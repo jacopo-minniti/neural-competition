@@ -81,6 +81,19 @@ Both layers remain trainable. Seeds, data sizes, learning rates, optimizer choic
 and the 2,000-update budget are unchanged. Analyze this sweep with
 `analyses/teacher64.ipynb`; it reads `runs/teacher64` by default.
 
+## 512-neuron teacher comparison
+
+Increase the teacher to 512 neurons and preserve the previous student-to-teacher
+width ratios of 1x, 8x, and 16x: students have widths 512, 4,096, and 8,192.
+
+```sh
+uv run python scripts/run_experiments.py --config configs/teacher512.json --device cpu --output runs/teacher512
+```
+
+Both layers remain trainable; all other protocol settings are unchanged. Analyze
+this sweep with `analyses/teacher512.ipynb`. Raw checkpoints are larger than in
+the previous comparisons because they retain every probe gradient.
+
 ## What gets saved
 
 All generated data, logs, and results belong under `runs/`, which is gitignored.
