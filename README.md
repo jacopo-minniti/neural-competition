@@ -69,6 +69,18 @@ configuration must match. Only one process may write to an output directory;
 after a forced kill, verify the PID in `.lock` is no longer alive before removing
 that stale lock.
 
+## 64-neuron teacher comparison
+
+The same protocol with a 64-neuron teacher and student widths 64, 512, and 1,024:
+
+```sh
+uv run python scripts/run_experiments.py --config configs/teacher64.json --device cpu --output runs/teacher64
+```
+
+Both layers remain trainable. Seeds, data sizes, learning rates, optimizer choices,
+and the 2,000-update budget are unchanged. Analyze this sweep with
+`analyses/teacher64.ipynb`; it reads `runs/teacher64` by default.
+
 ## What gets saved
 
 All generated data, logs, and results belong under `runs/`, which is gitignored.
