@@ -47,6 +47,52 @@ def test_step_transfer_uses_both_orders_and_agrees_with_raw_sgd():
     assert abs(transfer["step_p_negative"] - (values < 0).double().mean().item()) < 1e-12
 
 
+def test_adam_candidates_freeze_both_moments_and_match_restored_torch():
+    from neural_competition.neurons import candidate_descent
+
+    gradients = torch.tensor([[[1.0, -2.0]], [[-3.0, 4.0]]], dtype=torch.float64)
+    first = torch.tensor([[-0.7, 0.4]], dtype=torch.float64)
+    second = torch.tensor([[0.2, 1.0]], dtype=torch.float64)
+    snapshot = {
+        "optimizer": {"name": "adam", "lr": 0.003, "betas": (0.9, 0.999), "eps": 1e-8},
+        "optimizer_before": {"exp_avg": first, "exp_avg_sq": second},
+        "step": 37,
+    }
+    directions = candidate_descent(snapshot, gradients)
+    for b, gradient in enumerate(gradients):
+        parameter = torch.nn.Parameter(torch.tensor([[1.0, -2.0]], dtype=torch.float64))
+        before = parameter.detach().clone()
+        optimizer = torch.optim.Adam([parameter], lr=0.003, foreach=False)
+        optimizer.state[parameter].update(
+            step=torch.tensor(37.0), exp_avg=first.clone(), exp_avg_sq=second.clone()
+        )
+        parameter.grad = gradient.clone()
+        optimizer.step()
+        torch.testing.assert_close(parameter, before - 0.003 * directions[b], atol=1e-15, rtol=0)
+    # History dominates the first candidate and can reverse its raw gradient.
+    assert (directions[0] * gradients[0]).sum() < 0
+    torch.testing.assert_close(first, torch.tensor([[-0.7, 0.4]], dtype=torch.float64))
+    torch.testing.assert_close(second, torch.tensor([[0.2, 1.0]], dtype=torch.float64))
+    torch.testing.assert_close(candidate_descent(snapshot, gradients[:1]), directions[:1])
+
+
+def test_first_adam_candidate_has_correct_bias_corrections():
+    from neural_competition.neurons import candidate_descent
+
+    gradient = torch.tensor([[[2.0, -4.0, 0.0]]], dtype=torch.float64)
+    snapshot = {
+        "optimizer": {"name": "adam", "eps": 1e-8},
+        "optimizer_before": {
+            "exp_avg": torch.zeros_like(gradient[0]),
+            "exp_avg_sq": torch.zeros_like(gradient[0]),
+        },
+        "step": 0,
+    }
+    torch.testing.assert_close(
+        candidate_descent(snapshot, gradient), gradient / (gradient.abs() + 1e-8)
+    )
+
+
 def test_neuron_negative_mass_is_hidden_by_other_neurons():
     # Two batch demands: neuron 0 conflicts, neuron 1 more than offsets it.
     gradients = torch.tensor([[[1.0], [1.0]], [[-2.0], [3.0]]])

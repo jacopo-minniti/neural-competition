@@ -1,0 +1,116 @@
+# Inspecting results and reproducing experiments
+
+Run commands from the repository root. Reports are self-contained under `docs/`;
+the representative raw archive is ignored under `runs/retained/`. The editable
+and executed notebooks have been removed as requested.
+
+## Supported checks on the cleaned repository
+
+```sh
+uv sync --python 3.12 --extra analysis --extra dev
+uv run python scripts/summarize_results.py
+uv run python scripts/audit_archive.py
+uv run pytest
+uv run ruff check src scripts tests
+```
+
+The summary command reads the versioned tables, so it works without raw data.
+The archive audit requires the local ignored archive and verifies its checksums,
+representative per-update accounting and retained gradient/optimizer evidence.
+It does not reconstruct a full-cohort confidence interval from the selected
+raw cases. Reports link directly to versioned figures; no notebook is needed.
+
+The full original computed tables, including per-seed results and dense curves,
+are compressed under `runs/retained/aggregates/`. Read them with
+`pandas.read_csv(path)`; gzip is detected from the extension. Original historical
+paths inside tables are provenance fields and do not imply those source trees
+still exist. See [the data guide](data.md) for checkpoint and raw-array loading.
+
+## A small new training run
+
+```sh
+uv run python scripts/run_experiments.py --smoke --device cpu --output runs/smoke
+```
+
+For new experiments, use a new output directory and an explicit configuration.
+The generic runner supports SGD, momentum, Adam and the hybrid Muon setup.
+`--resume` skips completed/diverged sequential cases and restarts an incomplete
+case from initialization; it is not optimizer-state continuation. The batched
+trajectory runner has separate real checkpoint-resume behavior.
+
+## Repeating the original studies
+
+Original producers and numerical audits are retained in `scripts/studies/`.
+They expect **full original-layout cohorts**, not `runs/retained/`. Running an
+analysis immediately after cleanup cannot recreate deleted inputs from the
+representative subset. Regenerate the required cohorts first. This is deliberate:
+silently calculating forty-seed estimates from two selected seeds would be wrong.
+
+Original focused SGD study:
+
+```sh
+uv run python scripts/run_experiments.py --config configs/teacher8.json --device cpu --output runs/teacher8
+uv run python scripts/run_experiments.py --config configs/teacher8_counterexample.json --device cpu --output runs/teacher8_counterexample
+uv run python scripts/studies/audit_results.py
+```
+
+The focused configurations reproduce the original curated subset. The broader
+20-seed reliability counts are the historical cohort in
+`docs/tables/core/teacher8_history.csv`, not estimates from those configurations.
+
+Distribution and control cohorts (these are substantial runs):
+
+```sh
+for name in pier_distributions pier_early pier_early_extra pier_optimizer_pilot pier_initialization_control pier_stability_pilot; do
+  uv run python scripts/run_experiments.py --config configs/studies/$name.json --output runs/$name --device cpu --resume
+done
+uv run python scripts/studies/continue_stability.py
+uv run python scripts/studies/check_tails.py
+uv run python scripts/studies/analyze_distributions.py
+uv run python scripts/studies/plot_agreement.py
+uv run python scripts/studies/analyze_neurons.py
+uv run python scripts/studies/audit_neurons.py
+uv run python scripts/studies/compare_momentum.py
+uv run python scripts/studies/audit_momentum.py
+uv run python scripts/studies/analyze_pairs.py
+uv run python scripts/studies/audit_pairs.py
+```
+
+The continuation config is `configs/studies/pier_stability_continuation.json`.
+The historical broad pair-budget derivation is preserved in the archive's
+`provenance/summarize_pair_budget.py`, together with its exact source arrays for
+representative cases and the full-cohort computed tables. Its formulas and
+published numbers are in [the pair report](reports/pair_interactions.md).
+
+Every-update SGD/momentum study, using the retained original dataset:
+
+```sh
+uv run python scripts/studies/run_trajectory.py --data runs/retained/datasets/k8_teacher2027.pt
+uv run python scripts/studies/analyze_trajectory.py
+uv run python scripts/studies/audit_trajectory.py
+```
+
+Robustness study (the partition commands may run in separate terminals):
+
+```sh
+uv run python scripts/studies/run_robustness.py --prepare-only
+uv run python scripts/studies/run_robustness.py --partition 0
+uv run python scripts/studies/run_robustness.py --partition 1
+uv run python scripts/studies/run_initialization_controls.py
+uv run python scripts/studies/analyze_robustness.py
+uv run python scripts/studies/audit_robustness.py
+uv run python scripts/studies/analyze_adam_cross_batch.py
+```
+
+The robustness base-data default is the retained teacher-8 dataset. Both
+trajectory families create new full-layout results under `runs/pier_study/`.
+The latest Adam script needs the freshly generated complete teacher-8 Adam
+groups, including their original model lists and moments; it cannot use the
+repacked archive as a drop-in resume folder.
+
+The current engine and original study configurations remain versioned. Exact
+execution sources from before cleanup, plus each batched group's frozen sources,
+are retained in archive provenance. Code paths changed during organization;
+original execution hashes refer to those immutable copies, not the relocated
+live files. Float32 arithmetic and operation order can change individual basins
+even when the experimental protocol is the same.

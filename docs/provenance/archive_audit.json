@@ -1,0 +1,13 @@
+{
+  "verified_files": 861,
+  "representative_model_updates": 2800000,
+  "update_archives": 7,
+  "maximum_accounting_error": 3.4861002973229915e-14,
+  "maximum_checkpoint_loss_error": 0.0,
+  "adam_raw_states": 36,
+  "maximum_autograd_error": 4.163336342344337e-17,
+  "maximum_adam_direction_error": 0.0,
+  "pair_array_files": 106,
+  "full_cohort_tables_preserved": true,
+  "scope": "Curated raw subset; historical full-cohort audits are archived separately"
+}

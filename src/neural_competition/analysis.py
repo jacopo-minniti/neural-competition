@@ -1,4 +1,4 @@
-"""Load the curated teacher-8 results for notebooks without running training."""
+"""Load the curated teacher-8 results without running training."""
 
 import json
 import math
@@ -12,6 +12,11 @@ def load_metrics(root: Path) -> pd.DataFrame:
     frames = []
     for name in ("teacher8", "teacher8_counterexample"):
         folder = Path(root) / "runs" / name
+        if not (folder / "config.json").exists():
+            raise FileNotFoundError(
+                "Original-layout cohort is absent; the curated archive is not a full cohort. "
+                "See docs/reproduction.md."
+            )
         config = json.loads((folder / "config.json").read_text())
         for run in sorted(folder.glob("w*")):
             state = json.loads((run / "state.json").read_text())
@@ -28,7 +33,7 @@ def load_metrics(root: Path) -> pd.DataFrame:
             frame["train_mse_before"] = 2 * frame["train_loss"]
             frames.append(frame)
     if not frames:
-        raise FileNotFoundError("No complete teacher-8 results; see docs/experiment.md")
+        raise FileNotFoundError("No complete teacher-8 results; see docs/reproduction.md")
     return pd.concat(frames, ignore_index=True)
 
 

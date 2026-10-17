@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-17T18:34:53.984025+00:00",
+  "status": "complete",
+  "original_files": 10412,
+  "original_bytes": 8273229636,
+  "deleted_roots": [
+    "analysis",
+    "pier_distributions",
+    "pier_early",
+    "pier_early_extra",
+    "pier_initialization_control",
+    "pier_optimizer_pilot",
+    "pier_stability_continuation",
+    "pier_stability_pilot",
+    "pier_study",
+    "teacher8",
+    "teacher8_counterexample"
+  ],
+  "archive": "runs/retained",
+  "pre_deletion_archive_manifest_sha256": "defba36090df792cf4fa43cb6773e882126ff6138d79bb043c542757995a36c9",
+  "archive_audit_sha256": "f0b6deabc59be84002f5a471bb7310a6bf6fd3880ad89df10ca31009be20cd5e",
+  "authorization": "User explicitly requested pruning all nonessential raw data after reporting results",
+  "retained_files": 862,
+  "retained_bytes": 555797287,
+  "notebooks_remaining": 0,
+  "final_archive_manifest_sha256": "b7a8c3d8aca41103f7fc563ef69db001ae4f0038918489c5e40890e609eefe5f"
+}

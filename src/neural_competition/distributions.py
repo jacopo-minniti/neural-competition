@@ -51,7 +51,7 @@ def read_study(root, names=("pier_distributions", "pier_optimizer_pilot")):
                 }
             )
     if not frames:
-        raise FileNotFoundError("Run configs/pier_distributions.json first")
+        raise FileNotFoundError("Run configs/studies/pier_distributions.json first")
     return pd.concat(frames, ignore_index=True), pd.DataFrame(outcomes)
 
 

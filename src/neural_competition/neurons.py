@@ -6,18 +6,30 @@ import torch
 
 
 def candidate_descent(snapshot, gradients=None, *, include_history=True):
-    """SGD descent direction before multiplying by lr; freeze pre-step history.
+    """Optimizer descent before multiplying by lr; freeze pre-step history.
 
     PyTorch's momentum here has zero dampening, no Nesterov, no decay.
     A candidate minibatch changes g_B but does not replay the past trajectory.
+    For Adam, snapshot['step'] counts updates BEFORE the candidate step. Both
+    moments are updated separately for every candidate, with bias corrections.
+    Arithmetic is float64; parameter rounding is outside this local diagnostic.
     """
     gradients = snapshot["probe_gradients"] if gradients is None else gradients
     gradients = gradients.double()
     spec = snapshot["optimizer"]
     if spec["name"] == "sgd" or not include_history:
         return gradients
+    if spec["name"] == "adam":
+        beta1, beta2 = spec.get("betas", (0.9, 0.999))
+        history = snapshot["optimizer_before"]
+        first = beta1 * history["exp_avg"].double() + (1 - beta1) * gradients
+        second = beta2 * history["exp_avg_sq"].double() + (1 - beta2) * gradients.square()
+        step = int(snapshot["step"]) + 1
+        corrected_first = first / (1 - beta1**step)
+        corrected_second = second / (1 - beta2**step)
+        return corrected_first / (corrected_second.sqrt() + spec.get("eps", 1e-8))
     if spec["name"] != "momentum":
-        raise ValueError("Only plain SGD and classical momentum are supported")
+        raise ValueError("Only plain SGD, classical momentum and default Adam are supported")
     previous = snapshot["optimizer_before"]["momentum_buffer"].double()
     return gradients + spec["momentum"] * previous
 
