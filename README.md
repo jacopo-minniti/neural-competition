@@ -111,3 +111,11 @@ uv run ruff check src scripts tests analyses
 actual updates, widths 8/16 and ten paired seeds for momentum and SGD.
 They compare accumulated penalties over steps, at equal standalone gains,
 and at matched loss, with per-update accounting on a fixed reference set.
+
+## Robustness across optimizers, widths and teachers
+
+[Results and protocol](docs/robustness.md) and
+[analysis notebook](analyses/08_robustness.ipynb) cover momentum, Adam at two
+learning rates, teacher widths 8/16, mild and larger student expansions,
+teacher replicas, and an outgoing-initialization control. The sweep records
+all actual updates and separates fitting gains from pairwise interaction costs.

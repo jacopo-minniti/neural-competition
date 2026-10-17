@@ -13,7 +13,7 @@ import torch
 
 from neural_competition.experiment import output_lock, save_torch, write_json
 from neural_competition.model import ShallowReLU
-from neural_competition.trajectory import FIELDS, VIEWS, components, run_block
+from neural_competition.trajectory import FIELDS, VIEWS, components, run_adam_block, run_block
 
 
 def evaluate(parameters, widths, x, y):
@@ -26,13 +26,30 @@ def evaluate(parameters, widths, x, y):
     return total.numpy() / len(x)
 
 
-def train(args, label, data, reference_indices):
+def train(
+    args,
+    label,
+    data,
+    reference_indices,
+    *,
+    student_widths=None,
+    teacher_width=8,
+    optimizer_spec=None,
+    study=None,
+    output_scale=0.0,
+):
     output = args.output / label
     output.mkdir(parents=True, exist_ok=True)
-    widths = torch.tensor([w for w in [8, 16] for _ in range(args.seeds)])[:, None]
-    seeds = torch.arange(args.seeds).repeat(2)
+    student_widths = student_widths or [8, 16]
+    widths = torch.tensor([w for w in student_widths for _ in range(args.seeds)])[:, None]
+    seeds = torch.arange(args.seeds).repeat(len(student_widths))
     models = [{"width": int(w), "seed": int(s)} for w, s in zip(widths[:, 0], seeds)]
     lr, momentum = (0.1, 0.9) if label == "momentum" else (1.0, 0.0)
+    kind = label
+    if optimizer_spec is not None:
+        kind = optimizer_spec["name"]
+        lr = optimizer_spec["lr"]
+        momentum = optimizer_spec.get("momentum", 0.0)
     config = dict(
         steps=args.steps,
         models=models,
@@ -46,11 +63,17 @@ def train(args, label, data, reference_indices):
         views=VIEWS,
         float_training="float32",
         float_metrics="float64",
-        teacher_width=8,
+        teacher_width=teacher_width,
         data_seed=2026,
         reference="fixed random training subset",
         data_sha256=hashlib.sha256(args.data.read_bytes()).hexdigest(),
     )
+    if optimizer_spec is not None:
+        config["optimizer_spec"] = optimizer_spec
+    if study is not None:
+        config["study"] = study
+    if output_scale:
+        config["student_output_scale"] = output_scale
     if (output / "config.json").exists():
         if json.loads((output / "config.json").read_text()) != config:
             raise ValueError("Existing run has a different configuration")
@@ -61,19 +84,30 @@ def train(args, label, data, reference_indices):
     write_json(output / "config.json", config)
     hashes = {
         name: hashlib.sha256((Path(__file__).resolve().parents[1] / name).read_bytes()).hexdigest()
-        for name in ["scripts/run_trajectory.py", "src/neural_competition/trajectory.py"]
+        for name in [
+            "scripts/run_trajectory.py",
+            "src/neural_competition/trajectory.py",
+            *getattr(args, "extra_sources", []),
+        ]
     }
     write_json(output / "source_hashes.json", hashes)
     for name in hashes:
         frozen = output / "executed_sources" / name
         frozen.parent.mkdir(parents=True, exist_ok=True)
         frozen.write_bytes((Path(__file__).resolve().parents[1] / name).read_bytes())
-    p = torch.zeros(len(models), 16, 22)
+    maximum = max(student_widths)
+    dim = data["x_train"].shape[-1]
+    p = torch.zeros(len(models), maximum, dim + 2)
     for i, model in enumerate(models):
-        p[i, : model["width"]] = ShallowReLU(20, model["width"], model["seed"]).parameter_blocks()
+        network = ShallowReLU(dim, model["width"], model["seed"], zero_output=output_scale == 0)
+        initial = network.parameter_blocks()
+        if output_scale:
+            initial[:, -1].mul_(output_scale)
+        p[i, : model["width"]] = initial
     velocity = torch.zeros_like(p)
-    active = torch.arange(16)[None] < widths
-    upper = torch.triu(torch.ones(16, 16, dtype=torch.bool), diagonal=1)[None]
+    second = torch.zeros_like(p)
+    active = torch.arange(maximum)[None] < widths
+    upper = torch.triu(torch.ones(maximum, maximum, dtype=torch.bool), diagonal=1)[None]
     upper = upper & active[:, :, None] & active[:, None, :]
     generators = [torch.Generator().manual_seed(2026 + 10_000 + s) for s in range(args.seeds)]
     xref = data["x_train"][reference_indices].double()[None].expand(len(models), -1, -1)
@@ -90,6 +124,8 @@ def train(args, label, data, reference_indices):
             checkpoint["completed"],
         )
         elapsed_before = checkpoint["elapsed_seconds"]
+        if kind == "adam":
+            second = checkpoint["second"]
         for generator, state in zip(generators, checkpoint["rng_states"]):
             generator.set_state(state)
         records = np.lib.format.open_memmap(output / "updates.npy", mode="r+")
@@ -112,22 +148,40 @@ def train(args, label, data, reference_indices):
     for start in range(completed, args.steps, args.block):
         count = min(args.block, args.steps - start)
         indices = torch.stack(
-            [torch.randint(8192, (count, 64), generator=g) for g in generators], dim=1
+            [torch.randint(len(data["x_train"]), (count, 64), generator=g) for g in generators],
+            dim=1,
         )
-        p, velocity, stats = run_block(
-            p,
-            velocity,
-            data["x_train"],
-            data["y_train"],
-            indices,
-            seeds,
-            widths,
-            xref,
-            yref,
-            upper,
-            lr,
-            momentum,
-        )
+        if kind == "adam":
+            p, velocity, second, stats = run_adam_block(
+                p,
+                velocity,
+                second,
+                data["x_train"],
+                data["y_train"],
+                indices,
+                seeds,
+                widths,
+                xref,
+                yref,
+                upper,
+                lr,
+                start,
+            )
+        else:
+            p, velocity, stats = run_block(
+                p,
+                velocity,
+                data["x_train"],
+                data["y_train"],
+                indices,
+                seeds,
+                widths,
+                xref,
+                yref,
+                upper,
+                lr,
+                momentum,
+            )
         if not torch.isfinite(stats).all() or not torch.isfinite(p).all():
             raise RuntimeError(f"Nonfinite state at block {start}")
         records[start : start + count] = stats.numpy()
@@ -142,16 +196,20 @@ def train(args, label, data, reference_indices):
             elapsed = elapsed_before + time.perf_counter() - started
             records.flush()
             pd.DataFrame(evaluations).to_csv(output / "losses.csv", index=False)
-            save_torch(
-                output / "resume.pt",
-                dict(
-                    parameters=p,
-                    velocity=velocity,
-                    completed=completed,
-                    rng_states=[g.get_state() for g in generators],
-                    elapsed_seconds=elapsed,
-                ),
+            checkpoint = dict(
+                parameters=p,
+                velocity=velocity,
+                completed=completed,
+                rng_states=[g.get_state() for g in generators],
+                elapsed_seconds=elapsed,
             )
+            if kind == "adam":
+                checkpoint["second"] = second
+            save_torch(output / "resume.pt", checkpoint)
+            if getattr(args, "keep_checkpoints", False):
+                folder = output / "checkpoints"
+                folder.mkdir(exist_ok=True)
+                save_torch(folder / f"step_{completed:06d}.pt", checkpoint)
             write_json(
                 output / "state.json",
                 dict(
@@ -161,7 +219,8 @@ def train(args, label, data, reference_indices):
                 ),
             )
             medians = [
-                np.median(train_mse[i * args.seeds : (i + 1) * args.seeds]) for i in range(2)
+                np.median(train_mse[i * args.seeds : (i + 1) * args.seeds])
+                for i in range(len(student_widths))
             ]
             print(
                 f"{label}: {completed:,}/{args.steps:,}, {elapsed:.1f}s, median train MSE {medians}",

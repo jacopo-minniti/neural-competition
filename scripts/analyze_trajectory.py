@@ -76,7 +76,7 @@ def save(fig, output, name):
     plt.close(fig)
 
 
-def collect(folder):
+def collect(folder, bin_ranges=None):
     config = json.loads((folder / "config.json").read_text())
     if json.loads((folder / "state.json").read_text())["status"] != "complete":
         raise ValueError(f"Training is not complete: {folder}")
@@ -91,7 +91,10 @@ def collect(folder):
         ]
     )
     caps = raw[:, :, :, INDEX["solo_gain"]].sum(0).min(0)
-    bins = {"overview": np.geomspace(1e-9, 2.0, 76), "primary": np.geomspace(0.02, 0.2, 13)}
+    bins = bin_ranges or {
+        "overview": np.geomspace(1e-9, 2.0, 76),
+        "primary": np.geomspace(0.02, 0.2, 13),
+    }
     cumulative, windows, phases, progress, finals, audits = [], [], [], [], [], []
     label = config["optimizer"]
     for i, model in enumerate(config["models"]):

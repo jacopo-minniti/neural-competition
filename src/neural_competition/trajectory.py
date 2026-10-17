@@ -1,4 +1,4 @@
-"""Small batched momentum runner and exact per-update interaction accounting.
+"""Small batched optimizers and exact per-update interaction accounting.
 
 The padded neurons stay identically zero. Training uses float32; diagnostics
 evaluate the actual rounded before/after parameters in float64.
@@ -26,8 +26,8 @@ VIEWS = ["source", "reference"]
 
 
 @torch.jit.script
-def momentum_step(p, velocity, x, y, norm, lr: float, momentum: float):
-    """Analytic half-MSE gradient; equivalent to ordinary PyTorch SGD momentum."""
+def batch_gradient(p, x, y, norm):
+    """Analytic half-MSE gradient for each independent model in the batch."""
     dim = x.shape[-1]
     z = torch.bmm(x, p[:, :, :dim].transpose(1, 2)) + p[:, None, :, dim]
     hidden = z.relu()
@@ -42,8 +42,25 @@ def momentum_step(p, velocity, x, y, norm, lr: float, momentum: float):
         ],
         dim=-1,
     )
-    velocity = torch.add(velocity * momentum, gradient)
+    return gradient
+
+
+@torch.jit.script
+def momentum_step(p, velocity, x, y, norm, lr: float, momentum: float):
+    """Equivalent to ordinary PyTorch SGD with optional classical momentum."""
+    velocity = torch.add(velocity * momentum, batch_gradient(p, x, y, norm))
     return torch.add(p, velocity, alpha=-lr), velocity
+
+
+@torch.jit.script
+def adam_step(p, first, second, x, y, norm, lr: float, step: int):
+    """Adam defaults, no decay/AMSGrad; step is the one-based update count."""
+    gradient = batch_gradient(p, x, y, norm)
+    first = torch.lerp(first, gradient, 0.1)
+    second = torch.addcmul(second * 0.999, gradient, gradient, value=0.001)
+    denominator = second.sqrt() / ((1.0 - 0.999**step) ** 0.5) + 1e-8
+    following = torch.addcdiv(p, first, denominator, value=-lr / (1.0 - 0.9**step))
+    return following, first, second
 
 
 @torch.jit.script
@@ -122,3 +139,39 @@ def run_block(
         records[step, :, 1] = interaction_metrics(before[:, n:], after[:, n:], y_reference, upper)
         p = following
     return p, velocity, records
+
+
+@torch.jit.script
+def run_adam_block(
+    p,
+    first,
+    second,
+    x_train,
+    y_train,
+    indices,
+    seed_map,
+    widths,
+    x_reference,
+    y_reference,
+    upper,
+    lr: float,
+    start_update: int,
+):
+    """Same exact diagnostics as run_block, with Adam's actual rounded updates."""
+    records = torch.empty((indices.shape[0], p.shape[0], 2, 14), dtype=torch.float64)
+    norm64 = widths.double().sqrt()
+    norm32 = norm64.float()
+    for step in range(indices.shape[0]):
+        ids = indices[step].index_select(0, seed_map)
+        x, y = x_train[ids], y_train[ids]
+        following, first, second = adam_step(
+            p, first, second, x, y, norm32, lr, start_update + step + 1
+        )
+        combined = torch.cat([x.double(), x_reference], dim=1)
+        before = components(p.double(), combined, norm64)
+        after = components(following.double(), combined, norm64)
+        n = x.shape[1]
+        records[step, :, 0] = interaction_metrics(before[:, :n], after[:, :n], y.double(), upper)
+        records[step, :, 1] = interaction_metrics(before[:, n:], after[:, n:], y_reference, upper)
+        p = following
+    return p, first, second, records
