@@ -103,3 +103,11 @@ not this selected subset, to describe success rates. Across the completed broade
 uv run pytest
 uv run ruff check src scripts tests analyses
 ```
+
+## Cumulative interactions over training
+
+[Results and protocol](docs/cumulative_interference.md) and
+[analysis notebook](analyses/07_cumulative_interference.ipynb) cover 200,000
+actual updates, widths 8/16 and ten paired seeds for momentum and SGD.
+They compare accumulated penalties over steps, at equal standalone gains,
+and at matched loss, with per-update accounting on a fixed reference set.
