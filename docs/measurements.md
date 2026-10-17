@@ -142,3 +142,8 @@ interventions, beyond reconstructing the global sum.
 ## Neuron-level follow-up
 
 See [neuron_interference.md](neuron_interference.md) for P/N, exact individual-neuron prediction changes, partial cancellation, and full-step versus short-step collateral harm.
+
+
+## Same-batch pair interference
+
+See [pair_interference.md](pair_interference.md) for exact standalone and joint loss changes on the source minibatch, strong interference frequency, and conditional versus aggregate severity.

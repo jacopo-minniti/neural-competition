@@ -45,6 +45,19 @@ uv run python scripts/compare_momentum.py
 uv run python scripts/audit_momentum.py
 ```
 
+## Same-batch neuron pairs
+
+See [pair interference findings](docs/pair_interference.md) and
+[the pair notebook](analyses/06_pair_interference.ipynb) for exact tests of
+updates that help individually but become harmful together. All neuron pairs
+are enumerated at widths 8 and 16; the report separates per-pair frequency,
+conditional severity and aggregate harm.
+
+```sh
+uv run python scripts/analyze_pairs.py
+uv run python scripts/audit_pairs.py
+```
+
 ## Original curated study
 
 - [Protocol and reproduction](docs/experiment.md)
