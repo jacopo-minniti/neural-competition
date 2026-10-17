@@ -228,3 +228,8 @@ median test MSE is 0.00423 and 0.00000953 respectively. This equal-step comparis
 does not support A as a universal predictor of fitting success. Late width-16
 ratios also involve very small gradients. See `measurements.md` for definitions
 and why taking signs before summing neuron blocks preserves additional information.
+
+
+## Neuron-level follow-up
+
+See [neuron_interference.md](neuron_interference.md) for P/N, exact individual-neuron prediction changes, partial cancellation, and full-step versus short-step collateral harm.

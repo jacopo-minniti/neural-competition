@@ -21,6 +21,18 @@ All generated data are under ignored `runs/`; the executed notebook and figures
 are in `runs/pier_study/analysis/`.
 Reproduction commands and the separate training budgets are in the report.
 
+## Neuron-level follow-up
+
+See [the neuron-interference findings](docs/neuron_interference.md) and
+[the neuron notebook](analyses/04_neuron_interference.ipynb) for positive/negative
+neuron gradient masses, exact prediction changes, partial cancellation and
+step-size sensitivity at widths 8 and 16. These analyses reuse saved states.
+
+```sh
+uv run python scripts/analyze_neurons.py
+uv run python scripts/audit_neurons.py
+```
+
 ## Original curated study
 
 - [Protocol and reproduction](docs/experiment.md)

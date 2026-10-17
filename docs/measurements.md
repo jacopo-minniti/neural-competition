@@ -137,3 +137,8 @@ incompatible batch demands. They still discard which neurons and which batch pai
 are involved, and are not direct measurements of interactions between distinct
 neurons' prediction changes. Testing a neuron mechanism requires those patterns or
 interventions, beyond reconstructing the global sum.
+
+
+## Neuron-level follow-up
+
+See [neuron_interference.md](neuron_interference.md) for P/N, exact individual-neuron prediction changes, partial cancellation, and full-step versus short-step collateral harm.
