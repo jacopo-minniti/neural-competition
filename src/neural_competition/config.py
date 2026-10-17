@@ -26,28 +26,37 @@ class OptimizerConfig:
 @dataclass
 class ExperimentConfig:
     input_dim: int = 20
-    teacher_width: int = 4
+    teacher_width: int = 8
     n_train: int = 8192
     n_test: int = 4096
     data_seed: int = 2026
-    widths: list[int] = field(default_factory=lambda: [8, 64, 512])
-    seeds: list[int] = field(default_factory=lambda: [0, 1, 2])
-    steps: int = 2000
+    widths: list[int] = field(default_factory=lambda: [8, 9, 10, 16, 128])
+    seeds: list[int] = field(default_factory=lambda: [0, 1, 3])
+    steps: int = 100000
     batch_size: int = 64
     probe_batches: int = 64
     checkpoint_steps: list[int] = field(
-        default_factory=lambda: [0, 1, 5, 20, 100, 300, 700, 1200, 1999]
+        default_factory=lambda: [
+            0,
+            1,
+            20,
+            100,
+            700,
+            1999,
+            4999,
+            9999,
+            19999,
+            39999,
+            59999,
+            79999,
+            99999,
+        ]
     )
     sharpness_batches: int = 4
-    log_every: int = 50
+    log_every: int = 1000
     cpu_threads: int = 4
     optimizers: list[OptimizerConfig] = field(
-        default_factory=lambda: [
-            OptimizerConfig("sgd", 0.1, "sgd_small"),
-            OptimizerConfig("sgd", 1.0, "sgd_large"),
-            OptimizerConfig("momentum", 0.01, "momentum_small"),
-            OptimizerConfig("momentum", 0.1, "momentum_large"),
-        ]
+        default_factory=lambda: [OptimizerConfig("sgd", 1.0, "sgd_large")]
     )
 
     @classmethod

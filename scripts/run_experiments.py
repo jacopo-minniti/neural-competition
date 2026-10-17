@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the first sweep: python scripts/run_experiments.py --output runs/first."""
+"""Run the focused teacher-8 sweep with saved gradient diagnostics."""
 
 import argparse
 import signal
@@ -12,8 +12,8 @@ from neural_competition.experiment import run_experiments
 def main():
     root = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--config", type=Path, default=root / "configs/first.json")
-    parser.add_argument("--output", type=Path, default=root / "runs/first")
+    parser.add_argument("--config", type=Path, default=root / "configs/teacher8.json")
+    parser.add_argument("--output", type=Path, default=root / "runs/teacher8")
     parser.add_argument("--device", choices=["auto", "cpu", "mps", "cuda"], default="auto")
     parser.add_argument(
         "--resume",
