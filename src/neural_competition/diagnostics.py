@@ -32,17 +32,18 @@ def optimizer_buffers(model, optimizer):
     return result
 
 
-def batch_sharpness(model, x_probe, y_probe):
-    """Mean Rayleigh quotient E[g_B^T H_B g_B / ||g_B||^2].
+def batch_curvature_samples(model, x_probe, y_probe):
+    """Return g_B^T H_B g_B and ||g_B||^2 separately in CPU float64.
 
-    Use CPU float64 for this small higher-derivative calculation. This avoids
-    relying on higher-order MPS operator coverage. No full Hessian is formed.
+    Their ratio of sums estimates Definition 1 of Andreyev & Beneventano
+    (arXiv:2412.20553v3). A mean of individual ratios is a different statistic.
     ReLU derivatives describe the local activation region, not boundary crossings.
     """
     if len(x_probe) == 0:
-        return torch.empty(0, dtype=torch.float64)
+        empty = torch.empty(0, dtype=torch.float64)
+        return empty, empty
     reference = copy.deepcopy(model).cpu().double()
-    values = []
+    numerators, denominators = [], []
     parameters = tuple(reference.parameters())
     for x, y in zip(x_probe.cpu().double(), y_probe.cpu().double()):
         gradients = torch.autograd.grad(loss(reference, x, y), parameters, create_graph=True)
@@ -51,10 +52,15 @@ def batch_sharpness(model, x_probe, y_probe):
         hvp = torch.autograd.grad(directional_derivative, parameters)
         numerator = sum((v * h).sum() for v, h in zip(direction, hvp))
         denominator = sum(v.square().sum() for v in direction)
-        values.append(
-            (numerator / denominator).detach() if denominator > 0 else torch.tensor(float("nan"))
-        )
-    return torch.stack(values)
+        numerators.append(numerator.detach())
+        denominators.append(denominator.detach())
+    return torch.stack(numerators), torch.stack(denominators)
+
+
+def batch_sharpness(model, x_probe, y_probe):
+    """Individual Rayleigh quotients (legacy statistic; not the paper's ratio)."""
+    numerator, denominator = batch_curvature_samples(model, x_probe, y_probe)
+    return torch.where(denominator > 0, numerator / denominator, float("nan"))
 
 
 def collect_before(model, optimizer, data, x_probe, y_probe, sharpness_batches):
@@ -67,6 +73,9 @@ def collect_before(model, optimizer, data, x_probe, y_probe, sharpness_batches):
     with torch.no_grad():
         test_predictions = model(data["x_test"])
         test_loss = 0.5 * (test_predictions - data["y_test"]).square().mean()
+    curvature_numerator, curvature_denominator = batch_curvature_samples(
+        model, x_probe[:sharpness_batches], y_probe[:sharpness_batches]
+    )
     return {
         "parameters_before": model.parameter_blocks().cpu(),
         "optimizer_before": optimizer_buffers(model, optimizer),
@@ -76,9 +85,9 @@ def collect_before(model, optimizer, data, x_probe, y_probe, sharpness_batches):
         "test_predictions_before": test_predictions.detach().cpu(),
         "train_loss_before": float(train_loss.cpu()),
         "test_loss_before": float(test_loss.cpu()),
-        "batch_sharpness_samples": batch_sharpness(
-            model, x_probe[:sharpness_batches], y_probe[:sharpness_batches]
-        ),
+        "batch_sharpness_samples": curvature_numerator / curvature_denominator,
+        "batch_curvature_numerators": curvature_numerator,
+        "batch_curvature_denominators": curvature_denominator,
     }
 
 
@@ -98,12 +107,29 @@ def distribution_summary(prefix, values):
     if not len(values):
         return {
             f"{prefix}_{key}": math.nan
-            for key in ("mean", "std", "negative_fraction", "q01", "q05", "q50", "q95", "q99")
+            for key in (
+                "mean",
+                "std",
+                "skewness",
+                "excess_kurtosis",
+                "negative_fraction",
+                "q01",
+                "q05",
+                "q50",
+                "q95",
+                "q99",
+            )
         }
+    centered = values - values.mean()
+    variance = centered.square().mean()
+    skewness = (centered.pow(3).mean() / variance.pow(1.5)).item() if variance > 0 else math.nan
+    kurtosis = (centered.pow(4).mean() / variance.square() - 3).item() if variance > 0 else math.nan
     quantiles = torch.quantile(
         values, torch.tensor([0.01, 0.05, 0.5, 0.95, 0.99], dtype=torch.float64)
     )
     result = {
+        f"{prefix}_skewness": skewness,
+        f"{prefix}_excess_kurtosis": kurtosis,
         f"{prefix}_mean": values.mean().item(),
         f"{prefix}_std": values.std(unbiased=False).item(),
         f"{prefix}_negative_fraction": (values < 0).double().mean().item(),
@@ -150,6 +176,12 @@ def summarize(snapshot):
         if len(snapshot["batch_sharpness_samples"])
         else math.nan,
     }
+    if "batch_curvature_numerators" in snapshot:
+        numerator = snapshot["batch_curvature_numerators"].sum()
+        denominator = snapshot["batch_curvature_denominators"].sum()
+        result["batch_sharpness_ratio"] = (
+            (numerator / denominator).item() if denominator > 0 else math.nan
+        )
     for prefix, values in (
         ("pair_dot", pair_dot),
         ("pair_cosine", pair_cosine),

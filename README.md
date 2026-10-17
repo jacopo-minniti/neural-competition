@@ -4,7 +4,23 @@ Small PyTorch experiments on whether extra neurons improve optimization and how
 minibatch updates compete through shared neuron parameters. The current experiment
 uses one fixed, noiseless eight-neuron ReLU teacher, with both student layers trained.
 
-## Start here
+## Distribution and optimizer follow-up
+
+See [Pier's experiment results](docs/pier_experiments.md) and
+[the distribution notebook](analyses/03_pier_distributions.ipynb) for the newer
+SGD/momentum/Adam/Muon comparisons, 40-seed early distributions, fresh 512-batch
+tail checks, and saved-state learning-rate interventions.
+
+```sh
+uv run python scripts/analyze_distributions.py
+uv run python scripts/audit_distributions.py
+```
+
+All generated data are under ignored `runs/`; the executed notebook and figures
+are in `runs/pier_study/analysis/`.
+Reproduction commands and the separate training budgets are in the report.
+
+## Original curated study
 
 - [Protocol and reproduction](docs/experiment.md)
 - [What we found](docs/findings.md)
@@ -18,7 +34,7 @@ uv sync --python 3.12 --extra analysis --extra dev
 uv run python scripts/audit_results.py
 ```
 
-The retained runs already contain the necessary gradients, actual updates, losses
+The original retained runs contain gradients, actual updates, losses
 and curvature probes. Cleanup reused and verified them; no training rerun was needed.
 
 Open the notebooks with this repository's `.venv` Python kernel.

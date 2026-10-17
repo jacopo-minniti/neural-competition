@@ -78,3 +78,11 @@ that the learned functions or representations are identical.
 Earlier teacher-4, teacher-64 and teacher-512 scans motivated the longer-budget
 check. Their raw outputs and old notebooks were removed to focus this repository
 on the present teacher-8 experiment. The interrupted Martinelli work is excluded.
+
+
+## Distribution/optimizer follow-up
+
+See [Pier's suggested experiments](pier_experiments.md) for the newer multi-seed
+distribution results, optimizer-specific tails, initialization control and causal
+saved-state learning-rate intervention. Those results also correct the distinction
+between a mean curvature ratio and the paper's ratio of expectations.

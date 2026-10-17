@@ -11,12 +11,15 @@ class OptimizerConfig:
     lr: float
     label: str
     momentum: float = 0.9
+    auxiliary_lr: float | None = None
 
     def validate(self) -> None:
-        if self.name not in {"sgd", "momentum", "adam"}:
+        if self.name not in {"sgd", "momentum", "adam", "muon"}:
             raise ValueError(f"Unknown optimizer: {self.name}")
         if self.lr <= 0 or not 0 <= self.momentum < 1:
             raise ValueError("Invalid learning rate or momentum")
+        if self.auxiliary_lr is not None and self.auxiliary_lr <= 0:
+            raise ValueError("Auxiliary learning rate must be positive")
         if not self.label or any(
             c not in "abcdefghijklmnopqrstuvwxyz0123456789_-" for c in self.label
         ):
@@ -30,6 +33,7 @@ class ExperimentConfig:
     n_train: int = 8192
     n_test: int = 4096
     data_seed: int = 2026
+    student_output_scale: float = 0.0
     widths: list[int] = field(default_factory=lambda: [8, 9, 10, 16, 128])
     seeds: list[int] = field(default_factory=lambda: [0, 1, 3])
     steps: int = 100000
@@ -53,6 +57,8 @@ class ExperimentConfig:
         ]
     )
     sharpness_batches: int = 4
+    loss_checkpoints: list[float] = field(default_factory=list)
+    loss_check_every: int = 100
     log_every: int = 1000
     cpu_threads: int = 4
     optimizers: list[OptimizerConfig] = field(
@@ -78,6 +84,7 @@ class ExperimentConfig:
             self.batch_size,
             self.probe_batches,
             self.log_every,
+            self.loss_check_every,
             self.cpu_threads,
         ]
         if min(positive) < 1 or self.probe_batches < 2:
@@ -94,6 +101,12 @@ class ExperimentConfig:
             raise ValueError("Provide optimizers with unique labels")
         if any(s < 0 or s >= self.steps for s in self.checkpoint_steps):
             raise ValueError("Checkpoint steps must index an update in [0, steps)")
+        if self.student_output_scale < 0:
+            raise ValueError("Student output initialization scale must be nonnegative")
+        if any(v <= 0 for v in self.loss_checkpoints):
+            raise ValueError("Loss checkpoints use positive ordinary training MSE")
+        if len(set(self.loss_checkpoints)) != len(self.loss_checkpoints):
+            raise ValueError("Loss checkpoints must be unique")
         for optimizer in self.optimizers:
             optimizer.validate()
 

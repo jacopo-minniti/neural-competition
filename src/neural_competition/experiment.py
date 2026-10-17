@@ -14,6 +14,7 @@ import torch
 from .config import ExperimentConfig, OptimizerConfig
 from .diagnostics import collect_before, optimizer_buffers, probe_losses, summarize
 from .model import ShallowReLU, loss, make_data
+from .optimizers import MuonAdam
 
 
 def now():
@@ -68,6 +69,8 @@ def make_optimizer(model, spec: OptimizerConfig):
         return torch.optim.SGD(model.parameters(), lr=spec.lr)
     if spec.name == "momentum":
         return torch.optim.SGD(model.parameters(), lr=spec.lr, momentum=spec.momentum)
+    if spec.name == "muon":
+        return MuonAdam(model, spec)
     return torch.optim.Adam(model.parameters(), lr=spec.lr)
 
 
@@ -76,23 +79,37 @@ def append_row(writer, handle, row):
     handle.flush()
 
 
-def run_one(config, spec, width, seed, data, output, device):
+def run_one(
+    config, spec, width, seed, data, output, device, *, initial_parameters=None, start_update=0
+):
     output.mkdir(parents=True, exist_ok=True)
     checkpoints = output / "checkpoints"
     checkpoints.mkdir(exist_ok=True)
     torch.manual_seed(seed)
-    model = ShallowReLU(config.input_dim, width, seed).to(device)
+    model = ShallowReLU(
+        config.input_dim, width, seed, zero_output=config.student_output_scale == 0
+    ).to(device)
+    if config.student_output_scale:
+        with torch.no_grad():
+            model.output.mul_(config.student_output_scale)
+    if initial_parameters is not None:
+        d = config.input_dim
+        with torch.no_grad():
+            model.weight.copy_(initial_parameters[:, :d])
+            model.bias.copy_(initial_parameters[:, d])
+            model.output.copy_(initial_parameters[:, d + 1])
     optimizer = make_optimizer(model, spec)
     train_generator = torch.Generator().manual_seed(config.data_seed + 10_000 + seed)
     # Every width and optimizer sees the same minibatch sequence within a seed.
     indices = torch.randint(
-        config.n_train, (config.steps, config.batch_size), generator=train_generator
-    ).to(device)
+        config.n_train, (config.steps + start_update, config.batch_size), generator=train_generator
+    )[start_update:].to(device)
     probe_indices = data["probe_indices"].to(device)
     x_probe = data["x_train"][probe_indices]
     y_probe = data["y_train"][probe_indices]
     previous_step = torch.zeros_like(model.parameter_blocks())
     checkpoint_steps = set(config.checkpoint_steps) | {0, config.steps - 1}
+    pending_losses = set(config.loss_checkpoints)
     started = time.perf_counter()
     state = {
         "status": "running",
@@ -102,6 +119,7 @@ def run_one(config, spec, width, seed, data, output, device):
         "device": str(device),
         "started_at": now(),
         "updates_completed": 0,
+        "initial_updates": start_update,
     }
     write_json(output / "state.json", state)
 
@@ -121,7 +139,13 @@ def run_one(config, spec, width, seed, data, output, device):
                 x = data["x_train"][indices[step]]
                 y = data["y_train"][indices[step]]
                 value = loss(model, x, y)
-                checkpoint = step in checkpoint_steps
+                crossed_losses = []
+                if pending_losses and step % config.loss_check_every == 0:
+                    with torch.no_grad():
+                        current_mse = 2 * loss(model, data["x_train"], data["y_train"]).item()
+                    crossed_losses = sorted(v for v in pending_losses if current_mse <= v)
+                    pending_losses.difference_update(crossed_losses)
+                checkpoint = step in checkpoint_steps or bool(crossed_losses)
                 log = checkpoint or step % config.log_every == 0
                 if log and not torch.isfinite(value).item():
                     state.update(status="diverged", updates_completed=step, ended_at=now())
@@ -151,7 +175,8 @@ def run_one(config, spec, width, seed, data, output, device):
                         test_after = loss(model, data["x_test"], data["y_test"])
                     snapshot.update(
                         {
-                            "format_version": 1,
+                            "format_version": 2,
+                            "loss_targets_crossed": crossed_losses,
                             "step": step,
                             "updates_completed": step + 1,
                             "width": width,
@@ -245,7 +270,10 @@ def run_experiments(config: ExperimentConfig, output, device="auto", *, resume=F
     device = choose_device(device)
     with output_lock(output):
         config_path = output / "config.json"
-        if config_path.exists() and json.loads(config_path.read_text()) != config.to_dict():
+        if (
+            config_path.exists()
+            and ExperimentConfig.load(config_path).to_dict() != config.to_dict()
+        ):
             raise ValueError("Saved configuration differs; use a new output directory")
         write_json(config_path, config.to_dict())
         write_json(

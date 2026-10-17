@@ -81,7 +81,7 @@ intervention or evidence that coordinated cancellation causes the width benefit.
 
 ## Curvature and interpretation
 
-The saved batch sharpness is the mean of four individual
+The original curated snapshots save the mean of four individual
 $g_B^\top H_Bg_B/\|g_B\|^2$ quotients for the **half-MSE**, computed by
 Hessian-vector products in float64. It is not the full-data top Hessian eigenvalue
 or a ratio of expectations. NaN is legitimate when a direction is exactly zero.
@@ -93,3 +93,13 @@ Checkpoint loss matching is approximate: display the actual losses rather than
 silently treating them as identical. Very small losses introduce rounding and
 near-zero direction effects. Curated seeds illustrate contrasting outcomes;
 they cannot establish population success rates or a causal interference mechanism.
+
+
+## Follow-up distribution study
+
+The follow-up in [pier_experiments.md](pier_experiments.md) stores curvature
+numerators and denominators separately. Its `batch_sharpness_ratio` estimates
+E[gBᵀ HB gB] / E[||gB||²], the definition in Pier's paper. The old field
+`batch_sharpness` remains the mean of individual ratios for compatibility.
+The new study adds full distribution plots, standardized skewness/fourth moments,
+seed-level uncertainty, momentum/Adam directions and finite-step interventions.

@@ -75,3 +75,16 @@ Removed raw material includes other teachers, redundant teacher-8 runs, interrup
 runs, obsolete plots/logs, Martinelli trials and Julia runtimes/caches. Old notebooks
 and configs pointing to deleted results were replaced by the focused notebooks
 and configurations. The retention manifest records storage before and after.
+
+
+## New distribution and optimizer experiments
+
+The later study preserves the original 17 curated cases and adds only teacher-8
+collections. See [pier_experiments.md](pier_experiments.md) for budgets and seed counts.
+`runs/pier_distributions`, `pier_early`, `pier_early_extra`, `pier_optimizer_pilot`,
+`pier_initialization_control`, `pier_stability_pilot` and `pier_stability_continuation`
+contain training snapshots; `runs/pier_study` contains analysis, fresh probe checks,
+audit and execution logs. All remain ignored. New checkpoints include raw curvature
+numerators/denominators and labels for loss-threshold crossings. Fresh 512-batch
+gradients and their probe indices are saved under `runs/pier_study/tail_checks`.
+The original cleanup manifest describes the earlier curation, not these new files.
