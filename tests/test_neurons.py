@@ -3,6 +3,50 @@ import torch
 from neural_competition.neurons import gradient_masses, movement_statistics, prediction_moves
 
 
+def test_momentum_candidate_matches_torch_and_can_reverse_the_raw_gradient():
+    from neural_competition.neurons import candidate_descent
+
+    parameter = torch.nn.Parameter(torch.tensor([[1.0, 2.0]], dtype=torch.float64))
+    gradient = torch.tensor([[1.0, 1.0]], dtype=torch.float64)
+    previous = torch.tensor([[-3.0, -3.0]], dtype=torch.float64)
+    optimizer = torch.optim.SGD([parameter], lr=0.1, momentum=0.9)
+    optimizer.state[parameter]["momentum_buffer"] = previous.clone()
+    parameter.grad = gradient.clone()
+    before = parameter.detach().clone()
+    snapshot = {
+        "optimizer": {"name": "momentum", "lr": 0.1, "momentum": 0.9},
+        "optimizer_before": {"momentum_buffer": previous},
+    }
+    direction = candidate_descent(snapshot, gradient)
+    optimizer.step()
+    torch.testing.assert_close(parameter, before - 0.1 * direction)
+    assert (direction * gradient).sum() < 0
+    torch.testing.assert_close(
+        candidate_descent(snapshot, gradient, include_history=False), gradient
+    )
+
+
+def test_step_transfer_uses_both_orders_and_agrees_with_raw_sgd():
+    from neural_competition.neurons import step_transfer_masses
+
+    gradients = torch.tensor([[[1.0]], [[-2.0]], [[3.0]]], dtype=torch.float64)
+    raw, _ = gradient_masses(gradients)
+    same = step_transfer_masses(gradients, gradients)
+    assert abs(same["step_P"] - raw["P"]) < 1e-12
+    assert abs(same["step_N"] - raw["N"]) < 1e-12
+    direction = gradients + 2
+    transfer = step_transfer_masses(gradients, direction)
+    values = torch.tensor(
+        [
+            float(direction[b].flatten() @ gradients[c].flatten())
+            for b in range(3)
+            for c in range(3)
+            if b != c
+        ]
+    )
+    assert abs(transfer["step_p_negative"] - (values < 0).double().mean().item()) < 1e-12
+
+
 def test_neuron_negative_mass_is_hidden_by_other_neurons():
     # Two batch demands: neuron 0 conflicts, neuron 1 more than offsets it.
     gradients = torch.tensor([[[1.0], [1.0]], [[-2.0], [3.0]]])

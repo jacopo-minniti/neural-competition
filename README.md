@@ -33,6 +33,18 @@ uv run python scripts/analyze_neurons.py
 uv run python scripts/audit_neurons.py
 ```
 
+## Momentum comparison
+
+See [the momentum replication](docs/momentum_comparison.md) and
+[the comparison notebook](analyses/05_momentum_comparison.ipynb) for raw versus
+momentum-directed neuron conflict, exact prediction changes, step-length controls,
+and fresh-batch validation. The saved momentum buffers are retained in candidate steps.
+
+```sh
+uv run python scripts/compare_momentum.py
+uv run python scripts/audit_momentum.py
+```
+
 ## Original curated study
 
 - [Protocol and reproduction](docs/experiment.md)

@@ -5,6 +5,51 @@ import math
 import torch
 
 
+def candidate_descent(snapshot, gradients=None, *, include_history=True):
+    """SGD descent direction before multiplying by lr; freeze pre-step history.
+
+    PyTorch's momentum here has zero dampening, no Nesterov, no decay.
+    A candidate minibatch changes g_B but does not replay the past trajectory.
+    """
+    gradients = snapshot["probe_gradients"] if gradients is None else gradients
+    gradients = gradients.double()
+    spec = snapshot["optimizer"]
+    if spec["name"] == "sgd" or not include_history:
+        return gradients
+    if spec["name"] != "momentum":
+        raise ValueError("Only plain SGD and classical momentum are supported")
+    previous = snapshot["optimizer_before"]["momentum_buffer"].double()
+    return gradients + spec["momentum"] * previous
+
+
+def step_transfer_masses(gradients, descent):
+    """Neuron-level g_C dot descent_B, with ordered off-diagonal batch pairs.
+
+    Normalize by sqrt(E||g_C||² E||descent_B||²). Unlike raw q, momentum
+    transfer is not symmetric in B,C; using just the upper triangle is biased.
+    """
+    gradients, descent = gradients.double(), descent.double()
+    count = len(gradients)
+    if gradients.shape != descent.shape:
+        raise ValueError("Candidate descents and probe gradients must have identical shapes")
+    q = torch.bmm(descent.transpose(0, 1), gradients.transpose(0, 1).transpose(1, 2))
+    keep = ~torch.eye(count, dtype=torch.bool)
+    q = q[:, keep]
+    g_energy = gradients.square().sum((1, 2)).mean()
+    d_energy = descent.square().sum((1, 2)).mean()
+    scale = (g_energy * d_energy).sqrt()
+    if scale <= 0:
+        return {k: math.nan for k in ["step_P", "step_N", "step_global_N", "step_p_negative"]}
+    q /= scale
+    total = q.sum(0)
+    return {
+        "step_P": q.clamp_min(0).sum(0).mean().item(),
+        "step_N": (-q).clamp_min(0).sum(0).mean().item(),
+        "step_global_N": (-total).clamp_min(0).mean().item(),
+        "step_p_negative": (total < 0).double().mean().item(),
+    }
+
+
 def gradient_masses(gradients):
     """Off-diagonal batch pairs, normalized by whole-network gradient energy.
 

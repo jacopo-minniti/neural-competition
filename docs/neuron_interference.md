@@ -217,3 +217,8 @@ six states using independent full-model and isolated-neuron forward evaluations;
 the largest isolated prediction discrepancy is about 2.3e-15. Fourteen unit
 tests pass, including explicit protective-cancellation and harmful-reinforcement
 examples.
+
+
+## Momentum replication
+
+See [momentum_comparison.md](momentum_comparison.md) for the same measurements with saved momentum history, plus raw-gradient controls at identical model states.

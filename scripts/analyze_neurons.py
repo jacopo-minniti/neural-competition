@@ -49,16 +49,17 @@ MOVE_METRICS = [
 ]
 
 
-def selection(root):
+def selection(root, profiles=None):
     metrics, _ = read_study(
         root, names=("pier_distributions", "pier_optimizer_pilot", "pier_early", "pier_early_extra")
     )
     metrics = metrics[metrics.width.isin([8, 16])].copy()
     views = []
-    for collection, optimizer in [
+    profiles = profiles or [
         ("pier_distributions", "sgd_1"),
         ("pier_optimizer_pilot", "sgd_01"),
-    ]:
+    ]
+    for collection, optimizer in profiles:
         part = metrics[(metrics.collection == collection) & (metrics.optimizer == optimizer)]
         common_steps = sorted(
             set.intersection(*(set(p.step) for _, p in part.groupby(["width", "seed"])))
@@ -75,16 +76,20 @@ def selection(root):
         chosen["comparison"] = "mse_0.01"
         chosen["comparison_kind"] = "matched_loss"
         views.append(chosen)
-    early = metrics[
-        metrics.collection.isin(["pier_early", "pier_early_extra"]) & (metrics.optimizer == "sgd_1")
-    ]
-    chosen = matched_states(early, target=0.2, tolerance=0.1)
-    chosen = chosen[chosen.loss_eligible].copy()
-    paired = chosen.groupby("seed").width.nunique()
-    chosen = chosen[chosen.seed.isin(paired[paired == 2].index)].copy()
-    chosen["comparison"] = "mse_0.2"
-    chosen["comparison_kind"] = "matched_loss"
-    views.append(chosen)
+    for optimizer in dict.fromkeys(
+        o for collection, o in profiles if collection == "pier_distributions"
+    ):
+        early = metrics[
+            metrics.collection.isin(["pier_early", "pier_early_extra"])
+            & (metrics.optimizer == optimizer)
+        ]
+        chosen = matched_states(early, target=0.2, tolerance=0.1)
+        chosen = chosen[chosen.loss_eligible].copy()
+        paired = chosen.groupby("seed").width.nunique()
+        chosen = chosen[chosen.seed.isin(paired[paired == 2].index)].copy()
+        chosen["comparison"] = "mse_0.2"
+        chosen["comparison_kind"] = "matched_loss"
+        views.append(chosen)
     result = pd.concat(views, ignore_index=True)
     result["source_checkpoint"] = [
         str(Path(r.run_path) / "checkpoints" / f"step_{int(r.step):06d}.pt")

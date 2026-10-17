@@ -233,3 +233,8 @@ and why taking signs before summing neuron blocks preserves additional informati
 ## Neuron-level follow-up
 
 See [neuron_interference.md](neuron_interference.md) for P/N, exact individual-neuron prediction changes, partial cancellation, and full-step versus short-step collateral harm.
+
+
+## Momentum replication
+
+See [momentum_comparison.md](momentum_comparison.md) for the same measurements with saved momentum history, plus raw-gradient controls at identical model states.
