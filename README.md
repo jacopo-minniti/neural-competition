@@ -13,6 +13,7 @@ tail checks, and saved-state learning-rate interventions.
 
 ```sh
 uv run python scripts/analyze_distributions.py
+uv run python scripts/plot_agreement.py
 uv run python scripts/audit_distributions.py
 ```
 

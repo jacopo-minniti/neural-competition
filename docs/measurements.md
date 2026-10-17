@@ -103,3 +103,37 @@ E[gBᵀ HB gB] / E[||gB||²], the definition in Pier's paper. The old field
 `batch_sharpness` remains the mean of individual ratios for compatibility.
 The new study adds full distribution plots, standardized skewness/fourth moments,
 seed-level uncertainty, momentum/Adam directions and finite-step interventions.
+
+
+## Net agreement A and the information in neuron blocks
+
+For independent minibatches at a frozen parameter state,
+
+$$
+A=\frac{\mathbb E[g_B^\top g_C]}{\mathbb E\|g_B\|^2}
+=\frac{\|\nabla L\|^2}{\mathbb E\|g_B\|^2}.
+$$
+
+`scripts/plot_agreement.py` plots this quantity from saved SGD snapshots for widths
+8 and 16, with ten seeds and pointwise seed-bootstrap intervals. The full-training
+gradient supplies the numerator; 128 probe batches estimate the denominator. Each
+state is measured before its recorded update, so step t means t completed updates.
+The two widths need not have equal loss at the same step. A's population range is
+[0,1] when defined, but its estimated denominator has Monte Carlo error; it is
+undefined when both numerator and denominator vanish. Small gradients also make
+late ratios numerically sensitive. A higher value alone does not imply a better fit.
+
+Summing the signed neuron contributions gives exactly the original global dot.
+Information is gained by keeping neuron identities or applying a nonlinear summary
+before summing. In particular,
+
+$$
+\sum_r\max(-q_r,0)\ \geq\ \max\left(-\sum_rq_r,0\right).
+$$
+
+For example, q = (-2,3) and q = (0,1) both give X = 1, but their summed negative
+neuron contributions are 2 and 0. Separate positive/negative totals reveal hidden
+incompatible batch demands. They still discard which neurons and which batch pairs
+are involved, and are not direct measurements of interactions between distinct
+neurons' prediction changes. Testing a neuron mechanism requires those patterns or
+interventions, beyond reconstructing the global sum.

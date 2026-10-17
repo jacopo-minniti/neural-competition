@@ -213,3 +213,18 @@ The continuation script checks source hashes before reusing results. The audit
 checks saved steps, completed-run raw gradient shapes/finiteness, independent gradient/loss/HVP
 recomputations, starting-state identity for the continuations, and all fresh-probe
 states. Unit tests also compare the finite-step quadratic expression against autograd.
+
+
+## Follow-up: A over training steps
+
+The requested width-8/16 SGD curve is reproduced with
+`uv run python scripts/plot_agreement.py`. The PNG, PDF, seed-level CSV and summary
+are in `runs/pier_study/analysis/agreement_sgd_1_w8_w16*`, and the distribution
+notebook includes the figure. It uses the full-training-gradient numerator and
+128 probe gradients at each of nine shared checkpoints, seeds 0–9.
+
+At 19,999 completed updates, A averages 0.257 at width 8 and 0.133 at width 16;
+median test MSE is 0.00423 and 0.00000953 respectively. This equal-step comparison
+does not support A as a universal predictor of fitting success. Late width-16
+ratios also involve very small gradients. See `measurements.md` for definitions
+and why taking signs before summing neuron blocks preserves additional information.
