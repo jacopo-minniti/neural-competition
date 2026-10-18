@@ -5,6 +5,15 @@ experiments. We use different measurements for conflicting data demands,
 interactions between neuron updates and accumulated training costs. Their signs
 and denominators answer different questions.
 
+The [allocation study](reports/allocation.md) now measures three additional
+objects proposed in the theory notes: duplication-invariant positive/negative
+residual work, corrective cosine, and gain from relative neuron step weights
+beyond uniform shrink. It distinguishes the nonnegative fitted quadratic
+regret from signed held-out exact-forward benefit, and includes sign-filter,
+four-group, shuffled-coefficient and shortened-step controls. None gives a
+universal width ordering in the completed experiments. Detailed definitions,
+CE extensions, small-step limits and caveats are in that report.
+
 ## Model and loss conventions
 
 \[

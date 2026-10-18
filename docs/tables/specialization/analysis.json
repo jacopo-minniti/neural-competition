@@ -1,0 +1,12 @@
+{
+  "ordinary_stability_boundary_degrees": 63.76073822218701,
+  "executed_nonpilot_model_endpoints": 2040,
+  "distinct_endpoint_configurations": 1770,
+  "distinct_training_configurations": 1650,
+  "repeated_first_five_max_loss_delta": 0.0,
+  "max_initial_perturbation_rmse": 0.008859604068255677,
+  "resamples": 4000,
+  "bootstrap_seed": 741,
+  "independent_units": "paired training seeds",
+  "source_sha256": "d4141e29a181e91998729adddca7a34a0384361add57b6c3c99a079d0f070f6f"
+}

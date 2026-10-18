@@ -1,5 +1,17 @@
 # Versioned result tables
 
+The [residual-growth tables](residual_growth/README.md) retain the ordinary
+random-initialization, signed-output and polarity-control studies, with
+population geometry, all seed curves, negative predictions, and source audits.
+
+The [specialization tables](specialization/README.md) contain the new
+mechanism-derived training experiments, including full seed curves, paired
+contrasts, source hashes, and long-budget catch-up results.
+
+The [allocation tables](allocation/README.md) contain the new residual-work,
+cross-fitted neuron-step allocation, calibration-size, matched-target and
+full-cohort readout-refit diagnostics, including negative results and audits.
+
 The [MNIST tables](mnist/README.md) contain the complete real-data width study,
 including exact main G/H budgets, sampled pair costs, matched-loss diagnostics,
 learning-rate controls and full-training-objective probes.

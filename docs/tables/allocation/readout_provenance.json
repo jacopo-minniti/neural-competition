@@ -1,0 +1,27 @@
+{
+  "models": 245,
+  "rcond": 1e-10,
+  "solver": "torch.linalg.lstsq gelsd float64",
+  "input_sha256": {
+    "runs/allocation/full/robustness_k16_teacher2027_adam_001.pt": "b56280faeb3b380c8e5fb7ac5e6988deeb698ae87dcacba93d72a00c9477dc8a",
+    "runs/retained/datasets/k16_teacher2027.pt": "13f218950fe8923eaa063932d491c1fab3a6e77d567c6a18742ba03e9ca05413",
+    "runs/allocation/full/robustness_k16_teacher2027_adam_01.pt": "45bf02e38584bc459b0256475e76e0d009cb4a61e5add174aaee830fe00fc804",
+    "runs/allocation/full/robustness_k16_teacher2027_momentum_01.pt": "ccc779182b83517de61da8b5781a0ccc7a93ff4c0a84ae5d1979f7f7d8ac72a9",
+    "runs/allocation/full/robustness_k16_teacher2037_adam_001.pt": "e0450c5c2859bb9b6897993c66ca083431d76863fd1bb389ce14e8a3a06f47b1",
+    "runs/retained/datasets/k16_teacher2037.pt": "a18d509954f41748e79cb8e342fd4046a4c21fe506a072f06df966887a6ef0fb",
+    "runs/allocation/full/robustness_k16_teacher2037_momentum_01.pt": "f849f97517ff5e63ac05be79e6edcc723e10fdab342068083779cae028ca5af4",
+    "runs/allocation/full/robustness_k8_teacher2027_adam_001.pt": "7638167dc5386dfda273f783e2397134523306de60fbffb09ea49ed9d9afebb6",
+    "runs/retained/datasets/k8_teacher2027.pt": "008f2803ad2c31b8e725193a2f6d7f3438f5edf705ec02ed64bfe97aef59e94c",
+    "runs/allocation/full/robustness_k8_teacher2027_adam_01.pt": "1203e1ba225aae2227c8c057932da155ca50b2d51beadd09e2ad9e03d6a3d5ad",
+    "runs/allocation/full/robustness_k8_teacher2027_init01_adam_001.pt": "b61e51c18eda7501a0143ab8ca899300128b96b1aed2ae3103a4a39d9d63c5b3",
+    "runs/allocation/full/robustness_k8_teacher2027_init1_adam_001.pt": "2975b795225786c5b2a81d1910732fbe09c9dc75fe9dd90d62b7186fbb4629eb",
+    "runs/allocation/full/robustness_k8_teacher2027_momentum_003.pt": "62ff7c29ab6e4df9a40baf55936ff1e7a9ae81666d588993bf151b19f889568c",
+    "runs/allocation/full/robustness_k8_teacher2027_momentum_01.pt": "58c2569bea8803d7c735a831add14adc051b6d38d3ead901d4136f59586b937a",
+    "runs/allocation/full/robustness_k8_teacher2037_adam_001.pt": "59b692a935383e8daefee6ab546682570472ffde92cc34dd3bcd3e8d4a389f9f",
+    "runs/retained/datasets/k8_teacher2037.pt": "b1fedfe97d6c6bbaff3cc5d04563799da729e3674216876bda48672756f7e649",
+    "runs/allocation/full/robustness_k8_teacher2037_momentum_01.pt": "58a46a70a85682228295fb259aa7023ef58da5d9f004eb1844d739df1c6957a1",
+    "runs/allocation/full/trajectory_momentum.pt": "006e000f821bd2a8aeab284b3340b3b4b1f9b83fd9b9cd9be6a4057918af1a15",
+    "runs/allocation/full/trajectory_sgd.pt": "ec579e3a1d0c2c1277fc1e4a49828409730a026a7f39301463859d05641a3935"
+  },
+  "source_sha256": "d025a6d67b5bdf6e47710a154b612371679c82289dd4e56f76722198b131fa89"
+}

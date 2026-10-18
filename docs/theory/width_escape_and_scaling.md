@@ -1,5 +1,10 @@
 # Mild width expansion, escape directions and slow refinement
 
+Follow-up: the [specialization geometry derivation](specialization_geometry.md)
+and [new training study](../reports/specialization.md) now construct and test
+one shared-feature mechanism. They preserve the finite-sample ReLU qualification
+below and find a conditional training delay, with catch-up under longer training.
+
 The specific facts to explain are the [teacher-8 SGD results](../reports/training_width.md):
 6/20 good fits at width 8, 8/20 at 9, 18/20 at 10, and slower final refinement
 at width 128 under unchanged rates. There are also narrow successes and wider

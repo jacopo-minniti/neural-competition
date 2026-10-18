@@ -1,0 +1,8 @@
+{
+  "analysis_sha256": "344470a254ca5c06884b60b727625161bbf33f835c37d9ec35fc729d8adb4d03",
+  "bootstrap_draws": 4000,
+  "bootstrap_seed": 742,
+  "intervals": "pointwise paired seed bootstrap",
+  "executed_model_endpoints": 2760,
+  "repeat_warning": "Collections overlap; longer runs extend existing starts. Do not pool seeds."
+}

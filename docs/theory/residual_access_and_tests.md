@@ -1,5 +1,10 @@
 # Measures of residual access, and experiments that could distinguish mechanisms
 
+Follow-up: the [allocation study](../reports/allocation.md) tests relative-step
+allocation, residual work and corrective cosine, and refits readouts for all
+245 teacher trajectories. Tangent access, teacher-feature expansion and
+sustained optimizer interventions below remain proposed tests.
+
 The proposed common idea is **limited access to useful corrections**, followed
 by optimizer-dependent use of those corrections. This is broader than positive
 pair cost, but also more demanding: feature access, direction choice and finite

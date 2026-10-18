@@ -1,0 +1,66 @@
+[
+  {
+    "condition": "robustness/k8_teacher2027/adam_001",
+    "calibration_size": 8192,
+    "heldout_size": 1024,
+    "elapsed_seconds": 12.954686457989737,
+    "source_sha256": {
+      "scripts/studies/check_allocation_calibration.py": "2c91af579c9ba231424ae278f5a324dd978e3d66423e54cf2d06568810b7393a",
+      "scripts/studies/run_allocation.py": "87f1f838b310e898398147cc01d5c94bb40c93768bc76fa14fe082aded3e5587",
+      "src/neural_competition/allocation.py": "2db58b8ce4a424326059aec32282830bb6c11e7015245e45d621a8318eb6dc97"
+    },
+    "input_sha256": {
+      "runs/allocation/full/robustness_k8_teacher2027_adam_001.pt": "7638167dc5386dfda273f783e2397134523306de60fbffb09ea49ed9d9afebb6",
+      "runs/retained/datasets/k8_teacher2027.pt": "008f2803ad2c31b8e725193a2f6d7f3438f5edf705ec02ed64bfe97aef59e94c"
+    },
+    "max_qp_relative_gap": 9.973585730553797e-11
+  },
+  {
+    "condition": "robustness/k8_teacher2027/adam_01",
+    "calibration_size": 8192,
+    "heldout_size": 1024,
+    "elapsed_seconds": 13.132232500007376,
+    "source_sha256": {
+      "scripts/studies/check_allocation_calibration.py": "2c91af579c9ba231424ae278f5a324dd978e3d66423e54cf2d06568810b7393a",
+      "scripts/studies/run_allocation.py": "87f1f838b310e898398147cc01d5c94bb40c93768bc76fa14fe082aded3e5587",
+      "src/neural_competition/allocation.py": "2db58b8ce4a424326059aec32282830bb6c11e7015245e45d621a8318eb6dc97"
+    },
+    "input_sha256": {
+      "runs/allocation/full/robustness_k8_teacher2027_adam_01.pt": "1203e1ba225aae2227c8c057932da155ca50b2d51beadd09e2ad9e03d6a3d5ad",
+      "runs/retained/datasets/k8_teacher2027.pt": "008f2803ad2c31b8e725193a2f6d7f3438f5edf705ec02ed64bfe97aef59e94c"
+    },
+    "max_qp_relative_gap": 9.904321380057726e-11
+  },
+  {
+    "condition": "trajectory/momentum",
+    "calibration_size": 8192,
+    "heldout_size": 1024,
+    "elapsed_seconds": 7.284953374997713,
+    "source_sha256": {
+      "scripts/studies/check_allocation_calibration.py": "2c91af579c9ba231424ae278f5a324dd978e3d66423e54cf2d06568810b7393a",
+      "scripts/studies/run_allocation.py": "87f1f838b310e898398147cc01d5c94bb40c93768bc76fa14fe082aded3e5587",
+      "src/neural_competition/allocation.py": "2db58b8ce4a424326059aec32282830bb6c11e7015245e45d621a8318eb6dc97"
+    },
+    "input_sha256": {
+      "runs/allocation/full/trajectory_momentum.pt": "006e000f821bd2a8aeab284b3340b3b4b1f9b83fd9b9cd9be6a4057918af1a15",
+      "runs/retained/datasets/k8_teacher2027.pt": "008f2803ad2c31b8e725193a2f6d7f3438f5edf705ec02ed64bfe97aef59e94c"
+    },
+    "max_qp_relative_gap": 9.275477121330351e-11
+  },
+  {
+    "condition": "trajectory/sgd",
+    "calibration_size": 8192,
+    "heldout_size": 1024,
+    "elapsed_seconds": 7.607952375081368,
+    "source_sha256": {
+      "scripts/studies/check_allocation_calibration.py": "2c91af579c9ba231424ae278f5a324dd978e3d66423e54cf2d06568810b7393a",
+      "scripts/studies/run_allocation.py": "87f1f838b310e898398147cc01d5c94bb40c93768bc76fa14fe082aded3e5587",
+      "src/neural_competition/allocation.py": "2db58b8ce4a424326059aec32282830bb6c11e7015245e45d621a8318eb6dc97"
+    },
+    "input_sha256": {
+      "runs/allocation/full/trajectory_sgd.pt": "ec579e3a1d0c2c1277fc1e4a49828409730a026a7f39301463859d05641a3935",
+      "runs/retained/datasets/k8_teacher2027.pt": "008f2803ad2c31b8e725193a2f6d7f3438f5edf705ec02ed64bfe97aef59e94c"
+    },
+    "max_qp_relative_gap": 2.2514124783202115e-08
+  }
+]

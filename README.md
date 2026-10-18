@@ -15,6 +15,9 @@ evidence, counterexamples and remaining causal questions.
 - [Literature-guided explanations and predictions](docs/theory/README.md)
 - [Temporal causal peer-update experiment](docs/reports/temporal_branches.md)
 - [MNIST width experiments](docs/reports/mnist.md)
+- [New allocation and residual-work experiments](docs/reports/allocation.md)
+- [Specialization geometry and new controlled training experiments](docs/reports/specialization.md)
+- [Residual growth and signed-role competition without splitting](docs/reports/residual_growth.md)
 - [Result tables](docs/tables/README.md) and [figures](docs/figures/README.md)
 - [Data retention](docs/data.md) and [reproduction](docs/reproduction.md)
 

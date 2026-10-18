@@ -28,9 +28,22 @@ still exist. See [the data guide](data.md) for checkpoint and raw-array loading.
 
 ## A small new training run
 
+The [residual-growth report](reports/residual_growth.md#evidence-and-reproduction)
+provides the ordinary-training and polarity-control commands, including source
+version checks and reconstruction of final losses from saved parameters.
+
+The [specialization study](reports/specialization.md#evidence-and-reproduction)
+provides commands for the new correlated-feature training sweep, perturbation,
+bias, rate and longer-training controls, and its source/duplicate audit.
+
 ```sh
 uv run python scripts/run_experiments.py --smoke --device cpu --output runs/smoke
 ```
+
+For the new residual-work and cross-fitted allocation diagnostics, use the
+[allocation reproduction guide](tables/allocation/README.md#reproduction).
+It includes original-trajectory replay, MNIST probes, all-training calibration,
+tighter matched targets, readout refits, analysis and provenance audits.
 
 For new experiments, use a new output directory and an explicit configuration.
 The generic runner supports SGD, momentum, Adam and the hybrid Muon setup.

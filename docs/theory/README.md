@@ -1,9 +1,29 @@
 # Literature-guided explanations and predictions
 
 Research notes started 18 October 2026. These interpret the completed
-[experiments](../README.md); they do not replace the reports or introduce new
-training results. Paper results, deductions for our model, and hypotheses to
-test are distinguished explicitly.
+[experiments](../README.md). Paper results, deductions for our model, and
+hypotheses to test are distinguished explicitly.
+
+The latest [signed residual-potential note](residual_growth.md) describes
+growth of existing neurons and the structural need for positive/negative
+feature roles. Its [ordinary-training study](../reports/residual_growth.md)
+finds a stronger opposing-output width regime without splitting, but rejects
+two shortcuts from a local sign to a global prediction of width benefit.
+
+The new [specialization geometry note](specialization_geometry.md) derives a
+conditional mechanism: residual curvature along directions that preserve a
+shared feature to first order. Its [training study](../reports/specialization.md)
+tests predicted allocation and expansion effects, with both layers trained.
+Balanced minimal width and longer-training catch-up are important limits;
+finite-data ReLU requires finite gate-crossing paths, not a naive smooth Hessian.
+
+Follow-up: the [allocation study](../reports/allocation.md) now tests the
+residual-work, corrective-cosine and relative-step proposals on the original
+teacher cohorts and MNIST, and expands the readout check to all teacher runs.
+It finds useful local interventions but no consistent width ordering; it also
+derives the small-step connection between allocation regret and individual
+anti-residual work. The specialization study now tests controlled splitting;
+sustained allocation interventions remain proposals.
 
 The questions guiding the search are specific:
 

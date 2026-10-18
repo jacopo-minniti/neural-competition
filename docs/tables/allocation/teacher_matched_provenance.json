@@ -1,0 +1,3287 @@
+[
+  {
+    "condition": "robustness/k16_teacher2027/adam_001",
+    "calibration_size": 8192,
+    "heldout_size": 1024,
+    "match_reference_size": 512,
+    "mse_targets": [
+      0.2,
+      0.1
+    ],
+    "tolerance": 0.05,
+    "check_every": "each update through 1000, then every 10",
+    "coverage": [
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      }
+    ],
+    "sources": 4,
+    "elapsed_seconds": 9.198265166021883,
+    "max_qp_relative_gap": 0.0,
+    "source_sha256": {
+      "scripts/studies/run_allocation_matched.py": "3a386e80ea4b4e4d3b48147422bd607e4be79a8197aaff28c3e881236f36a0fb",
+      "scripts/studies/run_allocation.py": "87f1f838b310e898398147cc01d5c94bb40c93768bc76fa14fe082aded3e5587",
+      "scripts/studies/run_temporal_branches.py": "b984c4f7f795f1a19d4bb984f4f359f75cb87fde7089d4dbae75f46e35d6f594",
+      "src/neural_competition/allocation.py": "2db58b8ce4a424326059aec32282830bb6c11e7015245e45d621a8318eb6dc97"
+    }
+  },
+  {
+    "condition": "robustness/k16_teacher2027/adam_01",
+    "calibration_size": 8192,
+    "heldout_size": 1024,
+    "match_reference_size": 512,
+    "mse_targets": [
+      0.2,
+      0.1
+    ],
+    "tolerance": 0.05,
+    "check_every": "each update through 1000, then every 10",
+    "coverage": [
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      }
+    ],
+    "sources": 4,
+    "elapsed_seconds": 8.168700041947886,
+    "max_qp_relative_gap": 1.5212109887994312e-11,
+    "source_sha256": {
+      "scripts/studies/run_allocation_matched.py": "3a386e80ea4b4e4d3b48147422bd607e4be79a8197aaff28c3e881236f36a0fb",
+      "scripts/studies/run_allocation.py": "87f1f838b310e898398147cc01d5c94bb40c93768bc76fa14fe082aded3e5587",
+      "scripts/studies/run_temporal_branches.py": "b984c4f7f795f1a19d4bb984f4f359f75cb87fde7089d4dbae75f46e35d6f594",
+      "src/neural_competition/allocation.py": "2db58b8ce4a424326059aec32282830bb6c11e7015245e45d621a8318eb6dc97"
+    }
+  },
+  {
+    "condition": "robustness/k16_teacher2027/momentum_01",
+    "calibration_size": 8192,
+    "heldout_size": 1024,
+    "match_reference_size": 512,
+    "mse_targets": [
+      0.2,
+      0.1
+    ],
+    "tolerance": 0.05,
+    "check_every": "each update through 1000, then every 10",
+    "coverage": [
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 18,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 64,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      }
+    ],
+    "sources": 4,
+    "elapsed_seconds": 8.235671582981013,
+    "max_qp_relative_gap": 8.124553750311599e-11,
+    "source_sha256": {
+      "scripts/studies/run_allocation_matched.py": "3a386e80ea4b4e4d3b48147422bd607e4be79a8197aaff28c3e881236f36a0fb",
+      "scripts/studies/run_allocation.py": "87f1f838b310e898398147cc01d5c94bb40c93768bc76fa14fe082aded3e5587",
+      "scripts/studies/run_temporal_branches.py": "b984c4f7f795f1a19d4bb984f4f359f75cb87fde7089d4dbae75f46e35d6f594",
+      "src/neural_competition/allocation.py": "2db58b8ce4a424326059aec32282830bb6c11e7015245e45d621a8318eb6dc97"
+    }
+  },
+  {
+    "condition": "robustness/k16_teacher2037/adam_001",
+    "calibration_size": 8192,
+    "heldout_size": 1024,
+    "match_reference_size": 512,
+    "mse_targets": [
+      0.2,
+      0.1
+    ],
+    "tolerance": 0.05,
+    "check_every": "each update through 1000, then every 10",
+    "coverage": [
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": false
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": false
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": false
+      },
+      {
+        "width": 32,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      }
+    ],
+    "sources": 4,
+    "elapsed_seconds": 13.573497334029526,
+    "max_qp_relative_gap": 0.0,
+    "source_sha256": {
+      "scripts/studies/run_allocation_matched.py": "3a386e80ea4b4e4d3b48147422bd607e4be79a8197aaff28c3e881236f36a0fb",
+      "scripts/studies/run_allocation.py": "87f1f838b310e898398147cc01d5c94bb40c93768bc76fa14fe082aded3e5587",
+      "scripts/studies/run_temporal_branches.py": "b984c4f7f795f1a19d4bb984f4f359f75cb87fde7089d4dbae75f46e35d6f594",
+      "src/neural_competition/allocation.py": "2db58b8ce4a424326059aec32282830bb6c11e7015245e45d621a8318eb6dc97"
+    }
+  },
+  {
+    "condition": "robustness/k16_teacher2037/momentum_01",
+    "calibration_size": 8192,
+    "heldout_size": 1024,
+    "match_reference_size": 512,
+    "mse_targets": [
+      0.2,
+      0.1
+    ],
+    "tolerance": 0.05,
+    "check_every": "each update through 1000, then every 10",
+    "coverage": [
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      }
+    ],
+    "sources": 4,
+    "elapsed_seconds": 2.211434999946505,
+    "max_qp_relative_gap": 4.547878519419997e-19,
+    "source_sha256": {
+      "scripts/studies/run_allocation_matched.py": "3a386e80ea4b4e4d3b48147422bd607e4be79a8197aaff28c3e881236f36a0fb",
+      "scripts/studies/run_allocation.py": "87f1f838b310e898398147cc01d5c94bb40c93768bc76fa14fe082aded3e5587",
+      "scripts/studies/run_temporal_branches.py": "b984c4f7f795f1a19d4bb984f4f359f75cb87fde7089d4dbae75f46e35d6f594",
+      "src/neural_competition/allocation.py": "2db58b8ce4a424326059aec32282830bb6c11e7015245e45d621a8318eb6dc97"
+    }
+  },
+  {
+    "condition": "robustness/k8_teacher2027/adam_001",
+    "calibration_size": 8192,
+    "heldout_size": 1024,
+    "match_reference_size": 512,
+    "mse_targets": [
+      0.2,
+      0.1
+    ],
+    "tolerance": 0.05,
+    "check_every": "each update through 1000, then every 10",
+    "coverage": [
+      {
+        "width": 8,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      }
+    ],
+    "sources": 4,
+    "elapsed_seconds": 5.651258875033818,
+    "max_qp_relative_gap": 4.606883430223398e-18,
+    "source_sha256": {
+      "scripts/studies/run_allocation_matched.py": "3a386e80ea4b4e4d3b48147422bd607e4be79a8197aaff28c3e881236f36a0fb",
+      "scripts/studies/run_allocation.py": "87f1f838b310e898398147cc01d5c94bb40c93768bc76fa14fe082aded3e5587",
+      "scripts/studies/run_temporal_branches.py": "b984c4f7f795f1a19d4bb984f4f359f75cb87fde7089d4dbae75f46e35d6f594",
+      "src/neural_competition/allocation.py": "2db58b8ce4a424326059aec32282830bb6c11e7015245e45d621a8318eb6dc97"
+    }
+  },
+  {
+    "condition": "robustness/k8_teacher2027/adam_01",
+    "calibration_size": 8192,
+    "heldout_size": 1024,
+    "match_reference_size": 512,
+    "mse_targets": [
+      0.2,
+      0.1
+    ],
+    "tolerance": 0.05,
+    "check_every": "each update through 1000, then every 10",
+    "coverage": [
+      {
+        "width": 8,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      }
+    ],
+    "sources": 4,
+    "elapsed_seconds": 4.683419624925591,
+    "max_qp_relative_gap": 7.920262613732613e-11,
+    "source_sha256": {
+      "scripts/studies/run_allocation_matched.py": "3a386e80ea4b4e4d3b48147422bd607e4be79a8197aaff28c3e881236f36a0fb",
+      "scripts/studies/run_allocation.py": "87f1f838b310e898398147cc01d5c94bb40c93768bc76fa14fe082aded3e5587",
+      "scripts/studies/run_temporal_branches.py": "b984c4f7f795f1a19d4bb984f4f359f75cb87fde7089d4dbae75f46e35d6f594",
+      "src/neural_competition/allocation.py": "2db58b8ce4a424326059aec32282830bb6c11e7015245e45d621a8318eb6dc97"
+    }
+  },
+  {
+    "condition": "robustness/k8_teacher2027_init01/adam_001",
+    "calibration_size": 8192,
+    "heldout_size": 1024,
+    "match_reference_size": 512,
+    "mse_targets": [
+      0.2,
+      0.1
+    ],
+    "tolerance": 0.05,
+    "check_every": "each update through 1000, then every 10",
+    "coverage": [
+      {
+        "width": 8,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      }
+    ],
+    "sources": 4,
+    "elapsed_seconds": 4.019905374967493,
+    "max_qp_relative_gap": 0.0,
+    "source_sha256": {
+      "scripts/studies/run_allocation_matched.py": "3a386e80ea4b4e4d3b48147422bd607e4be79a8197aaff28c3e881236f36a0fb",
+      "scripts/studies/run_allocation.py": "87f1f838b310e898398147cc01d5c94bb40c93768bc76fa14fe082aded3e5587",
+      "scripts/studies/run_temporal_branches.py": "b984c4f7f795f1a19d4bb984f4f359f75cb87fde7089d4dbae75f46e35d6f594",
+      "src/neural_competition/allocation.py": "2db58b8ce4a424326059aec32282830bb6c11e7015245e45d621a8318eb6dc97"
+    }
+  },
+  {
+    "condition": "robustness/k8_teacher2027_init1/adam_001",
+    "calibration_size": 8192,
+    "heldout_size": 1024,
+    "match_reference_size": 512,
+    "mse_targets": [
+      0.2,
+      0.1
+    ],
+    "tolerance": 0.05,
+    "check_every": "each update through 1000, then every 10",
+    "coverage": [
+      {
+        "width": 8,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      }
+    ],
+    "sources": 4,
+    "elapsed_seconds": 3.699539792025462,
+    "max_qp_relative_gap": 0.0,
+    "source_sha256": {
+      "scripts/studies/run_allocation_matched.py": "3a386e80ea4b4e4d3b48147422bd607e4be79a8197aaff28c3e881236f36a0fb",
+      "scripts/studies/run_allocation.py": "87f1f838b310e898398147cc01d5c94bb40c93768bc76fa14fe082aded3e5587",
+      "scripts/studies/run_temporal_branches.py": "b984c4f7f795f1a19d4bb984f4f359f75cb87fde7089d4dbae75f46e35d6f594",
+      "src/neural_competition/allocation.py": "2db58b8ce4a424326059aec32282830bb6c11e7015245e45d621a8318eb6dc97"
+    }
+  },
+  {
+    "condition": "robustness/k8_teacher2027/momentum_003",
+    "calibration_size": 8192,
+    "heldout_size": 1024,
+    "match_reference_size": 512,
+    "mse_targets": [
+      0.2,
+      0.1
+    ],
+    "tolerance": 0.05,
+    "check_every": "each update through 1000, then every 10",
+    "coverage": [
+      {
+        "width": 8,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      }
+    ],
+    "sources": 4,
+    "elapsed_seconds": 3.3822677079588175,
+    "max_qp_relative_gap": 0.0,
+    "source_sha256": {
+      "scripts/studies/run_allocation_matched.py": "3a386e80ea4b4e4d3b48147422bd607e4be79a8197aaff28c3e881236f36a0fb",
+      "scripts/studies/run_allocation.py": "87f1f838b310e898398147cc01d5c94bb40c93768bc76fa14fe082aded3e5587",
+      "scripts/studies/run_temporal_branches.py": "b984c4f7f795f1a19d4bb984f4f359f75cb87fde7089d4dbae75f46e35d6f594",
+      "src/neural_competition/allocation.py": "2db58b8ce4a424326059aec32282830bb6c11e7015245e45d621a8318eb6dc97"
+    }
+  },
+  {
+    "condition": "robustness/k8_teacher2027/momentum_01",
+    "calibration_size": 8192,
+    "heldout_size": 1024,
+    "match_reference_size": 512,
+    "mse_targets": [
+      0.2,
+      0.1
+    ],
+    "tolerance": 0.05,
+    "check_every": "each update through 1000, then every 10",
+    "coverage": [
+      {
+        "width": 8,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 10,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 32,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      }
+    ],
+    "sources": 4,
+    "elapsed_seconds": 4.326059125014581,
+    "max_qp_relative_gap": 9.598351154303838e-11,
+    "source_sha256": {
+      "scripts/studies/run_allocation_matched.py": "3a386e80ea4b4e4d3b48147422bd607e4be79a8197aaff28c3e881236f36a0fb",
+      "scripts/studies/run_allocation.py": "87f1f838b310e898398147cc01d5c94bb40c93768bc76fa14fe082aded3e5587",
+      "scripts/studies/run_temporal_branches.py": "b984c4f7f795f1a19d4bb984f4f359f75cb87fde7089d4dbae75f46e35d6f594",
+      "src/neural_competition/allocation.py": "2db58b8ce4a424326059aec32282830bb6c11e7015245e45d621a8318eb6dc97"
+    }
+  },
+  {
+    "condition": "robustness/k8_teacher2037/adam_001",
+    "calibration_size": 8192,
+    "heldout_size": 1024,
+    "match_reference_size": 512,
+    "mse_targets": [
+      0.2,
+      0.1
+    ],
+    "tolerance": 0.05,
+    "check_every": "each update through 1000, then every 10",
+    "coverage": [
+      {
+        "width": 8,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      }
+    ],
+    "sources": 4,
+    "elapsed_seconds": 1.5843805000185966,
+    "max_qp_relative_gap": 0.0,
+    "source_sha256": {
+      "scripts/studies/run_allocation_matched.py": "3a386e80ea4b4e4d3b48147422bd607e4be79a8197aaff28c3e881236f36a0fb",
+      "scripts/studies/run_allocation.py": "87f1f838b310e898398147cc01d5c94bb40c93768bc76fa14fe082aded3e5587",
+      "scripts/studies/run_temporal_branches.py": "b984c4f7f795f1a19d4bb984f4f359f75cb87fde7089d4dbae75f46e35d6f594",
+      "src/neural_competition/allocation.py": "2db58b8ce4a424326059aec32282830bb6c11e7015245e45d621a8318eb6dc97"
+    }
+  },
+  {
+    "condition": "robustness/k8_teacher2037/momentum_01",
+    "calibration_size": 8192,
+    "heldout_size": 1024,
+    "match_reference_size": 512,
+    "mse_targets": [
+      0.2,
+      0.1
+    ],
+    "tolerance": 0.05,
+    "check_every": "each update through 1000, then every 10",
+    "coverage": [
+      {
+        "width": 8,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      }
+    ],
+    "sources": 4,
+    "elapsed_seconds": 1.294638374936767,
+    "max_qp_relative_gap": 2.8056322728293407e-11,
+    "source_sha256": {
+      "scripts/studies/run_allocation_matched.py": "3a386e80ea4b4e4d3b48147422bd607e4be79a8197aaff28c3e881236f36a0fb",
+      "scripts/studies/run_allocation.py": "87f1f838b310e898398147cc01d5c94bb40c93768bc76fa14fe082aded3e5587",
+      "scripts/studies/run_temporal_branches.py": "b984c4f7f795f1a19d4bb984f4f359f75cb87fde7089d4dbae75f46e35d6f594",
+      "src/neural_competition/allocation.py": "2db58b8ce4a424326059aec32282830bb6c11e7015245e45d621a8318eb6dc97"
+    }
+  },
+  {
+    "condition": "trajectory/momentum",
+    "calibration_size": 8192,
+    "heldout_size": 1024,
+    "match_reference_size": 512,
+    "mse_targets": [
+      0.2,
+      0.1
+    ],
+    "tolerance": 0.05,
+    "check_every": "each update through 1000, then every 10",
+    "coverage": [
+      {
+        "width": 8,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 5,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 5,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 6,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 6,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 7,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 7,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 8,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 8,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 9,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 9,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 5,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 5,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 6,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 6,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 7,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 7,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 8,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 8,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 9,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 9,
+        "target_loss": 0.1,
+        "found": true
+      }
+    ],
+    "sources": 4,
+    "elapsed_seconds": 2.576696250005625,
+    "max_qp_relative_gap": 9.966956838135349e-11,
+    "source_sha256": {
+      "scripts/studies/run_allocation_matched.py": "3a386e80ea4b4e4d3b48147422bd607e4be79a8197aaff28c3e881236f36a0fb",
+      "scripts/studies/run_allocation.py": "87f1f838b310e898398147cc01d5c94bb40c93768bc76fa14fe082aded3e5587",
+      "scripts/studies/run_temporal_branches.py": "b984c4f7f795f1a19d4bb984f4f359f75cb87fde7089d4dbae75f46e35d6f594",
+      "src/neural_competition/allocation.py": "2db58b8ce4a424326059aec32282830bb6c11e7015245e45d621a8318eb6dc97"
+    }
+  },
+  {
+    "condition": "trajectory/sgd",
+    "calibration_size": 8192,
+    "heldout_size": 1024,
+    "match_reference_size": 512,
+    "mse_targets": [
+      0.2,
+      0.1
+    ],
+    "tolerance": 0.05,
+    "check_every": "each update through 1000, then every 10",
+    "coverage": [
+      {
+        "width": 8,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 5,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 5,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 6,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 6,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 7,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 7,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 8,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 8,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 9,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 8,
+        "seed": 9,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 0,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.2,
+        "found": false
+      },
+      {
+        "width": 16,
+        "seed": 1,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 2,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 3,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 4,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 5,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 5,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 6,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 6,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 7,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 7,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 8,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 8,
+        "target_loss": 0.1,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 9,
+        "target_loss": 0.2,
+        "found": true
+      },
+      {
+        "width": 16,
+        "seed": 9,
+        "target_loss": 0.1,
+        "found": true
+      }
+    ],
+    "sources": 4,
+    "elapsed_seconds": 29.998213166021742,
+    "max_qp_relative_gap": 9.636024661503119e-11,
+    "source_sha256": {
+      "scripts/studies/run_allocation_matched.py": "3a386e80ea4b4e4d3b48147422bd607e4be79a8197aaff28c3e881236f36a0fb",
+      "scripts/studies/run_allocation.py": "87f1f838b310e898398147cc01d5c94bb40c93768bc76fa14fe082aded3e5587",
+      "scripts/studies/run_temporal_branches.py": "b984c4f7f795f1a19d4bb984f4f359f75cb87fde7089d4dbae75f46e35d6f594",
+      "src/neural_competition/allocation.py": "2db58b8ce4a424326059aec32282830bb6c11e7015245e45d621a8318eb6dc97"
+    }
+  }
+]

@@ -1,5 +1,21 @@
 # Figures from the completed studies
 
+## Residual growth without splitting
+
+The [new report](../reports/residual_growth.md) includes
+[ordinary training](residual_growth/ordinary_training.png),
+[signed role availability](residual_growth/roles.png),
+[longer training](residual_growth/longer.png), and the
+[failed sign-boundary prediction](residual_growth/sign_test.png).
+
+## Specialization geometry
+
+The [specialization report](../reports/specialization.md) includes the
+[derived population curvature](specialization/curvature.png),
+[controlled training curves](specialization/controlled.png), and
+[random-initialization transfer](specialization/random.png), alongside
+[longer-training catch-up](specialization/longer.png).
+
 ## MNIST
 
 The [MNIST report](../reports/mnist.md) includes [training curves](mnist/training.png),

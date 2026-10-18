@@ -1,5 +1,11 @@
 # When positive pair cost is competition, and when it is shared correction
 
+Follow-up: the [allocation experiments](../reports/allocation.md) now measure
+residual work, corrective cosine and relative-step allocation regret, including
+held-out exact interventions and controls. They do not find a universal width
+ordering. The derivations below motivate the objects, rather than guaranteeing
+that they support the competition hypothesis.
+
 This note addresses the reversal in [the robustness report](../reports/robustness.md),
 the vanishing tiny-step events in [the pair report](../reports/pair_interactions.md),
 and the persistent early direction effect in [the momentum report](../reports/momentum.md).
@@ -149,7 +155,8 @@ progress. Ratios are undefined for the relevant zero denominators.
 The [objective-scale audit](../reports/effect_magnitude.md) now recovers total
 linear work and total squared-movement cost from the old sufficient statistics,
 and reports their cumulative ratio. The corrective cosine and parallel versus
-perpendicular split remain unmeasured proposals. The earlier R_perpendicular
+perpendicular split are now measured in the [allocation study](../reports/allocation.md).
+The earlier R_perpendicular
 measures reinforcement **between neuron changes**; it does not already supply
 the total-step residual decomposition. Pool raw numerators/denominators within
 seed and keep independent-evaluation collateral harm alongside them.
@@ -197,8 +204,8 @@ subdivision. Adding genuinely different directions can change the feasible
 set and the result. This distinction supplies a check against merely counting
 more neuron pairs.
 
-R is a **new local proposal**, not a published result from the papers in these
-notes. It detects avoidable allocation cost, including individually harmful
+R is a **local diagnostic proposed here**, now tested in the allocation study,
+not a published result from the papers in these notes. It detects avoidable allocation cost, including individually harmful
 updates; it is not exclusively a pair interaction measure. More alpha
 coordinates provide more fitting freedom, so include fixed-count neuron-group
 and random-group controls. Selecting alpha on a source set and evaluating it

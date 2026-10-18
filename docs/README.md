@@ -12,6 +12,30 @@ refer to completed experiments, rather than proposed experiments. The detailed
 reports preserve the optimizer, loss stage, seed counts, normalization and
 uncertainty needed to interpret each comparison.
 
+The new [allocation and residual-work study](reports/allocation.md) tests
+duplicate-invariant alternatives to pair cost on all original teacher cohorts
+and the MNIST matched states. Reweighting neuron updates improves held-out
+one-step loss in several settings, but the gain does not consistently decrease
+with width. Sign-filter and tiny-step controls separate individually harmful
+directions from finite-step relative allocation; full-cohort readout refits
+also locate a substantial feature limitation in narrow Adam failures.
+
+The later [specialization study](reports/specialization.md) starts from a
+[geometric mechanism](theory/specialization_geometry.md): a shared feature can
+oppose ordinary movement while favoring separation into two features. New
+both-layer training experiments support a conditional specialization delay,
+with balanced minimal-width networks and longer-training catch-up limiting the
+claim. This is distinct from establishing harmful neuron-to-neuron updates.
+
+The newest [residual-growth study](reports/residual_growth.md) removes the
+splitting intervention entirely. Ordinary random training on overlapping
+features with opposing outputs produces larger width gaps, persistent to 100k
+updates in the extended starts, and loss of required positive-output roles in
+narrow models. Its [residual-potential derivation](theory/residual_growth.md)
+gives a local signed growth law, but two simple sign-based predictors fail.
+The report distinguishes competition between feature demands from a proved
+causal mechanism of harmful peer updates.
+
 The [MNIST experiments](reports/mnist.md) extend the main measurements to a
 one-hidden-layer image classifier under squared loss and cross-entropy. Across
 120 main runs and 80 rate controls, width materially improves fitting, but
@@ -94,7 +118,7 @@ There is no single privileged definition that settles all three questions.
 
 ## Main settings and where to read them
 
-All main mechanism experiments use a one-hidden-layer ReLU network, Gaussian
+The original main mechanism experiments use a one-hidden-layer ReLU network, Gaussian
 inputs in 20 dimensions, noiseless teacher targets, 8,192 training and 4,096 test
 examples, batch size 64, and output scaling 1/sqrt(width). Both student layers
 and hidden biases train. The default outgoing coefficients start at zero.
@@ -119,8 +143,9 @@ These conventions are detailed in [the protocol](protocol.md).
 Historical teacher-4/64/512 scans were already discarded in an earlier curation;
 their precise cohort results cannot be reconstructed from this repository.
 They motivate the longer-budget work but are not used as quantitative evidence
-in this synthesis. A neuron-splitting construction is a mathematical motivation,
-not an intervention performed in these experiments.
+in this synthesis. Splitting was only a mathematical motivation for those
+original experiments; the later [specialization study](reports/specialization.md)
+now performs controlled perturbed expansions in a new correlated-feature task.
 
 ## What the different percentages mean
 
