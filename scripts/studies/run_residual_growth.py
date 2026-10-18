@@ -12,36 +12,13 @@ import pandas as pd
 import torch
 
 from neural_competition.residual_growth import (
-    conditional_gram,
     gaussian_relu_gram,
     residual_potential,
 )
-from neural_competition.specialization import advance
-from neural_competition.trajectory import components
+from neural_competition.tasks import paired_gaussian_task
+from neural_competition.training import advance, components
 
 ROOT = Path(__file__).resolve().parents[2]
-
-
-def dataset(degrees, ratio, data_seed):
-    rng = torch.Generator().manual_seed(data_seed)
-    basis = torch.linalg.qr(torch.randn(20, 8, generator=rng, dtype=torch.float64)).Q.T
-    centers, contrasts = basis[::2], basis[1::2]
-    theta = math.radians(degrees)
-    teacher = torch.stack([math.cos(theta)*centers+math.sin(theta)*contrasts,
-                           math.cos(theta)*centers-math.sin(theta)*contrasts], 1).flatten(0, 1)
-    beta = torch.tensor([1., ratio]*4, dtype=torch.float64)/math.sqrt(8)
-    x = torch.randn(8192, 20, generator=rng, dtype=torch.float64)
-    y = (x @ teacher.T).relu() @ beta
-    scale = y[:4096].std()
-    y, beta = y/scale, beta/scale
-    cg = conditional_gram(teacher, centers)
-    phi = (x @ centers.T).relu()
-    coarse_beta = torch.linalg.lstsq(phi[:4096], y[:4096], driver='gelsd').solution
-    return dict(xtrain=x[:4096], xtest=x[4096:], ytrain=y[:4096], ytest=y[4096:],
-                teacher=teacher, beta=beta, centers=centers, conditional_gram=cg,
-                predicted_growth=beta.sign()*(cg @ beta),
-                coarse_beta=coarse_beta,
-                coarse_test_loss=float(.5*((phi[4096:] @ coarse_beta)-y[4096:]).square().mean()))
 
 
 def run(degrees, ratio, optimizer, args):
@@ -52,7 +29,7 @@ def run(degrees, ratio, optimizer, args):
     if (folder/f'{tag}.json').exists():
         print('SKIP', tag, flush=True)
         return
-    data = dataset(degrees, ratio, args.data_seed)
+    data = paired_gaussian_task(degrees, ratio, args.data_seed)
     models = [dict(seed=seed, width=width, convention=convention)
               for seed in range(args.seeds) for width, convention in
               [(8, 'fixed'), (16, 'fixed'), (16, 'mapped'), (32, 'fixed'), (32, 'mapped')]]
@@ -132,7 +109,7 @@ def run(degrees, ratio, optimizer, args):
     torch.save(dict(parameters=p, first=first, second=second, models=models, data=data),
                folder/f'{tag}.pt')
     sources = [Path(__file__), ROOT/'src/neural_competition/residual_growth.py',
-               ROOT/'src/neural_competition/specialization.py', ROOT/'src/neural_competition/trajectory.py',
+               ROOT/'src/neural_competition/training.py', ROOT/'src/neural_competition/tasks.py',
                ROOT/'docs/theory/residual_growth_protocol.md']
     manifest = dict(args=vars(args), degrees=degrees, ratio=ratio, optimizer=optimizer,
                     elapsed_seconds=time.monotonic()-started,

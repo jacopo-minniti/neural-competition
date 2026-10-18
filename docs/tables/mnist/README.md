@@ -49,5 +49,6 @@ untouched test set. Official test accuracy is evaluated only after full runs.
 
 The first matched diagnostic pass used independent probes across widths. It was
 superseded by common probes, which reduce comparison noise; it is not used in
-the reported estimates. Its raw cache and source snapshot remain under
-`runs/mnist/matched_initial_independent_probes` for execution provenance.
+the reported estimates. Its raw cache was removed during curation; the original source and tracked
+provenance remain recoverable at Git commit `b03c53f`. It is not needed to
+regenerate the published estimates. See [retention](../../data.md).

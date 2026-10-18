@@ -200,3 +200,41 @@ feature diversity and obstruct fitting under particular small-initialization
 assumptions; [gradient starvation](https://papers.neurips.cc/paper/2021/hash/0987b8b338d6c90bbedd8631bc499221-Abstract.html)
 formalizes feature imbalance under cross-entropy. Our finite-data squared-loss
 models and initialization do not inherit those papers' guarantees.
+
+## Teacher-free extension (proposed)
+
+The residual potential needs data labels and current predictions, not a known
+teacher decomposition. For a vector-output model, define
+
+\[
+\mathbf H_f(u)=\mathbb E[\phi_u(x)r(x)],\qquad
+r=y-f(x)\ \text{(squared loss)},\quad
+r=y-\operatorname{softmax}(f(x))\ \text{(cross-entropy)}.
+\]
+
+For an existing hidden activation h_r and outgoing vector a_r in the MNIST
+normalization, ordinary gradient flow gives
+
+\[
+\dot a_r=\mathbb E[h_r(x)r(x)]/\sqrt m,\qquad
+\tfrac12\frac{d}{dt}\|a_r\|^2
+=a_r^T\mathbb E[h_r(x)r(x)]/\sqrt m.
+\]
+
+For cross-entropy, remove the outgoing vector's common-logit component when
+interpreting a class-contrast role. Negative radial force contracts that role;
+this need not be harmful. Momentum and Adam require tracking the actual update
+separately from the gradient force. Empirical averages estimate the field; a
+held-out probe can check whether conclusions are specific to training examples.
+
+Near uniform predictions and balanced labels, component k is proportional to
+the feature's class-k mean activation minus its average activation across
+classes. Thus a sign condition is observable without teacher features. What is
+missing is a guarantee that the suppressed role is required: the four-positive /
+four-negative teacher quota has no direct MNIST analogue. One prospective test
+would define candidate features/class contrasts on a separate discovery split,
+check their complementary predictive value, and test whether early suppression
+precedes persistent loss of that information and is relieved by width.
+
+This is a proposed transfer route, not a completed experiment or an established
+causal explanation of the existing MNIST width gap.

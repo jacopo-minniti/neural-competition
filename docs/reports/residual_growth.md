@@ -79,6 +79,14 @@ This is a materially larger absolute effect than the previous 15° splitting
 study's approximately .3% narrow MSE. It still does not explain all initial
 loss, and should not be advertised as a universal large-error phenomenon.
 
+For scale, predicting the training mean gives test MSE 1.00055 in this task;
+zero prediction gives 2.04636 because the target was not centered. Width 8
+therefore already captures about 95–98% of target variance. Width 32 removes
+96.3%, 96.7%, and 99.98% of the remaining narrow error, respectively—not that
+fraction of the original task. Pooled RMSE is about 15–22% of target standard
+deviation narrow versus 0.34–2.9% wide. This is a persistent, meaningful fitting
+gap in a noiseless realizable problem, but a moderate fraction of total variance.
+
 Changing just the pre-normalization output pattern to (1,3) gives:
 
 | Optimizer | Width 8 | Width 32 | Wide starts with lower loss |
@@ -267,10 +275,11 @@ This gives an ordinary scalar SGD/momentum bias step. Adam's fixed epsilon
 becomes √m·1e−8 in physical bias coordinates; the tests check this exact
 convention rather than claiming perfect default-Adam equivalence near zero.
 
-Validation: all 83 repository tests pass, including six new cases covering
+Original study validation: 83 repository tests passed, including six cases covering
 the Gaussian kernel, conditional sign reversal, exact signed-amplitude
-gradient law, and scalar-intercept optimizer convention. Ruff passes.
-All 72 experiment manifests pass source-version checks; reconstructed final
-held-out losses agree with the recorded values within 1.1e−16. Six manifests
-use the preserved earlier polarity-producer source rather than its later
-balanced-sign-control version.
+gradient law, and scalar-intercept optimizer convention. Ruff passed at that revision.
+All 72 experiment manifests passed source-version checks; reconstructed final
+held-out losses agree with the recorded values within 1.1e−16. Six manifests used the earlier polarity-producer version. After curation,
+the audit resolves moved/refactored sources to exact executed snapshots;
+it still reconstructs all 72 saved final states. The current validation commands
+are in the [reproduction guide](../reproduction.md).

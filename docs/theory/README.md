@@ -1,122 +1,21 @@
-# Literature-guided explanations and predictions
+# Theory and prospective records
 
-Research notes started 18 October 2026. These interpret the completed
-[experiments](../README.md). Paper results, deductions for our model, and
-hypotheses to test are distinguished explicitly.
+[Signed residual potentials](residual_growth.md) is the maintained theory note.
+It derives the signed-amplitude growth law, explains what assumptions make
+correct-polarity suppression possible, and separates that local statement from
+the failed global sign predictions. Its teacher-free extension is a proposal,
+not a completed MNIST result.
 
-The latest [signed residual-potential note](residual_growth.md) describes
-growth of existing neurons and the structural need for positive/negative
-feature roles. Its [ordinary-training study](../reports/residual_growth.md)
-finds a stronger opposing-output width regime without splitting, but rejects
-two shortcuts from a local sign to a global prediction of width benefit.
+Two unchanged documents preserve what was predicted before the corresponding
+experiments; read their outcomes in the [report](../reports/residual_growth.md):
 
-The new [specialization geometry note](specialization_geometry.md) derives a
-conditional mechanism: residual curvature along directions that preserve a
-shared feature to first order. Its [training study](../reports/specialization.md)
-tests predicted allocation and expansion effects, with both layers trained.
-Balanced minimal width and longer-training catch-up are important limits;
-finite-data ReLU requires finite gate-crossing paths, not a naive smooth Hessian.
+- [Conditional-growth protocol](residual_growth_protocol.md): its sign did not
+  predict where ordinary training showed the largest width benefit.
+- [Polarity follow-up protocol](polarity_followup_protocol.md): the refined sign
+  and bias controls also did not establish a global width-benefit boundary.
 
-Follow-up: the [allocation study](../reports/allocation.md) now tests the
-residual-work, corrective-cosine and relative-step proposals on the original
-teacher cohorts and MNIST, and expands the readout check to all teacher runs.
-It finds useful local interventions but no consistent width ordering; it also
-derives the small-step connection between allocation regret and individual
-anti-residual work. The specialization study now tests controlled splitting;
-sustained allocation interventions remain proposals.
-
-The questions guiding the search are specific:
-
-- Why can wider Adam students fit better while paying more positive pair cost?
-- Why does changing outgoing initialization rescue narrow Adam so strongly?
-- Why does momentum's early transfer advantage survive shortening a step,
-  whereas strict same-batch interference almost disappears?
-- Why can two extra neurons improve reliability while a much larger expansion
-  slows final refinement?
-
-The working direction is to separate access to useful features, the optimizer's
-allocation of motion, and finite-step costs. A measure should distinguish those
-mechanisms and survive simple counterexamples; agreement across optimizers is a
-prediction to test, not a criterion for choosing a definition after seeing data.
-
-## What the search changes
-
-The strongest revision is to separate **access to useful corrections** from
-**the cost of combining the proposed corrections**. The existing C_plus is
-exact accounting, but cannot be a necessary condition for better fitting:
-even subdividing the same useful prediction change among identical neuron
-copies increases it. Adam's observed reversal therefore need not contradict
-a feature-access mechanism, although it does contradict a universal claim
-through decreasing C_plus.
-
-Recent work yields useful hypotheses and also assumption checks. In particular,
-a sign-preservation argument from balanced small initialization does not apply
-to our zero-output initialization. A gate-death explanation suggested by a
-2026 preprint fails in two inspected narrow Adam cases. Those same cases
-cannot be rescued just by optimally refitting the readout: their current
-hidden features impose a high error floor.
-
-| Question from our reports | Useful interpretation or prediction | Detailed note |
-| --- | --- | --- |
-| Why can Adam improve with more pair cost? | Shared useful corrections incur positive pair cost; inspect standalone harm, residual correction and avoidable allocation cost | [Pair cost and competition](pair_cost_and_competition.md) |
-| Why does outgoing initialization matter so much? | Mean-driven early polarity and joint feature development; track feature floors and sign crossings | [Adam, initialization and features](adam_initialization_and_features.md) |
-| Why do small expansions help, while large width can refine slowly? | Escape directions, gate changes and learning strength are different questions; a live split need not supply local descent here | [Width, escape and scaling](width_escape_and_scaling.md) |
-| What could become a defensible alternative measure? | Readout floors, residual-weighted tangent rates, teacher-feature demand and gain from reweighting neuron steps | [Residual access and next tests](residual_access_and_tests.md) |
-
-[Source selection and assumption audit](sources.md) records the precise
-theorems/sections used, including why the generic Cooper/Nguyen guarantees
-do not directly cover this regime. Six papers are used substantively;
-other classics are retained only where their scope changes an interpretation.
-The sources span 2018 through a September 2026 preprint. This is not a claim
-that every relevant paper has been found or that the proposed metrics are novel.
-
-## Recommended next decision
-
-First compare failed and successful saved states using the readout floor,
-residual access and actual optimizer response. Then check whether changing
-relative neuron step weights helps beyond the best uniform step shrink,
-using independent evaluation and exact forwards. These diagnostics distinguish
-feature shortage, optimizer history and finite-step overshoot before choosing
-a larger causal experiment.
-
-Function-preserving expansions and early readout/bias rate interventions are
-the most direct continuations if those checks support the corresponding
-mechanisms. No proposed metric is guaranteed to improve with every optimizer;
-the [test matrix](residual_access_and_tests.md#what-to-predict-before-committing-to-a-larger-experiment)
-states outcomes that would favor different explanations.
-
-The [strict-interference follow-up](../reports/strict_matched_loss.md) now
-compares frequency and harm at matched reference loss. It uses verified
-deterministic replays of the original five-seed teacher-8 cohorts, including
-both Adam rates and output-initialization controls. It distinguishes per-pair
-rates from total event counts and makes no new independent-replicate claim.
-
-The [temporal peer-update experiment](../reports/temporal_branches.md) now tests
-one downstream causal link directly: whether changing an earlier sender step
-changes later standalone harm at other neurons. It finds phase-dependent
-influence, especially beneficial responses in narrow teacher-8 momentum, but
-no universal width ordering. This pulse experiment is separate from optimizing
-neuron-step weights against the best uniform shrink.
-
-## Small checks of existing saved states
-
-The [objective-scale audit](../reports/effect_magnitude.md) evaluates practical
-size and early predictive value using the existing full cohorts. It finds
-material local SGD/momentum budget differences but no strong general early
-pair-score predictor. It also derives subdivision-invariant residual-work
-accounting and bounds a larger anti-corrective-motion phenomenon in Adam.
-
-[The saved-state check](checks/README.md) inspects 144 retained teacher-8
-states without training. It measures gate coverage and the least-squares
-readout attainable with hidden features held fixed. It includes its producer,
-CSV and input hashes. The retained seeds are purposively selected examples,
-not a new cohort estimate.
-
-The later [MNIST experiment](../reports/mnist.md) tests the principal measurements
-on real images with both squared loss and cross-entropy. It reproduces Adam's
-C_plus reversal with random outgoing initialization, distinguishes lower
-conditional strict frequency from total strict harm, and finds wider SGD can
-have more harmful batch directions. Its full-objective probes derive useful
-logit work minus convex-loss curvature as a complementary account of actual
-progress. These findings constrain the explanations above; they do not establish
-that one competition measure mediates the final width advantage.
+Older landscape, kernel, allocation and splitting notes are consolidated in
+[research history](../reports/research_history.md), with complete originals in
+Git commit `b03c53f`. Related literature is cited where used in the maintained
+note. No theorem from a different model or optimizer is treated as a guarantee
+for the present experiments.

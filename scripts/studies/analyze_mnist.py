@@ -208,7 +208,6 @@ def interaction_seed_summary(frame):
 
 def save_figure(fig, name):
     fig.savefig(FIGURES / (name + ".png"), dpi=170, bbox_inches="tight")
-    fig.savefig(FIGURES / (name + ".pdf"), bbox_inches="tight")
     plt.close(fig)
 
 

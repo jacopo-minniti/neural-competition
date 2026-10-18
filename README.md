@@ -1,47 +1,40 @@
 # Neural competition
 
-Small PyTorch teacher–student experiments testing whether extra neurons improve
-optimization through less interference or more useful reinforcement.
+Small PyTorch experiments investigating when competing feature demands obstruct
+learning and whether extra width helps. We seek a conditional mechanism with a
+meaningful loss effect, not a universal explanation of overparameterization.
 
-Width improves fitting in the tested shallow ReLU problems. Some early momentum
-measurements support reduced conflict, but the mechanism depends on the optimizer
-and training phase. Wider Adam students can fit better while accumulating more
-pairwise interaction cost. See the [research summary](docs/README.md) for the
-evidence, counterexamples and remaining causal questions.
+Start with [OBJECTIVE.md](OBJECTIVE.md) and the [evidence overview](docs/README.md).
 
-- [Protocol and study ledger](docs/protocol.md)
-- [Metrics, signs and interpretation](docs/metrics.md)
-- [Detailed reports](docs/reports/)
-- [Literature-guided explanations and predictions](docs/theory/README.md)
-- [Temporal causal peer-update experiment](docs/reports/temporal_branches.md)
-- [MNIST width experiments](docs/reports/mnist.md)
-- [New allocation and residual-work experiments](docs/reports/allocation.md)
-- [Specialization geometry and new controlled training experiments](docs/reports/specialization.md)
-- [Residual growth and signed-role competition without splitting](docs/reports/residual_growth.md)
-- [Result tables](docs/tables/README.md) and [figures](docs/figures/README.md)
-- [Data retention](docs/data.md) and [reproduction](docs/reproduction.md)
+| Where | Contents |
+| --- | --- |
+| [Current research](docs/reports/residual_growth.md) | Ordinary training, signed feature roles, strong width gaps, and failed sign predictions |
+| [MNIST](docs/reports/mnist.md) | Real-data width benefits and limits of interference diagnostics |
+| [Earlier findings](docs/reports/research_history.md) | Consolidated positive, negative, and superseded experiments |
+| [Theory](docs/theory/README.md) | Residual potential, assumptions, and unchanged prospective protocols |
+| [Code](src/neural_competition/README.md) / [scripts](scripts/README.md) | Shared numerical modules and the two maintained study pipelines |
+| [Tables](docs/tables/README.md) / [figures](docs/figures/README.md) | Auditable evidence and a small set of retained plots |
+| [Reproduction](docs/reproduction.md) / [data retention](docs/data.md) | Commands, local-data requirements, and recovery of historical work |
 
 ```sh
 uv sync --python 3.12 --extra analysis --extra dev
 uv run python scripts/summarize_results.py
-uv run python scripts/audit_archive.py
-uv run pytest
+uv run python scripts/check_repository.py
+uv run pytest -q
 uv run ruff check src scripts tests
 ```
 
-Reports, compact tables and figures are versioned. Representative raw data and
-all original computed tables live in ignored `runs/retained/`; the archive audit
-requires that local data. All notebooks have been removed. Selected raw cases
-illustrate outcomes; use the full-cohort tables for rates and uncertainty.
-
-The small package is in `src/neural_competition/`. `scripts/run_experiments.py`
-is the generic training entry point; `scripts/studies/` preserves the original
-study producers and audits. Historical study configurations are grouped under
-`configs/studies/`. Full reruns use fresh original-layout outputs, separately
-from the compact archive; see the reproduction guide before running them.
-
-For a small new run:
+A small end-to-end check, without downloading data:
 
 ```sh
 uv run python scripts/run_experiments.py --smoke --device cpu --output runs/smoke
 ```
+
+Reports and full-cohort result tables are versioned. Raw runs and datasets are
+local and ignored by Git. `scripts/check_repository.py --local-data` also verifies
+the retained local files. The [retention guide](docs/data.md) distinguishes
+recomputing summaries, inspecting saved states, and rerunning training.
+
+The complete pre-curation research tree is recoverable at Git commit `b03c53f`.
+It preserves retired reports, plots, source code, and versioned evidence; deleted
+untracked raw arrays are not recoverable from Git.

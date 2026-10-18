@@ -319,8 +319,8 @@ gate crossings; tests verify frozen Adam histories and attribution sums.
 The sampled MSE pair identity has maximum error 1.23e−16. Matched replays and
 all every-update budget replays recover original states and optimizer moments
 bitwise. Full-reference sums telescope to the endpoint objective difference
-with maximum error 1.16e−15. The final repository suite has 62 passing tests;
-Ruff passes across source, scripts and tests.
+with maximum error 1.16e−15. At the original MNIST study revision, 62 repository tests passed and Ruff
+passed. The curated active suite is documented in [reproduction](../reproduction.md).
 
 Intervals use 10,000 paired seed-bootstrap draws with RNG seed 741. Five seeds
 give exploratory, pointwise intervals conditional on this dataset/split and
@@ -331,6 +331,19 @@ is rounded to float32 and is a local direction-scaling check, not another
 training trajectory.
 
 All compact per-seed results, complete diagnostic aggregates, coverage and
-audits are [versioned with the study](../tables/mnist/README.md). Raw datasets,
-optimizer checkpoints and every-update audit arrays remain in ignored
-`data/mnist` and `runs/mnist`. See [reproduction](../reproduction.md#mnist-width-study).
+audits are [versioned with the study](../tables/mnist/README.md). Raw archives, all main optimizer checkpoints, accepted main matched states,
+control final states and scalar audit outputs remain local. Intermediate
+control checkpoints, superseded probes, dense per-update arrays and the
+regenerable prepared-data cache were pruned; see [retention](../data.md). See [reproduction](../reproduction.md#mnist-width-study).
+
+## Connection to the current hypothesis
+
+The [residual-growth study](residual_growth.md) now supplies a derived candidate
+object with stronger controlled effects. Its residual field extends directly
+to these ten-output networks, using labels minus logits for squared loss and
+labels minus softmax probabilities for cross-entropy. The
+[theory note](../theory/residual_growth.md#teacher-free-extension-proposed)
+explains this measurement and the missing assumption: identifying which
+suppressed feature roles are needed. No such MNIST experiment is reported here.
+The width benefit and old diagnostic counterexamples remain evidence; the new
+mechanism has not yet explained them.

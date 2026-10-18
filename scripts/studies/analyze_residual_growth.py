@@ -10,10 +10,10 @@ import matplotlib
 import numpy as np
 import pandas as pd
 import torch
-from run_residual_growth import dataset
 
 from neural_competition.residual_growth import gaussian_relu_gram
-from neural_competition.trajectory import components
+from neural_competition.tasks import paired_gaussian_task
+from neural_competition.training import components
 
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -51,7 +51,8 @@ def read_and_audit():
                               .assign(collection=manifest_path.parent.name))
             snapshot_count = 0
             for source, expected in meta['sources'].items():
-                actual = hashlib.sha256((ROOT/source).read_bytes()).hexdigest()
+                actual = (hashlib.sha256((ROOT/source).read_bytes()).hexdigest()
+                          if (ROOT/source).exists() else None)
                 if actual != expected:
                     snapshot = OUT/'source_snapshots'/f'{expected}.txt'
                     assert snapshot.exists() and hashlib.sha256(snapshot.read_bytes()).hexdigest() == expected
@@ -101,7 +102,7 @@ def geometry(frame):
     rows = []
     keys = frame[['data_seed', 'degrees', 'ratio']].drop_duplicates()
     for seed, degree, ratio in keys.itertuples(index=False, name=None):
-        data = dataset(degree, ratio, seed)
+        data = paired_gaussian_task(degree, ratio, seed)
         g = gaussian_relu_gram(data['teacher'], data['teacher'])
         centered = g-1/(2*math.pi)
         for j in range(8):

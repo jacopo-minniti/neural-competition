@@ -10,11 +10,10 @@ from pathlib import Path
 
 import pandas as pd
 import torch
-from run_residual_growth import dataset
 
 from neural_competition.residual_growth import gaussian_relu_gram
-from neural_competition.specialization import advance
-from neural_competition.trajectory import components
+from neural_competition.tasks import paired_gaussian_task
+from neural_competition.training import advance, components
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -27,7 +26,7 @@ def run(degrees, ratio, optimizer, args):
     if (folder/f'{tag}.json').exists():
         print('SKIP', tag, flush=True)
         return
-    data = dataset(degrees, ratio, args.data_seed)
+    data = paired_gaussian_task(degrees, ratio, args.data_seed)
     modes = ['no_bias', 'free_bias', 'centered_bias']
     models = [dict(seed=s, width=w, mode=mode) for s in range(args.seeds)
               for w in [8, 16, 32] for mode in modes]
@@ -89,9 +88,9 @@ def run(degrees, ratio, optimizer, args):
             rows.append(row)
     pd.DataFrame(rows).to_csv(folder/f'{tag}.csv.gz', index=False, float_format='%.17g')
     torch.save(dict(parameters=p, first=first, second=second, models=models, data=data), folder/f'{tag}.pt')
-    sources = [Path(__file__), ROOT/'scripts/studies/run_residual_growth.py',
-               ROOT/'src/neural_competition/residual_growth.py', ROOT/'src/neural_competition/specialization.py',
-               ROOT/'src/neural_competition/trajectory.py', ROOT/'docs/theory/polarity_followup_protocol.md']
+    sources = [Path(__file__),
+               ROOT/'src/neural_competition/residual_growth.py', ROOT/'src/neural_competition/training.py',
+               ROOT/'src/neural_competition/tasks.py', ROOT/'docs/theory/polarity_followup_protocol.md']
     manifest = dict(args=vars(args), degrees=degrees, ratio=ratio, optimizer=optimizer,
                     elapsed_seconds=time.monotonic()-start,
                     sources={str(s.relative_to(ROOT)):hashlib.sha256(s.read_bytes()).hexdigest()

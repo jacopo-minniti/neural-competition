@@ -26,3 +26,8 @@ def residual_potential(directions, teacher, beta, incoming, output):
     """Exact population correlations, with output in effective (unscaled) units."""
     return (gaussian_relu_gram(directions, teacher) @ beta
             -gaussian_relu_gram(directions, incoming) @ output)
+
+
+def relu_kernel(angle):
+    """E[relu(u.X)relu(v.X)] for unit u,v and isotropic Gaussian X."""
+    return (math.sin(angle)+(math.pi-angle)*math.cos(angle))/(2*math.pi)

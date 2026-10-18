@@ -6,10 +6,10 @@ import torch
 from neural_competition.residual_growth import (
     conditional_gram,
     gaussian_relu_gram,
+    relu_kernel,
     residual_potential,
 )
-from neural_competition.specialization import advance, relu_kernel
-from neural_competition.trajectory import batch_gradient, components
+from neural_competition.training import advance, batch_gradient, components
 
 
 def test_gaussian_gram_norms_and_opposite_directions():

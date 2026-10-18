@@ -18,7 +18,7 @@ See the [derivation](../../theory/residual_growth.md) and
 | `audit.csv` | Source-version checks and maximum discrepancy from reconstructing final test losses from saved parameters |
 | `provenance.json` | Executed arguments, source hashes and checksums of raw curves/final parameter files |
 | `analysis.json` | Analysis code hash and bootstrap specification |
-| `source_snapshots/` | Exact executed producer content retained when the balanced-sign option was added |
+| `source_snapshots/` | Exact executed producer/module content retained across the balanced-sign change and code refactor |
 
 Targets have unit training variance. Loss columns are half-MSE; multiply by
 200 to express ordinary MSE as a percentage of that variance. Population
