@@ -1,0 +1,179 @@
+{
+  "condition": "trajectory/momentum",
+  "original_models": [
+    {
+      "width": 8,
+      "seed": 0
+    },
+    {
+      "width": 8,
+      "seed": 1
+    },
+    {
+      "width": 8,
+      "seed": 2
+    },
+    {
+      "width": 8,
+      "seed": 3
+    },
+    {
+      "width": 8,
+      "seed": 4
+    },
+    {
+      "width": 8,
+      "seed": 5
+    },
+    {
+      "width": 8,
+      "seed": 6
+    },
+    {
+      "width": 8,
+      "seed": 7
+    },
+    {
+      "width": 8,
+      "seed": 8
+    },
+    {
+      "width": 8,
+      "seed": 9
+    },
+    {
+      "width": 16,
+      "seed": 0
+    },
+    {
+      "width": 16,
+      "seed": 1
+    },
+    {
+      "width": 16,
+      "seed": 2
+    },
+    {
+      "width": 16,
+      "seed": 3
+    },
+    {
+      "width": 16,
+      "seed": 4
+    },
+    {
+      "width": 16,
+      "seed": 5
+    },
+    {
+      "width": 16,
+      "seed": 6
+    },
+    {
+      "width": 16,
+      "seed": 7
+    },
+    {
+      "width": 16,
+      "seed": 8
+    },
+    {
+      "width": 16,
+      "seed": 9
+    }
+  ],
+  "independent_new_runs": false,
+  "counterfactual_training_performed": true,
+  "dose": 0.2,
+  "checkpoints": [
+    0,
+    2,
+    3,
+    5,
+    9,
+    15,
+    24,
+    40,
+    66,
+    110,
+    181,
+    298,
+    492,
+    812,
+    1339,
+    2209,
+    3644,
+    6010,
+    9914,
+    16354,
+    26978,
+    44501,
+    73407,
+    121089,
+    199743
+  ],
+  "long_probe_ids": [
+    5,
+    9,
+    13,
+    17,
+    21
+  ],
+  "lags": [
+    1,
+    4,
+    16,
+    32,
+    128
+  ],
+  "fields": [
+    "loss_before",
+    "loss_after",
+    "gain",
+    "harm",
+    "anti_work",
+    "energy",
+    "harmful_count",
+    "recipient_count",
+    "all_gain",
+    "all_harm",
+    "net_pair",
+    "quality_harm",
+    "residual_harm",
+    "linear_gain",
+    "signed_alone"
+  ],
+  "sender_selection": "two neurons uniformly without replacement per model/checkpoint; RNG 7141+1009*probe_id",
+  "intervention": "one actual rounded parameter update damped; all just-computed moments retained; later updates normal",
+  "control": "uniform parameter-step reduction calibrated to removed prediction RMS on original fixed reference",
+  "views": {
+    "reference_size": 512,
+    "heldout_size": 256,
+    "heldout_seed": 20261018
+  },
+  "original_checkpoint_audits": [
+    {
+      "completed": 200000,
+      "parameters_moments_rng_bitwise_equal": true
+    }
+  ],
+  "normal_branch_layout_audits": 25,
+  "branch_update_groups": 5120,
+  "baseline_update_groups": 200000,
+  "branch_seconds": 12.285129459225573,
+  "elapsed_seconds": 36.59264308295678,
+  "max_budget_error": 2.990229591715021e-16,
+  "all_seed_endpoint_error": 5.898059818321144e-17,
+  "input_sha256": {
+    "runs/retained/provenance/training/trajectory/momentum/config.json": "4c856c56d2c48b47848a3e7f7480a244e5adcd3e13c8f11b186ae9e7c5437bfb",
+    "runs/retained/datasets/k8_teacher2027.pt": "008f2803ad2c31b8e725193a2f6d7f3438f5edf705ec02ed64bfe97aef59e94c",
+    "runs/retained/checkpoints/trajectory/momentum/initial.pt": "507c42fdbf32e78fd0a3b41e9275eb51ecb02f7656f785c0b6534c7cfb156582",
+    "runs/retained/checkpoints/trajectory/momentum/final.pt": "d46e4aa8a9c5f782f3f54da8db8c59f9943557ff70702a0ff953309d7969c80b",
+    "docs/tables/cumulative_interference_seeds.csv": "1a1b7c1c9e66ac47914d251f9d4b59c0d488ea0c0c08f0fb6c2d26f2aea8d31d"
+  },
+  "producer_sha256": "e3446e18851bc23dd53781caff1e176a04cd0c56ebdadf85de78df178ea8e240",
+  "engine_sha256": "9e76f22d4b9e074c06fc96ff06db70c78d9666e1cc8001ae78563c4f657ae5d9",
+  "torch_version": "2.14.1",
+  "threads": 1,
+  "pilot_limit": null
+}

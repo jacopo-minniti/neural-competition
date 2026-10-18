@@ -1,0 +1,154 @@
+{
+  "training_performed": false,
+  "loss_units": "raw half-MSE on the fixed training-reference subset",
+  "normalization": "none",
+  "loss_binning": false,
+  "prefix_sums": "each original actual update contributes; only plotted time points are subsampled",
+  "displayed_widths": {
+    "trajectory": [
+      8,
+      16
+    ],
+    "robustness": [
+      8,
+      16,
+      32
+    ]
+  },
+  "additional_exported_widths": [
+    10
+  ],
+  "independent_runs": 130,
+  "progress_identity": "G(T)-H(T)-C_net(T) = L_ref(0)-L_ref(T)",
+  "reference_mse_field_note": "original cumulative reference_mse is pre-update; after-step loss is reconstructed and audited",
+  "max_endpoint_error": 4.971040939993898e-13,
+  "independent_raw_forward_checks": [
+    {
+      "condition": "teacher8/sgd",
+      "width": 8,
+      "seed": 0,
+      "points": 765,
+      "max_loss_error": 6.064788428405965e-13
+    },
+    {
+      "condition": "teacher8/sgd",
+      "width": 16,
+      "seed": 0,
+      "points": 765,
+      "max_loss_error": 2.0135841820104203e-14
+    },
+    {
+      "condition": "teacher8/momentum",
+      "width": 8,
+      "seed": 0,
+      "points": 765,
+      "max_loss_error": 5.237997535711969e-14
+    },
+    {
+      "condition": "teacher8/momentum",
+      "width": 16,
+      "seed": 0,
+      "points": 765,
+      "max_loss_error": 9.42587810958592e-15
+    },
+    {
+      "condition": "k8_teacher2027/momentum_01",
+      "width": 8,
+      "seed": 0,
+      "points": 647,
+      "max_loss_error": 2.0508334613866808e-14
+    },
+    {
+      "condition": "k8_teacher2027/momentum_01",
+      "width": 10,
+      "seed": 0,
+      "points": 647,
+      "max_loss_error": 9.610576768001952e-15
+    },
+    {
+      "condition": "k8_teacher2027/momentum_01",
+      "width": 16,
+      "seed": 0,
+      "points": 647,
+      "max_loss_error": 1.034214498440385e-14
+    },
+    {
+      "condition": "k8_teacher2027/momentum_01",
+      "width": 32,
+      "seed": 0,
+      "points": 647,
+      "max_loss_error": 1.6745509716388745e-14
+    },
+    {
+      "condition": "k8_teacher2027/adam_001",
+      "width": 8,
+      "seed": 0,
+      "points": 647,
+      "max_loss_error": 3.773370504944751e-14
+    },
+    {
+      "condition": "k8_teacher2027/adam_001",
+      "width": 10,
+      "seed": 0,
+      "points": 647,
+      "max_loss_error": 1.644517855226013e-14
+    },
+    {
+      "condition": "k8_teacher2027/adam_001",
+      "width": 16,
+      "seed": 0,
+      "points": 647,
+      "max_loss_error": 1.8193779816044753e-14
+    },
+    {
+      "condition": "k8_teacher2027/adam_001",
+      "width": 32,
+      "seed": 0,
+      "points": 647,
+      "max_loss_error": 1.1899613510269608e-14
+    },
+    {
+      "condition": "k8_teacher2027/adam_01",
+      "width": 8,
+      "seed": 0,
+      "points": 647,
+      "max_loss_error": 1.6726897644758765e-13
+    },
+    {
+      "condition": "k8_teacher2027/adam_01",
+      "width": 10,
+      "seed": 0,
+      "points": 647,
+      "max_loss_error": 9.857392679890609e-14
+    },
+    {
+      "condition": "k8_teacher2027/adam_01",
+      "width": 16,
+      "seed": 0,
+      "points": 647,
+      "max_loss_error": 1.7502665983215593e-13
+    },
+    {
+      "condition": "k8_teacher2027/adam_01",
+      "width": 32,
+      "seed": 0,
+      "points": 647,
+      "max_loss_error": 6.263422146458697e-14
+    }
+  ],
+  "input_sha256": {
+    "runs/retained/aggregates/robustness/cumulative.csv.gz": "4d1a6c716e539a39825f7ed5792d10c6090b12ed8fc9424f7d1ae599fec4a462",
+    "runs/retained/aggregates/trajectory/cumulative.csv.gz": "3b727b4ccb93b5fe28037c5c11291ad1c9a02a65377ee3b6fdfdb6423bfa598a",
+    "docs/tables/robustness_per_seed_results.csv": "ece9704508913f1c753a1c5582df5a0693c44ee9291ba536a0eb00a041fa6fdf",
+    "docs/tables/cumulative_interference_seeds.csv": "1a1b7c1c9e66ac47914d251f9d4b59c0d488ea0c0c08f0fb6c2d26f2aea8d31d",
+    "runs/retained/manifest.json": "b7a8c3d8aca41103f7fc563ef69db001ae4f0038918489c5e40890e609eefe5f",
+    "runs/retained/raw_updates/trajectory_sgd.npz": "691b9903a4947621e31b8fc6a0c8f6b573228465962a191b37d4514d4d082cf0",
+    "runs/retained/raw_updates/trajectory_momentum.npz": "464388e67814c49530a89732e37a9f81841b43daf1601b8157abf7017c4afb04",
+    "runs/retained/raw_updates/robustness_k8_teacher2027_momentum_01.npz": "247b6debf3e265772310d10ff603950d0610470a33451496b5a2009ebf4bf07a",
+    "runs/retained/raw_updates/robustness_k8_teacher2027_adam_001.npz": "dd1133783d701e85bb4812153ef681bd014c0978928181ee4d55b9f65de43e61",
+    "runs/retained/raw_updates/robustness_k8_teacher2027_adam_01.npz": "be100e541b4b999c0045ba78c123c8b2344138331837b91a38cf62327e4bb6a0"
+  },
+  "script_sha256": "7711e1339347648eef548e4a3a536a8906d58836f406c4b4112875ef70e5819b",
+  "numpy_version": "2.5.4",
+  "pandas_version": "3.0.6"
+}

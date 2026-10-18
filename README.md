@@ -12,6 +12,8 @@ evidence, counterexamples and remaining causal questions.
 - [Protocol and study ledger](docs/protocol.md)
 - [Metrics, signs and interpretation](docs/metrics.md)
 - [Detailed reports](docs/reports/)
+- [Literature-guided explanations and predictions](docs/theory/README.md)
+- [Temporal causal peer-update experiment](docs/reports/temporal_branches.md)
 - [Result tables](docs/tables/README.md) and [figures](docs/figures/README.md)
 - [Data retention](docs/data.md) and [reproduction](docs/reproduction.md)
 

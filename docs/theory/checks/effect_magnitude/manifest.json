@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-18",
+  "training_performed": false,
+  "loss_units": "half-MSE; reference budgets telescope; source budgets do not",
+  "matched_windows": {
+    "trajectory": [
+      0.02,
+      0.2
+    ],
+    "robustness": [
+      0.07662373699114575,
+      0.2
+    ]
+  },
+  "prediction_prefixes": [
+    1000,
+    5000,
+    10000
+  ],
+  "prediction_runs": 205,
+  "width_contrasts_per_prefix": 140,
+  "independent_paired_seed_folds": 5,
+  "predictive_baseline": "comparison fixed effects plus current narrow/wide full-train loss and initial full-train loss gap",
+  "predictive_features": [
+    "raw_Cplus",
+    "raw_Cnet",
+    "net_fraction",
+    "strict_F",
+    "solo_harm",
+    "rho",
+    "credit"
+  ],
+  "predictive_targets": "future mean full-training half-MSE gap (trapezoid, 1000-update grid), and mean half-MSE gap over 91k\u2013100k",
+  "target_normalization": "teacher's zero-predictor full-training half-MSE, common across initializations/widths",
+  "leakage_control": "fit coefficients and feature standardization using only other initialization seeds",
+  "caveat": "exploratory; held-out seeds share one fixed experimental design; comparison effects control away the average width benefit",
+  "script_sha256": "cd5b991d39b603dedb7694e2fa289eadc384f90f8ed5620d5a0b079e76b88a5b",
+  "inputs_sha256": {
+    "docs/tables/robustness_per_seed_results.csv": "ece9704508913f1c753a1c5582df5a0693c44ee9291ba536a0eb00a041fa6fdf",
+    "docs/tables/cumulative_interference_seeds.csv": "1a1b7c1c9e66ac47914d251f9d4b59c0d488ea0c0c08f0fb6c2d26f2aea8d31d",
+    "runs/retained/aggregates/robustness/loss_bins.csv.gz": "379334aa150ba450cd2f389b868906f3f91a51fa11e5b23f40a53c414a20eb94",
+    "runs/retained/aggregates/trajectory/loss_bins.csv.gz": "eb3a668a9f88b2e9515cae8e3b33d6da9a851bcf61d3a0eefc0856e66b0fa55e",
+    "docs/theory/checks/strict_matched_loss/k8_teacher2027_momentum_01.csv.gz": "afe315842a68c021f7cfd7a4e225235ab458c3c560c1c50334f5c1cecc90924d",
+    "docs/theory/checks/strict_matched_loss/k8_teacher2027_adam_001.csv.gz": "a313173b0664c6f61a4b1ed4f3bf57606b848fb53356a7165e9e00fea6016416",
+    "docs/theory/checks/strict_matched_loss/k8_teacher2027_adam_01.csv.gz": "8d40275949a585eb5a175b031c7ea3375b353efc386ee66420db11dc5bb524d2",
+    "docs/theory/checks/strict_matched_loss/k8_teacher2027_init01_adam_001.csv.gz": "6cb5d03bb07373e3dab8a5c5c75222975f54ec52d0c84c4e581ebbb8d217db08",
+    "docs/theory/checks/strict_matched_loss/k8_teacher2027_init1_adam_001.csv.gz": "0c306199e8b4dc7936ab8d4c6ccdb4631a217ede6afa9bd17028e664587eb577",
+    "runs/retained/aggregates/momentum/actual_step_seeds.csv.gz": "8a345f37475d7147f02fff84ad6a6459974e2293ba7586a50b18291265c4eaa9",
+    "docs/tables/adam_cross_batch_per_seed.csv": "28c1b00b17d960ac7da58d63b8e9dc6213ace44a7338c5e9883534c05106d62b",
+    "runs/retained/aggregates/robustness/cumulative.csv.gz": "4d1a6c716e539a39825f7ed5792d10c6090b12ed8fc9424f7d1ae599fec4a462",
+    "runs/retained/aggregates/robustness/loss_history.csv.gz": "4a105ace083ce55ed64506881e4f6ca2d451a6e0407ce8dfd00088fda887dfc8"
+  },
+  "helper_sha256": {
+    "scripts/studies/analyze_trajectory.py": "8cd0df94371a053821072b7a6e8c386cf44bbdca91ca34eb716d51b9154de8da"
+  },
+  "numpy_version": "2.5.4",
+  "pandas_version": "3.0.6"
+}

@@ -179,7 +179,7 @@ with controls for useful progress and step length.
 
 ## Raw totals and progress controls answer different questions
 
-For total penalty actually experienced over a fixed budget, raw accumulated C_plus is the primary descriptive quantity. Earlier convergence is part of that observed benefit. Equal U and matched loss probe activity and phase; they are complementary estimands, not universally fairer replacements. The 89% raw momentum difference and 12% equal-U difference are both meaningful. See [the synthesis](../README.md) for this distinction.
+For total penalty actually experienced over a fixed budget, raw accumulated C_plus is the primary descriptive quantity. Earlier convergence is part of that observed difference. Equal U and matched loss probe activity and phase; they are complementary estimands, not universally fairer replacements. The 89% raw momentum difference and 12% equal-U difference are both descriptive results. Neither is a percentage of final loss benefit explained. The [objective-scale audit](effect_magnitude.md) quantifies retention of useful activity, cancellation between cumulative budget terms, and early predictive value. See [the synthesis](../README.md) for the estimand distinction.
 
 ![Progress controls](../figures/trajectory/comparison_summary.png)
 

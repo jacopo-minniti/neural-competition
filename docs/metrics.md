@@ -170,6 +170,10 @@ that denominator to events. Neither is an additive cost of the full update:
 alternative pairs overlap in neurons. Lower per-pair frequency can coexist
 with the same number of events per batch because width creates more pairs.
 
+The [matched-loss follow-up](reports/strict_matched_loss.md) applies these
+strict frequency/severity definitions to the original teacher-8 Adam cohorts,
+retaining pair counts and raw harm alongside the normalized outcomes.
+
 The broader cost uses every unordered pair once:
 
 \[
@@ -216,6 +220,23 @@ ratios equally over reference MSE .2→.02, requiring complete paired coverage.
 Raw totals, equal U and matched loss answer different questions; no one is
 uniformly the fairer choice. Failed narrow Adam runs create missing coverage.
 
+## Temporal causal peer response
+
+The [temporal intervention report](reports/temporal_branches.md) introduces a
+different measurement: damp one earlier sender update, continue training on
+identical future minibatches, and compare later standalone harm at all other
+neurons with the ordinary trajectory. Positive B_H is damped-minus-ordinary
+recipient harm, so the ordinary sender prevented harm; negative B_H means
+damping that sender reduced later harm. It is not the same-step C_plus or a
+lag correlation. Useful gains and actual loss are evaluated alongside H.
+
+The primary pulses match removed prediction RMS across widths and include a
+uniform-step control of matching RMS. Report raw finite effects, per ordinary
+recipient G, and relative to the pulse's initial absolute loss perturbation.
+The pulse-normalized ratio is not a percentage of training loss explained.
+Only sampled short windows are summed; effects from different hypothetical
+branches cannot be added into one full-training counterfactual trajectory.
+
 ## Curvature and finite-step controls
 
 Batch sharpness uses E[g_B^T H_B g_B]/E||g_B||², computed by separately saved
@@ -242,3 +263,16 @@ can supply this second-order prediction term; moving only incoming weights with
 fixed outgoing coefficient has no such term there. Gate changes add nonsmooth
 effects. This motivates extra degrees of freedom, but no controlled splitting
 experiment was run and useful cancellation is not guaranteed.
+
+## Literature-guided alternatives under consideration
+
+[Pair cost and competition](theory/pair_cost_and_competition.md) derives a
+duplication counterexample for C_plus, a residual-based finite-step budget and
+a proposed local test of whether relative neuron step weights improve on the
+best uniform shrink. [Residual access](theory/residual_access_and_tests.md)
+develops complementary feature/readout and optimizer-rate diagnostics. These
+are research proposals; the definitions and measured results above remain
+the conventions for the completed studies. The
+[width note](theory/width_escape_and_scaling.md#a-useful-caution-about-splitting-in-our-exact-model)
+also identifies a stationary fixed-gate case where the second-order split
+motivation has no negative direction.

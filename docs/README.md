@@ -12,6 +12,32 @@ refer to completed experiments, rather than proposed experiments. The detailed
 reports preserve the optimizer, loss stage, seed counts, normalization and
 uncertainty needed to interpret each comparison.
 
+[Literature-guided explanations and predictions](theory/README.md) connects
+these specific findings to selected landscape and dynamics papers. It separates
+paper results, deductions, small checks of retained states and proposed tests,
+including alternatives to interpreting C_plus as universal competition.
+
+The [matched-loss strict-interference follow-up](reports/strict_matched_loss.md)
+revisits Adam's whole-training strict-event reversal. In the common loss range,
+the wider models have lower per-pair frequency; the report checks harm magnitude
+and total event counts as well, using verified replays of the original runs.
+
+The [objective-scale magnitude audit](reports/effect_magnitude.md) asks the
+harder question of whether these differences are large and predictive. It
+finds substantial local SGD/momentum effects, tiny cumulative strict harm
+for low-rate Adam, and little stable extra forecasting value in the early
+cumulative scores after accounting for early loss and the width setting.
+
+The [running objective-budget plots](reports/cumulative_budget.md) show G,
+H and net pair cost cumulatively against actual training updates, alongside
+the loss decrease they account for exactly. These use raw half-MSE units,
+with no loss-bin averaging or division by G.
+
+The [temporal peer-update experiment](reports/temporal_branches.md) now directly
+changes one earlier neuron update and measures later harm at other neurons.
+It uses short paired continuations, prediction-matched pulse controls and all
+245 original trajectories, rather than inferring causality from lag correlations.
+
 ## The hypothesis and what would count as support
 
 The working hypothesis is that a minimally sized network asks a small collection
@@ -23,7 +49,7 @@ more reliable fitting. The architecture can represent the teacher at the
 minimal width, so an improvement above that width is an optimization benefit,
 not an increase in the teacher function's representational necessity.
 
-We separated three questions:
+We now distinguish four questions:
 
 1. **Across data:** does the update proposed by batch B help or harm batch C?
    The network-level optimizer-direction score answers this directly to first
@@ -36,6 +62,9 @@ We separated three questions:
    experienced, relative to standalone gains, favorable credits and final fit?
    Every-update accounting answers this descriptively, including when the
    wider network stops moving earlier.
+4. **Across time:** does an earlier neuron update change later standalone harm
+   at other neurons? Short paired interventions now test this causal influence;
+   they do not identify how much final width benefit is mediated by it.
 
 There is no single privileged definition that settles all three questions.
 [Metrics and signs](metrics.md) explains their relationship and limitations.
@@ -75,6 +104,10 @@ These conventions are detailed in [the protocol](protocol.md).
 | Same-batch pairs | Strict events plus broad J costs, frequency/severity, fresh sources, tolerance and rounding controls | [Pair interactions](reports/pair_interactions.md) |
 | Accumulated cost | 40 SGD/momentum runs; 200k updates; every-update source/reference accounting, equal activity and matched-loss controls | [Cumulative penalties](reports/cumulative_penalties.md) |
 | Robustness | 205 runs at 100k; teachers 8/16; widths K/K+2/2K/4K; two Adam rates; teacher/rate/initialization controls | [Robustness](reports/robustness.md) |
+| Strict interference at matched loss | Verified replays of 90 original teacher-8 runs; five seeds; both Adam rates, output initialization controls and momentum | [Strict frequency and harm](reports/strict_matched_loss.md) |
+| Magnitude and objective connection | Existing 245 cumulative trajectories, matched-loss budgets, direct objective probes and early-feature forecasts across 205 robustness runs | [Effect magnitude](reports/effect_magnitude.md) |
+| Running objective budget | Exact every-update G/H/net pair sums for 130 original SGD, momentum and Adam trajectories, including initialization controls | [Cumulative G, H and net pair cost](reports/cumulative_budget.md) |
+| Temporal causal influence | Sampled sender-update interventions in all 245 original trajectories; matched prediction pulses, uniform controls, held-out outcomes and lags through 128 updates | [Temporal peer effects](reports/temporal_branches.md) |
 | Quick Adam direction check | 180 saved/replayed states; students 8/16/32; five seeds; 128 fresh batches per state | [Adam cross-batch transfer](reports/adam_cross_batch.md) |
 
 Historical teacher-4/64/512 scans were already discarded in an earlier curation;
@@ -137,13 +170,13 @@ distributed across units. The shared scalar learning rate and 1/sqrt(width)
 scaling do not fix hidden-feature learning strength across widths. The metrics
 also depend on parameterization and the chosen neuron blocks.
 
-The strongest next causal test would intervene on proposed neuron updates while
-retaining each neuron's existing contribution to the network, with controls for
-step norm and useful correction. Temporarily suppressing an update is different
-from deleting the neuron's current function. One-step isolated/pair counterfactuals
-are already measured; controlled training continuations targeting the proposed
-competition mechanism have not been done. The actual training intervention so
-far varied learning rate from identical high-rate SGD states.
+The [temporal peer-update experiment](reports/temporal_branches.md) now intervenes
+on one proposed neuron update while retaining its current contribution, then
+measures other neurons over short continuations. This identifies that pulse's
+causal influence, not the share of final width benefit caused by competition.
+Earlier saved-state interventions varied learning rate. A sustained allocation
+intervention with useful-correction controls and an optimized uniform-step
+baseline remains a stronger test of the full proposed mechanism.
 
 All uncertainty is conditional on the tested teacher functions and datasets.
 Bootstrap intervals resample paired training seeds, not correlated batch pairs

@@ -37,3 +37,13 @@ Dense per-seed/per-batch tables and curves are separately preserved under `runs/
 | [teacher8_history.csv](teacher8_history.csv) | 198 |
 
 [index.json](index.json) records schemas, sources and SHA-256 hashes.
+
+The [objective-scale magnitude and forecasting outputs](../theory/checks/effect_magnitude/README.md)
+are separately versioned with their producer and input hashes. They include
+per-seed cumulative budgets, matched-loss retention, direct objective probes
+and early-feature/held-out-outcome tables.
+
+The later [matched-loss strict-interference tables](../theory/checks/strict_matched_loss/README.md)
+are versioned separately with their replay audits. They recover additional
+harm statistics for original teacher-8 runs and do not alter the historical
+tables or this original index.

@@ -1,0 +1,149 @@
+{
+  "condition": "robustness/k8_teacher2037/adam_001",
+  "original_models": [
+    {
+      "width": 8,
+      "seed": 0
+    },
+    {
+      "width": 8,
+      "seed": 1
+    },
+    {
+      "width": 8,
+      "seed": 2
+    },
+    {
+      "width": 8,
+      "seed": 3
+    },
+    {
+      "width": 8,
+      "seed": 4
+    },
+    {
+      "width": 16,
+      "seed": 0
+    },
+    {
+      "width": 16,
+      "seed": 1
+    },
+    {
+      "width": 16,
+      "seed": 2
+    },
+    {
+      "width": 16,
+      "seed": 3
+    },
+    {
+      "width": 16,
+      "seed": 4
+    }
+  ],
+  "independent_new_runs": false,
+  "counterfactual_training_performed": true,
+  "dose": 0.2,
+  "checkpoints": [
+    0,
+    2,
+    3,
+    5,
+    8,
+    13,
+    21,
+    34,
+    54,
+    86,
+    138,
+    221,
+    353,
+    565,
+    904,
+    1447,
+    2317,
+    3708,
+    5934,
+    9498,
+    15201,
+    24329,
+    38938,
+    62320,
+    99743
+  ],
+  "long_probe_ids": [
+    5,
+    9,
+    13,
+    17,
+    21
+  ],
+  "lags": [
+    1,
+    4,
+    16,
+    32,
+    128
+  ],
+  "fields": [
+    "loss_before",
+    "loss_after",
+    "gain",
+    "harm",
+    "anti_work",
+    "energy",
+    "harmful_count",
+    "recipient_count",
+    "all_gain",
+    "all_harm",
+    "net_pair",
+    "quality_harm",
+    "residual_harm",
+    "linear_gain",
+    "signed_alone"
+  ],
+  "sender_selection": "two neurons uniformly without replacement per model/checkpoint; RNG 7141+1009*probe_id",
+  "intervention": "one actual rounded parameter update damped; all just-computed moments retained; later updates normal",
+  "control": "uniform parameter-step reduction calibrated to removed prediction RMS on original fixed reference",
+  "views": {
+    "reference_size": 256,
+    "heldout_size": 256,
+    "heldout_seed": 20261018
+  },
+  "original_checkpoint_audits": [
+    {
+      "completed": 10000,
+      "parameters_moments_rng_bitwise_equal": true
+    },
+    {
+      "completed": 50000,
+      "parameters_moments_rng_bitwise_equal": true
+    },
+    {
+      "completed": 100000,
+      "parameters_moments_rng_bitwise_equal": true
+    }
+  ],
+  "normal_branch_layout_audits": 25,
+  "branch_update_groups": 5120,
+  "baseline_update_groups": 100000,
+  "branch_seconds": 4.849401163868606,
+  "elapsed_seconds": 13.404569374979474,
+  "max_budget_error": 4.974137455279835e-16,
+  "all_seed_endpoint_error": 7.979727989493313e-17,
+  "input_sha256": {
+    "runs/retained/provenance/training/robustness/k8_teacher2037/adam_001/config.json": "b2629c3564a670a4084e22fae79765ca610563453134edfa6869e893170c2735",
+    "runs/retained/datasets/k8_teacher2037.pt": "b1fedfe97d6c6bbaff3cc5d04563799da729e3674216876bda48672756f7e649",
+    "runs/retained/checkpoints/robustness/k8_teacher2037/adam_001/initial.pt": "0fc911fc4fec7027a7868d5bb9de3cf2a9dbda0f506054523c0b7b47d8f5b53e",
+    "runs/retained/checkpoints/robustness/k8_teacher2037/adam_001/step_010000.pt": "6ae6f3a99943e05bbe8b7ac18f560502f0ed77e0a4a24d4932f8c8e227cc1f8b",
+    "runs/retained/checkpoints/robustness/k8_teacher2037/adam_001/step_050000.pt": "c3c6beb98c2952492250b4861de021f53445f518339800e610e0301713ae20a4",
+    "runs/retained/checkpoints/robustness/k8_teacher2037/adam_001/final.pt": "a9f8b21fd122818088d51713635f10d37536d9863526624121eb95f1c89a2fed",
+    "docs/tables/robustness_per_seed_results.csv": "ece9704508913f1c753a1c5582df5a0693c44ee9291ba536a0eb00a041fa6fdf"
+  },
+  "producer_sha256": "e3446e18851bc23dd53781caff1e176a04cd0c56ebdadf85de78df178ea8e240",
+  "engine_sha256": "9e76f22d4b9e074c06fc96ff06db70c78d9666e1cc8001ae78563c4f657ae5d9",
+  "torch_version": "2.14.1",
+  "threads": 1,
+  "pilot_limit": null
+}

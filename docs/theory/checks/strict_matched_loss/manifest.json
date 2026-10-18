@@ -1,0 +1,37 @@
+{
+  "purpose": "Strict frequency and harm at matched reference loss in original teacher-8 cohorts",
+  "conditions": [
+    "k8_teacher2027/adam_001",
+    "k8_teacher2027/adam_01",
+    "k8_teacher2027_init01/adam_001",
+    "k8_teacher2027_init1/adam_001",
+    "k8_teacher2027/momentum_01"
+  ],
+  "independent_seeds_per_condition": 5,
+  "shared_bins": [
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "shared_mse_range": [
+    0.07662373699114575,
+    0.2
+  ],
+  "matching": "pre-update fixed-reference MSE; all visits within each original log bin",
+  "aggregation": "ratios of sums per seed/bin; equal bin weights; then equal seed weights",
+  "bootstrap": "4000 paired-seed resamples, seed 741; pointwise, exploratory",
+  "new_training_conditions": false,
+  "new_independent_runs": false,
+  "original_archives_modified": false,
+  "script_sha256": "5e1c2e46cfa071b05fedd3d9d31d464df563ba89558bba9093bedf134dc0593f",
+  "engine_sha256": "9e76f22d4b9e074c06fc96ff06db70c78d9666e1cc8001ae78563c4f657ae5d9",
+  "replay_producers_sha256": {
+    "k8_teacher2027/adam_001": "b008321af386f149024178553314a96e19905ad3eb62743d3feb36ec404a9596",
+    "k8_teacher2027/adam_01": "b008321af386f149024178553314a96e19905ad3eb62743d3feb36ec404a9596",
+    "k8_teacher2027_init01/adam_001": "b008321af386f149024178553314a96e19905ad3eb62743d3feb36ec404a9596",
+    "k8_teacher2027_init1/adam_001": "b008321af386f149024178553314a96e19905ad3eb62743d3feb36ec404a9596",
+    "k8_teacher2027/momentum_01": "b008321af386f149024178553314a96e19905ad3eb62743d3feb36ec404a9596"
+  }
+}

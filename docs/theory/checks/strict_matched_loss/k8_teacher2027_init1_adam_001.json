@@ -1,0 +1,38 @@
+{
+  "condition": "k8_teacher2027_init1/adam_001",
+  "models": 15,
+  "seeds": 5,
+  "updates": 100000,
+  "checkpoints": [
+    {
+      "updates": 10000,
+      "retained_states_bitwise_equal": true
+    },
+    {
+      "updates": 50000,
+      "retained_states_bitwise_equal": true
+    },
+    {
+      "updates": 100000,
+      "retained_states_bitwise_equal": true
+    }
+  ],
+  "original_seed0_raw_max_error": null,
+  "original_bin_frequency_max_error": 9.974659986866641e-17,
+  "original_full_frequency_max_error": 9.80118763926896e-17,
+  "input_sha256": {
+    "runs/retained/provenance/training/robustness/k8_teacher2027_init1/adam_001/config.json": "9fea83f14e956f6f6b065be30e53fd93deb6758ec07ad16d8a37b7c5b8d902ee",
+    "runs/retained/datasets/k8_teacher2027.pt": "008f2803ad2c31b8e725193a2f6d7f3438f5edf705ec02ed64bfe97aef59e94c",
+    "runs/retained/checkpoints/robustness/k8_teacher2027_init1/adam_001/initial.pt": "471b611166b1faaea31ed6f31e75153d6be88a14252f9ab3490908504df653d8",
+    "runs/retained/checkpoints/robustness/k8_teacher2027_init1/adam_001/step_010000.pt": "171f477f78f2f77e5166e98cacc47cc1eaea372a4b87c42e442998bb66ab346c",
+    "runs/retained/checkpoints/robustness/k8_teacher2027_init1/adam_001/step_050000.pt": "81f653d23a5a0ac48980f491c34b08779de232c4cd3dbd8ac5d3194184a5c75f",
+    "runs/retained/checkpoints/robustness/k8_teacher2027_init1/adam_001/final.pt": "9c34065d1206f193ec3015138fe2feb0da0c15edde17cdee1ac50a4320bcbe6f"
+  },
+  "elapsed_seconds": 95.47242387500592,
+  "torch_version": "2.14.1",
+  "numpy_version": "2.5.4",
+  "threads": 4,
+  "replay_is_new_independent_evidence": false,
+  "replay_producer_sha256": "b008321af386f149024178553314a96e19905ad3eb62743d3feb36ec404a9596",
+  "replay_engine_sha256": "9e76f22d4b9e074c06fc96ff06db70c78d9666e1cc8001ae78563c4f657ae5d9"
+}

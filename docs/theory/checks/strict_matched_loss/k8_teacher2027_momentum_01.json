@@ -1,0 +1,39 @@
+{
+  "condition": "k8_teacher2027/momentum_01",
+  "models": 20,
+  "seeds": 5,
+  "updates": 100000,
+  "checkpoints": [
+    {
+      "updates": 10000,
+      "retained_states_bitwise_equal": true
+    },
+    {
+      "updates": 50000,
+      "retained_states_bitwise_equal": true
+    },
+    {
+      "updates": 100000,
+      "retained_states_bitwise_equal": true
+    }
+  ],
+  "original_seed0_raw_max_error": 0.0,
+  "original_bin_frequency_max_error": 9.974659986866641e-17,
+  "original_full_frequency_max_error": 9.454242944073599e-17,
+  "input_sha256": {
+    "runs/retained/provenance/training/robustness/k8_teacher2027/momentum_01/config.json": "3ab118cb01343adf3930d41bff1b056f94adc27b4e24df46b6630923af20b828",
+    "runs/retained/datasets/k8_teacher2027.pt": "008f2803ad2c31b8e725193a2f6d7f3438f5edf705ec02ed64bfe97aef59e94c",
+    "runs/retained/checkpoints/robustness/k8_teacher2027/momentum_01/initial.pt": "fe09d680ddca73a0bcb9af97727dcb9b4fcf6dbcb8911d316b176f0e4d71e3ee",
+    "runs/retained/raw_updates/robustness_k8_teacher2027_momentum_01.npz": "247b6debf3e265772310d10ff603950d0610470a33451496b5a2009ebf4bf07a",
+    "runs/retained/checkpoints/robustness/k8_teacher2027/momentum_01/step_010000.pt": "eb6474f7d0d8af56bd962e3e38bfac35b81a297ead288523ea08c38436538192",
+    "runs/retained/checkpoints/robustness/k8_teacher2027/momentum_01/step_050000.pt": "5d5f25fa4593abd36ee18b07863cc7d722d5d84e9e65caec8980c41bfe8dde1a",
+    "runs/retained/checkpoints/robustness/k8_teacher2027/momentum_01/final.pt": "d81b7e795526a6fe998c405e52df6668c85e7645ec5cecf7335dc6d6fab3d907"
+  },
+  "elapsed_seconds": 133.53223037498537,
+  "torch_version": "2.14.1",
+  "numpy_version": "2.5.4",
+  "threads": 4,
+  "replay_is_new_independent_evidence": false,
+  "replay_producer_sha256": "b008321af386f149024178553314a96e19905ad3eb62743d3feb36ec404a9596",
+  "replay_engine_sha256": "9e76f22d4b9e074c06fc96ff06db70c78d9666e1cc8001ae78563c4f657ae5d9"
+}

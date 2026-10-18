@@ -114,3 +114,64 @@ are retained in archive provenance. Code paths changed during organization;
 original execution hashes refer to those immutable copies, not the relocated
 live files. Float32 arithmetic and operation order can change individual basins
 even when the experimental protocol is the same.
+
+## Audit objective-scale magnitude and early predictive value
+
+```sh
+MPLCONFIGDIR=/tmp/neural-competition-matplotlib .venv/bin/python scripts/studies/analyze_effect_magnitude.py
+```
+
+This reads existing cohort/retained aggregate tables and the previously
+generated strict-replay caches. It performs no optimization or replay.
+The [report](reports/effect_magnitude.md) and [computation directory](theory/checks/effect_magnitude/README.md)
+document objective budgets, matched efficiency, direct probes and held-out
+seed prediction. Outputs include input hashes and every held-out prediction.
+
+## Plot cumulative G, H and net pair cost against training steps
+
+```sh
+MPLCONFIGDIR=/tmp/neural-competition-matplotlib .venv/bin/python scripts/studies/plot_cumulative_budget.py
+```
+
+This reads exact original every-update prefix sums from the retained aggregate
+tables, without training or replay. The [report](reports/cumulative_budget.md)
+and [data directory](theory/checks/cumulative_budget/README.md) document the
+raw-unit plots, 130-run endpoint checks and independent retained-update loss
+checks. Only plotting times are subsampled; every update contributes to each sum.
+
+## Recover strict harm at matched loss from the retained archive
+
+The [strict-interference follow-up](reports/strict_matched_loss.md) has a
+separate producer that reconstructs the original teacher-8 cohorts using
+their configurations, model batch layouts and minibatch generators:
+
+```sh
+MPLCONFIGDIR=/tmp/neural-competition-matplotlib .venv/bin/python scripts/studies/analyze_strict_matched_loss.py
+```
+
+It checks retained parameters/moments and RNG states bitwise, every retained
+seed-0 update field exactly, and archived five-seed bin frequencies/visits.
+Original archives are read-only. Outputs, definitions, hashes and cache
+semantics are documented in the [diagnostic directory](theory/checks/strict_matched_loss/README.md).
+Cached summaries and figures can be regenerated with `--summarize-only`
+without replaying optimization. Use `--refresh` to force a replay.
+
+## Run sampled temporal peer-update interventions
+
+```sh
+.venv/bin/python scripts/studies/run_temporal_branches.py --match-width-dose
+MPLCONFIGDIR=/tmp/neural-competition-matplotlib .venv/bin/python scripts/studies/analyze_temporal_branches.py
+```
+
+This replays the original 245 trajectories to recover sampled states, then runs
+short paired counterfactual branches with identical future minibatches. It
+changes one sender update, observes all other neurons and calibrates uniform
+controls. Prediction-space pulse size is matched across widths within each
+seed/checkpoint. Original archives are read-only. Each completed condition is
+cached under `runs/temporal_branches/`; `--refresh` regenerates it.
+
+For the fixed-20% sensitivity comparison, omit `--match-width-dose` in the
+producer and pass `--design fixed_fraction` to the analyzer. The
+[report](reports/temporal_branches.md) and
+[computation directory](theory/checks/temporal_branches/README.md) document
+scope, exact checks, sampling, outcomes, uncertainty and raw-data locations.

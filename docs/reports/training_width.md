@@ -17,6 +17,11 @@ raw training logs. Results use one fixed teacher and one fixed training/test dra
 "Good fit" means test MSE below 1e-6. An unsuccessful run is not automatically a
 proven local minimum.
 
+For literature-guided explanations of mild expansion and slower wide-model
+refinement, see [width, escape and scaling](../theory/width_escape_and_scaling.md).
+That note also specifies a function-preserving continuation to distinguish
+escape from from-start feature coverage.
+
 | Student width | Completed seeds | Mean test MSE | Median test MSE | Good fits |
 |---|---:|---:|---:|---:|
 | 8 | 20 | 2.379e-03 | 2.850e-03 | 6/20 |

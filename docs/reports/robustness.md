@@ -8,6 +8,12 @@ accounting for favorable interaction credits. A targeted initialization control
 also shows that much of the severe narrow-Adam failure depends on starting all
 outgoing coefficients at zero.
 
+The [literature-guided Adam note](../theory/adam_initialization_and_features.md)
+develops explanations and predictions from these results, including a small
+read-only check of feature coverage and optimal readouts in retained cases.
+The [pair-cost note](../theory/pair_cost_and_competition.md) derives why an
+increase in C_plus need not imply a worse useful correction.
+
 ## Protocol and scope
 
 The planned sweep has 175 runs. A post-hoc, targeted initialization follow-up
@@ -94,6 +100,12 @@ ordered event: both neurons help alone, but one becomes harmful after the
 other update. Frequencies condition on eligible helpful pairs; C_+ magnitudes
 include every unordered pair once. Sign tests use tolerance 1e-10 times the
 evaluation set's half-MSE. Continuous magnitudes retain all values.
+
+The later [matched-loss strict-event analysis](strict_matched_loss.md) recovers
+strict-harm magnitudes through verified replays of 90 original teacher-8 runs.
+It finds lower per-pair frequency at matched reference loss even for default
+Adam, despite the whole-budget reversal. This is a different comparison and
+metric from accumulated C_plus; total events per update need not decrease.
 
 Full train and test MSE are evaluated every 1,000 updates. The main fitting
 outcome averages the last ten evaluations (updates 91k–100k), first within
@@ -201,6 +213,11 @@ isolate polarity as the sole causal path. With exactly zero outgoing weights,
 the incoming-weight gradient is initially zero by the model's derivative.
 
 ## Interpretation
+
+The [objective-scale magnitude audit](effect_magnitude.md) quantifies how
+large the interaction and standalone terms are relative to observed progress,
+and tests early metrics against later objective gains. A favorable normalized
+pattern and a useful general predictor are separate claims.
 
 The robust result is that additional units improve fitting and reliability in
 this grid when the increase is large enough. The stronger claim that they do

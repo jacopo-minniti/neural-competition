@@ -1,0 +1,190 @@
+{
+  "condition": "robustness/k8_teacher2027/adam_001",
+  "original_models": [
+    {
+      "width": 8,
+      "seed": 0
+    },
+    {
+      "width": 8,
+      "seed": 1
+    },
+    {
+      "width": 8,
+      "seed": 2
+    },
+    {
+      "width": 8,
+      "seed": 3
+    },
+    {
+      "width": 8,
+      "seed": 4
+    },
+    {
+      "width": 10,
+      "seed": 0
+    },
+    {
+      "width": 10,
+      "seed": 1
+    },
+    {
+      "width": 10,
+      "seed": 2
+    },
+    {
+      "width": 10,
+      "seed": 3
+    },
+    {
+      "width": 10,
+      "seed": 4
+    },
+    {
+      "width": 16,
+      "seed": 0
+    },
+    {
+      "width": 16,
+      "seed": 1
+    },
+    {
+      "width": 16,
+      "seed": 2
+    },
+    {
+      "width": 16,
+      "seed": 3
+    },
+    {
+      "width": 16,
+      "seed": 4
+    },
+    {
+      "width": 32,
+      "seed": 0
+    },
+    {
+      "width": 32,
+      "seed": 1
+    },
+    {
+      "width": 32,
+      "seed": 2
+    },
+    {
+      "width": 32,
+      "seed": 3
+    },
+    {
+      "width": 32,
+      "seed": 4
+    }
+  ],
+  "independent_new_runs": false,
+  "counterfactual_training_performed": true,
+  "dose": 0.2,
+  "checkpoints": [
+    0,
+    2,
+    3,
+    5,
+    8,
+    13,
+    21,
+    34,
+    54,
+    86,
+    138,
+    221,
+    353,
+    565,
+    904,
+    1447,
+    2317,
+    3708,
+    5934,
+    9498,
+    15201,
+    24329,
+    38938,
+    62320,
+    99743
+  ],
+  "match_width_dose": true,
+  "long_probe_ids": [
+    5,
+    9,
+    13,
+    17,
+    21
+  ],
+  "lags": [
+    1,
+    4,
+    16,
+    32,
+    128
+  ],
+  "fields": [
+    "loss_before",
+    "loss_after",
+    "gain",
+    "harm",
+    "anti_work",
+    "energy",
+    "harmful_count",
+    "recipient_count",
+    "all_gain",
+    "all_harm",
+    "net_pair",
+    "quality_harm",
+    "residual_harm",
+    "linear_gain",
+    "signed_alone"
+  ],
+  "sender_selection": "two neurons uniformly without replacement per model/checkpoint; RNG 7141+1009*probe_id",
+  "intervention": "one actual rounded parameter update damped; all just-computed moments retained; later updates normal",
+  "control": "uniform parameter-step reduction calibrated to removed prediction RMS on original fixed reference",
+  "views": {
+    "reference_size": 256,
+    "heldout_size": 256,
+    "heldout_seed": 20261018
+  },
+  "original_checkpoint_audits": [
+    {
+      "completed": 10000,
+      "parameters_moments_rng_bitwise_equal": true
+    },
+    {
+      "completed": 50000,
+      "parameters_moments_rng_bitwise_equal": true
+    },
+    {
+      "completed": 100000,
+      "parameters_moments_rng_bitwise_equal": true
+    }
+  ],
+  "normal_branch_layout_audits": 25,
+  "branch_update_groups": 5120,
+  "baseline_update_groups": 100000,
+  "branch_seconds": 16.391578751732595,
+  "elapsed_seconds": 33.31375316705089,
+  "max_budget_error": 3.3986932310782784e-16,
+  "all_seed_endpoint_error": 9.020562075079397e-17,
+  "input_sha256": {
+    "runs/retained/provenance/training/robustness/k8_teacher2027/adam_001/config.json": "8cef076ad38624d6d50dabec29cf3d3792842ba136a6a4e27317a3bcfe78a2aa",
+    "runs/retained/datasets/k8_teacher2027.pt": "008f2803ad2c31b8e725193a2f6d7f3438f5edf705ec02ed64bfe97aef59e94c",
+    "runs/retained/checkpoints/robustness/k8_teacher2027/adam_001/initial.pt": "f3e1d3938537959ad1702b8b6d87fc803540321143bc04250fcd97161d696af2",
+    "runs/retained/checkpoints/robustness/k8_teacher2027/adam_001/step_010000.pt": "dc3ed99b13489b80d5f673b45d4cc27eb2d80e76bbcc9f7dd7268d5169189499",
+    "runs/retained/checkpoints/robustness/k8_teacher2027/adam_001/step_050000.pt": "226099c7ea9b8be4e1fe9696700858bb9da674bc9ce0b3c1b885123dc07aa762",
+    "runs/retained/checkpoints/robustness/k8_teacher2027/adam_001/final.pt": "7f0596b1d82d7fb0d49978c77b64bc045ebc65b7f7876e0081c4c81f485c7a10",
+    "docs/tables/robustness_per_seed_results.csv": "ece9704508913f1c753a1c5582df5a0693c44ee9291ba536a0eb00a041fa6fdf"
+  },
+  "producer_sha256": "b984c4f7f795f1a19d4bb984f4f359f75cb87fde7089d4dbae75f46e35d6f594",
+  "engine_sha256": "9e76f22d4b9e074c06fc96ff06db70c78d9666e1cc8001ae78563c4f657ae5d9",
+  "torch_version": "2.14.1",
+  "threads": 1,
+  "pilot_limit": null
+}

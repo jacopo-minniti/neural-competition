@@ -86,3 +86,49 @@ These PNG figures are versioned with the reports and no longer depend on deleted
 - [adam cross batch trajectory](adam_cross_batch/adam_cross_batch_trajectory.png)
 
 - [Broad pair cost](pairs/broad_pair_cost.png) — broad unfavorable cost and frequency, distinct from strict events.
+
+## Objective-scale effect magnitude
+
+See the [magnitude and forecasting report](../reports/effect_magnitude.md).
+The prediction-error percentages are not percentages of loss explained.
+Vector PDFs are saved beside the PNGs.
+
+- [SGD/momentum objective efficiency](effect_magnitude/trajectory_matched_efficiency.png)
+- [Adam and control objective efficiency](effect_magnitude/robustness_matched_efficiency.png)
+- [Early metrics: incremental forecasting value](effect_magnitude/predictive_increment.png)
+
+## Running objective budgets
+
+Exact every-update prefix sums in raw half-MSE units, plotted against training
+updates without loss bins or division by G. See the
+[report](../reports/cumulative_budget.md); vector PDFs accompany each PNG.
+
+- [Adam, both learning rates](cumulative_budget/adam_cumulative_budget.png)
+- [SGD and momentum, 200k updates](cumulative_budget/sgd_momentum_cumulative_budget.png)
+- [Momentum, 100k updates including width 32](cumulative_budget/momentum_100k_cumulative_budget.png)
+- [Adam outgoing-initialization controls](cumulative_budget/adam_initialization_cumulative_budget.png)
+
+## Strict interference at matched loss
+
+Verified replays of the original five-seed teacher-8 cohorts; see the
+[report](../reports/strict_matched_loss.md) for matching, severity denominators,
+raw event counts and uncertainty. Vector PDFs are saved beside these PNGs.
+
+- [Default Adam, reference evaluation](strict_matched_loss/adam_default_matched_loss_reference.png)
+- [Default Adam, source evaluation](strict_matched_loss/adam_default_matched_loss_source.png)
+- [Adam including initialization controls, reference evaluation](strict_matched_loss/adam_matched_loss_reference.png)
+- [Adam including initialization controls, source evaluation](strict_matched_loss/adam_matched_loss_source.png)
+
+## Temporal peer-update interventions
+
+The [report](../reports/temporal_branches.md) defines the causal contrasts and
+normalizations. Positive peer benefit means the ordinary sender update reduced
+later recipient harm relative to damping that update. Widths receive matched
+prediction-space pulses; intervals resample original seeds. PDFs accompany PNGs.
+
+- [Held-out effects, all sampled checkpoints](temporal_branches/peer_harm_heldout_all_sampled.png)
+- [Held-out effects relative to initial pulse impact](temporal_branches/peer_harm_heldout_all_sampled_pulse.png)
+- [Held-out effects, first sampled checkpoint in the shared loss band](temporal_branches/peer_harm_heldout_first_shared_loss.png)
+- [Training-reference effects](temporal_branches/peer_harm_reference_all_sampled.png)
+- [Lag dependence on the same five checkpoints](temporal_branches/peer_harm_lags_heldout.png)
+- [Fixed-20% pulse sensitivity](temporal_branches/fixed_fraction/peer_harm_heldout_all_sampled_pulse.png)
