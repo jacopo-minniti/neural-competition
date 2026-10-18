@@ -175,3 +175,36 @@ producer and pass `--design fixed_fraction` to the analyzer. The
 [report](reports/temporal_branches.md) and
 [computation directory](theory/checks/temporal_branches/README.md) document
 scope, exact checks, sampling, outcomes, uncertainty and raw-data locations.
+
+## MNIST width study
+
+The [MNIST report](reports/mnist.md) and [complete tables](tables/mnist/README.md)
+describe the new real-data cohorts. These commands download the four public
+MNIST archives and run a fresh full study. They train 200 thirty-epoch runs plus
+96 five-epoch tuning starts; diagnostic replays add computation without adding
+independent starts. Use a new directory when changing the source or protocol.
+
+```sh
+.venv/bin/python scripts/studies/run_mnist.py --phase tune --download --output runs/mnist_new
+.venv/bin/python scripts/studies/run_mnist.py --phase main --output runs/mnist_new
+.venv/bin/python scripts/studies/check_mnist.py --phase rates --input runs/mnist_new
+.venv/bin/python scripts/studies/check_mnist.py --phase matched --input runs/mnist_new
+.venv/bin/python scripts/studies/check_mnist.py --phase matched --collection lower_lr --input runs/mnist_new
+.venv/bin/python scripts/studies/check_mnist.py --phase matched --collection width_tuned --input runs/mnist_new
+.venv/bin/python scripts/studies/audit_mnist.py --all --input runs/mnist_new
+.venv/bin/python scripts/studies/probe_mnist_objective.py --input runs/mnist_new
+MPLCONFIGDIR=/tmp/neural-competition-matplotlib .venv/bin/python scripts/studies/analyze_mnist.py --input runs/mnist_new
+```
+
+The original completed study is in `runs/mnist`. Its original producers skip
+completed cases only when configurations match, and check their frozen source
+copies. Data preparation verifies archive MD5 hashes and preserves split and
+reference indices. No torchvision dependency is needed: the loader reads the
+official IDX format directly. Use the repository environment described above.
+The study uses four CPU workers with one thread each; no GPU is required.
+
+The every-update audit checks all original main endpoints and optimizer moments
+bitwise before replacing sampled primary G/H/C_all totals. Individual pair costs
+still sample training time, and CE also samples pairs. Analysis saves complete
+per-seed tables and all figure panels; it does not substitute a retained example
+subset for the full cohort.

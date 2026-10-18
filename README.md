@@ -14,6 +14,7 @@ evidence, counterexamples and remaining causal questions.
 - [Detailed reports](docs/reports/)
 - [Literature-guided explanations and predictions](docs/theory/README.md)
 - [Temporal causal peer-update experiment](docs/reports/temporal_branches.md)
+- [MNIST width experiments](docs/reports/mnist.md)
 - [Result tables](docs/tables/README.md) and [figures](docs/figures/README.md)
 - [Data retention](docs/data.md) and [reproduction](docs/reproduction.md)
 

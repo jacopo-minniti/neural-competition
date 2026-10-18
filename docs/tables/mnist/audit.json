@@ -1,0 +1,19 @@
+{
+  "training_runs": 200,
+  "tuning_runs": 96,
+  "matched_runs": 200,
+  "matched_states": 396,
+  "matched_targets": 400,
+  "training_updates": 2574000,
+  "max_mse_pair_identity_error": 1.2213537473049207e-16,
+  "max_budget_error": 2.220446049250313e-16,
+  "max_logit_additivity_error": 3.6637359812630166e-14,
+  "max_replay_error": 0.0,
+  "dense_replay_runs": 120,
+  "full_objective_states": 119,
+  "full_objective_sources": 8,
+  "matched_sources": 16,
+  "matched_batch_probes": 64,
+  "seeds": 5,
+  "max_matching_relative_error": 0.2445799027211738
+}

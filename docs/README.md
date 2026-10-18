@@ -12,6 +12,12 @@ refer to completed experiments, rather than proposed experiments. The detailed
 reports preserve the optimizer, loss stage, seed counts, normalization and
 uncertainty needed to interpret each comparison.
 
+The [MNIST experiments](reports/mnist.md) extend the main measurements to a
+one-hidden-layer image classifier under squared loss and cross-entropy. Across
+120 main runs and 80 rate controls, width materially improves fitting, but
+batch conflict, strict pair frequency and accumulated C_plus give different
+answers. Primary G/H/total-interaction budgets measure every actual update.
+
 [Literature-guided explanations and predictions](theory/README.md) connects
 these specific findings to selected landscape and dynamics papers. It separates
 paper results, deductions, small checks of retained states and proposed tests,

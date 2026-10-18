@@ -91,3 +91,12 @@ states without training. It measures gate coverage and the least-squares
 readout attainable with hidden features held fixed. It includes its producer,
 CSV and input hashes. The retained seeds are purposively selected examples,
 not a new cohort estimate.
+
+The later [MNIST experiment](../reports/mnist.md) tests the principal measurements
+on real images with both squared loss and cross-entropy. It reproduces Adam's
+C_plus reversal with random outgoing initialization, distinguishes lower
+conditional strict frequency from total strict harm, and finds wider SGD can
+have more harmful batch directions. Its full-objective probes derive useful
+logit work minus convex-loss curvature as a complementary account of actual
+progress. These findings constrain the explanations above; they do not establish
+that one competition measure mediates the final width advantage.

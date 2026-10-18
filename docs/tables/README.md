@@ -1,5 +1,9 @@
 # Versioned result tables
 
+The [MNIST tables](mnist/README.md) contain the complete real-data width study,
+including exact main G/H budgets, sampled pair costs, matched-loss diagnostics,
+learning-rate controls and full-training-objective probes.
+
 These preserve the reported cohorts before raw-data pruning. Rows have different units (seeds, comparisons or summary metrics); use each report and the saved count columns. Historical optimizer labels differ across collections: see [the protocol](../protocol.md).
 
 Dense per-seed/per-batch tables and curves are separately preserved under `runs/retained/aggregates/`. The selected raw checkpoints are not the cohort used for these summaries.

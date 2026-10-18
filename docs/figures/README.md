@@ -1,5 +1,14 @@
 # Figures from the completed studies
 
+## MNIST
+
+The [MNIST report](../reports/mnist.md) includes [training curves](mnist/training.png),
+[matched metrics](mnist/matched_metrics.png), [accumulated C_plus](mnist/cumulative_pair_plus.png),
+exact cumulative budgets for [squared loss](mnist/cumulative_mse.png) and
+[cross-entropy](mnist/cumulative_ce.png), [step scaling](mnist/step_size.png),
+and [full-training-objective probes](mnist/full_objective.png).
+Every panel also has a PDF with the same filename stem.
+
 These PNG figures are versioned with the reports and no longer depend on deleted run folders. Intervals are exploratory and pointwise; see the associated reports.
 
 ## Distributions

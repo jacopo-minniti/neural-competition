@@ -220,6 +220,23 @@ ratios equally over reference MSE .2→.02, requiring complete paired coverage.
 Raw totals, equal U and matched loss answer different questions; no one is
 uniformly the fairer choice. Failed narrow Adam runs create missing coverage.
 
+## MNIST extension
+
+The [MNIST study](reports/mnist.md) keeps one hidden layer but uses ten output
+scores. Each neuron owns (w_r,b_r,a_r), with a_r a ten-vector. Squared loss is
+half the sum of ten squared score errors, averaged over examples. Replace
+scalar e*d_r and d_r*d_s by vector inner products; all additive-model quadratic
+identities, including the exact pair budget, survive finite updates unchanged.
+
+For cross-entropy, define A_r by the exact isolated loss contrast and J_rs by
+the exact four-loss contrast. Strict events have the same interpretation, but
+pair sums generally omit higher-order effects. Define C_all=Delta L−sum_r A_r
+for an exact whole-update budget H−G+C_all. It includes every interaction order
+and is not pair-only C_net. Main MNIST G/H/C_all sums measure every actual
+update on a fixed reference; pair statistics sample time and, for CE, pairs.
+The report retains inverse-inclusion weights, excluded matched targets,
+sampling checks and direct evaluations on the entire training set.
+
 ## Temporal causal peer response
 
 The [temporal intervention report](reports/temporal_branches.md) introduces a

@@ -1,5 +1,11 @@
 # Retained data and cleanup
 
+This page describes the legacy teacher–student archive. The later
+[MNIST study](reports/mnist.md) keeps its new raw data and optimizer states under
+ignored `data/mnist` and `runs/mnist`, and its complete compact results under
+[versioned MNIST tables](tables/mnist/README.md). The historical sizes below do
+not include that new study.
+
 The final archive preserves the reported results of every study while reducing
 raw data to representative cases. Original run data occupied **8.27 GB**
 across 10,412 files. The curated payload is approximately

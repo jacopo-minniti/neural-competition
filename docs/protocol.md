@@ -60,6 +60,18 @@ should not be treated as independent replications of one setting. Diagnostic
 reuses of existing snapshots are not new training starts. The robustness sweep
 has 205 completed runs and 20.5 million actual updates.
 
+## MNIST real-data extension
+
+The [MNIST report](reports/mnist.md) has a separate protocol: 55k/5k/10k
+train/validation/test, flattened 784-dimensional images, ten output scores,
+widths 16/32/64/128 and random nonzero outgoing initialization. It contains
+120 main and 80 rate-control runs, five paired seeds, 30 epochs of 429 updates,
+plus 96 independent five-epoch tuning starts. Squared and cross-entropy losses
+use independently selected common rates. These are not extra teacher–student
+cohorts and do not establish a known minimally sufficient width. The full
+per-seed data, exact main budgets and matched-loss coverage are versioned in
+[the study tables](tables/mnist/README.md).
+
 ## Optimizers and labels
 
 Classical momentum has beta .9, no dampening/Nesterov or weight decay. Adam uses
