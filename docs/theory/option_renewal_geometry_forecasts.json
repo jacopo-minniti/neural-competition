@@ -1,0 +1,35 @@
+{
+  "seed": 241030,
+  "draws_per_setting": 128,
+  "forecasts": [
+    {
+      "separation": 1.0,
+      "added": 1,
+      "miss_probability": 0.3040867239846964,
+      "predicted_mean": 0.027367805158622673,
+      "realized_linear_mean": 0.02390625
+    },
+    {
+      "separation": 1.0,
+      "added": 2,
+      "miss_probability": 0.3040867239846964,
+      "predicted_mean": 0.008322186213337043,
+      "realized_linear_mean": 0.007734375
+    },
+    {
+      "separation": 4.0,
+      "added": 1,
+      "miss_probability": 0.10817344796939271,
+      "predicted_mean": 0.009735610317245343,
+      "realized_linear_mean": 0.0084375
+    },
+    {
+      "separation": 4.0,
+      "added": 2,
+      "miss_probability": 0.10817344796939271,
+      "predicted_mean": 0.0010531345361028221,
+      "realized_linear_mean": 0.00140625
+    }
+  ],
+  "status": "Saved before new geometry continuations."
+}

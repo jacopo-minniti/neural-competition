@@ -1,0 +1,10 @@
+bundle,max_error
+uniform_adam,0.0
+gaussian_sgd,0.0
+uniform_momentum,0.0
+gaussian_adam,0.0
+mixture_adam,0.0
+gaussian_momentum,0.0
+uniform_sgd,0.0
+mixture_momentum,0.0
+mixture_sgd,0.0

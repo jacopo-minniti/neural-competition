@@ -1,0 +1,37 @@
+{
+  "regional_affine_formula": 0.002282642487046632,
+  "regional_affine_projection": 0.002282642487046626,
+  "infinitesimal_kernel_error": 5.995204332975845e-14,
+  "continuation_step_audit": {
+    "seeds": 8,
+    "width": 16,
+    "default_dt": 0.05,
+    "refined_dt": 0.025,
+    "default_mean": 0.0007545906377525021,
+    "refined_mean": 0.0007545799259757932,
+    "mean_absolute_difference": 1.0711776708836245e-08
+  },
+  "dynamics": [
+    {
+      "case": "context_2_m4",
+      "newly_positive": 16,
+      "recovered_after_early": 0,
+      "early_mean": 0.026562499999999992,
+      "final_mean": 0.028125
+    },
+    {
+      "case": "attribute_2_m8",
+      "newly_positive": 4,
+      "recovered_after_early": 0,
+      "early_mean": 0.0028125000000000064,
+      "final_mean": 0.0028125
+    },
+    {
+      "case": "attribute_5_m8",
+      "newly_positive": 15,
+      "recovered_after_early": 17,
+      "early_mean": 0.003708979041403434,
+      "final_mean": 1.6865797608633116e-06
+    }
+  ]
+}

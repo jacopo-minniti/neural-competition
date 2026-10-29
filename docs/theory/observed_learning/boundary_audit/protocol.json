@@ -1,0 +1,38 @@
+{
+  "seed": 283010,
+  "count": 64,
+  "widths": [
+    4,
+    8
+  ],
+  "horizon": 20,
+  "rates": [
+    0.05,
+    0.025,
+    0.0125,
+    0.00625
+  ],
+  "cases": [
+    [
+      "discrete",
+      1,
+      0.0
+    ],
+    [
+      "continuous",
+      3,
+      0.15
+    ],
+    [
+      "dense",
+      9,
+      0.15
+    ]
+  ],
+  "purpose": "Exploratory numerical gate audit after half-step nonlinearity persisted",
+  "sources": {
+    "scripts/studies/audit_ledger_boundaries.py": "14d54581edc794d3a0cadfcc96d381b538741c0dd2efde4f88c47056991998a0",
+    "scripts/studies/trace_observed_learning.py": "687baca4f524516677d4cf517fca9c11d5db7b00b3f3f16e96aa6a6867a6d7d3",
+    "scripts/studies/explore_stable_distinctions.py": "2c2bd9ea00c6507f15bf03a54246edd383a6dff51f09bf0bfb3a24e79ebfe9af"
+  }
+}

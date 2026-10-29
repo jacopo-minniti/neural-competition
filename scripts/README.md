@@ -8,7 +8,7 @@ in [reproduction](../docs/reproduction.md).
 | `summarize_results.py` | Print headline current results from versioned tables; no raw data needed |
 | `check_repository.py` | Check internal documentation links and retained source hashes; `--local-data` also checks the local inventory |
 | `run_experiments.py` | Generic configurable teacher/student training; `--smoke` is a tiny integration check |
-| [studies/](studies/README.md) | Maintained residual-growth/polarity and MNIST pipelines |
+| [studies/](studies/README.md) | Maintained feature-profile, residual-growth/polarity and MNIST pipelines |
 
 Study scripts configure experiments and publish evidence. Numerical kernels and
 task construction belong in [the package](../src/neural_competition/README.md).

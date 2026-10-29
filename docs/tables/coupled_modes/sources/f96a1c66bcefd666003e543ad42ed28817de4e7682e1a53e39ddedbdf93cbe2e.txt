@@ -1,0 +1,36 @@
+# Coupled-mode loss forecasts: prospective local test
+
+23 October 2026. Recorded before executing this probe. This tests a quantitative
+candidate definition, not a declaration that it explains the previous width gap.
+
+Use the existing MNIST squared-loss SGD checkpoints at update 429, widths 16 and
+128, seeds 0–4. Pick a fixed 256-example training subset and independent 1024-example
+validation subset using seed 231023. No tuning on the validation split.
+
+For current hidden features Phi, D=diag(Phi^T Phi/n), Z=Phi D^-1/2, and C=Z^T Z/n.
+Discard exactly dead feature columns. Normalize the readout by B=D^1/2 A. On the
+current feature span, fit B* and decompose initial residual energy into C's modes.
+With eta=.5/max(1,lambda_max(C)), predict the loss after k steps of readout
+gradient descent in B using (1-eta lambda)^(2k). A joint-curvature comparator
+uses C^dagger and has contraction (1-eta)^(2k) on the identifiable span.
+
+The prediction for coupling damage is L_diagonal(k)-L_joint-curvature(k), on
+the SAME actual objective and initial state. Report positive slow-mode cost and
+negative fast-mode benefit separately. Eigenvalues alone do not predict damage:
+residual energy in each mode is required. The comparator has extra computation
+and changes the optimizer metric. This is a precisely specified optimization
+contrast, not unique causal attribution or a compute-matched training comparison.
+
+Forecast at normalized times .1,.5,2 (rounded upward to k integer steps).
+Verify fixed-feature forecasts with iterative matrix-gradient updates. Then run
+two live-feature branches from the same state, using the same frozen readout
+preconditioners and ordinary hidden-layer gradient descent with step eta. Compare
+their observed loss contrast to the frozen forecast; include a zero-damage
+prediction baseline. All parameters are float64. These continuations reset
+optimizer state and use full gradients on the fixed subset; they are not a replay
+of the original SGD/minibatch optimizer. Save predictions before continuations.
+
+This is a small real-data mechanism test. It does not measure whole-dataset MNIST
+training efficiency, establish transfer to Adam/cross-entropy, or give a full-run
+generalization forecast. Validation contrast tests whether a training-subset
+benefit persists outside that subset. A failed forecast must remain visible.

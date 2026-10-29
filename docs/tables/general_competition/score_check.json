@@ -1,0 +1,12 @@
+{
+  "samples": 300000,
+  "moment_error": 0.014627027206710544,
+  "target_eigenvalues": [
+    -0.5361569688004055,
+    0.15356696690313887
+  ],
+  "estimated_C_max": 1.989219475065929,
+  "plugin_bound": 0.01185530989387088,
+  "empirical_mse": 1.2321334765253054,
+  "note": "Monte Carlo check, not a finite-sample certified bound."
+}

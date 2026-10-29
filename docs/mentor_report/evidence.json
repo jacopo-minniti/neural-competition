@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-18",
+  "training_rerun": false,
+  "pages": 4,
+  "files": {
+    "docs/tables/history/teacher/pier_tail_summary.csv": "880a5759a3b14e4a31cd82022dc7f9fa4dc329707d60b32d954bb9f6c1ca400b",
+    "docs/tables/history/teacher/pier_tail_effects.csv": "121b192b3b3d3a70fb721c7182a3511920cfa8addb6de585b535b9aa798cf1fe",
+    "docs/tables/history/teacher/pier_agreement_summary.csv": "dd32db1da5b6e2c468f0886a91af838d30ee18ba71c0119f1719dd96f01bd81c",
+    "docs/tables/history/teacher/pier_continuation_summary.csv": "13800163c22b2bb3c51dbda1d5d65f506c6d54aa88ede366b4072389fc0aa85d",
+    "docs/tables/history/teacher/pier_outcomes_summary.csv": "290bf5596f5094029a11aed024adfb8ee00593947da5c07caa09e542e2188275",
+    "docs/tables/history/teacher/momentum_gradient_summary.csv": "20225cee4f56143ded99f32daa874c98a9b96bdf05b6bd999872cd212f136ce7",
+    "docs/tables/history/teacher/momentum_actual_step_summary.csv": "319b3587161798cf4da653ddf96c5b070df621489936cc0bd5d16e7333e55648",
+    "docs/tables/history/teacher/pair_interference_summary.csv": "bf71614da1a8c6c8959c39bdfaa921f870e5e2e7f6ad3de0ab891011f366b73d",
+    "docs/tables/history/teacher/pair_interference_effects.csv": "5089f01a94e42442a0174886ffd2422c223aa05fc08ec67b5d466f0e72f26619",
+    "docs/reports/research_history.md": "5d1c9f5a9c8fc068f7df582e33dcc0ab082f706436db89af498b7f7d4d4c4526",
+    "docs/reports/residual_growth.md": "1e6cceba64d208ec3ea31452350edb2d78746526feb9ed867c6211cecad7e35f",
+    "docs/theory/residual_growth.md": "5a37851224a9e27fcb0b9d08fdad89109142945676e0bdaaa374e90ae5d36a7d",
+    "docs/reports/feature_profile.md": "6229124468ff87266469fb89856c9beaa86139ea0fa6fcc52858acd1a2b4289a",
+    "docs/tables/residual_growth/summary.csv": "3df36b548a2dfa85f5982acc32d393114fe5489a2d84ded2a6f70a1faf9bd9f4",
+    "docs/tables/residual_growth/roles.csv": "a94bd563a5f1402c70bf9ba74b82713cf574f51f968d8d5725d041e3df755906",
+    "docs/tables/feature_profile/summary.csv": "ad9c47732c06e9df7bbcb32f8d82096e002416b3e108eb4eaf1923847950a25b",
+    "docs/tables/feature_profile/paired_effects.csv": "8c8b40e9f6fab07cbfb17be58424b9369562027b7ed6604a50b54aea857b7e7e",
+    "docs/tables/feature_profile/causal_controls.csv": "1d321d53aba8abb9ea1198288e53bc45d79a9ca798ed731cb1d7be05c0a95998",
+    "docs/tables/feature_profile/forecast_summary.csv": "fef7e3e68ac695c28280a8778dc9eb0039bd83dbe8dcdbbd6ed3ac2ff7a322c9",
+    "docs/mentor_report/main.tex": "c032bab1490ecb2e9c9db92fd180ee8a12235030e09cab2976861c1fdea16d8b",
+    "docs/mentor_report/build_figures.py": "409e670e3c2212f8dbe953e6901b53c7ddca69dd00b4bdfc6affe6468f4fbd15",
+    "output/pdf/neural_competition_update.pdf": "d09fa008f7655650422b0069938ffa8079dd32982e20b120a3a07330f6c8161f",
+    "docs/tables/feature_profile/endpoints.csv": "70927391307a9eb4315934f7b8c68ab46cb7ea6227828dd206dd0cf458588451",
+    "docs/mentor_report/images/distributions.png": "3e369929b3e3f90b4dee2cae6e4c6f9c2a5e41df2e2bffed3309b75582a416c4",
+    "docs/mentor_report/images/readout_timing.pdf": "0a63b07b2fbb30bdd4469a6d09353e38eefa3cb81c67c38b66f82127100e4c27",
+    "docs/mentor_report/images/signed_roles.pdf": "26669c4ffec0d42dd472318f5fdb47363e2863ba5b04996cde27ecd0ce7011e7",
+    "docs/mentor_report/images/cumulative_cost.pdf": "9532b1420b7496cb814abef66c441df83ea0ef37c353aacabf0607e8fd5dd8d3",
+    "docs/tables/history/effect_magnitude/cumulative_per_seed.csv": "358754e5d3b7b8e3012527599e8fe062acc61cb56f54ef5e0ee4c3511a9f5cea",
+    "docs/theory/feature_profile_protocol.md": "e4b49a260ed10479c402731b51c527a1709619e4cdf2b50e4cd0578015153b42"
+  },
+  "git_sources": {
+    "b03c53f:docs/reports/batch_distributions.md": "03b18a66b3f4e7cab56fc80152b03f2dc4e45cd031a55c5460561b8aabb453a5",
+    "b03c53f:docs/reports/momentum.md": "0cd8df3df601d59194ce350e55bf575c9af6eb446a20b785046c33515f28f3a8",
+    "b03c53f:docs/reports/pair_interactions.md": "715695263578b51132c9f34a8cd8c5c15526a1901be91e4cd0068ea376981a36",
+    "b03c53f:docs/figures/distributions/gradient_distributions_0.2.png": "3e369929b3e3f90b4dee2cae6e4c6f9c2a5e41df2e2bffed3309b75582a416c4"
+  },
+  "revision": "Four subsections, four figures and one table; contextual counterexamples; cumulative cost versus fitting; explicit network, loss and gradient-flow/projection derivations; four-sided plot frames."
+}

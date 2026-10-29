@@ -1,0 +1,28 @@
+{
+  "seeds": [
+    281805,
+    281806
+  ],
+  "widths": [
+    32,
+    128
+  ],
+  "start": 800,
+  "continuation": 7200,
+  "arms": [
+    "ordinary",
+    "frozen_tangent"
+  ],
+  "rate": 0.05,
+  "batch": 128,
+  "checkpoints": [
+    0,
+    20,
+    100,
+    400,
+    1200,
+    3200,
+    7200
+  ],
+  "note": "Saved before branch results. Original task, labels, optimizer rate and matched minibatches; tangent model freezes all derivative features."
+}

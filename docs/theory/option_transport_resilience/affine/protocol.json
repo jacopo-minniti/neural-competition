@@ -1,0 +1,47 @@
+{
+  "created": "2026-10-28T16:13:54.181781+00:00",
+  "seeds": [
+    282901,
+    282902,
+    282903,
+    282904,
+    282905,
+    282906
+  ],
+  "widths": [
+    9,
+    36
+  ],
+  "copies": 4,
+  "affine": true,
+  "active_initialization": true,
+  "train_n": 256,
+  "validation_n": 2048,
+  "panel_n": 64,
+  "rate": 0.06,
+  "start": 200,
+  "exposure": 400,
+  "recovery": 3000,
+  "histories": [
+    "full",
+    "peer"
+  ],
+  "peer": "seed modulo 3, equal input intervals",
+  "arms": [
+    "ordinary",
+    "reserve",
+    "double_rate (width 9 only)"
+  ],
+  "objective": "Original labels throughout; peer history temporarily changes sampling only",
+  "predictions": [
+    "Function and complete initial optimizer kernel match exactly for reserve vs ordinary.",
+    "Smooth initial kernel velocity is reduced fourfold, with either sign preserved.",
+    "Gate-mediated weakening is not generally reduced fourfold.",
+    "Slack conjecture: reserve reduces peer-induced residual-option weakening and later excess loss, especially at width 9.",
+    "Competing prediction: reserve also slows beneficial feature creation and may impede full-task improvement.",
+    "Affine control should have small absolute reserve effects."
+  ],
+  "inference": "No endpoint-fitted coefficients. Seed/task pair is the sampling unit; all horizons correlated.",
+  "source_sha256": "834891e76ff321a49138bb59dbca70c8af6a977e284e1abe1da37c3ab516e712",
+  "dependency_sha256": "44def62107f5f19ed9b8ca90a7c4ce77f28e568d22f2ed3f5123392260de6f37"
+}

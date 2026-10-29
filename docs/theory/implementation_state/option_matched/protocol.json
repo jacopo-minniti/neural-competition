@@ -1,0 +1,40 @@
+{
+  "count": 48,
+  "seed": 296201,
+  "end": 2000,
+  "configs": [
+    {
+      "n": 1,
+      "ratio": 1.0,
+      "overlap": 1.0
+    },
+    {
+      "n": 1,
+      "ratio": 1.0,
+      "overlap": 0.0
+    },
+    {
+      "n": 4,
+      "ratio": 0.1,
+      "overlap": 1.0
+    },
+    {
+      "n": 4,
+      "ratio": 0.1,
+      "overlap": 0.0
+    }
+  ],
+  "dt": 0.05,
+  "horizons": [
+    0.05,
+    0.5,
+    2.0,
+    10.0
+  ],
+  "construction": "Zero-function ReLU identity blocks with readouts +/-a. Same predictions, full K and B at time zero, same width and metric; signed gate-resolved q changes. Artificial causal necessity test, not natural-width initialization.",
+  "sources": {
+    "probe_option_matched_implementations.py": "1fb1bbe19beeef367f77f9b5837dedb57dc8e66fa4d03ddc2d2c11a78cc494ea",
+    "implementation_moments.py": "b701af849ebba0bd6d59a087b3728af9a85e47544d601c8065521fcb258b5d15",
+    "toy_option_resources.py": "b0368544480a11ed884b7b59563fbb370d92543471e46a53effffda75099ce72"
+  }
+}

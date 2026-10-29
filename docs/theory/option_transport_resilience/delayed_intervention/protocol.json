@@ -1,0 +1,32 @@
+{
+  "seed": 282942,
+  "seeds": 64,
+  "widths": [
+    4,
+    8
+  ],
+  "scale": 0.002,
+  "dt": 0.05,
+  "end": 2000,
+  "arms": [
+    "ordinary",
+    "clone_at_2",
+    "reserve_at_2",
+    "reserve_at_20",
+    "double_rate_at_2"
+  ],
+  "cases": [
+    "delayed",
+    "continuous",
+    "no_refinement"
+  ],
+  "predictions": [
+    "Uniform clones reproduce ordinary learning.",
+    "Early reserve could preserve an implementation until delayed demand develops; late reserve may fail once all useful gates close.",
+    "Matching function and kernel excludes added initial coverage and initial loss derivative as explanations of reserve effects.",
+    "The intervention changes the fixed metric and subsequent feature-learning speed; neither later speed nor standard-width mediation is thereby controlled.",
+    "No-refinement task should have little persistent absolute benefit."
+  ],
+  "chronology": "Designed after delayed-demand and response-matched sensor results; all new branch outcomes follow this protocol.",
+  "source_sha256": "2e6c1e8b623f9f18086532bfd5432fd8f17a436a6dc78807251ea5d7cb137cb8"
+}

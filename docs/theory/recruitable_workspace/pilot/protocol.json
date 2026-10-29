@@ -1,0 +1,32 @@
+{
+  "created": "2026-10-28T15:26:04.239790+00:00",
+  "seeds": [
+    282801,
+    282802,
+    282803,
+    282804
+  ],
+  "affine": false,
+  "train_n": 256,
+  "validation_n": 2048,
+  "widths": [
+    9,
+    36
+  ],
+  "rate": 0.06,
+  "ordinary_steps": 3000,
+  "checkpoint": 200,
+  "pressure_steps": 400,
+  "recovery_steps": 1200,
+  "pressure_region": "seed modulo 3; all other regions withheld",
+  "source_sha256": "5b6cf45cddae3f95f1737c0f697b0ed05c1dd7e895b56b4cf8e579cea0c367d0",
+  "forecasts": [
+    "Replacement hypothesis: peer-only exposure increases fixed-common-demand recovery cost more at width 9 than 36.",
+    "Recruitable-space hypothesis: fresh zero-head additions improve recovery more than exact clones, including after initial gain matching.",
+    "Initial-coverage alternative: width advantage already present at initialization; pressure may add no deficit.",
+    "Evidence suppression: full-distribution continuation outperforms peer-only exposure, but equalized residual assays may erase the difference.",
+    "Affine negative control: local-refinement obstruction and benefit of new routes should be small.",
+    "Exact clones must match narrow dynamics to floating point."
+  ],
+  "interpretation": "All predictions qualitative and recorded before outcomes; no fit to endpoints. Paired seed/task is independent unit."
+}

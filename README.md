@@ -8,11 +8,13 @@ Start with [OBJECTIVE.md](OBJECTIVE.md) and the [evidence overview](docs/README.
 
 | Where | Contents |
 | --- | --- |
-| [Current research](docs/reports/residual_growth.md) | Ordinary training, signed feature roles, strong width gaps, and failed sign predictions |
+| [Current research](docs/reports/sign_survival.md) | Sign-crossing protection rescues narrow learning; a spectral bound certifies error from lost roles |
+| [Readout follow-up](docs/reports/feature_profile.md) | Early readout interventions rescue narrow feature learning; predictive and causal limits remain |
+| [Starting evidence](docs/reports/residual_growth.md) | Ordinary training, signed feature roles, strong width gaps, and failed sign predictions |
 | [MNIST](docs/reports/mnist.md) | Real-data width benefits and limits of interference diagnostics |
 | [Earlier findings](docs/reports/research_history.md) | Consolidated positive, negative, and superseded experiments |
 | [Theory](docs/theory/README.md) | Residual potential, assumptions, and unchanged prospective protocols |
-| [Code](src/neural_competition/README.md) / [scripts](scripts/README.md) | Shared numerical modules and the two maintained study pipelines |
+| [Code](src/neural_competition/README.md) / [scripts](scripts/README.md) | Shared numerical modules and maintained study pipelines |
 | [Tables](docs/tables/README.md) / [figures](docs/figures/README.md) | Auditable evidence and a small set of retained plots |
 | [Reproduction](docs/reproduction.md) / [data retention](docs/data.md) | Commands, local-data requirements, and recovery of historical work |
 

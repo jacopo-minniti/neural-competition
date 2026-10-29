@@ -1,0 +1,11 @@
+{
+  "record": "Post-run reproduction environment",
+  "python": "3.12.14 (main, Aug 12 2026, 13:57:54) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "numpy": "2.5.4",
+  "torch": "2.14.1",
+  "device": "CPU",
+  "threads_per_producer": 2,
+  "training_dtype": "float32",
+  "counterfactual_dtype": "float64"
+}

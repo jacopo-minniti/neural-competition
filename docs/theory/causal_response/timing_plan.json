@@ -1,0 +1,8 @@
+{
+  "status": "Mechanism follow-up after broad validation, before timing outcomes; class8 outcomes not inspected",
+  "purpose": "Separate preservation during pressure from changed optimizer/representation during correction",
+  "broad_selection": "All three seed/class pairs containing a forecast-negative first-step state, both widths retained",
+  "class8_selection": "All eight focused replication seeds, both widths",
+  "comparison": "Early signed minus late-only signed; late copies match the actual post-pressure function and full kernel",
+  "limitation": "Early and late states may differ in subsequent response evolution as well as initial post-pressure options; this timing control is not a complete mediation decomposition."
+}

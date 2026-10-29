@@ -1,0 +1,49 @@
+{
+  "input": "docs/theory/observed_learning/mnist_confirmation",
+  "cases": [
+    {
+      "seed": 283104,
+      "step": 20,
+      "focal": 4
+    },
+    {
+      "seed": 283106,
+      "step": 100,
+      "focal": 6
+    },
+    {
+      "seed": 283101,
+      "step": 100,
+      "focal": 1
+    }
+  ],
+  "widths": [
+    32,
+    128
+  ],
+  "pressure": 20,
+  "recovery": 20,
+  "rate": 0.05,
+  "copies": 4,
+  "tau": 1,
+  "refresh": 10,
+  "signed": true,
+  "model": "Fixed-gate bilinear evolution, physical decoding, reset masks at declared phase change",
+  "anchor": "Fixed output offset to pre-pressure predictions; focal hard targets and initial background probabilities",
+  "sources": {
+    "scripts/studies/probe_causal_response.py": "7b4caf9d060835cc865ab3841cbc6ad832b8339339a550a165935f7ff33719cb",
+    "scripts/studies/probe_response_feedback.py": "fdeb905f4e206df57d478952e65cd938f9eccac0d16c00e85162c8d797fbdafb",
+    "scripts/studies/trace_observed_learning.py": "687baca4f524516677d4cf517fca9c11d5db7b00b3f3f16e96aa6a6867a6d7d3",
+    "scripts/studies/audit_conditional_editability.py": "e035c05dfbc22a0845c8c63590735e6388e5eab50ebf2c57f0900f1829c53ff6",
+    "scripts/studies/explore_conditional_editability.py": "a5b6531e629952067916458288fa1026a5b71880480143a7faff731c552d786f"
+  },
+  "checkpoint_hashes": {
+    "model_283104_32_20.pt": "c00035fc76ef0a54a3581bc2e7ff97bf562fc0f05a15341599d420c3b42b7959",
+    "model_283104_128_20.pt": "2eae816fc981fe44cbeab99f8100a6d12e995a50b9b9b5be08083dfdf488c35c",
+    "model_283106_32_100.pt": "0739f2ae4c8f5e61a749efaca8115d77804f818a797589f0051c203f8d10fb42",
+    "model_283106_128_100.pt": "9230ae32c2db604d36b2c55960cbf449fa78e48bc76428515583f4f3909ebce5",
+    "model_283101_32_100.pt": "828f6e0a33c4dc29e1771bd129da276c062d051ff93db5a141bbb588117eabfc",
+    "model_283101_128_100.pt": "9d4cd1d016ed22065a3c4a21558223b99510cc10e7eab03de78196c0ec8ecc6f"
+  },
+  "data_sha256": "69857976fb601c00cc4a0f50dfb5505c429dd9be84e4ac6a633a9a1c5c596df2"
+}

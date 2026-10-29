@@ -1,0 +1,28 @@
+{
+  "protocol": {
+    "seed": 997031,
+    "seeds": 48,
+    "checkpoint": 100,
+    "endpoint": 2000,
+    "dt": 0.05,
+    "status": "Written before these held-out continuations."
+  },
+  "forecasts": [
+    {
+      "width": 4,
+      "spectral": 0.017638609696073414,
+      "floor": 0.01737093386777409
+    },
+    {
+      "width": 8,
+      "spectral": 0.0010043904723817656,
+      "floor": 0.0004800448096854344
+    },
+    {
+      "width": 16,
+      "spectral": 0.0008284918989553486,
+      "floor": 7.31965237846364e-05
+    }
+  ],
+  "source_sha256": "f14b3f1f22a73c9b2032a7e47be0047c66ad17602b1ae035b5ad8e165e8e570f"
+}

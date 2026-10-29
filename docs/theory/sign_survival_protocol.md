@@ -1,0 +1,82 @@
+# Sign survival: a direct falsification test
+
+Recorded 21 October 2026 before executing the new experiment. Existing evidence
+motivates this design; this is an exploratory follow-up, not independent
+confirmation of a previously published hypothesis.
+
+## Question and primary test
+
+Does preventing the early loss of signed neuron roles rescue the minimally
+representable network? Balanced initial counts alone already failed. Early
+least-squares readout correction succeeds but changes much more than signs.
+
+Use the existing Gaussian teacher, data seed 9027, half-angle 30 degrees,
+coefficients (1,-3), 4096 training/test samples, width normalization and ordinary
+SGD/momentum/Adam rates. New seeds 200–219, 10,000 updates, batch size 128.
+Each balanced width-8 start has four randomly assigned signs of each kind with
+the ordinary absolute Gaussian coefficients. No teacher directions enter training.
+All balanced arms share initial parameters and minibatch indices. Random-sign
+ordinary widths 8 and 32 provide an additional anchor; they are not the paired
+baseline for the sign intervention.
+
+Arms: balanced ordinary8; sign protection during steps 0–999; protection throughout;
+protection during steps 9000–9999; early readout profiling every ten steps without
+moment resets; random-sign ordinary8 and ordinary32. Protection projects the
+proposed readout onto its allowed half-line: a <- s max(s a,0), where s is the
+fixed assignment. No positive floor, coefficient refit, hidden-weight change or
+moment reset is applied. Zero-amplitude units count as inactive, not as surviving
+features. A projection can freeze a unit until the residual favors its sign again.
+Late protection uses signs at step 9000, so it does not suddenly change the model
+or restore roles already lost. It is a timing control, not equal projection work.
+
+Primary outcome: paired final held-out half-MSE change from balanced ordinary8.
+Report target-variance MSE percentage, seed bootstrap uncertainty, all starts,
+active signs, and terminal profiled loss. Record projection counts and changes
+to coefficients. Failing to rescue despite retained sign eligibility refutes
+the sufficiency of sign protection, not all possible competition mechanisms.
+Success would implicate crossings, but need not establish unique mediation of
+width: projections change the subsequent optimization path.
+
+## A trajectory object with explicit assumptions
+
+For bias-free equal-rate Euclidean gradient flow, rho=||w|| and
+D=rho^2-a^2 is invariant. If D>0, write
+
+    z = asinh(a/sqrt(D)), a=sqrt(D)sinh(z), rho=sqrt(D)cosh(z).
+
+The Section 3 equations imply dz/dt=H_f(u)/sqrt(m). The first crossing of z=0
+depends on integrated residual exposure, not the sign of H at one time. This
+identity alone is retrospective, not an endpoint predictor. It is inapplicable
+as an exact law to Adam, momentum or finite steps; those use actual proposals.
+If D<0, a cannot cross zero under that flow. Thus initialization balance matters
+even for identical initial functions. The norm invariant is known in homogeneous
+network literature; no novelty is claimed for it.
+
+## Implementation and provenance
+
+Use separate new files, retain existing user changes, snapshot executed sources
+and protocol, retain per-seed trajectories and final states. Check projected
+updates against ordinary updates when inactive, check same-stream paired starts,
+and reconstruct held-out endpoint losses from saved parameters. Any experiments
+selected after seeing these outcomes will be separately identified.
+
+## Follow-ups chosen after the main result
+
+The main 20-seed comparison showed strong rescue for all three optimizers.
+Run the same design on (i) half-angle 60 degrees, (ii) balanced teacher outputs
+(1,-1), (iii) data seed 9037, and (iv) rates multiplied by 0.3, each on the first
+ten seeds 200–209. These cohorts overlap the main initializations and are not
+additional independent replications. Extend the first five main starts from
+scratch to 100k steps, retaining early protection only through step 999. The
+permanent-protection arm remains protected; label that distinction explicitly.
+
+Also add an early readout-damping control on the main 20 seeds. At every step
+use the same seed's protected-early arm's Euclidean coefficient correction norm
+as a budget. Shorten the damping arm's proposed readout update along its own
+direction by that distance, capped at its full step length. It retains optimizer
+moments, changes no hidden proposal, and permits sign crossings. Record caps and
+applied correction norms. This controls coefficient-space displacement, not
+prediction-space displacement or trajectory-dependent computation. The reference
+arm drives the budget; this is a counterfactual control, not a standalone optimizer.
+It tests generic readout slowing as an alternative. Repeated main arms must match
+the earlier run; they are consistency checks, not new independent evidence.

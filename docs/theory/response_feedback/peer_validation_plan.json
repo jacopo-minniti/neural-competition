@@ -1,0 +1,30 @@
+{
+  "seeds": [
+    283101,
+    283102,
+    283103,
+    283104,
+    283105,
+    283106,
+    283107,
+    283108
+  ],
+  "steps": [
+    20,
+    100
+  ],
+  "widths": [
+    32,
+    128
+  ],
+  "focal": "seed modulo 10",
+  "pressure_steps": 20,
+  "recovery_steps": 80,
+  "rate": 0.05,
+  "tau": 1,
+  "model": "Smooth fixed-gate bilinear parameter dynamics, physical ReLU evaluation of predicted response",
+  "primary_target": "Change in reference-curvature option value on fixed initial focal demand under peer-only pressure",
+  "comparison": "Undecoded fixed-gate model and unchanged-response forecast",
+  "hypothesis": "Decoded capability-change RMSE below 0.35 times unchanged-response RMSE, pooled states; peer loss can worsen without capability weakening",
+  "chronology": "Fixed after the original peer pilot and the first four decoded pilot outcomes. No held-out peer interventions inspected."
+}

@@ -1,0 +1,31 @@
+{
+  "input": "docs/theory/toy_resource_competition/pilot",
+  "cases": [
+    "discrete",
+    "continuous",
+    "separate_attribute",
+    "two_refinements"
+  ],
+  "time": 20,
+  "end": 500,
+  "repeats": 4,
+  "dt": 0.05,
+  "selection": "All checkpoint states; exact prediction-preserving readout redistribution required on training and dense grids. No selection by future outcome.",
+  "treatment": "Random replacement of one zero-output feature, activation energy matched to its old direction",
+  "control": "Same redistributed readouts and zero output unit, with original incoming feature retained",
+  "limits": "Same width/function/kernel trace, not same full kernel or parameter norm. Random directions are not selected for task alignment.",
+  "sources": {
+    "recycle_toy_resources.py": "5c96f1e795ec316a0bc6928272e4afb974a53938a65d548492b94e3fa6292d04",
+    "toy_option_resources.py": "b0368544480a11ed884b7b59563fbb370d92543471e46a53effffda75099ce72"
+  },
+  "input_hashes": {
+    "discrete_4_states.npz": "bc1b9a22fb308fb1b6f04036c0e9fc6c05dbba2cba778878865aa5e3f298bb50",
+    "discrete_8_states.npz": "f36e92b0f4d4967bed14fd3b186c7e1869228eb421da06116f05ab4f65f2a2f5",
+    "continuous_4_states.npz": "6603914f65f7f8300cb816b792eec96f006e67f87b3ba39adaa50e33deaedc19",
+    "continuous_8_states.npz": "b9347122f441376311e4515ec79780c371b5c317e0e2492e35c2cf18fb42bfc6",
+    "separate_attribute_4_states.npz": "79be8b7b1c862249513325230d880eaa176e3a52d080fb2c5aee8bcf1f656969",
+    "separate_attribute_8_states.npz": "f7bd7770b796ae9c498db2eb87ebd28bfb38e0194145b9c51da8e1302df8e2d2",
+    "two_refinements_6_states.npz": "d594502d7afefacdc3b0667e86ae52dc500afd83113e0a129a68111e57d404b0",
+    "two_refinements_12_states.npz": "577cc82934a220d942670ae0026f9eaf41206cc962125de25c1bc5b751e95ff7"
+  }
+}

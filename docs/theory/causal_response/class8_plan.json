@@ -1,0 +1,61 @@
+{
+  "status": "Targeted fresh replication, chosen after the broad ten-class validation",
+  "cases": [
+    {
+      "seed": 284201,
+      "step": 100,
+      "focal": 8
+    },
+    {
+      "seed": 284202,
+      "step": 100,
+      "focal": 8
+    },
+    {
+      "seed": 284203,
+      "step": 100,
+      "focal": 8
+    },
+    {
+      "seed": 284204,
+      "step": 100,
+      "focal": 8
+    },
+    {
+      "seed": 284205,
+      "step": 100,
+      "focal": 8
+    },
+    {
+      "seed": 284206,
+      "step": 100,
+      "focal": 8
+    },
+    {
+      "seed": 284207,
+      "step": 100,
+      "focal": 8
+    },
+    {
+      "seed": 284208,
+      "step": 100,
+      "focal": 8
+    }
+  ],
+  "widths": [
+    32,
+    128
+  ],
+  "pressure": 20,
+  "recovery": [
+    1,
+    5,
+    20
+  ],
+  "model": "Bilinear with physical readout and refresh every10steps",
+  "primary": "Signed-minus-peer anchored correction gain at20steps, conditional on forecast pressure impairment at20steps",
+  "hypothesis": "Forecasts identify when preservation helps finite-budget correction; narrow impairment and rescue may occur more often than wide, but occurrence frequency is not assumed",
+  "negative_controls": "All unselected cases retained. Native original-label recovery is reported separately; no uniform rescue claim.",
+  "selection": "Digit8 is selected because the broad cohort had its only20step deficit at width32/class8, after an initial gain. This is not a class-universal claim.",
+  "scoring": "Prediction RMSE vs zero effect, sign, seed-level uncertainty; no further tuning on replication outcomes."
+}

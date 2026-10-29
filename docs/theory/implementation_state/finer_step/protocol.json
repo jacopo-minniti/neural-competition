@@ -1,0 +1,26 @@
+{
+  "configs": [
+    {
+      "n": 4,
+      "ratio": 0.25,
+      "overlap": 0.0
+    }
+  ],
+  "count": 48,
+  "seed": 296101,
+  "end": 4000.0,
+  "dt": 0.0125,
+  "factors": [
+    1,
+    2
+  ],
+  "scale": 0.002,
+  "task": "All contexts always present; total refinement frequency .2; q_j proportional to ratio**j; alternating coefficients +/-2; overlap is attribute overlap, not an assumed measured implementation overlap.",
+  "widths": "(2+2N)*factor, exact target representation at narrow width",
+  "analysis": "Per-refinement structural coverage >= .95, residual gap <= .1 of target gap; report continuous values and sensitivities. Checkpoint transitions are sampled, not exact event times.",
+  "sources": {
+    "run_refinement_hierarchy.py": "038f0211b11ec0c0547b8638709aa5c1e9585b7e8a10c851b88ad5357bf28b48",
+    "implementation_moments.py": "d6762e6cc7776ffda30322d7dde82d12acc9969296c1f49da45186347bbbc281",
+    "toy_option_resources.py": "b0368544480a11ed884b7b59563fbb370d92543471e46a53effffda75099ce72"
+  }
+}

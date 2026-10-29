@@ -1,0 +1,69 @@
+{
+  "input": "docs/theory/causal_response/checkpoints",
+  "cases": [
+    {
+      "seed": 284106,
+      "step": 100,
+      "focal": 5
+    },
+    {
+      "seed": 284107,
+      "step": 100,
+      "focal": 6
+    },
+    {
+      "seed": 284108,
+      "step": 100,
+      "focal": 7
+    },
+    {
+      "seed": 284109,
+      "step": 100,
+      "focal": 8
+    },
+    {
+      "seed": 284110,
+      "step": 100,
+      "focal": 9
+    }
+  ],
+  "widths": [
+    32,
+    128
+  ],
+  "pressure": 20,
+  "recovery": 20,
+  "rate": 0.05,
+  "copies": 4,
+  "tau": 1,
+  "refresh": 0,
+  "signed": true,
+  "compact": true,
+  "quadratic": true,
+  "forecast_refresh": [
+    0,
+    10
+  ],
+  "model": "Fixed-gate bilinear evolution, physical decoding, reset masks at declared phase change",
+  "anchor": "Fixed output offset to pre-pressure predictions; focal hard targets and initial background probabilities",
+  "sources": {
+    "scripts/studies/probe_causal_response.py": "24c59463f13faddfc30c8448fc91d105bcc3c0cbf0c8d0492eccb27b2761327f",
+    "scripts/studies/probe_response_feedback.py": "fdeb905f4e206df57d478952e65cd938f9eccac0d16c00e85162c8d797fbdafb",
+    "scripts/studies/trace_observed_learning.py": "687baca4f524516677d4cf517fca9c11d5db7b00b3f3f16e96aa6a6867a6d7d3",
+    "scripts/studies/audit_conditional_editability.py": "e035c05dfbc22a0845c8c63590735e6388e5eab50ebf2c57f0900f1829c53ff6",
+    "scripts/studies/explore_conditional_editability.py": "a5b6531e629952067916458288fa1026a5b71880480143a7faff731c552d786f"
+  },
+  "checkpoint_hashes": {
+    "model_284106_32_100.pt": "e03b642cbef21e2383b4ba1e29c6771f71fcae4973f59300eb2b90523460230c",
+    "model_284106_128_100.pt": "95032519af303b4fd783263837f96bd241f3db92dbdb0e6b47fb6569d3a0ff4e",
+    "model_284107_32_100.pt": "781bd6e18b139bdbb6948291a4cea0832f916e66ef5755fba39f1950752da81a",
+    "model_284107_128_100.pt": "92afeff9ac4d2eae837391050c224b157b40b1965fa51f16e8ca6b3a6c847d5c",
+    "model_284108_32_100.pt": "42b65d6e56da6196d0cc1cf294ede5306db7dfa55540362774b592884df7f404",
+    "model_284108_128_100.pt": "c06fc1107bdb85eebf4e7b28aa685eac622ac746e4d8fa524a5fec7885563d3c",
+    "model_284109_32_100.pt": "027ad1652a0858503c3f87c0033f7ec2d9a776687e896837a8c86dee49bbdd31",
+    "model_284109_128_100.pt": "bd0895fd39d0fd08bf8091c3d2d1dc5cb148c45a82482330e4d81ddcd35b3abd",
+    "model_284110_32_100.pt": "4e4a5176ea2305f6cc7c22557ac4977207f7466f7b7a13433f7b924394143d1e",
+    "model_284110_128_100.pt": "e1c2e3857b904a63392d29d209066b1e06612a5d5b5ff92af25f5db92979b38d"
+  },
+  "data_sha256": "69857976fb601c00cc4a0f50dfb5505c429dd9be84e4ac6a633a9a1c5c596df2"
+}

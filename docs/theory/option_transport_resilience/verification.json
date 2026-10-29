@@ -1,0 +1,38 @@
+{
+  "main": {
+    "executed_source_hash": "834891e76ff321a49138bb59dbca70c8af6a977e284e1abe1da37c3ab516e712",
+    "complete": true,
+    "branches": 120
+  },
+  "affine": {
+    "executed_source_hash": "834891e76ff321a49138bb59dbca70c8af6a977e284e1abe1da37c3ab516e712",
+    "complete": true,
+    "branches": 60
+  },
+  "delayed": {
+    "executed_source_hash": "1957990e0b435c58cdd22f63ab928341e366612d91a1d6c0e3445a98d413966f",
+    "complete": true,
+    "endpoints": 640
+  },
+  "delayed_confirmation": {
+    "executed_source_hash": "5b500c8c7a98475a2b50a08be755bb8744f49e07faa0a891bbfdb6721e91edf5",
+    "complete": true,
+    "endpoints": 640
+  },
+  "delayed_half_step": {
+    "executed_source_hash": "5b500c8c7a98475a2b50a08be755bb8744f49e07faa0a891bbfdb6721e91edf5",
+    "complete": true,
+    "endpoints": 640
+  },
+  "delayed_intervention": {
+    "executed_source_hash": "2e6c1e8b623f9f18086532bfd5432fd8f17a436a6dc78807251ea5d7cb137cb8",
+    "complete": true
+  },
+  "intervention_matching": {
+    "function_error": 2.6645352591003757e-15,
+    "kernel_error": 3.552713678800501e-15
+  },
+  "clone_max_loss_difference": 4.440892098500626e-16,
+  "numerical_bound_violations": 0,
+  "note_local_links": "all exist"
+}

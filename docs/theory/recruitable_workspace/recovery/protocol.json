@@ -1,0 +1,26 @@
+{
+  "created": "2026-10-28T15:30:09.547356+00:00",
+  "source": "docs/theory/recruitable_workspace/confirmation",
+  "seeds": [
+    282811,
+    282812,
+    282813,
+    282814,
+    282815,
+    282816,
+    282817,
+    282818,
+    282819,
+    282820,
+    282821,
+    282822
+  ],
+  "source_sha256": "869eaf29f6d06caa36fcc055f735259e20a49f1f86324eacf67b3feed1983a2d",
+  "note": "Designed after pilot; saved before these new continuations. No outcome-selected seeds.",
+  "forecasts": [
+    "Fixed-feature rescue would favor initial added coverage over nonlinear replacement.",
+    "Tiny clone perturbations may not provide accessible alternative implementations at this budget.",
+    "Long ordinary continuation and fast control may remove the apparent obstruction.",
+    "Dormant-resource recycling changes function by zero on bounded task support; improvement need not imply dynamic loss."
+  ]
+}

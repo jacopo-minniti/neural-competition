@@ -1,0 +1,69 @@
+{
+  "seed": 241030,
+  "draws_per_setting": 128,
+  "forecasts": [
+    {
+      "separation": 1.0,
+      "added": 1,
+      "miss_probability": 0.3040867239846964,
+      "predicted_mean": 0.027367805158622673,
+      "realized_linear_mean": 0.02390625
+    },
+    {
+      "separation": 1.0,
+      "added": 2,
+      "miss_probability": 0.3040867239846964,
+      "predicted_mean": 0.008322186213337043,
+      "realized_linear_mean": 0.007734375
+    },
+    {
+      "separation": 4.0,
+      "added": 1,
+      "miss_probability": 0.10817344796939271,
+      "predicted_mean": 0.009735610317245343,
+      "realized_linear_mean": 0.0084375
+    },
+    {
+      "separation": 4.0,
+      "added": 2,
+      "miss_probability": 0.10817344796939271,
+      "predicted_mean": 0.0010531345361028221,
+      "realized_linear_mean": 0.00140625
+    }
+  ],
+  "status": "Saved before new geometry continuations.",
+  "validation": [
+    {
+      "separation": 1.0,
+      "added": 1,
+      "mean_loss": 0.023906250000000004,
+      "se": 0.003527232314812491,
+      "mae_from_linear": 2.385244779593719e-18,
+      "repair_disagreements": 0
+    },
+    {
+      "separation": 1.0,
+      "added": 2,
+      "mean_loss": 0.007734375,
+      "se": 0.0022383085454338075,
+      "mae_from_linear": 6.505213035902454e-19,
+      "repair_disagreements": 0
+    },
+    {
+      "separation": 4.0,
+      "added": 1,
+      "mean_loss": 0.008437500000000007,
+      "se": 0.0023278248333421505,
+      "mae_from_linear": 8.047037960647794e-18,
+      "repair_disagreements": 0
+    },
+    {
+      "separation": 4.0,
+      "added": 2,
+      "mean_loss": 0.00140625,
+      "se": 0.0009904463359464576,
+      "mae_from_linear": 4.985755167666778e-25,
+      "repair_disagreements": 0
+    }
+  ]
+}

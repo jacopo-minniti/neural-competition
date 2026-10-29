@@ -1,0 +1,90 @@
+{
+  "protocol": {
+    "pilot_width": 32,
+    "pilot_seeds": 32,
+    "reference_width": 4096,
+    "horizon": 20,
+    "dt": 0.05,
+    "drivers": 24,
+    "bank_per_driver": 512,
+    "draws_per_driver": 128,
+    "heldout_seed": 281099,
+    "heldout_seeds": 96,
+    "endpoint": 2000
+  },
+  "forecasts": [
+    {
+      "case": "discrete",
+      "width": 4,
+      "shared_field_forecast": 0.04201788651315789,
+      "driver_se": 0.006644384836921817,
+      "deterministic_field_forecast": 0.03586963903010367,
+      "shared_blind_probability": 0.016105785418403684,
+      "iid_blind_probability": 0.004356156713957301
+    },
+    {
+      "case": "discrete",
+      "width": 6,
+      "shared_field_forecast": 0.005914713541666668,
+      "driver_se": 0.0023041715944860657,
+      "deterministic_field_forecast": 0.005273437500000001,
+      "shared_blind_probability": 0.00316169692099149,
+      "iid_blind_probability": 0.0001880058833293315
+    },
+    {
+      "case": "discrete",
+      "width": 8,
+      "shared_field_forecast": 0.0006738281250000003,
+      "driver_se": 0.0005856508300092063,
+      "deterministic_field_forecast": 0.0011718749999999995,
+      "shared_blind_probability": 0.000640205864384456,
+      "iid_blind_probability": 7.104489378202081e-06
+    },
+    {
+      "case": "discrete",
+      "width": 12,
+      "shared_field_forecast": 0.0005859375,
+      "driver_se": 0.0005859375000000001,
+      "deterministic_field_forecast": 0.0,
+      "shared_blind_probability": 3.496825702469044e-05,
+      "iid_blind_probability": 8.927377939157057e-09
+    },
+    {
+      "case": "clusters",
+      "width": 4,
+      "shared_field_forecast": 0.05606539507655586,
+      "driver_se": 0.007383558804166291,
+      "deterministic_field_forecast": 0.04629923651024533,
+      "shared_blind_probability": 0.0040924604915441405,
+      "iid_blind_probability": 0.00212307496274997
+    },
+    {
+      "case": "clusters",
+      "width": 6,
+      "shared_field_forecast": 0.008802887382601913,
+      "driver_se": 0.0017916044407541671,
+      "deterministic_field_forecast": 0.007642377400613416,
+      "shared_blind_probability": 6.802761715754095e-05,
+      "iid_blind_probability": 4.271434117082129e-05
+    },
+    {
+      "case": "clusters",
+      "width": 8,
+      "shared_field_forecast": 0.001920104192896424,
+      "driver_se": 0.0008172998588879377,
+      "deterministic_field_forecast": 0.0014726457648085896,
+      "shared_blind_probability": 2.190533327732141e-06,
+      "iid_blind_probability": 1.0642801313596997e-06
+    },
+    {
+      "case": "clusters",
+      "width": 12,
+      "shared_field_forecast": 0.0001287118491163486,
+      "driver_se": 1.905553994627681e-05,
+      "deterministic_field_forecast": 0.00016257686038025562,
+      "shared_blind_probability": 2.9392019602949854e-09,
+      "iid_blind_probability": 6.232820360792275e-10
+    }
+  ],
+  "status": "Saved before held-out fixed-width training endpoints."
+}

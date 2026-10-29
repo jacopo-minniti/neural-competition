@@ -1,0 +1,37 @@
+{
+  "input": "docs/theory/observed_learning/mnist_confirmation",
+  "seeds": [
+    283101,
+    283102,
+    283103,
+    283104,
+    283105,
+    283106,
+    283107,
+    283108
+  ],
+  "widths": [
+    32,
+    128
+  ],
+  "steps": [
+    20,
+    100
+  ],
+  "focal_class": "seed modulo 10, fixed before branch outcomes",
+  "pressure_steps": 20,
+  "recovery_steps": 80,
+  "rate": 0.05,
+  "tau": 1.0,
+  "training": "full-gradient original cross-entropy",
+  "capability": "Fixed initial focal residual, fixed initial full-task curvature, full 8192-image measure",
+  "model": "fixed-gate bilinear, no fitted coefficients",
+  "decode_physical_response": true,
+  "claim": "Test whether peer pressure actually weakens useful options; sign not assumed",
+  "sources": {
+    "scripts/studies/probe_peer_response.py": "fd9205cbbf368e705b20f035e8847db62c0a372218262c6934ba2647e96bf298",
+    "scripts/studies/probe_response_feedback.py": "fdeb905f4e206df57d478952e65cd938f9eccac0d16c00e85162c8d797fbdafb",
+    "scripts/studies/trace_observed_learning.py": "687baca4f524516677d4cf517fca9c11d5db7b00b3f3f16e96aa6a6867a6d7d3",
+    "scripts/studies/audit_conditional_editability.py": "e035c05dfbc22a0845c8c63590735e6388e5eab50ebf2c57f0900f1829c53ff6"
+  }
+}

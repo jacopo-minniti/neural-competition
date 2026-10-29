@@ -1,0 +1,245 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=19mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\abovedisplayskip}{6pt}
+\setlength{\belowdisplayskip}{6pt}
+\newcommand{\E}{\mathbb E}
+\newcommand{\relu}{\operatorname{ReLU}}
+\newcommand{\reportfigure}[3]{%
+\par\addvspace{6pt}\noindent
+\begin{minipage}{\linewidth}
+\centering\includegraphics[width=#1\linewidth]{#2}\par
+\vspace{3pt}
+\refstepcounter{figure}
+{\raggedright\fontsize{9}{11}\selectfont\setlength{\parskip}{0pt}%
+\textbf{Figure \thefigure.} #3\par}
+\end{minipage}\par\addvspace{6pt}}
+\begin{document}
+{\Large\bfseries Mitigating Neural Competition Through Overparameterization}\par
+
+\subsection*{1. Do wider networks change the distribution of gradient agreement?}
+Following Pier's suggestion, I compare minibatch-gradient product distributions
+across widths, including their negative tails. The scalar-regression student and
+half-MSE are
+\[
+f_\theta(x)=\frac1{\sqrt m}\sum_{r=1}^m a_r\relu(w_r^\top x+b_r),
+\qquad L_Q(\theta)=\tfrac12\E_Q[(f_\theta-y)^2].
+\]
+Here $Q$ denotes the training data, a probe batch or the population, and
+$\langle h,k\rangle_Q=\E_Q[hk]$. The first two studies use Gaussian inputs and an
+eight-neuron teacher. Both layers and biases train, starting with zero readouts.
+Width 8 already suffices to represent the target.
+
+For independently sampled batches $B,C$ at fixed $\theta$, let $g_B=\nabla L_B$.
+Then $\E_{B,C}[g_B^\top g_C]=\|\nabla L_{\rm train}\|^2$, by independence and
+unbiasedness. Negative products predict increased loss on $C$ after a sufficiently
+small step along $-g_B$. Since their raw distribution also reflects gradient scale,
+I compare $g_B^\top g_C/\E_B\|g_B\|^2$ as well.
+
+\reportfigure{1}{images/distributions.png}{Gradient-product CDFs across widths at similar training loss.
+Top: raw products; bottom: products normalized by mean squared batch-gradient norm.
+Negative values indicate first-order disagreement; shading shows uncertainty across starts.}
+
+Matching near MSE .2 compares fitting progress rather than training time and
+includes narrow Adam runs that never reach lower errors. This practical checkpoint
+is not a theoretical threshold; it does not match residual structure or optimizer history.
+
+Width changes raw scale more consistently than normalized shape. Normalized curves
+largely overlap; fresh probes support modestly lighter tails for SGD/momentum, but
+no clear Adam trend or universal skewness shift. Sampled changes look gradual, with
+no resolved phase transition. This does not support a general account in which
+width helps by removing gradient disagreement.
+
+Pier's distinction between cause and consequence remains central. Later narrow
+SGD states can agree more while fitting worse: batches may share an \emph{unresolved}
+residual, without learning the missing features. Momentum's candidate directions
+show a clearer early width effect than raw gradients, supporting his emphasis on
+optimizer history. Shortening high-rate SGD steps reduces harm, and lowering the
+rate from the same state removes a plateau: finite-step instability is another
+explanation in that regime. These controls motivate testing which feature updates
+are obstructed, rather than treating agreement itself as the mechanism.
+
+\newpage
+\subsection*{2. Can individually useful neuron updates obstruct one another?}
+To move from data disagreement to neuron interaction, fix one proposed optimizer
+step $\Delta\theta$ and apply its neuron blocks separately and jointly. Each block
+contains $(w_r,b_r,a_r)$; the optimizer state and all block proposals stay fixed.
+For $e=f_\theta-y$ and $d_r=f_{\theta+\Delta\theta_r}-f_\theta$, additivity of the
+network gives $f_{\theta+\Delta\theta_r+\Delta\theta_s}-f_\theta=d_r+d_s$.
+Expanding half-MSE on the same source batch $B$ therefore gives
+\[
+A_r=\langle e,d_r\rangle_B+\tfrac12\|d_r\|_B^2,\quad
+J_{rs}=\langle d_r,d_s\rangle_B,\quad
+\Delta L_{r,s}=A_r+A_s+J_{rs}.
+\]
+These are finite-step identities, including ReLU gate crossings. Positive $J_{rs}$
+can mean ordinary diminishing returns: both neurons correct the same error.
+The stricter event $A_r<0$, $A_s<0$, $A_s+J_{rs}>0$ instead says both help alone,
+but adding $s$ after $r$ increases loss. No gradient is recomputed between them.
+
+\begin{center}
+\small
+\begin{tabular}{lrr}
+\toprule
+Early momentum, matched MSE .2 & Width 8 & Width 16\\
+\midrule
+Strict events / eligible ordered pairs & 1.245\% & 0.253\%\\
+Strict events per source batch & 0.481 & 0.474\\
+Summed marginal harm / full-step gain & 0.394\% & 0.035\%\\
+\bottomrule
+\end{tabular}
+\end{center}
+{\fontsize{9}{11}\selectfont\raggedright
+\textbf{Table 1.} Cohort means. Eligible pairs have $A_r,A_s<0$; marginal harm sums
+$A_s+J_{rs}$ over strict events. The last row divides mean harm by the full step's
+mean loss reduction within each start, then averages across starts.\par}
+
+Width reduces the frequency and summed harm, but hardly the event count because
+there are more pairs. More importantly, the harm is small relative to useful
+progress. These overlapping pair alternatives cannot be added up as a causal
+loss penalty; the table establishes a local obstruction, not its responsibility
+for the final fitting gap.
+
+Could accumulation make interaction decisive? On a fixed reference set $Q$, define
+\[
+C_+(T)=\sum_{t<T}\sum_{r<s}[J_{rs,t}]_+,\qquad [z]_+=\max(z,0).
+\]
+Unlike the strict-event test, this includes all positive overlaps. The distinction
+matters: reducing $C_+$ could remove redundancy, while increasing it could accompany
+more useful learning.
+
+\reportfigure{.88}{images/cumulative_cost.pdf}{Width $8\to16$ in two retained eight-feature teacher cohorts.
+Arrows connect cohort means; both axes use the same fixed reference set within each cohort.
+Wider models fit better in both, but positive pair cost moves in opposite directions.
+The cohorts have different training protocols; this is not an optimizer ranking.}
+
+Momentum initially supports the cost account, but much of its reduction disappears
+when matching accumulated isolated helpful movement rather than training duration:
+earlier convergence itself reduces subsequent interaction. Adam is a stronger
+counterexample: width improves fitting while \emph{increasing} $C_+$.
+Thus a monotone ``less pair cost, better learning'' explanation fails across these
+regimes. This does not rule out specific harmful interactions; it shows that the
+aggregate mixes them with useful, redundant and trajectory-dependent movement.
+The next hypothesis must identify \emph{which necessary feature is suppressed},
+not merely how much neurons interact.
+
+\newpage
+\subsection*{3. Does competition suppress necessary signed feature roles?}
+Can overlapping target components give a needed feature the wrong signal? Set
+$b_r=0$ and derive the dynamics under \emph{unit-rate gradient flow} on half-MSE:
+$\dot a_r=-\partial_{a_r}L_Q$, $\dot w_r=-\nabla_{w_r}L_Q$. Both layers move at
+equal rates, without momentum, preconditioning or regularization. Assume
+$\rho_r=\|w_r\|>0$ and differentiate away from ReLU gate boundaries
+(almost surely for Gaussian inputs).
+
+Let $\phi_u(x)=\relu(u^\top x)$, $u_r=w_r/\rho_r$ and
+$c_r=a_r\rho_r/\sqrt m$, so $f=\sum_r c_r\phi_{u_r}$. Define
+\[
+H_f(u)=\langle y-f,\phi_u\rangle_Q
+      =\langle y,\phi_u\rangle_Q-\sum_s c_s K_Q(u,u_s),
+\qquad K_Q(u,v)=\langle\phi_u,\phi_v\rangle_Q.
+\]
+$H_f$ is the negative loss derivative for adding signed feature mass at $u$.
+Differentiation and ReLU homogeneity give
+\[
+\dot a_r=\frac{\rho_r}{\sqrt m}H_f(u_r),\qquad
+\dot\rho_r=\frac{a_r}{\sqrt m}H_f(u_r),\qquad
+\dot c_r=\frac{a_r^2+\rho_r^2}{m}H_f(u_r).
+\]
+Consequently $\operatorname{sign}(c_r)H_f(u_r)<0$ contracts $|c_r|$ when $c_r\ne0$.
+This is a local amplitude law, not a frozen-direction model or a convergence claim.
+For a teacher $y=\sum_i\beta_i\phi_{v_i}$ and $f\approx0$, the signal for its
+correctly oriented, correctly signed role is
+\[
+\chi_i=\operatorname{sign}(\beta_i)\sum_j\beta_jK_Q(v_i,v_j).
+\]
+Opposite-sign coactive components can outweigh its positive self contribution:
+a needed role contracts. However, learning peers can remove that offending residual
+and \emph{release} it. Initial suppression does not establish harmful peer dynamics
+throughout training.
+
+The experiment uses eight Gaussian-input teacher features in four orthogonal pair
+planes, $60^\circ$ apart within each pair. Coefficients $(1,-3)$ create opposing
+demands; $(1,3)$ changes only their signs before scaling to unit training variance.
+Bias-free widths 8 and 32 use ordinary random weights and small random readouts.
+\emph{Training uses finite-step SGD, momentum and Adam}, with unchanged rates across
+widths. Gradient flow motivates the hypothesis; it is not the exact experimental
+dynamics, especially for momentum and Adam.
+
+\reportfigure{.88}{images/signed_roles.pdf}{Left: target signs change the width advantage (circles: SGD;
+squares: momentum; triangles: Adam). Right: opposing targets lead narrow models to lose positive roles.
+The dashed quota is necessary for exact population fitting, not an approximate-error bound.}
+
+Opposing targets leave narrow MSE at roughly 2--5\% of target variance, with much
+smaller wide errors; same-sign targets are easier. Exact population fitting requires
+four units of each sign: one unit cannot supply two distinct teacher hyperplane
+kinks. Narrow runs often lose positive roles, even from balanced signs; width leaves
+enough units to carry them. Redundancy against role loss is a candidate explanation.
+
+But $\chi_i$ fails to locate the width-benefit boundary, and enough signs do not
+ensure the right directions. Flipping signs also changes target means and scaling,
+so this control does not isolate suppression. The next test asks whether changing
+coefficient learning changes the inadequate features that narrow networks acquire.
+
+\newpage
+\subsection*{4. Does early readout adaptation change which features are learned?}
+To test that question, keep the bias-free task and write its training predictions
+as $\Phi(W)a$, where $W=(w_1,\ldots,w_m)$ and
+$\Phi_{ir}=\relu(w_r^\top x_i)/\sqrt m$. With $n$ training examples, define
+\[
+a_*\in\arg\min_a\|y-\Phi a\|^2,\qquad
+R(W)=\frac{\|y-\Phi a_*\|^2}{2n}.
+\]
+No full-rank assumption is needed: $a_*$ may be nonunique but $\Phi a_*$ is the
+unique projection of $y$ onto the current feature span. The normal equations
+$\Phi^\top(y-\Phi a_*)=0$ cancel the cross term, giving
+\[
+L(W,a)=R(W)+\frac{\|\Phi(a-a_*)\|^2}{2n}.
+\]
+Thus $R$ isolates the limitation of the current representation; the remaining term
+is readout lag. These are empirical training quantities using labels and current
+features, with no teacher directions. For $f_*=\Phi a_*$ and empirical inner products,
+\[
+H_f(u)=H_{f_*}(u)-\langle\Phi(a-a_*),\phi_u\rangle_{\rm train}.
+\]
+This connects the two objects: readout lag changes the residual field. Removing
+it jointly refits the coefficients, potentially changing their signs and magnitudes.
+This acts beyond suppression of a specific role: it also changes hidden-layer
+gradients directly through their coefficient factors.
+
+On the opposing task, periodic least-squares readout corrections are applied to
+width 8 during either the first or the last tenth of training. Both layers otherwise
+train normally. Equal correction counts control intervention budget; the early arm
+has more time for subsequent feature adaptation. A terminal refit separately tests
+whether an ordinary failed model already contains adequate features.
+
+\reportfigure{.88}{images/readout_timing.pdf}{Early readout correction gives a lasting rescue; late correction is much
+weaker. Dashed lines show ordinary width-32 error. All errors are measured on held-out data before
+any terminal refit; corrections use training data only.}
+
+A terminal refit barely rescues ordinary narrow models, whereas repeated early
+corrections close about 94\% of the ordinary mean narrow--wide error gap. The
+benefit persists after corrections stop and in longer runs. Taken together, these
+results locate the problem in \emph{feature formation}, not merely inaccurate final
+coefficients, and show that early coefficient adaptation can substantially alter it.
+The percentage measures gap closure, not a fraction uniquely caused by competition.
+
+The controls limit the causal interpretation. Retaining optimizer moments preserves
+most of the correction benefit, but resetting moments alone also substantially
+rescues Adam; faster readout learning helps as well. There is therefore no unique
+identification of residual-field suppression as the cause, nor evidence that width
+and readout correction act through the same mechanism. Extra least-squares work
+also makes this an intervention study, not a comparison of training efficiency.
+
+Finally, early $R$ and readout lag did not improve forecasts across settings, and
+$R$ usually decreases even in failing runs. Failure need not mean that features
+become worse: they may improve along an inadequate path. The intervention supports
+coefficient--feature feedback as consequential in this task, while leaving open the
+central predictive question: which residual-field trajectories lose necessary
+features, and when does extra width prevent that loss?
+\end{document}

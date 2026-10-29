@@ -1,0 +1,24 @@
+{
+  "input": "docs/theory/toy_resource_competition/step_check",
+  "end": 100,
+  "dt": 0.025,
+  "threshold": 0.03,
+  "cases": [
+    "discrete",
+    "continuous",
+    "separate_attribute"
+  ],
+  "selection": "Every ordinary update with a gate change; record absolute structural coverage change above threshold. No terminal-outcome selection.",
+  "sources": {
+    "audit_toy_option_events.py": "2a2d71036ce2d480caf255ab3ccce9e8c40cc01f8eea98d4fbb882eae80347bf",
+    "toy_option_resources.py": "b0368544480a11ed884b7b59563fbb370d92543471e46a53effffda75099ce72"
+  },
+  "input_hashes": {
+    "discrete_4_states.npz": "2ea3d465f2ddf6d69da21a8acdf38e576d82e323f46e61e232ab8bbdeaf65878",
+    "discrete_8_states.npz": "4169c41f7300c7d2798d518758f11a0767010f900093673a98c9f3306d5f4f05",
+    "continuous_4_states.npz": "471c071b97f2de29871f2d8c6634ec4679dcc2e911c62a597fe2aade5673477a",
+    "continuous_8_states.npz": "f9ae73ca1fbd3c7ee82e62965a49304fe88392c8031fd62cdbabf0cd763ae391",
+    "separate_attribute_4_states.npz": "8e2185edc50bab188a87f76a79412bfffb7363d5aa3ece483d1c4709dcbd9c7f",
+    "separate_attribute_8_states.npz": "e5db8b70128d713ac09a58fec2e4ce46ca2eb74e46dd3e745c527e1712955a3c"
+  }
+}

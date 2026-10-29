@@ -1,0 +1,108 @@
+{
+  "interpretation": "Endpoint-selected retrospective fixed-demand trace; pulses are local counterfactuals, not long-trajectory rescue tests.",
+  "selected": 11,
+  "found": 11,
+  "shared_alone_closes": 3,
+  "rest_alone_closes": 7,
+  "rows": [
+    {
+      "seed": 23,
+      "time": 2.5500000000000003,
+      "initial_strength": 2.8968503919355385e-06,
+      "before": 0.0001415292093234911,
+      "full_after": 9.31148479433716e-29,
+      "shared_only_after": 9.311485687047623e-29,
+      "rest_only_after": 0.00013814816895581445
+    },
+    {
+      "seed": 41,
+      "time": 3.3000000000000003,
+      "initial_strength": 2.658006522583112e-06,
+      "before": 0.0008933403665063298,
+      "full_after": 8.892044534269637e-29,
+      "shared_only_after": 8.892070085305951e-29,
+      "rest_only_after": 0.0008842498934064911
+    },
+    {
+      "seed": 61,
+      "time": 3.4000000000000004,
+      "initial_strength": 4.099648118791838e-06,
+      "before": 0.0023035773409155057,
+      "full_after": 9.630869483445375e-29,
+      "shared_only_after": 0.07092948343187562,
+      "rest_only_after": 9.616567076901909e-29
+    },
+    {
+      "seed": 31,
+      "time": 3.45,
+      "initial_strength": 1.9476461678292453e-06,
+      "before": 0.003461285621025227,
+      "full_after": 9.546283226356705e-29,
+      "shared_only_after": 0.06418037286320297,
+      "rest_only_after": 9.540724993645535e-29
+    },
+    {
+      "seed": 37,
+      "time": 3.45,
+      "initial_strength": 1.311604216325935e-06,
+      "before": 0.03627180993784096,
+      "full_after": 9.387320758625542e-29,
+      "shared_only_after": 0.034262043246743146,
+      "rest_only_after": 9.339476468768429e-29
+    },
+    {
+      "seed": 20,
+      "time": 3.5500000000000003,
+      "initial_strength": 9.446588047772821e-07,
+      "before": 0.06864916116789492,
+      "full_after": 9.648770013801644e-29,
+      "shared_only_after": 0.08543204974613286,
+      "rest_only_after": 1.5458206581719816e-05
+    },
+    {
+      "seed": 62,
+      "time": 3.8000000000000003,
+      "initial_strength": 2.737966379922587e-06,
+      "before": 0.021844127297064322,
+      "full_after": 9.548514140470608e-29,
+      "shared_only_after": 0.04561878783541817,
+      "rest_only_after": 9.542108226486481e-29
+    },
+    {
+      "seed": 46,
+      "time": 3.95,
+      "initial_strength": 2.932531080189739e-06,
+      "before": 0.059479840839980876,
+      "full_after": 7.985416391886784e-29,
+      "shared_only_after": 0.0015187954272133373,
+      "rest_only_after": 7.975448713666162e-29
+    },
+    {
+      "seed": 34,
+      "time": 5.0,
+      "initial_strength": 2.3773989032302454e-06,
+      "before": 3.061856701371949e-06,
+      "full_after": 1.0360995397168975e-28,
+      "shared_only_after": 3.0845988003892705e-06,
+      "rest_only_after": 1.0315963735984244e-28
+    },
+    {
+      "seed": 30,
+      "time": 6.4,
+      "initial_strength": 1.1777763380209845e-06,
+      "before": 1.6667536101741205e-06,
+      "full_after": 1.231916053286817e-28,
+      "shared_only_after": 1.6767227052050509e-06,
+      "rest_only_after": 1.2193996909942504e-28
+    },
+    {
+      "seed": 58,
+      "time": 7.45,
+      "initial_strength": 1.2597034575322195e-06,
+      "before": 5.672751506570531e-07,
+      "full_after": 1.0118301156446682e-28,
+      "shared_only_after": 1.012058971168418e-28,
+      "rest_only_after": 5.579731194267068e-07
+    }
+  ]
+}

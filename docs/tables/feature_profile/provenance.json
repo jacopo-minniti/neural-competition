@@ -1,0 +1,959 @@
+[
+  {
+    "args": {
+      "degrees": 30,
+      "ratio": -1.0,
+      "data_seed": 9027,
+      "bias": "none",
+      "optimizer": "adam",
+      "seed_start": 100,
+      "seeds": 10,
+      "steps": 10000,
+      "collection": "controls"
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "94c7d701d09831539cf8b51285a0845068dec0667fb5a6eeeaeb4dc0f1824669",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "b1afb3b016e30c68e15b76c36417d7599158dbb24a1d1caa18fdf2a7587366e3"
+    },
+    "elapsed_seconds": 16.63329300004989,
+    "dataset_hash": "5ea56bb89476d858d722b691b75c902eb9e70f36d2e19bc51c33dacff7ff1d03",
+    "curve_sha256": "18e6609ea919e126581f81367200b6c401b7d72f6fc76d539f39aa58957fd7bc",
+    "checkpoint_sha256": "85f1d8a9ee9265e4e5ade95d8ed7c315cac72eee114f9ff897369a757128f769"
+  },
+  {
+    "args": {
+      "degrees": 30,
+      "ratio": -1.0,
+      "data_seed": 9027,
+      "bias": "none",
+      "optimizer": "momentum",
+      "seed_start": 100,
+      "seeds": 10,
+      "steps": 10000,
+      "collection": "controls"
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "94c7d701d09831539cf8b51285a0845068dec0667fb5a6eeeaeb4dc0f1824669",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "b1afb3b016e30c68e15b76c36417d7599158dbb24a1d1caa18fdf2a7587366e3"
+    },
+    "elapsed_seconds": 15.976508459076285,
+    "dataset_hash": "5ea56bb89476d858d722b691b75c902eb9e70f36d2e19bc51c33dacff7ff1d03",
+    "curve_sha256": "01befb49e65ce7934a4a31d5b225b357fee1831494c8ee9aa6f4097e39f10475",
+    "checkpoint_sha256": "00051ff0b348a5c46dc398a53ff03a59122ed31dc7bbd4771d89a3f61738e051"
+  },
+  {
+    "args": {
+      "degrees": 30,
+      "ratio": -1.0,
+      "data_seed": 9027,
+      "bias": "none",
+      "optimizer": "sgd",
+      "seed_start": 100,
+      "seeds": 10,
+      "steps": 10000,
+      "collection": "controls"
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "94c7d701d09831539cf8b51285a0845068dec0667fb5a6eeeaeb4dc0f1824669",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "b1afb3b016e30c68e15b76c36417d7599158dbb24a1d1caa18fdf2a7587366e3"
+    },
+    "elapsed_seconds": 17.317029082914814,
+    "dataset_hash": "5ea56bb89476d858d722b691b75c902eb9e70f36d2e19bc51c33dacff7ff1d03",
+    "curve_sha256": "4153ee83204726466df8f81e2801027cb22834a34c3d25c1210c9d4c8a0e1723",
+    "checkpoint_sha256": "547eb389ee52651c08053629307f0254d0de8d12099841efe2af527980e1c375"
+  },
+  {
+    "args": {
+      "degrees": 30,
+      "ratio": -3,
+      "data_seed": 9027,
+      "bias": "centered",
+      "optimizer": "adam",
+      "seed_start": 100,
+      "seeds": 10,
+      "steps": 10000,
+      "collection": "controls",
+      "initial_controls": false
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "c52ad287a072b233da738882581b42799885d1e7f5975f338656d79427277e5c",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "39ae370f7ab2c177ebd16aae4bef3ce72405612e07d9b767a1bd3085680c809e"
+    },
+    "elapsed_seconds": 18.041665334021673,
+    "dataset_hash": "c2186bd7d74add806d063b74b3ca27370eeef1fc7b4a981c3b3fc0ea5c52f3ee",
+    "curve_sha256": "1738b63f96e915fb5d3f5e7200608257fc7a0bfbc475adf9cf18d4d544fddcba",
+    "checkpoint_sha256": "01f78f414f77ce72b8e96f3cfab78ca039d92a1a8a9926487eb5ff502ca00c69"
+  },
+  {
+    "args": {
+      "degrees": 30,
+      "ratio": -3,
+      "data_seed": 9027,
+      "bias": "centered",
+      "optimizer": "momentum",
+      "seed_start": 100,
+      "seeds": 10,
+      "steps": 10000,
+      "collection": "controls"
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "94c7d701d09831539cf8b51285a0845068dec0667fb5a6eeeaeb4dc0f1824669",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "b1afb3b016e30c68e15b76c36417d7599158dbb24a1d1caa18fdf2a7587366e3"
+    },
+    "elapsed_seconds": 16.557660500053316,
+    "dataset_hash": "c2186bd7d74add806d063b74b3ca27370eeef1fc7b4a981c3b3fc0ea5c52f3ee",
+    "curve_sha256": "b978a3c09cf86aa37ca675515a0a49a5dabb405e3cf2e7474a529ecc33f87c3b",
+    "checkpoint_sha256": "c86ab788ba82e6b8908847eedaf2af2e0702994b7bda0a2ad4515fdeddb260d5"
+  },
+  {
+    "failures": [
+      {
+        "seed": 100,
+        "width": 8,
+        "arm": "fast_readout",
+        "first_detected_step": 20
+      },
+      {
+        "seed": 101,
+        "width": 8,
+        "arm": "fast_readout",
+        "first_detected_step": 20
+      },
+      {
+        "seed": 102,
+        "width": 8,
+        "arm": "fast_readout",
+        "first_detected_step": 20
+      },
+      {
+        "seed": 103,
+        "width": 8,
+        "arm": "fast_readout",
+        "first_detected_step": 20
+      },
+      {
+        "seed": 104,
+        "width": 8,
+        "arm": "fast_readout",
+        "first_detected_step": 20
+      },
+      {
+        "seed": 105,
+        "width": 8,
+        "arm": "fast_readout",
+        "first_detected_step": 20
+      },
+      {
+        "seed": 106,
+        "width": 8,
+        "arm": "fast_readout",
+        "first_detected_step": 20
+      },
+      {
+        "seed": 107,
+        "width": 8,
+        "arm": "fast_readout",
+        "first_detected_step": 20
+      },
+      {
+        "seed": 108,
+        "width": 8,
+        "arm": "fast_readout",
+        "first_detected_step": 20
+      },
+      {
+        "seed": 109,
+        "width": 8,
+        "arm": "fast_readout",
+        "first_detected_step": 20
+      }
+    ],
+    "args": {
+      "degrees": 30,
+      "ratio": -3,
+      "data_seed": 9027,
+      "bias": "centered",
+      "optimizer": "sgd",
+      "seed_start": 100,
+      "seeds": 10,
+      "steps": 10000,
+      "collection": "controls",
+      "initial_controls": false
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "a8719849b029b7e44e229ba9e15e7d5927140b1a259cc79fabc9e601161b9368",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "39ae370f7ab2c177ebd16aae4bef3ce72405612e07d9b767a1bd3085680c809e"
+    },
+    "elapsed_seconds": 16.404167500091717,
+    "dataset_hash": "c2186bd7d74add806d063b74b3ca27370eeef1fc7b4a981c3b3fc0ea5c52f3ee",
+    "curve_sha256": "5517019b6aa703258b53729a8c30abbbbc7787df28a0ab7d7b38d1e48eb28b7c",
+    "checkpoint_sha256": "34339691bf861b3f0c87f41d0c3734344276a24e59d49c2e122078c96dc70eb5"
+  },
+  {
+    "args": {
+      "degrees": 30,
+      "ratio": 3.0,
+      "data_seed": 9027,
+      "bias": "none",
+      "optimizer": "adam",
+      "seed_start": 100,
+      "seeds": 10,
+      "steps": 10000,
+      "collection": "controls"
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "94c7d701d09831539cf8b51285a0845068dec0667fb5a6eeeaeb4dc0f1824669",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "b1afb3b016e30c68e15b76c36417d7599158dbb24a1d1caa18fdf2a7587366e3"
+    },
+    "elapsed_seconds": 16.891336041968316,
+    "dataset_hash": "2ca9be4ab9e9772b1f2e955d0e357d6c2b6baed0cbf129d7679d75e240264ed0",
+    "curve_sha256": "b9dd60ab887122a6a345d145e276254fe53a3317c7a818f0b6baa520920b7efe",
+    "checkpoint_sha256": "7518ca2d76734156dc4086b7606d5c89570e6f534cf11caa263e159f6f382246"
+  },
+  {
+    "args": {
+      "degrees": 30,
+      "ratio": 3.0,
+      "data_seed": 9027,
+      "bias": "none",
+      "optimizer": "momentum",
+      "seed_start": 100,
+      "seeds": 10,
+      "steps": 10000,
+      "collection": "controls"
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "94c7d701d09831539cf8b51285a0845068dec0667fb5a6eeeaeb4dc0f1824669",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "b1afb3b016e30c68e15b76c36417d7599158dbb24a1d1caa18fdf2a7587366e3"
+    },
+    "elapsed_seconds": 15.40421491698362,
+    "dataset_hash": "2ca9be4ab9e9772b1f2e955d0e357d6c2b6baed0cbf129d7679d75e240264ed0",
+    "curve_sha256": "527f508bdac88ecdedd5f1ec641427a2dfb8d2fce36102da76fd2d09a8972691",
+    "checkpoint_sha256": "dbbda009969ea3b8b07ad29b1fde14bbb0e7253cef9da83962af9e5a887f62b3"
+  },
+  {
+    "args": {
+      "degrees": 30,
+      "ratio": 3.0,
+      "data_seed": 9027,
+      "bias": "none",
+      "optimizer": "sgd",
+      "seed_start": 100,
+      "seeds": 10,
+      "steps": 10000,
+      "collection": "controls"
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "94c7d701d09831539cf8b51285a0845068dec0667fb5a6eeeaeb4dc0f1824669",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "b1afb3b016e30c68e15b76c36417d7599158dbb24a1d1caa18fdf2a7587366e3"
+    },
+    "elapsed_seconds": 15.78508700011298,
+    "dataset_hash": "2ca9be4ab9e9772b1f2e955d0e357d6c2b6baed0cbf129d7679d75e240264ed0",
+    "curve_sha256": "f7b7f1f1686ea46c42de266e1aa05cbcdb60ca7dd88be09a6eacab9f953bc93e",
+    "checkpoint_sha256": "334d4968583343c8ae0a9915ab7fceeaaa975da7c77db44f19fe92c17190e2fe"
+  },
+  {
+    "args": {
+      "degrees": 45,
+      "ratio": -2.0,
+      "data_seed": 9027,
+      "bias": "none",
+      "optimizer": "adam",
+      "seed_start": 100,
+      "seeds": 10,
+      "steps": 10000,
+      "collection": "controls",
+      "initial_controls": false
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "c52ad287a072b233da738882581b42799885d1e7f5975f338656d79427277e5c",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "39ae370f7ab2c177ebd16aae4bef3ce72405612e07d9b767a1bd3085680c809e"
+    },
+    "elapsed_seconds": 17.20355737488717,
+    "dataset_hash": "523d1b58d005cf2e06bd4f780a1e94968d6d734107100c975499dc2cb57b7ddd",
+    "curve_sha256": "fd5aa5170db8b311e31e2de215ad48285ca5e2c4f72fb3a53be8cb79c0fdc87c",
+    "checkpoint_sha256": "dafd1385577aea2f7714222ffc165952042240e75eef43329400b098ee050933"
+  },
+  {
+    "args": {
+      "degrees": 45,
+      "ratio": -2.0,
+      "data_seed": 9027,
+      "bias": "none",
+      "optimizer": "momentum",
+      "seed_start": 100,
+      "seeds": 10,
+      "steps": 10000,
+      "collection": "controls"
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "94c7d701d09831539cf8b51285a0845068dec0667fb5a6eeeaeb4dc0f1824669",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "b1afb3b016e30c68e15b76c36417d7599158dbb24a1d1caa18fdf2a7587366e3"
+    },
+    "elapsed_seconds": 16.05730350012891,
+    "dataset_hash": "523d1b58d005cf2e06bd4f780a1e94968d6d734107100c975499dc2cb57b7ddd",
+    "curve_sha256": "4e1ff814c8ebe7221b9e05ce3909f87c8f5d58a60e738d05bbd0d552cf64e075",
+    "checkpoint_sha256": "2417568c201383bbdf5600401b5b21ab5a9f29ad5a46e0569cc57c3f2d357b2a"
+  },
+  {
+    "args": {
+      "degrees": 45,
+      "ratio": -2.0,
+      "data_seed": 9027,
+      "bias": "none",
+      "optimizer": "sgd",
+      "seed_start": 100,
+      "seeds": 10,
+      "steps": 10000,
+      "collection": "controls"
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "94c7d701d09831539cf8b51285a0845068dec0667fb5a6eeeaeb4dc0f1824669",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "b1afb3b016e30c68e15b76c36417d7599158dbb24a1d1caa18fdf2a7587366e3"
+    },
+    "elapsed_seconds": 15.51020299992524,
+    "dataset_hash": "523d1b58d005cf2e06bd4f780a1e94968d6d734107100c975499dc2cb57b7ddd",
+    "curve_sha256": "f255e89465576a73ce60f4885e3f8f6be4bcdfab3afcaad0812c273c342fa28f",
+    "checkpoint_sha256": "edb11d1256203ae4f9f5c7c706339294ea83be4ddbdfbcb936614f58e19946d1"
+  },
+  {
+    "args": {
+      "degrees": 60,
+      "ratio": -3,
+      "data_seed": 9027,
+      "bias": "centered",
+      "optimizer": "adam",
+      "seed_start": 100,
+      "seeds": 10,
+      "steps": 10000,
+      "collection": "controls",
+      "initial_controls": false
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "c52ad287a072b233da738882581b42799885d1e7f5975f338656d79427277e5c",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "39ae370f7ab2c177ebd16aae4bef3ce72405612e07d9b767a1bd3085680c809e"
+    },
+    "elapsed_seconds": 17.820326833985746,
+    "dataset_hash": "c4cb080749e114de2e4b854ab7254f61d75ff217bc8f1ed5cc3fe9efbe74c4f2",
+    "curve_sha256": "5ee76d9a7e44fa205c0c8fd7bd78339598a01847a4f32fca463fbdcde12c1a9e",
+    "checkpoint_sha256": "de2753a978e543632cb70e386f5c9bef64bf5a6620bd7b015c224668742df8cf"
+  },
+  {
+    "args": {
+      "degrees": 60,
+      "ratio": -3,
+      "data_seed": 9027,
+      "bias": "none",
+      "optimizer": "adam",
+      "seed_start": 100,
+      "seeds": 10,
+      "steps": 10000,
+      "collection": "controls"
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "94c7d701d09831539cf8b51285a0845068dec0667fb5a6eeeaeb4dc0f1824669",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "b1afb3b016e30c68e15b76c36417d7599158dbb24a1d1caa18fdf2a7587366e3"
+    },
+    "elapsed_seconds": 17.560029999818653,
+    "dataset_hash": "c4cb080749e114de2e4b854ab7254f61d75ff217bc8f1ed5cc3fe9efbe74c4f2",
+    "curve_sha256": "f92de8a7afb0a0b8f5af3195d6c93d5ee6b83369eabbd7ef0bfde24e8e498b84",
+    "checkpoint_sha256": "2e9db134c9cd95795b06273ee9a18134ff0dd7b44ab015902843d3e1f4b85269"
+  },
+  {
+    "args": {
+      "degrees": 60,
+      "ratio": -3,
+      "data_seed": 9027,
+      "bias": "centered",
+      "optimizer": "momentum",
+      "seed_start": 100,
+      "seeds": 10,
+      "steps": 10000,
+      "collection": "controls"
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "94c7d701d09831539cf8b51285a0845068dec0667fb5a6eeeaeb4dc0f1824669",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "b1afb3b016e30c68e15b76c36417d7599158dbb24a1d1caa18fdf2a7587366e3"
+    },
+    "elapsed_seconds": 16.305975999915972,
+    "dataset_hash": "c4cb080749e114de2e4b854ab7254f61d75ff217bc8f1ed5cc3fe9efbe74c4f2",
+    "curve_sha256": "dbcee0f5b5e968fcafaec1ea1e8cf74fc693a3c446d60a45619b9191bf9fec61",
+    "checkpoint_sha256": "31cce656dfe49151d8d2df5e3519e0a912087c030fb5c8d5dedd008890f36162"
+  },
+  {
+    "args": {
+      "degrees": 60,
+      "ratio": -3,
+      "data_seed": 9027,
+      "bias": "none",
+      "optimizer": "momentum",
+      "seed_start": 100,
+      "seeds": 10,
+      "steps": 10000,
+      "collection": "controls"
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "94c7d701d09831539cf8b51285a0845068dec0667fb5a6eeeaeb4dc0f1824669",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "b1afb3b016e30c68e15b76c36417d7599158dbb24a1d1caa18fdf2a7587366e3"
+    },
+    "elapsed_seconds": 14.49113225005567,
+    "dataset_hash": "c4cb080749e114de2e4b854ab7254f61d75ff217bc8f1ed5cc3fe9efbe74c4f2",
+    "curve_sha256": "f50317f82c7b04ee0a7bbf265816f516a99a75366d45a716feb41d77f4cfa282",
+    "checkpoint_sha256": "fcf17cf6928386fd0925bef700c84d3988324c1ff8cca9d586b79dd4a2f0d262"
+  },
+  {
+    "failures": [
+      {
+        "seed": 100,
+        "width": 8,
+        "arm": "fast_readout",
+        "first_detected_step": 20
+      },
+      {
+        "seed": 101,
+        "width": 8,
+        "arm": "fast_readout",
+        "first_detected_step": 20
+      },
+      {
+        "seed": 102,
+        "width": 8,
+        "arm": "fast_readout",
+        "first_detected_step": 20
+      },
+      {
+        "seed": 103,
+        "width": 8,
+        "arm": "fast_readout",
+        "first_detected_step": 20
+      },
+      {
+        "seed": 104,
+        "width": 8,
+        "arm": "fast_readout",
+        "first_detected_step": 20
+      },
+      {
+        "seed": 105,
+        "width": 8,
+        "arm": "fast_readout",
+        "first_detected_step": 20
+      },
+      {
+        "seed": 106,
+        "width": 8,
+        "arm": "fast_readout",
+        "first_detected_step": 20
+      },
+      {
+        "seed": 107,
+        "width": 8,
+        "arm": "fast_readout",
+        "first_detected_step": 20
+      },
+      {
+        "seed": 108,
+        "width": 8,
+        "arm": "fast_readout",
+        "first_detected_step": 20
+      },
+      {
+        "seed": 109,
+        "width": 8,
+        "arm": "fast_readout",
+        "first_detected_step": 20
+      }
+    ],
+    "args": {
+      "degrees": 60,
+      "ratio": -3,
+      "data_seed": 9027,
+      "bias": "centered",
+      "optimizer": "sgd",
+      "seed_start": 100,
+      "seeds": 10,
+      "steps": 10000,
+      "collection": "controls",
+      "initial_controls": false
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "a8719849b029b7e44e229ba9e15e7d5927140b1a259cc79fabc9e601161b9368",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "39ae370f7ab2c177ebd16aae4bef3ce72405612e07d9b767a1bd3085680c809e"
+    },
+    "elapsed_seconds": 15.078124500112608,
+    "dataset_hash": "c4cb080749e114de2e4b854ab7254f61d75ff217bc8f1ed5cc3fe9efbe74c4f2",
+    "curve_sha256": "696db4c3f3cc75fbe81b1dd74c25d4b4537b18829ba450492c0f8c5b5d7a0dd3",
+    "checkpoint_sha256": "5146c90d0e49fabf6316d3606e0228d84b96a5c334b1c9bb1cc34fda47c2eb77"
+  },
+  {
+    "args": {
+      "degrees": 60,
+      "ratio": -3,
+      "data_seed": 9027,
+      "bias": "none",
+      "optimizer": "sgd",
+      "seed_start": 100,
+      "seeds": 10,
+      "steps": 10000,
+      "collection": "controls"
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "94c7d701d09831539cf8b51285a0845068dec0667fb5a6eeeaeb4dc0f1824669",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "b1afb3b016e30c68e15b76c36417d7599158dbb24a1d1caa18fdf2a7587366e3"
+    },
+    "elapsed_seconds": 15.815131291979924,
+    "dataset_hash": "c4cb080749e114de2e4b854ab7254f61d75ff217bc8f1ed5cc3fe9efbe74c4f2",
+    "curve_sha256": "28b902d777dd45dd3ea2c9e51488dea7a58d63e2ad92a15ff7f8a06ad5022d28",
+    "checkpoint_sha256": "00174317a9357df308e04cd4b3fccd63847ae7799949765fd6da85213c463974"
+  },
+  {
+    "failures": [],
+    "args": {
+      "degrees": 30,
+      "ratio": -3,
+      "data_seed": 9037,
+      "bias": "none",
+      "optimizer": "adam",
+      "seed_start": 100,
+      "seeds": 10,
+      "steps": 10000,
+      "collection": "data2",
+      "initial_controls": false,
+      "history_controls": false
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "36209349496349a7e4e13a3dbb411d198717b64d7c1d868017848537d5c1b798",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "e4b49a260ed10479c402731b51c527a1709619e4cdf2b50e4cd0578015153b42"
+    },
+    "elapsed_seconds": 18.4596077920869,
+    "dataset_hash": "5a51c8e46b386108a522f007f73f9a1850ddcc0624b8007ce27d8f8bd5d4b147",
+    "curve_sha256": "a0d39ca56619e548e48dbfa37b5fdea9758053e61d1cf9b2cecf7e5296899db8",
+    "checkpoint_sha256": "bf1a7ebfb707fc9aa851a65179ecccedbfbb9189ab2d868a8d02bf3d4ad2256a"
+  },
+  {
+    "failures": [],
+    "args": {
+      "degrees": 30,
+      "ratio": -3,
+      "data_seed": 9037,
+      "bias": "none",
+      "optimizer": "momentum",
+      "seed_start": 100,
+      "seeds": 10,
+      "steps": 10000,
+      "collection": "data2",
+      "initial_controls": false,
+      "history_controls": false
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "36209349496349a7e4e13a3dbb411d198717b64d7c1d868017848537d5c1b798",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "e4b49a260ed10479c402731b51c527a1709619e4cdf2b50e4cd0578015153b42"
+    },
+    "elapsed_seconds": 16.344529209192842,
+    "dataset_hash": "5a51c8e46b386108a522f007f73f9a1850ddcc0624b8007ce27d8f8bd5d4b147",
+    "curve_sha256": "e8db331e064229db5fca9df01423c8e9e32b95ea0af9a3678ef930827b14aada",
+    "checkpoint_sha256": "43c39a2a63ef574dac8af14c345eefd4d026bc47004d761ab5bf5ed0be51c334"
+  },
+  {
+    "failures": [],
+    "args": {
+      "degrees": 30,
+      "ratio": -3,
+      "data_seed": 9037,
+      "bias": "none",
+      "optimizer": "sgd",
+      "seed_start": 100,
+      "seeds": 10,
+      "steps": 10000,
+      "collection": "data2",
+      "initial_controls": false,
+      "history_controls": false
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "36209349496349a7e4e13a3dbb411d198717b64d7c1d868017848537d5c1b798",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "e4b49a260ed10479c402731b51c527a1709619e4cdf2b50e4cd0578015153b42"
+    },
+    "elapsed_seconds": 17.33211995800957,
+    "dataset_hash": "5a51c8e46b386108a522f007f73f9a1850ddcc0624b8007ce27d8f8bd5d4b147",
+    "curve_sha256": "ac8cbca8931ed30d60bce376b8fddd89245a5936b47ef815362856c304c95825",
+    "checkpoint_sha256": "ddfa2345bbc51f893fd162181112022d54a883cae59ce61c0b79657376b9fc74"
+  },
+  {
+    "failures": [],
+    "args": {
+      "degrees": 30,
+      "ratio": -3,
+      "data_seed": 9027,
+      "bias": "none",
+      "optimizer": "adam",
+      "seed_start": 100,
+      "seeds": 20,
+      "steps": 10000,
+      "collection": "history_controls",
+      "initial_controls": false,
+      "history_controls": true
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "36209349496349a7e4e13a3dbb411d198717b64d7c1d868017848537d5c1b798",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "7e01fe4d9dd97284b711edad5824d0e834a8b3361528ee7e4717a6bc88bd8180"
+    },
+    "elapsed_seconds": 42.641806500032544,
+    "dataset_hash": "c2186bd7d74add806d063b74b3ca27370eeef1fc7b4a981c3b3fc0ea5c52f3ee",
+    "curve_sha256": "77391b09236455af594f98ace83801ad2941eb3be9e1ea2b735c5377a401ea67",
+    "checkpoint_sha256": "fa6fbbb8fdb9bbc6c1f89db626118c01227c1941f64bc891d1c94d850d54cf4b"
+  },
+  {
+    "failures": [],
+    "args": {
+      "degrees": 30,
+      "ratio": -3,
+      "data_seed": 9027,
+      "bias": "none",
+      "optimizer": "momentum",
+      "seed_start": 100,
+      "seeds": 20,
+      "steps": 10000,
+      "collection": "history_controls",
+      "initial_controls": false,
+      "history_controls": true
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "36209349496349a7e4e13a3dbb411d198717b64d7c1d868017848537d5c1b798",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "7e01fe4d9dd97284b711edad5824d0e834a8b3361528ee7e4717a6bc88bd8180"
+    },
+    "elapsed_seconds": 40.48616529209539,
+    "dataset_hash": "c2186bd7d74add806d063b74b3ca27370eeef1fc7b4a981c3b3fc0ea5c52f3ee",
+    "curve_sha256": "fd0cf526ba21cb4f24e5bde1d40ca06d04427ebb144da3083034d4f8f9374a8e",
+    "checkpoint_sha256": "a4d7bfb317f6028a0aa4daaa66479ccbac841f3c94ff14a7439122fe3903fdc7"
+  },
+  {
+    "failures": [],
+    "args": {
+      "degrees": 30,
+      "ratio": -3,
+      "data_seed": 9027,
+      "bias": "none",
+      "optimizer": "sgd",
+      "seed_start": 100,
+      "seeds": 20,
+      "steps": 10000,
+      "collection": "history_controls",
+      "initial_controls": false,
+      "history_controls": true
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "36209349496349a7e4e13a3dbb411d198717b64d7c1d868017848537d5c1b798",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "7e01fe4d9dd97284b711edad5824d0e834a8b3361528ee7e4717a6bc88bd8180"
+    },
+    "elapsed_seconds": 40.18658570898697,
+    "dataset_hash": "c2186bd7d74add806d063b74b3ca27370eeef1fc7b4a981c3b3fc0ea5c52f3ee",
+    "curve_sha256": "bf687c45176c677b14a6e03aa7965b3df961d574f339567c3fa9f78a5099d58e",
+    "checkpoint_sha256": "3bdabc3fa866eb59524b22ce9b35e7c8d75bf76c5b8b6ef525a710333f176610"
+  },
+  {
+    "args": {
+      "degrees": 30,
+      "ratio": -3,
+      "data_seed": 9027,
+      "bias": "none",
+      "optimizer": "adam",
+      "seed_start": 100,
+      "seeds": 20,
+      "steps": 10000,
+      "collection": "initialization_controls",
+      "initial_controls": true
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "c52ad287a072b233da738882581b42799885d1e7f5975f338656d79427277e5c",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "39ae370f7ab2c177ebd16aae4bef3ce72405612e07d9b767a1bd3085680c809e"
+    },
+    "elapsed_seconds": 39.14193162485026,
+    "dataset_hash": "c2186bd7d74add806d063b74b3ca27370eeef1fc7b4a981c3b3fc0ea5c52f3ee",
+    "curve_sha256": "2fa44a01be36196366e796052087b28cac01c18e954a9be18447689d78cb7d13",
+    "checkpoint_sha256": "131b723d1ddc54fd262dbae36ddda18faa80b4196e176a748f877fe2deb6c23d"
+  },
+  {
+    "args": {
+      "degrees": 30,
+      "ratio": -3,
+      "data_seed": 9027,
+      "bias": "none",
+      "optimizer": "momentum",
+      "seed_start": 100,
+      "seeds": 20,
+      "steps": 10000,
+      "collection": "initialization_controls",
+      "initial_controls": true
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "c52ad287a072b233da738882581b42799885d1e7f5975f338656d79427277e5c",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "39ae370f7ab2c177ebd16aae4bef3ce72405612e07d9b767a1bd3085680c809e"
+    },
+    "elapsed_seconds": 37.61602966696955,
+    "dataset_hash": "c2186bd7d74add806d063b74b3ca27370eeef1fc7b4a981c3b3fc0ea5c52f3ee",
+    "curve_sha256": "19f58fa5a5cf090185afbfa799c420426f86343db9f292b8c07443a1f57b8066",
+    "checkpoint_sha256": "3bca70f04806d4832ba44d0ad194838a55a35243bb49832bb28097a7c54478ac"
+  },
+  {
+    "args": {
+      "degrees": 30,
+      "ratio": -3,
+      "data_seed": 9027,
+      "bias": "none",
+      "optimizer": "sgd",
+      "seed_start": 100,
+      "seeds": 20,
+      "steps": 10000,
+      "collection": "initialization_controls",
+      "initial_controls": true
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "c52ad287a072b233da738882581b42799885d1e7f5975f338656d79427277e5c",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "39ae370f7ab2c177ebd16aae4bef3ce72405612e07d9b767a1bd3085680c809e"
+    },
+    "elapsed_seconds": 38.63146229181439,
+    "dataset_hash": "c2186bd7d74add806d063b74b3ca27370eeef1fc7b4a981c3b3fc0ea5c52f3ee",
+    "curve_sha256": "a058b4d8bb5c976a434861360a6062041d182ad12a53def7b1ab249176c0d41d",
+    "checkpoint_sha256": "ea1b0c4af88342451c2b6bc2d329ca51876442bbee53b494cb526293fce22380"
+  },
+  {
+    "args": {
+      "degrees": 30,
+      "ratio": -3,
+      "data_seed": 9027,
+      "bias": "none",
+      "optimizer": "adam",
+      "seed_start": 100,
+      "seeds": 20,
+      "steps": 10000,
+      "collection": "main"
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "94c7d701d09831539cf8b51285a0845068dec0667fb5a6eeeaeb4dc0f1824669",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "b1afb3b016e30c68e15b76c36417d7599158dbb24a1d1caa18fdf2a7587366e3"
+    },
+    "elapsed_seconds": 33.64380408311263,
+    "dataset_hash": "c2186bd7d74add806d063b74b3ca27370eeef1fc7b4a981c3b3fc0ea5c52f3ee",
+    "curve_sha256": "b9b586e31077c8552ab5338162ac1b9745ade5956667c319bb8b2537fbdccec6",
+    "checkpoint_sha256": "c15ff1e6e00048a4d2d94fb8910a5ea15825127ed53def92ffbb93aa50a04aeb"
+  },
+  {
+    "args": {
+      "degrees": 30,
+      "ratio": -3,
+      "data_seed": 9027,
+      "bias": "none",
+      "optimizer": "momentum",
+      "seed_start": 100,
+      "seeds": 20,
+      "steps": 10000,
+      "collection": "main"
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "94c7d701d09831539cf8b51285a0845068dec0667fb5a6eeeaeb4dc0f1824669",
+      "src/neural_competition/feature_profile.py": "6319710c0ea097b34abfbff45aba150f1d2cb360541247e5f9a71594cd208b2c",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "b1afb3b016e30c68e15b76c36417d7599158dbb24a1d1caa18fdf2a7587366e3"
+    },
+    "elapsed_seconds": 33.65849595912732,
+    "dataset_hash": "c2186bd7d74add806d063b74b3ca27370eeef1fc7b4a981c3b3fc0ea5c52f3ee",
+    "curve_sha256": "ea16da894318154c4a72448d6c81ee0bc0814667e04df33dbe036d2cfab7f699",
+    "checkpoint_sha256": "2ac210d0c5887c10dd8020d7f5e53ca990b0b6eeb3e129212edba17292b65c2c"
+  },
+  {
+    "args": {
+      "degrees": 30,
+      "ratio": -3,
+      "data_seed": 9027,
+      "bias": "none",
+      "optimizer": "sgd",
+      "seed_start": 100,
+      "seeds": 20,
+      "steps": 10000,
+      "collection": "main"
+    },
+    "sources": {
+      "scripts/studies/run_feature_profile.py": "ffcc782a8a7b416e36a5e76ea1873408c5727224a84404817dd6fc18b3f262cf",
+      "src/neural_competition/feature_profile.py": "fbe76e07a9bc5291da7f28b07659c05c37a1ba60074567ca02d50f385b3d4b23",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "b1afb3b016e30c68e15b76c36417d7599158dbb24a1d1caa18fdf2a7587366e3"
+    },
+    "elapsed_seconds": 32.418783167144284,
+    "dataset_hash": "c2186bd7d74add806d063b74b3ca27370eeef1fc7b4a981c3b3fc0ea5c52f3ee",
+    "curve_sha256": "4a945d4d1b328c50db6333c5093e7f58ff0e1a859dd483cb864d1338fd883686",
+    "checkpoint_sha256": "1a8a9894e490bb6cbf3ff42e3646a6be2129551019fa6cb3c9dd06f90745e17e"
+  },
+  {
+    "sources": {
+      "scripts/studies/extend_feature_profile.py": "8e0af5fcedd0550c085c9c1178551a3b0134379bb0ed7a67f5dfd0dedc913e41",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "e4b49a260ed10479c402731b51c527a1709619e4cdf2b50e4cd0578015153b42"
+    },
+    "initial_sha256": "c15ff1e6e00048a4d2d94fb8910a5ea15825127ed53def92ffbb93aa50a04aeb",
+    "seed_start": 100,
+    "seeds": 5,
+    "initial_step": 10000,
+    "final_step": 100000,
+    "protocol": "All interventions stop at 10k, including fast readout rate; preserve optimizer state",
+    "collection": "extension",
+    "optimizer": "adam",
+    "curve_sha256": "cf01a9147b1068011b2cd9e22589a5f222a81c0af8cbdda00e10688fb86375f7",
+    "checkpoint_sha256": "f96f1cd399fb3ac3767e498e466361a8d559b0be5af0f3ed855ca97a90a168ec"
+  },
+  {
+    "sources": {
+      "scripts/studies/extend_feature_profile.py": "8e0af5fcedd0550c085c9c1178551a3b0134379bb0ed7a67f5dfd0dedc913e41",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "e4b49a260ed10479c402731b51c527a1709619e4cdf2b50e4cd0578015153b42"
+    },
+    "initial_sha256": "2ac210d0c5887c10dd8020d7f5e53ca990b0b6eeb3e129212edba17292b65c2c",
+    "seed_start": 100,
+    "seeds": 5,
+    "initial_step": 10000,
+    "final_step": 100000,
+    "protocol": "All interventions stop at 10k, including fast readout rate; preserve optimizer state",
+    "collection": "extension",
+    "optimizer": "momentum",
+    "curve_sha256": "45b49e11fab88e431602583656d48b2fcf4e8f6d553d1a51c4ee74d54ccf6425",
+    "checkpoint_sha256": "cf35bda879dcaad9393aa4fd66eff0c366291842d85d92890cc8bdb349959589"
+  },
+  {
+    "sources": {
+      "scripts/studies/extend_feature_profile.py": "8e0af5fcedd0550c085c9c1178551a3b0134379bb0ed7a67f5dfd0dedc913e41",
+      "src/neural_competition/training.py": "0266053d2b6986b98c144a9bd0d01f7c1d48e47318962fe826491a97f7fd0b86",
+      "src/neural_competition/tasks.py": "8f2e2e528b4eff9b4d25c8fe7286c7ec959e2e699f2833e765c2c1e8f5f5ad39",
+      "src/neural_competition/residual_growth.py": "0f1e4d2164379e081aad4868b51fde8e4d86cf89529ac09adf3064af570bd9ec",
+      "docs/theory/feature_profile_protocol.md": "e4b49a260ed10479c402731b51c527a1709619e4cdf2b50e4cd0578015153b42"
+    },
+    "initial_sha256": "1a8a9894e490bb6cbf3ff42e3646a6be2129551019fa6cb3c9dd06f90745e17e",
+    "seed_start": 100,
+    "seeds": 5,
+    "initial_step": 10000,
+    "final_step": 100000,
+    "protocol": "All interventions stop at 10k, including fast readout rate; preserve optimizer state",
+    "collection": "extension",
+    "optimizer": "sgd",
+    "curve_sha256": "b302d1f22df9ddba407ec0b24e89c2de390b88f4edb6f389a6afeea9bab726fb",
+    "checkpoint_sha256": "01f1029ef644ea872a95388b24bcca3bfa9a174b7075f8d0c014419c36e6fc66"
+  }
+]

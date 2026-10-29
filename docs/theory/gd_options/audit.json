@@ -1,0 +1,259 @@
+{
+  "identities": [
+    {
+      "width": 32,
+      "checkpoint": 0,
+      "gradient_rate_relative_error": 1.2073722865154142e-14,
+      "augmentation_identity_error": 4.440892098500626e-16
+    },
+    {
+      "width": 32,
+      "checkpoint": 600,
+      "gradient_rate_relative_error": 1.45607988372108e-14,
+      "augmentation_identity_error": 0.0
+    },
+    {
+      "width": 128,
+      "checkpoint": 0,
+      "gradient_rate_relative_error": 1.1336159573867166e-14,
+      "augmentation_identity_error": 4.440892098500626e-16
+    },
+    {
+      "width": 128,
+      "checkpoint": 600,
+      "gradient_rate_relative_error": 1.2171584634882272e-14,
+      "augmentation_identity_error": 0.0
+    }
+  ],
+  "sgd": [
+    {
+      "width": 32,
+      "checkpoint": 0,
+      "rate": 0.005,
+      "batch_size": 16,
+      "base_loss": 2.5956591445312145,
+      "predicted_loss": 2.5476377815879006,
+      "observed_mean": 2.5488775833968997,
+      "observed_se": 0.0011423678050158342,
+      "predicted_noise_cost": 0.0008900842116988395
+    },
+    {
+      "width": 32,
+      "checkpoint": 0,
+      "rate": 0.005,
+      "batch_size": 64,
+      "base_loss": 2.5956591445312145,
+      "predicted_loss": 2.5469702184291263,
+      "observed_mean": 2.546755522092397,
+      "observed_se": 0.00048733750990134447,
+      "predicted_noise_cost": 0.00022252105292470988
+    },
+    {
+      "width": 32,
+      "checkpoint": 0,
+      "rate": 0.05,
+      "batch_size": 16,
+      "base_loss": 2.5956591445312145,
+      "predicted_loss": 2.2293674779151313,
+      "observed_mean": 2.2972863737502913,
+      "observed_se": 0.009542268961649347,
+      "predicted_noise_cost": 0.08900842116988397
+    },
+    {
+      "width": 32,
+      "checkpoint": 0,
+      "rate": 0.05,
+      "batch_size": 64,
+      "base_loss": 2.5956591445312145,
+      "predicted_loss": 2.1626111620377184,
+      "observed_mean": 2.2166541468329948,
+      "observed_se": 0.0036909356532788535,
+      "predicted_noise_cost": 0.022252105292470993
+    },
+    {
+      "width": 32,
+      "checkpoint": 600,
+      "rate": 0.005,
+      "batch_size": 16,
+      "base_loss": 0.18672005385969065,
+      "predicted_loss": 0.18293046344824315,
+      "observed_mean": 0.1834926373782791,
+      "observed_se": 0.0004550944425104573,
+      "predicted_noise_cost": 0.00015959705671156568
+    },
+    {
+      "width": 32,
+      "checkpoint": 600,
+      "rate": 0.005,
+      "batch_size": 64,
+      "base_loss": 0.18672005385969065,
+      "predicted_loss": 0.18281076565570947,
+      "observed_mean": 0.18303166152257191,
+      "observed_se": 0.00021303414213037132,
+      "predicted_noise_cost": 3.989926417789142e-05
+    },
+    {
+      "width": 32,
+      "checkpoint": 600,
+      "rate": 0.05,
+      "batch_size": 16,
+      "base_loss": 0.18672005385969065,
+      "predicted_loss": 0.16802996842278237,
+      "observed_mean": 0.1708100205722725,
+      "observed_se": 0.002891105334983804,
+      "predicted_noise_cost": 0.015959705671156572
+    },
+    {
+      "width": 32,
+      "checkpoint": 600,
+      "rate": 0.05,
+      "batch_size": 64,
+      "base_loss": 0.18672005385969065,
+      "predicted_loss": 0.15606018916941494,
+      "observed_mean": 0.15681717957549896,
+      "observed_se": 0.0015616925874260387,
+      "predicted_noise_cost": 0.003989926417789143
+    },
+    {
+      "width": 128,
+      "checkpoint": 0,
+      "rate": 0.005,
+      "batch_size": 16,
+      "base_loss": 2.447111725470121,
+      "predicted_loss": 2.3753635454398125,
+      "observed_mean": 2.37548813936246,
+      "observed_se": 0.003161526278920733,
+      "predicted_noise_cost": 0.0008440275576137015
+    },
+    {
+      "width": 128,
+      "checkpoint": 0,
+      "rate": 0.005,
+      "batch_size": 64,
+      "base_loss": 2.447111725470121,
+      "predicted_loss": 2.374730524771602,
+      "observed_mean": 2.373651950479526,
+      "observed_se": 0.0013982849103989382,
+      "predicted_noise_cost": 0.00021100688940342538
+    },
+    {
+      "width": 128,
+      "checkpoint": 0,
+      "rate": 0.05,
+      "batch_size": 16,
+      "base_loss": 2.447111725470121,
+      "predicted_loss": 1.9006314603666892,
+      "observed_mean": 1.9962312243120914,
+      "observed_se": 0.016428023373833672,
+      "predicted_noise_cost": 0.08440275576137017
+    },
+    {
+      "width": 128,
+      "checkpoint": 0,
+      "rate": 0.05,
+      "batch_size": 64,
+      "base_loss": 2.447111725470121,
+      "predicted_loss": 1.8373293935456614,
+      "observed_mean": 1.8877741902616088,
+      "observed_se": 0.006036594388263835,
+      "predicted_noise_cost": 0.021100688940342543
+    },
+    {
+      "width": 128,
+      "checkpoint": 600,
+      "rate": 0.005,
+      "batch_size": 16,
+      "base_loss": 0.16426049961175732,
+      "predicted_loss": 0.16099231447950826,
+      "observed_mean": 0.16127202391874412,
+      "observed_se": 0.0004429862668823559,
+      "predicted_noise_cost": 0.00011684560763343547
+    },
+    {
+      "width": 128,
+      "checkpoint": 600,
+      "rate": 0.005,
+      "batch_size": 64,
+      "base_loss": 0.16426049961175732,
+      "predicted_loss": 0.16090468027378318,
+      "observed_mean": 0.1609744178983163,
+      "observed_se": 0.00020043788738509835,
+      "predicted_noise_cost": 2.9211401908358867e-05
+    },
+    {
+      "width": 128,
+      "checkpoint": 600,
+      "rate": 0.05,
+      "batch_size": 16,
+      "base_loss": 0.16426049961175732,
+      "predicted_loss": 0.14529037429284947,
+      "observed_mean": 0.14887988418975695,
+      "observed_se": 0.0024433226165022446,
+      "predicted_noise_cost": 0.011684560763343548
+    },
+    {
+      "width": 128,
+      "checkpoint": 600,
+      "rate": 0.05,
+      "batch_size": 64,
+      "base_loss": 0.16426049961175732,
+      "predicted_loss": 0.13652695372034182,
+      "observed_mean": 0.1368825760151554,
+      "observed_se": 0.0015101492517573915,
+      "predicted_noise_cost": 0.002921140190835887
+    }
+  ],
+  "fixed_metric_turnover": [
+    {
+      "seed": 281501,
+      "width": 32,
+      "lost": 26.92544605770342,
+      "gained": 64.07108426803441
+    },
+    {
+      "seed": 281501,
+      "width": 128,
+      "lost": 19.860534318234148,
+      "gained": 38.79961786048551
+    },
+    {
+      "seed": 281502,
+      "width": 32,
+      "lost": 25.35861240530376,
+      "gained": 74.1773383268277
+    },
+    {
+      "seed": 281502,
+      "width": 128,
+      "lost": 17.889094661926812,
+      "gained": 38.36930561062073
+    }
+  ],
+  "residual_response_turnover": [
+    {
+      "seed": 281501,
+      "width": 32,
+      "lost": 175.55490150319162,
+      "gained": 5043.772346447163
+    },
+    {
+      "seed": 281501,
+      "width": 128,
+      "lost": 140.4391889078295,
+      "gained": 4624.51173895926
+    },
+    {
+      "seed": 281502,
+      "width": 32,
+      "lost": 153.90741633965231,
+      "gained": 5210.1751086594
+    },
+    {
+      "seed": 281502,
+      "width": 128,
+      "lost": 94.3744747426381,
+      "gained": 4473.709027946342
+    }
+  ],
+  "caveat": "SGD forecast uses frozen generalized Gauss-Newton curvature, not the full Hessian."
+}

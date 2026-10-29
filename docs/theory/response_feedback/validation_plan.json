@@ -1,0 +1,36 @@
+{
+  "seeds": [
+    283101,
+    283102,
+    283103,
+    283104,
+    283105,
+    283106,
+    283107,
+    283108
+  ],
+  "source": "Existing ordinary SGD states; new unseen branch outcomes, not new independent initializations",
+  "primary_steps": [
+    20,
+    100
+  ],
+  "primary_horizons": [
+    20,
+    80
+  ],
+  "boundary_steps": [
+    0,
+    800
+  ],
+  "rate": 0.05,
+  "copies": 4,
+  "sgd_batch": 128,
+  "sgd_independent_streams": 8,
+  "model": "fixed activation patterns, evolving bilinear coefficient-feature feedback, original cross-entropy",
+  "fitted_parameters": 0,
+  "primary_target": "seed-level mean reserve-minus-ordinary gain over independent streams",
+  "quantitative_hypothesis": "Effect RMSE less than 0.35 times zero-effect RMSE over the pooled primary settings, and consistent sign for material effects",
+  "sign_hypothesis": "Slower feedback usually hurts after early learning on MNIST",
+  "ordinary_gain_forecast": "Secondary comparison with frozen-linear-response model; no assumed improvement",
+  "scope": "A local response-transport model, not a prediction of entire training or proof that delayed commitment causes the MNIST width gap"
+}

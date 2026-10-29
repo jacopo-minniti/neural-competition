@@ -1,0 +1,84 @@
+{
+  "status": "Locked before fresh counterfactual forecasts/outcomes",
+  "cases": [
+    {
+      "seed": 284101,
+      "step": 100,
+      "focal": 0
+    },
+    {
+      "seed": 284102,
+      "step": 100,
+      "focal": 1
+    },
+    {
+      "seed": 284103,
+      "step": 100,
+      "focal": 2
+    },
+    {
+      "seed": 284104,
+      "step": 100,
+      "focal": 3
+    },
+    {
+      "seed": 284105,
+      "step": 100,
+      "focal": 4
+    },
+    {
+      "seed": 284106,
+      "step": 100,
+      "focal": 5
+    },
+    {
+      "seed": 284107,
+      "step": 100,
+      "focal": 6
+    },
+    {
+      "seed": 284108,
+      "step": 100,
+      "focal": 7
+    },
+    {
+      "seed": 284109,
+      "step": 100,
+      "focal": 8
+    },
+    {
+      "seed": 284110,
+      "step": 100,
+      "focal": 9
+    }
+  ],
+  "widths": [
+    32,
+    128
+  ],
+  "pressure_steps": 20,
+  "correction_steps": [
+    1,
+    5,
+    20
+  ],
+  "rate": 0.05,
+  "model": "Local bilinear response with physical output decoding; midpoint mask refresh (10 steps) versus original unrefreshed evolution",
+  "arms": [
+    "no pressure",
+    "peer pressure",
+    "signed response-matched copies (2,-1), metrics output .5 / incoming .2"
+  ],
+  "primary_targets": [
+    "Peer minus no-pressure common-output correction gain",
+    "Signed minus peer common-output correction gain"
+  ],
+  "primary_score": "RMSE of contrast predictions, pooled seeds,widths,horizons; resample whole seeds for uncertainty",
+  "quantitative_hypothesis": "Refreshed-model contrast RMSE below .5 times zero-effect RMSE, and below original model RMSE",
+  "causal_hypothesis": "Signed copies reduce response drift; they improve first-step correction in states forecast to suffer peer-induced first-step impairment, while also suppressing beneficial changes",
+  "width_hypothesis": "Negative part of relative peer-induced first-step gain change is smaller on average at width128; no monotone long-term benefit presumed",
+  "limitation": "Pilot shows short-lived impairments and gain-order reversals. Lower V_tau alone is not a finite-horizon failure predictor; no uniform 20-step or native-recovery rescue predicted.",
+  "diagnostic": "Frozen-quadratic finite-budget response uses the same Jacobian/curvature and is compared with realized correction; no new fitted parameters",
+  "cohort": "Ten fresh initialization seeds, one assigned focal class per seed covering digits0-9. Class and initialization effects are not independently replicated.",
+  "chronology": "After selected-case pilot and signed-copy pilot; quadratic diagnostic pilot running; no fresh intervention results available."
+}

@@ -90,3 +90,34 @@ The old full archive audit no longer applies after pruning. Historical raw
 arrays removed from ignored `runs/` must be regenerated with their original
 producers. Do not use the current test count or retained example states to
 claim that every historical experiment has been rerun.
+
+## Coupled-readout follow-up
+
+Full reproduction of the new follow-up (CPU; completion markers skip existing
+bundles). The main design preceded fresh runs; initialization/history and final
+robustness follow-ups were exploratory additions, as recorded in the protocol.
+
+```sh
+set -e
+for opt in sgd momentum adam; do
+  uv run python scripts/studies/run_feature_profile.py --optimizer "$opt" --seeds 20 --collection main
+  uv run python scripts/studies/run_feature_profile.py --optimizer "$opt" --degrees 30 --ratio -1 --collection controls
+  uv run python scripts/studies/run_feature_profile.py --optimizer "$opt" --degrees 60 --ratio -3 --collection controls
+  uv run python scripts/studies/run_feature_profile.py --optimizer "$opt" --degrees 30 --ratio 3 --collection controls
+  uv run python scripts/studies/run_feature_profile.py --optimizer "$opt" --degrees 45 --ratio -2 --collection controls
+  uv run python scripts/studies/run_feature_profile.py --optimizer "$opt" --degrees 30 --bias centered --collection controls
+  uv run python scripts/studies/run_feature_profile.py --optimizer "$opt" --degrees 60 --bias centered --collection controls
+  uv run python scripts/studies/run_feature_profile.py --optimizer "$opt" --seeds 20 --initial-controls --collection initialization_controls
+  uv run python scripts/studies/run_feature_profile.py --optimizer "$opt" --seeds 20 --history-controls --collection history_controls
+  uv run python scripts/studies/run_feature_profile.py --optimizer "$opt" --data-seed 9037 --collection data2
+done
+uv run python scripts/studies/extend_feature_profile.py
+MPLCONFIGDIR=/tmp/neural-competition-mpl uv run python scripts/studies/analyze_feature_profile.py
+```
+
+To validate retained local states without rerunning training, run only the last
+analysis command. It reconstructs all final losses, checks source/data hashes,
+compares untreated late branches and repeated cohorts, and regenerates tables
+and two figures. This needs all main/control/history collections, rather than a
+partial study. A tiny smoke run can use `--steps 1000 --seeds 1 --collection validation`;
+validation is excluded from publication analysis. Raw data remain ignored by Git.

@@ -1,0 +1,36 @@
+{
+  "seed": 997031,
+  "seeds": 48,
+  "widths": [
+    4,
+    8,
+    16
+  ],
+  "q": 0.1,
+  "dt": 0.05,
+  "trace_horizon": 2000,
+  "extension_horizon": 10000,
+  "growth_time": 100,
+  "probe_columns": [
+    "loss",
+    "b",
+    "kappa",
+    "effective_blocks",
+    "direct",
+    "main_force",
+    "outside_force",
+    "db",
+    "outside_loss",
+    "max_block",
+    "effective_gate_families",
+    "conditional_energy",
+    "conditional_rate",
+    "conditional_transfer",
+    "conditional_energy_derivative",
+    "kappa_parameter_change",
+    "kappa_gate_change",
+    "cumulative_direct_reduction",
+    "cumulative_main_transfer",
+    "cumulative_finite_step_correction"
+  ]
+}

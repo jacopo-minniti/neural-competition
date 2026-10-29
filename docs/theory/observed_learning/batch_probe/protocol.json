@@ -1,0 +1,75 @@
+{
+  "source": "docs/theory/observed_learning/mnist_confirmation",
+  "seeds": [
+    283101,
+    283102,
+    283103,
+    283104,
+    283105,
+    283106,
+    283107,
+    283108
+  ],
+  "widths": [
+    32,
+    128
+  ],
+  "steps": [
+    100,
+    800
+  ],
+  "batch_sizes": [
+    128,
+    512,
+    2048,
+    "full"
+  ],
+  "repeats": 32,
+  "rate": 0.05,
+  "sampling": "with replacement, nested within repetition",
+  "precision": "float64 analytic SGD from identical saved float32 ordinary checkpoints",
+  "hypotheses": [
+    "Larger batches reduce convex cost and increase expected one-step gain.",
+    "Feature nonlinearity may limit the quadratic-noise explanation."
+  ],
+  "scope": "Immediate counterfactual, not long-run batch-size or generalization claim",
+  "checkpoint_hashes": {
+    "model_283101_32_100.pt": "828f6e0a33c4dc29e1771bd129da276c062d051ff93db5a141bbb588117eabfc",
+    "model_283101_32_800.pt": "9969dc75163c55ccb44e7d81ba5f477cdcce0b60ff35746a013014e9573f6a75",
+    "model_283101_128_100.pt": "9d4cd1d016ed22065a3c4a21558223b99510cc10e7eab03de78196c0ec8ecc6f",
+    "model_283101_128_800.pt": "6a7111fd0eb5399e232993b023d7baefeb71d4d96fc7031805c09d6e0c9b185a",
+    "model_283102_32_100.pt": "e38537c1d5a399bccafb7ad78a2c13515526f692a16e1513f426b7893beaa8a1",
+    "model_283102_32_800.pt": "1476d4d813c41c23582b6883d423f0f5e46fee23c2050c34ed637c3af866472f",
+    "model_283102_128_100.pt": "3e2d1ea5f672048832028b74009311c3543ee2eca95ee3a58c1587d011bc26b4",
+    "model_283102_128_800.pt": "b4b20998a6844ed0712cc171fc41aa4c7d7760dc498b368ab8265fbaeeebc02d",
+    "model_283103_32_100.pt": "fe61cf934844ec2a9653b4bbaaa88b3c8505f4277014eb3d6b4acced60afceb2",
+    "model_283103_32_800.pt": "30f87306fb01744ac37b71415f43cd03108f51eceed1181fe5e31fa281cd4919",
+    "model_283103_128_100.pt": "e85a1a18a60cd4a6deb1a5f3298949b9f3297ffbb62d1c16a4f373fa6cdc0be8",
+    "model_283103_128_800.pt": "9f031f689721e291f0cdb56d78f1654230ad5dd7fbd169811bde68569661eeb3",
+    "model_283104_32_100.pt": "ed42a7af4a62772fa962622d3119c46ed951a226fdd306903c85622e558f9463",
+    "model_283104_32_800.pt": "2e8ef35cdc74fe9490d1b48a1153ad7ec327820832b5e65a3cc8b37364acb212",
+    "model_283104_128_100.pt": "216ad17698d42a7a2617c456c0f5b050b71652f633e92d9026cba468a1946b44",
+    "model_283104_128_800.pt": "c4a625ab1e1b9484a52fabe4d065bcbbc78b450af42640a3580e3dae51c26497",
+    "model_283105_32_100.pt": "698614d1a1e14fe9da7530411d6da4f671119713a3dd7a97f5c4d4b855ee2b2e",
+    "model_283105_32_800.pt": "d25a2c4354a2c7ec65daf2aad8c11999e9c797b69f624292680f84f26a3a6272",
+    "model_283105_128_100.pt": "8f016dbf9ad2b5e4a1982173aac6b43a7658e95a84e25570009ea0510c964576",
+    "model_283105_128_800.pt": "518bd0cdbbd45839467af670f4ac7f1c7040ebd1e870e7e2b9f11d5f691b89bb",
+    "model_283106_32_100.pt": "0739f2ae4c8f5e61a749efaca8115d77804f818a797589f0051c203f8d10fb42",
+    "model_283106_32_800.pt": "990999765e0145a658f28fdfe8ea76d03e0940449df5170eb8ab124b95390fc1",
+    "model_283106_128_100.pt": "9230ae32c2db604d36b2c55960cbf449fa78e48bc76428515583f4f3909ebce5",
+    "model_283106_128_800.pt": "795c4cafbe47098e1f764e0cf52777e1357f0eee100509d57d18f860d41c4068",
+    "model_283107_32_100.pt": "e5f7b7cd6045a608f92f37dd9aa874774ce054292a89b7817b11b0dd8581c4e2",
+    "model_283107_32_800.pt": "5cc666da6b76b6dd2433da70f8d6b6cf218ffe25225d608e4ba4dd76a2823fab",
+    "model_283107_128_100.pt": "990df1548e45cf62cbbb48aa97d08f35bb17dceee39d2c3f3226da172a3e0fcf",
+    "model_283107_128_800.pt": "0cea0a100da9b5cd562e5d9d9865d376bb8fb1346cfc474f0a560a7ac80bb9ef",
+    "model_283108_32_100.pt": "b52dfec0303b3176008da43e59863dca27555263a57cd9cd8edb0027c5e71747",
+    "model_283108_32_800.pt": "b9799cba00473cbee5750720bdb5da87576750c6fd9340450990da15cba8636e",
+    "model_283108_128_100.pt": "8050dccdbd1a51954188cabd9c76831ad2f8eef6e44c8d747621bf09c795b078",
+    "model_283108_128_800.pt": "bcd4aaccb5a7fa994b080015b0d12a7f1168ff7b58b88b61a7d5fd03cdd57e7c"
+  },
+  "sources": {
+    "scripts/studies/probe_ledger_noise.py": "5d8ca0c9fa2bc94fc436773ad37c5372098ea31dd7a98bd8d081203605f58fad",
+    "scripts/studies/trace_observed_learning.py": "687baca4f524516677d4cf517fca9c11d5db7b00b3f3f16e96aa6a6867a6d7d3",
+    "src/neural_competition/learning_ledger.py": "cccd926d90226e1ea5eac5c5f8719e13c6e91d7ce3e060eca4c68717754cb143"
+  }
+}

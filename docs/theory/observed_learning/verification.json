@@ -1,0 +1,155 @@
+{
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.14.1",
+    "numpy": "2.5.4",
+    "platform": "macOS-26.5.1-arm64-arm-64bit"
+  },
+  "replay": [
+    {
+      "cohort": "mnist",
+      "seed": 283001,
+      "width": 32,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist",
+      "seed": 283001,
+      "width": 128,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist",
+      "seed": 283002,
+      "width": 32,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist",
+      "seed": 283002,
+      "width": 128,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist",
+      "seed": 283003,
+      "width": 32,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist",
+      "seed": 283003,
+      "width": 128,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist",
+      "seed": 283004,
+      "width": 32,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist",
+      "seed": 283004,
+      "width": 128,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist_confirmation",
+      "seed": 283101,
+      "width": 32,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist_confirmation",
+      "seed": 283101,
+      "width": 128,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist_confirmation",
+      "seed": 283102,
+      "width": 32,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist_confirmation",
+      "seed": 283102,
+      "width": 128,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist_confirmation",
+      "seed": 283103,
+      "width": 32,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist_confirmation",
+      "seed": 283103,
+      "width": 128,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist_confirmation",
+      "seed": 283104,
+      "width": 32,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist_confirmation",
+      "seed": 283104,
+      "width": 128,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist_confirmation",
+      "seed": 283105,
+      "width": 32,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist_confirmation",
+      "seed": 283105,
+      "width": 128,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist_confirmation",
+      "seed": 283106,
+      "width": 32,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist_confirmation",
+      "seed": 283106,
+      "width": 128,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist_confirmation",
+      "seed": 283107,
+      "width": 32,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist_confirmation",
+      "seed": 283107,
+      "width": 128,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist_confirmation",
+      "seed": 283108,
+      "width": 32,
+      "max_parameter_error": 0.0
+    },
+    {
+      "cohort": "mnist_confirmation",
+      "seed": 283108,
+      "width": 128,
+      "max_parameter_error": 0.0
+    }
+  ],
+  "historical_mnist_max_loss_difference": 3.8026430837501124e-08
+}

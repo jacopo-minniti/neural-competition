@@ -1,0 +1,11 @@
+{
+  "probes": 16,
+  "mass_estimate": 7172.927491336035,
+  "mass_standard_error": 170.5848261103007,
+  "exact_mass": 6879.57101354491,
+  "participation_estimate": 124.62752528419463,
+  "exact_participation": 126.73494469436805,
+  "max_cg_steps": 24,
+  "max_relative_residual": 9.522011015434119e-08,
+  "note": "Participation is a ratio estimator; the reported mass SE does not give its confidence interval."
+}

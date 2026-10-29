@@ -1,0 +1,7 @@
+optimizer,model,squared_error
+adam,loss_and_profile,16.13068737316096
+adam,loss_only,14.312320131120504
+momentum,loss_and_profile,17.9288847034885
+momentum,loss_only,16.844411939262105
+sgd,loss_and_profile,14.35858075905961
+sgd,loss_only,14.116481160450729

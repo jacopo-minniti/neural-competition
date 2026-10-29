@@ -1,0 +1,33 @@
+{
+  "input": "docs/theory/toy_resource_competition/confirmation",
+  "end": 100,
+  "dt": 0.05,
+  "threshold": 0.03,
+  "cases": [
+    "discrete",
+    "continuous",
+    "rarer",
+    "centered",
+    "separate_attribute",
+    "two_refinements"
+  ],
+  "selection": "Every ordinary update with a gate change; record absolute structural coverage change above threshold. No terminal-outcome selection.",
+  "sources": {
+    "audit_toy_option_events.py": "2a2d71036ce2d480caf255ab3ccce9e8c40cc01f8eea98d4fbb882eae80347bf",
+    "toy_option_resources.py": "b0368544480a11ed884b7b59563fbb370d92543471e46a53effffda75099ce72"
+  },
+  "input_hashes": {
+    "discrete_4_states.npz": "11b5bffd150921c6df44224ca283f31706cc4e28f7a52ef4ce60727d3c45d373",
+    "discrete_8_states.npz": "31e2902bff75c4f3793b8d778a065cf4749d4b63e80843bf2f168a1edb4f45d7",
+    "continuous_4_states.npz": "6c1386db1d4343f9b71feb50a73ac8655e5871291e3d8e9f789a969568447738",
+    "continuous_8_states.npz": "2d5dae32f87768e217301df605282a42e9265fab42b6943fea5f200597b3fe31",
+    "rarer_4_states.npz": "0ceb27bdf72dbf3f16cc7ff51688a7e6c3e413a9f56950726efc97d320ed505c",
+    "rarer_8_states.npz": "501ce7c2096fded34868f346e9b8532fd3225b69a39303635c3d598ace892135",
+    "centered_4_states.npz": "4ab2225d727554c902e4ed9812e3072f4d9b77be42faefe56c3859c986c0bf5c",
+    "centered_8_states.npz": "fcdb6c4c7012591558d4f375b3a7234613a091220cc7040aae9e44a8b7f7c8b9",
+    "separate_attribute_4_states.npz": "075d3013f219d57516c041d59747f1615591ebc08e2b40bcb0e5dfffda3d27f7",
+    "separate_attribute_8_states.npz": "0d476693d8099720438b6381516a83005eba4e5ebcdaba93d6b026be5e61de72",
+    "two_refinements_6_states.npz": "dda21fb4249b6110e695031e051fcad5ec479b730eb6404fad1b27d480936e75",
+    "two_refinements_12_states.npz": "fa0c9be461fa94bf10de0ee4b2a366a4726d91159b80c348a41691c0f58fb378"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "target": "wide gain minus narrow gain over next 20 ordinary SGD updates",
+  "models": {
+    "loss_time": [
+      "time",
+      "full_loss_gap",
+      "full_loss_mean"
+    ],
+    "loss_gradient": [
+      "time",
+      "full_loss_gap",
+      "full_loss_mean",
+      "gradient_norm_squared_gap",
+      "gradient_norm_squared_mean"
+    ],
+    "loss_gradient_curvature": [
+      "time",
+      "full_loss_gap",
+      "full_loss_mean",
+      "gradient_norm_squared_gap",
+      "gradient_norm_squared_mean",
+      "scalar_curvature_prediction_gap",
+      "scalar_curvature_prediction_mean"
+    ],
+    "loss_gradient_plus_options": [
+      "time",
+      "full_loss_gap",
+      "full_loss_mean",
+      "gradient_norm_squared_gap",
+      "gradient_norm_squared_mean",
+      "value_gap",
+      "alignment_gap",
+      "residual_strength_percentile_gap",
+      "breadth_gap",
+      "mass_gap"
+    ],
+    "loss_gradient_curvature_plus_options": [
+      "time",
+      "full_loss_gap",
+      "full_loss_mean",
+      "gradient_norm_squared_gap",
+      "gradient_norm_squared_mean",
+      "scalar_curvature_prediction_gap",
+      "scalar_curvature_prediction_mean",
+      "value_gap",
+      "alignment_gap",
+      "residual_strength_percentile_gap",
+      "breadth_gap",
+      "mass_gap"
+    ],
+    "loss_gradient_plus_spectral": [
+      "time",
+      "full_loss_gap",
+      "full_loss_mean",
+      "gradient_norm_squared_gap",
+      "gradient_norm_squared_mean",
+      "spectral_prediction_gap"
+    ],
+    "loss_gradient_plus_matched_demand": [
+      "time",
+      "full_loss_gap",
+      "full_loss_mean",
+      "gradient_norm_squared_gap",
+      "gradient_norm_squared_mean",
+      "capability_component",
+      "common_response_gap",
+      "excess_response_gap"
+    ]
+  },
+  "ridge_penalty": 1.0,
+  "calibration_seeds": [
+    281801,
+    281802,
+    281803,
+    281804
+  ],
+  "test_seeds": [
+    281805,
+    281806,
+    281807,
+    281808
+  ],
+  "periods": {
+    "all": "start>=0",
+    "late": "start>=100"
+  },
+  "note": "Initial feature sets fixed before inspecting target scores. Phase-conditioned fits and matched-demand additions are exploratory follow-ups. Intervals within a seed are correlated."
+}

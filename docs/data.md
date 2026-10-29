@@ -9,6 +9,9 @@ this repository does not publish local checkpoints or datasets.
 
 | Location | Retained evidence |
 | --- | --- |
+| `docs/tables/feature_profile/` | All new intervention curves, controls, forecasts, extension results, executed sources and audits |
+| `runs/feature_profile/` | All new raw curves, correction summaries, parameter/optimizer checkpoints and manifests; deterministic datasets rebuilt from seeds |
+| `runs/competition_pilot/` | Small exploratory screening and rejected profile-drift traces, with executed source copies; not confirmatory evidence |
 | `docs/tables/residual_growth/` | All non-pilot curves, endpoints, roles, feature probes, contrasts, geometry and executed-source provenance |
 | `runs/residual_growth/`, `runs/polarity/` | Every reported non-pilot final parameter/optimizer state, generated dataset, curve, probe and manifest |
 | `docs/tables/mnist/` | Complete main/control results, diagnostic summaries, tuning, split indices, audits and executed source snapshots |
@@ -28,7 +31,9 @@ uv run python scripts/check_repository.py --local-data
 ```
 
 This checks integrity, not the scientific interpretation. New runs and recreated
-caches are intentionally not required by the fixed inventory. Representative
+caches are intentionally not required by the fixed inventory. The later feature-
+profile study has its own versioned provenance hashes and reconstruction audit;
+rerun its analyzer to validate the new raw checkpoints. Representative
 old states must not be used to estimate cohort success frequencies.
 
 ## What was removed

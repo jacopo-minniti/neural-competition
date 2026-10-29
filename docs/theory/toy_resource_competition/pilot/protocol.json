@@ -1,0 +1,104 @@
+{
+  "seed": 295001,
+  "count": 32,
+  "cases": {
+    "discrete": {
+      "q": [
+        0.1
+      ],
+      "detail": [
+        2.0
+      ],
+      "base": 2.0,
+      "nodes": 1,
+      "spread": 0.0,
+      "attributes": 1
+    },
+    "continuous": {
+      "q": [
+        0.1
+      ],
+      "detail": [
+        2.0
+      ],
+      "base": 2.0,
+      "nodes": 3,
+      "spread": 0.15,
+      "attributes": 1
+    },
+    "rarer": {
+      "q": [
+        0.02
+      ],
+      "detail": [
+        2.0
+      ],
+      "base": 2.0,
+      "nodes": 1,
+      "spread": 0.0,
+      "attributes": 1
+    },
+    "centered": {
+      "q": [
+        0.1
+      ],
+      "detail": [
+        2.0
+      ],
+      "base": -0.2,
+      "nodes": 1,
+      "spread": 0.0,
+      "attributes": 1
+    },
+    "two_refinements": {
+      "q": [
+        0.1,
+        0.03
+      ],
+      "detail": [
+        2.0,
+        -1.0
+      ],
+      "base": 2.0,
+      "nodes": 1,
+      "spread": 0.0,
+      "attributes": 1
+    },
+    "separate_attribute": {
+      "q": [
+        0.1
+      ],
+      "detail": [
+        2.0
+      ],
+      "base": 2.0,
+      "nodes": 1,
+      "spread": 0.0,
+      "attributes": 2
+    }
+  },
+  "arms": [
+    "ordinary",
+    "early_no_common",
+    "matched_movement",
+    "late_no_common"
+  ],
+  "dt": 0.05,
+  "end": 500.0,
+  "scale": 0.002,
+  "early_window": [
+    0,
+    20
+  ],
+  "late_window": [
+    100,
+    120
+  ],
+  "widths": "capacity witness width and twice that width, nested initial units",
+  "pressure": "Orthogonal conditional-mean residual on attribute groups versus context-dependent residual",
+  "control": "Full-gradient direction with per-seed optimizer-metric velocity norm matched to early_no_common path at each step",
+  "sources": {
+    "run_toy_resource_competition.py": "dd7a3b28b0d21b669e2d10ea9950c151bb33718e6e0539f55d038d0c7a28e9f1",
+    "toy_option_resources.py": "b0368544480a11ed884b7b59563fbb370d92543471e46a53effffda75099ce72"
+  }
+}

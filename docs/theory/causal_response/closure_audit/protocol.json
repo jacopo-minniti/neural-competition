@@ -1,0 +1,25 @@
+{
+  "cases": [
+    {
+      "seed": 283104,
+      "step": 20,
+      "focal": 4
+    },
+    {
+      "seed": 283106,
+      "step": 100,
+      "focal": 6
+    },
+    {
+      "seed": 283101,
+      "step": 100,
+      "focal": 1
+    }
+  ],
+  "kind": "Retrospective diagnostic on selected development cases; actual post-pressure parameters supplied",
+  "sources": {
+    "audit_correction_closure.py": "84540cc205552fb12b6cd97bef2e91b4eb128851db5afceb809976fcc05fa40e",
+    "probe_causal_response.py": "24c59463f13faddfc30c8448fc91d105bcc3c0cbf0c8d0492eccb27b2761327f",
+    "probe_response_feedback.py": "fdeb905f4e206df57d478952e65cd938f9eccac0d16c00e85162c8d797fbdafb"
+  }
+}

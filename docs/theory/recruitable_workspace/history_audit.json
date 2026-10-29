@@ -1,0 +1,145 @@
+{
+  "mnist_final": {
+    "narrow": {
+      "full_loss": 0.20606752415187657,
+      "validation_loss": 0.31307945027947426,
+      "breadth": 97.48932927436024,
+      "mass": 8340.740206927716
+    },
+    "wide": {
+      "full_loss": 0.1797675364650786,
+      "validation_loss": 0.2818838953971863,
+      "breadth": 117.88007588232344,
+      "mass": 8214.28218861173
+    }
+  },
+  "late_forecast": {
+    "baseline": 0.0011521606103119311,
+    "options": 0.002577397532892581
+  },
+  "weakest_half": {
+    "32": 0.9205891375323181,
+    "128": 0.9493779827235849
+  },
+  "common_demand_ratio": 1.2082435019227291,
+  "tangent_fresh": {
+    "conditional": 0.00020579204877625704,
+    "independent": 0.0014073289488598596
+  },
+  "retention": {
+    "32_ordinary": 0.05058077024295926,
+    "32_frozen_tangent": 0.06730440235696733,
+    "128_ordinary": 0.035313315922394395,
+    "128_frozen_tangent": 0.036655748379416764
+  },
+  "transport_initial": {
+    "32": 0.091339111328125,
+    "128": 0.03992462158203125
+  },
+  "polarization": {
+    "base": {
+      "4": {
+        "predicted_mean": 0.0172265625,
+        "actual_mean": 0.0172265625,
+        "false_failure": 0,
+        "missed_failure": 0
+      },
+      "6": {
+        "predicted_mean": 0.005625000000000001,
+        "actual_mean": 0.0052734375,
+        "false_failure": 1,
+        "missed_failure": 0
+      },
+      "8": {
+        "predicted_mean": 0.0024609375000000005,
+        "actual_mean": 0.0024609375,
+        "false_failure": 0,
+        "missed_failure": 0
+      },
+      "12": {
+        "predicted_mean": 0.00035156250000000004,
+        "actual_mean": 0.00035156250000000004,
+        "false_failure": 0,
+        "missed_failure": 0
+      }
+    },
+    "near": {
+      "4": {
+        "predicted_mean": 0.0316015625,
+        "actual_mean": 0.0316015625,
+        "false_failure": 0,
+        "missed_failure": 0
+      },
+      "6": {
+        "predicted_mean": 0.0073828125000000005,
+        "actual_mean": 0.00703125,
+        "false_failure": 1,
+        "missed_failure": 0
+      },
+      "8": {
+        "predicted_mean": 0.0031640625,
+        "actual_mean": 0.0031640625,
+        "false_failure": 0,
+        "missed_failure": 0
+      },
+      "12": {
+        "predicted_mean": 0.0007031250000000001,
+        "actual_mean": 0.000703125,
+        "false_failure": 0,
+        "missed_failure": 0
+      }
+    },
+    "rare": {
+      "4": {
+        "predicted_mean": 0.0037515625,
+        "actual_mean": 0.0029093750000000022,
+        "false_failure": 11,
+        "missed_failure": 0
+      },
+      "6": {
+        "predicted_mean": 0.001225,
+        "actual_mean": 0.0005359375,
+        "false_failure": 9,
+        "missed_failure": 0
+      },
+      "8": {
+        "predicted_mean": 0.0005359375,
+        "actual_mean": 0.00015312500000000002,
+        "false_failure": 5,
+        "missed_failure": 0
+      },
+      "12": {
+        "predicted_mean": 7.65625e-05,
+        "actual_mean": 1.9453185700268737e-29,
+        "false_failure": 1,
+        "missed_failure": 0
+      }
+    },
+    "clusters": {
+      "4": {
+        "predicted_mean": 0.019092773437500002,
+        "actual_mean": 0.015577950232774427,
+        "false_failure": 0,
+        "missed_failure": 207
+      },
+      "6": {
+        "predicted_mean": 0.0058447265625,
+        "actual_mean": 0.003536349600912552,
+        "false_failure": 0,
+        "missed_failure": 241
+      },
+      "8": {
+        "predicted_mean": 0.002337890625,
+        "actual_mean": 0.0015365286135697702,
+        "false_failure": 0,
+        "missed_failure": 250
+      },
+      "12": {
+        "predicted_mean": 0.0003896484375,
+        "actual_mean": 0.0010964855025258054,
+        "false_failure": 0,
+        "missed_failure": 255
+      }
+    }
+  }
+}

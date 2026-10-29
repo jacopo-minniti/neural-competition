@@ -21,8 +21,11 @@ def sha256(path):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--local-data", action="store_true",
-                        help="Also verify every file in the ignored local retention inventory")
+    parser.add_argument(
+        "--local-data",
+        action="store_true",
+        help="Also verify every file in the ignored local retention inventory",
+    )
     args = parser.parse_args()
     errors, links = [], 0
     documents = [ROOT / "README.md", ROOT / "OBJECTIVE.md"]
@@ -39,19 +42,22 @@ def main():
             path = (document.parent / unquote(parsed.path)).resolve()
             if not path.is_relative_to(ROOT) or not path.exists():
                 errors.append(f"{document.relative_to(ROOT)}: missing link {target}")
-    snapshots = ROOT / "docs/tables/residual_growth/source_snapshots"
-    for snapshot in snapshots.glob("*.txt"):
-        if sha256(snapshot) != snapshot.stem:
-            errors.append(f"Invalid source snapshot: {snapshot.name}")
-    manifests = json.loads((ROOT / "docs/tables/residual_growth/provenance.json").read_text())
-    for manifest in manifests:
-        for source, expected in manifest["sources"].items():
-            path = ROOT / source
-            if path.exists() and sha256(path) == expected:
-                continue
-            snapshot = snapshots / f"{expected}.txt"
-            if not snapshot.exists() or sha256(snapshot) != expected:
-                errors.append(f"Missing executed source: {source} ({expected})")
+    manifest_count = 0
+    for study, folder in [("residual_growth", "source_snapshots"), ("feature_profile", "sources")]:
+        snapshots = ROOT / "docs/tables" / study / folder
+        for snapshot in snapshots.glob("*.txt"):
+            if sha256(snapshot) != snapshot.stem:
+                errors.append(f"Invalid source snapshot: {snapshot.name}")
+        manifests = json.loads((snapshots.parent / "provenance.json").read_text())
+        manifest_count += len(manifests)
+        for manifest in manifests:
+            for source, expected in manifest["sources"].items():
+                path = ROOT / source
+                if path.exists() and sha256(path) == expected:
+                    continue
+                snapshot = snapshots / f"{expected}.txt"
+                if not snapshot.exists() or sha256(snapshot) != expected:
+                    errors.append(f"Missing executed source: {source} ({expected})")
     local_files = 0
     if args.local_data:
         inventory = json.loads((ROOT / "docs/provenance/local_retention.json").read_text())
@@ -64,8 +70,10 @@ def main():
             local_files += 1
     if errors:
         raise SystemExit("\n".join(errors))
-    print(f"Checked {len(documents)} documents, {links} local links, "
-          f"{len(manifests)} source manifests, and {local_files} local files.")
+    print(
+        f"Checked {len(documents)} documents, {links} local links, "
+        f"{manifest_count} source manifests, and {local_files} local files."
+    )
 
 
 if __name__ == "__main__":

@@ -1,0 +1,480 @@
+{
+  "protocol": {
+    "seeds": [
+      281805,
+      281806
+    ],
+    "widths": [
+      32,
+      128
+    ],
+    "start": 800,
+    "continuation": 7200,
+    "arms": [
+      "ordinary",
+      "frozen_tangent"
+    ],
+    "rate": 0.05,
+    "batch": 128,
+    "checkpoints": [
+      0,
+      20,
+      100,
+      400,
+      1200,
+      3200,
+      7200
+    ],
+    "note": "Saved before branch results. Original task, labels, optimizer rate and matched minibatches; tangent model freezes all derivative features."
+  },
+  "results": [
+    {
+      "seed": 281805,
+      "width": 32,
+      "arm": "ordinary",
+      "step": 800,
+      "train_loss": 0.20712379924952984,
+      "validation_loss": 0.31647631525993347
+    },
+    {
+      "seed": 281805,
+      "width": 32,
+      "arm": "frozen_tangent",
+      "step": 800,
+      "train_loss": 0.20712379924952984,
+      "validation_loss": 0.31647631525993347
+    },
+    {
+      "seed": 281805,
+      "width": 128,
+      "arm": "ordinary",
+      "step": 800,
+      "train_loss": 0.18289535865187645,
+      "validation_loss": 0.2833004295825958
+    },
+    {
+      "seed": 281805,
+      "width": 128,
+      "arm": "frozen_tangent",
+      "step": 800,
+      "train_loss": 0.18289535865187645,
+      "validation_loss": 0.2833004295825958
+    },
+    {
+      "seed": 281805,
+      "width": 32,
+      "arm": "ordinary",
+      "step": 820,
+      "train_loss": 0.20540562458336353,
+      "validation_loss": 0.31399792432785034
+    },
+    {
+      "seed": 281805,
+      "width": 32,
+      "arm": "frozen_tangent",
+      "step": 820,
+      "train_loss": 0.2052131649106741,
+      "validation_loss": 0.3140653073787689
+    },
+    {
+      "seed": 281805,
+      "width": 128,
+      "arm": "ordinary",
+      "step": 820,
+      "train_loss": 0.18106530793011189,
+      "validation_loss": 0.2808356285095215
+    },
+    {
+      "seed": 281805,
+      "width": 128,
+      "arm": "frozen_tangent",
+      "step": 820,
+      "train_loss": 0.18088373728096485,
+      "validation_loss": 0.2809297740459442
+    },
+    {
+      "seed": 281805,
+      "width": 32,
+      "arm": "ordinary",
+      "step": 900,
+      "train_loss": 0.19913766905665398,
+      "validation_loss": 0.3118431866168976
+    },
+    {
+      "seed": 281805,
+      "width": 32,
+      "arm": "frozen_tangent",
+      "step": 900,
+      "train_loss": 0.1987528558820486,
+      "validation_loss": 0.31181371212005615
+    },
+    {
+      "seed": 281805,
+      "width": 128,
+      "arm": "ordinary",
+      "step": 900,
+      "train_loss": 0.17418570443987846,
+      "validation_loss": 0.27667275071144104
+    },
+    {
+      "seed": 281805,
+      "width": 128,
+      "arm": "frozen_tangent",
+      "step": 900,
+      "train_loss": 0.1735866777598858,
+      "validation_loss": 0.27698466181755066
+    },
+    {
+      "seed": 281805,
+      "width": 32,
+      "arm": "ordinary",
+      "step": 1200,
+      "train_loss": 0.1780118141323328,
+      "validation_loss": 0.30092883110046387
+    },
+    {
+      "seed": 281805,
+      "width": 32,
+      "arm": "frozen_tangent",
+      "step": 1200,
+      "train_loss": 0.1787474900484085,
+      "validation_loss": 0.3022572696208954
+    },
+    {
+      "seed": 281805,
+      "width": 128,
+      "arm": "ordinary",
+      "step": 1200,
+      "train_loss": 0.15137862600386143,
+      "validation_loss": 0.2626994550228119
+    },
+    {
+      "seed": 281805,
+      "width": 128,
+      "arm": "frozen_tangent",
+      "step": 1200,
+      "train_loss": 0.15033383294939995,
+      "validation_loss": 0.26406872272491455
+    },
+    {
+      "seed": 281805,
+      "width": 32,
+      "arm": "ordinary",
+      "step": 2000,
+      "train_loss": 0.13904876727610826,
+      "validation_loss": 0.2786305248737335
+    },
+    {
+      "seed": 281805,
+      "width": 32,
+      "arm": "frozen_tangent",
+      "step": 2000,
+      "train_loss": 0.14291359949856997,
+      "validation_loss": 0.28304895758628845
+    },
+    {
+      "seed": 281805,
+      "width": 128,
+      "arm": "ordinary",
+      "step": 2000,
+      "train_loss": 0.11259069200605154,
+      "validation_loss": 0.239446222782135
+    },
+    {
+      "seed": 281805,
+      "width": 128,
+      "arm": "frozen_tangent",
+      "step": 2000,
+      "train_loss": 0.11189622804522514,
+      "validation_loss": 0.24312974512577057
+    },
+    {
+      "seed": 281805,
+      "width": 32,
+      "arm": "ordinary",
+      "step": 4000,
+      "train_loss": 0.08926927391439676,
+      "validation_loss": 0.2621918022632599
+    },
+    {
+      "seed": 281805,
+      "width": 32,
+      "arm": "frozen_tangent",
+      "step": 4000,
+      "train_loss": 0.09969234000891447,
+      "validation_loss": 0.27381256222724915
+    },
+    {
+      "seed": 281805,
+      "width": 128,
+      "arm": "ordinary",
+      "step": 4000,
+      "train_loss": 0.06830175314098597,
+      "validation_loss": 0.22138576209545135
+    },
+    {
+      "seed": 281805,
+      "width": 128,
+      "arm": "frozen_tangent",
+      "step": 4000,
+      "train_loss": 0.06895112292841077,
+      "validation_loss": 0.22929784655570984
+    },
+    {
+      "seed": 281805,
+      "width": 32,
+      "arm": "ordinary",
+      "step": 8000,
+      "train_loss": 0.047506280709058046,
+      "validation_loss": 0.257002055644989
+    },
+    {
+      "seed": 281805,
+      "width": 32,
+      "arm": "frozen_tangent",
+      "step": 8000,
+      "train_loss": 0.06392233725637197,
+      "validation_loss": 0.2787763178348541
+    },
+    {
+      "seed": 281805,
+      "width": 128,
+      "arm": "ordinary",
+      "step": 8000,
+      "train_loss": 0.034954269183799624,
+      "validation_loss": 0.20550993084907532
+    },
+    {
+      "seed": 281805,
+      "width": 128,
+      "arm": "frozen_tangent",
+      "step": 8000,
+      "train_loss": 0.036816555075347424,
+      "validation_loss": 0.22155334055423737
+    },
+    {
+      "seed": 281806,
+      "width": 32,
+      "arm": "ordinary",
+      "step": 800,
+      "train_loss": 0.2206586506217718,
+      "validation_loss": 0.3201678693294525
+    },
+    {
+      "seed": 281806,
+      "width": 32,
+      "arm": "frozen_tangent",
+      "step": 800,
+      "train_loss": 0.2206586506217718,
+      "validation_loss": 0.3201678693294525
+    },
+    {
+      "seed": 281806,
+      "width": 128,
+      "arm": "ordinary",
+      "step": 800,
+      "train_loss": 0.1867875326424837,
+      "validation_loss": 0.2917764186859131
+    },
+    {
+      "seed": 281806,
+      "width": 128,
+      "arm": "frozen_tangent",
+      "step": 800,
+      "train_loss": 0.1867875326424837,
+      "validation_loss": 0.2917764186859131
+    },
+    {
+      "seed": 281806,
+      "width": 32,
+      "arm": "ordinary",
+      "step": 820,
+      "train_loss": 0.2185543905943632,
+      "validation_loss": 0.316304087638855
+    },
+    {
+      "seed": 281806,
+      "width": 32,
+      "arm": "frozen_tangent",
+      "step": 820,
+      "train_loss": 0.21842078864574432,
+      "validation_loss": 0.31642478704452515
+    },
+    {
+      "seed": 281806,
+      "width": 128,
+      "arm": "ordinary",
+      "step": 820,
+      "train_loss": 0.18447444029152393,
+      "validation_loss": 0.2876625955104828
+    },
+    {
+      "seed": 281806,
+      "width": 128,
+      "arm": "frozen_tangent",
+      "step": 820,
+      "train_loss": 0.18436048924922943,
+      "validation_loss": 0.2876124680042267
+    },
+    {
+      "seed": 281806,
+      "width": 32,
+      "arm": "ordinary",
+      "step": 900,
+      "train_loss": 0.21098550036549568,
+      "validation_loss": 0.3145219087600708
+    },
+    {
+      "seed": 281806,
+      "width": 32,
+      "arm": "frozen_tangent",
+      "step": 900,
+      "train_loss": 0.21077566780149937,
+      "validation_loss": 0.3147934079170227
+    },
+    {
+      "seed": 281806,
+      "width": 128,
+      "arm": "ordinary",
+      "step": 900,
+      "train_loss": 0.1772247962653637,
+      "validation_loss": 0.2875666618347168
+    },
+    {
+      "seed": 281806,
+      "width": 128,
+      "arm": "frozen_tangent",
+      "step": 900,
+      "train_loss": 0.17661812901496887,
+      "validation_loss": 0.28802645206451416
+    },
+    {
+      "seed": 281806,
+      "width": 32,
+      "arm": "ordinary",
+      "step": 1200,
+      "train_loss": 0.18853578716516495,
+      "validation_loss": 0.29672184586524963
+    },
+    {
+      "seed": 281806,
+      "width": 32,
+      "arm": "frozen_tangent",
+      "step": 1200,
+      "train_loss": 0.18896875530481339,
+      "validation_loss": 0.29869043827056885
+    },
+    {
+      "seed": 281806,
+      "width": 128,
+      "arm": "ordinary",
+      "step": 1200,
+      "train_loss": 0.15380742121487856,
+      "validation_loss": 0.2677440643310547
+    },
+    {
+      "seed": 281806,
+      "width": 128,
+      "arm": "frozen_tangent",
+      "step": 1200,
+      "train_loss": 0.1527463300153613,
+      "validation_loss": 0.2688751518726349
+    },
+    {
+      "seed": 281806,
+      "width": 32,
+      "arm": "ordinary",
+      "step": 2000,
+      "train_loss": 0.15031231101602316,
+      "validation_loss": 0.2796533703804016
+    },
+    {
+      "seed": 281806,
+      "width": 32,
+      "arm": "frozen_tangent",
+      "step": 2000,
+      "train_loss": 0.15353728644549847,
+      "validation_loss": 0.28481847047805786
+    },
+    {
+      "seed": 281806,
+      "width": 128,
+      "arm": "ordinary",
+      "step": 2000,
+      "train_loss": 0.11527560651302338,
+      "validation_loss": 0.2412893921136856
+    },
+    {
+      "seed": 281806,
+      "width": 128,
+      "arm": "frozen_tangent",
+      "step": 2000,
+      "train_loss": 0.11416971310973167,
+      "validation_loss": 0.2438168078660965
+    },
+    {
+      "seed": 281806,
+      "width": 32,
+      "arm": "ordinary",
+      "step": 4000,
+      "train_loss": 0.09855576232075691,
+      "validation_loss": 0.2593277096748352
+    },
+    {
+      "seed": 281806,
+      "width": 32,
+      "arm": "frozen_tangent",
+      "step": 4000,
+      "train_loss": 0.10844879876822233,
+      "validation_loss": 0.26715973019599915
+    },
+    {
+      "seed": 281806,
+      "width": 128,
+      "arm": "ordinary",
+      "step": 4000,
+      "train_loss": 0.06919767148792744,
+      "validation_loss": 0.21563144028186798
+    },
+    {
+      "seed": 281806,
+      "width": 128,
+      "arm": "frozen_tangent",
+      "step": 4000,
+      "train_loss": 0.06901008542627096,
+      "validation_loss": 0.2238706350326538
+    },
+    {
+      "seed": 281806,
+      "width": 32,
+      "arm": "ordinary",
+      "step": 8000,
+      "train_loss": 0.053655259776860476,
+      "validation_loss": 0.2586163878440857
+    },
+    {
+      "seed": 281806,
+      "width": 32,
+      "arm": "frozen_tangent",
+      "step": 8000,
+      "train_loss": 0.07068646745756269,
+      "validation_loss": 0.27349936962127686
+    },
+    {
+      "seed": 281806,
+      "width": 128,
+      "arm": "ordinary",
+      "step": 8000,
+      "train_loss": 0.035672362660989165,
+      "validation_loss": 0.201842799782753
+    },
+    {
+      "seed": 281806,
+      "width": 128,
+      "arm": "frozen_tangent",
+      "step": 8000,
+      "train_loss": 0.036494941683486104,
+      "validation_loss": 0.21511965990066528
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "seeds": [
+    281501,
+    281502
+  ],
+  "widths": [
+    32,
+    128
+  ],
+  "checkpoints": [
+    0,
+    100,
+    600
+  ],
+  "audit_seed": 281710,
+  "examples": 64,
+  "heldout_examples": 128,
+  "rates": [
+    0.005,
+    0.05
+  ],
+  "horizons": [
+    1,
+    5,
+    20
+  ],
+  "count_horizon": 1.0,
+  "count_metric": "current CE curvature; uniform-probability curvature control",
+  "note": "Stored before new branch outcomes. Saved checkpoints were trained by ordinary SGD."
+}

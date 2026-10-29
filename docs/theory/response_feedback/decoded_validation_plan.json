@@ -1,0 +1,39 @@
+{
+  "input": "docs/theory/observed_learning/mnist_original_replay",
+  "seeds": [
+    281801,
+    281802,
+    281803,
+    281804,
+    281805,
+    281806,
+    281807,
+    281808
+  ],
+  "steps": [
+    20,
+    100
+  ],
+  "horizons": [
+    20,
+    80
+  ],
+  "widths": [
+    32,
+    128
+  ],
+  "streams": 4,
+  "batch": 128,
+  "rate": 0.05,
+  "copies": 4,
+  "model": "Fixed-gate bilinear parameter evolution, physical ReLU output decoding",
+  "comparison": [
+    "internal bilinear readout",
+    "linear parameter evolution with physical decoding",
+    "zero effect"
+  ],
+  "primary": "Seed-stream mean reserve minus ordinary gain, pooled settings",
+  "hypothesis": "Decoded effect RMSE below .35 times zero-effect RMSE and below decoded linear model RMSE",
+  "chronology": "After decoded development pilot; before any matched-response intervention on these eight original-cohort seeds. Checkpoints and original ordinary trajectories existed previously.",
+  "qualification": "Tests a local conditional intervention forecast, not independent original-training or width-gap prediction."
+}

@@ -1,5 +1,13 @@
 # Numerical evidence
 
+- [Coupled-mode forecasts](coupled_modes/README.md): predicted and observed MNIST
+  branch loss contrasts, failed pilots, horizon limits and source audits.
+
+- [Sign survival](sign_survival/README.md): targeted sign-crossing interventions,
+  paired robustness, population error certificates and crossing attribution.
+
+- [Feature profiling](feature_profile/README.md): paired interventions, full
+  controls, failed forecasts, long continuations, source provenance and audits.
 - [Residual growth](residual_growth/README.md): complete current cohorts, seed
   curves, feature probes, role counts, uncertainty, source versions and audits.
 - [MNIST](mnist/README.md): full main/control cohorts, matched-state diagnostics,

@@ -1,0 +1,195 @@
+{
+  "classification": [
+    {
+      "case": "base",
+      "width": 4,
+      "dynamically_predicted_family_extinctions": 30,
+      "initialization_family_misclassifications": 52,
+      "dynamic_family_misclassifications": 0,
+      "predicted_dead_fraction": 0.1259765625,
+      "actual_dead_fraction": 0.1259765625,
+      "neuron_fate_disagreement": 0.0048828125
+    },
+    {
+      "case": "base",
+      "width": 6,
+      "dynamically_predicted_family_extinctions": 10,
+      "initialization_family_misclassifications": 14,
+      "dynamic_family_misclassifications": 1,
+      "predicted_dead_fraction": 0.12630208333333334,
+      "actual_dead_fraction": 0.12565104166666666,
+      "neuron_fate_disagreement": 0.006510416666666667
+    },
+    {
+      "case": "base",
+      "width": 8,
+      "dynamically_predicted_family_extinctions": 6,
+      "initialization_family_misclassifications": 6,
+      "dynamic_family_misclassifications": 0,
+      "predicted_dead_fraction": 0.1318359375,
+      "actual_dead_fraction": 0.13134765625,
+      "neuron_fate_disagreement": 0.00634765625
+    },
+    {
+      "case": "base",
+      "width": 12,
+      "dynamically_predicted_family_extinctions": 1,
+      "initialization_family_misclassifications": 1,
+      "dynamic_family_misclassifications": 0,
+      "predicted_dead_fraction": 0.13313802083333334,
+      "actual_dead_fraction": 0.13248697916666666,
+      "neuron_fate_disagreement": 0.0048828125
+    },
+    {
+      "case": "near",
+      "width": 4,
+      "dynamically_predicted_family_extinctions": 40,
+      "initialization_family_misclassifications": 64,
+      "dynamic_family_misclassifications": 0,
+      "predicted_dead_fraction": 0.203125,
+      "actual_dead_fraction": 0.2021484375,
+      "neuron_fate_disagreement": 0.001953125
+    },
+    {
+      "case": "near",
+      "width": 6,
+      "dynamically_predicted_family_extinctions": 15,
+      "initialization_family_misclassifications": 19,
+      "dynamic_family_misclassifications": 1,
+      "predicted_dead_fraction": 0.19791666666666666,
+      "actual_dead_fraction": 0.197265625,
+      "neuron_fate_disagreement": 0.001953125
+    },
+    {
+      "case": "near",
+      "width": 8,
+      "dynamically_predicted_family_extinctions": 8,
+      "initialization_family_misclassifications": 9,
+      "dynamic_family_misclassifications": 0,
+      "predicted_dead_fraction": 0.20068359375,
+      "actual_dead_fraction": 0.2001953125,
+      "neuron_fate_disagreement": 0.00244140625
+    },
+    {
+      "case": "near",
+      "width": 12,
+      "dynamically_predicted_family_extinctions": 2,
+      "initialization_family_misclassifications": 2,
+      "dynamic_family_misclassifications": 0,
+      "predicted_dead_fraction": 0.20345052083333334,
+      "actual_dead_fraction": 0.2021484375,
+      "neuron_fate_disagreement": 0.0032552083333333335
+    },
+    {
+      "case": "rare",
+      "width": 4,
+      "dynamically_predicted_family_extinctions": 30,
+      "initialization_family_misclassifications": 49,
+      "dynamic_family_misclassifications": 11,
+      "predicted_dead_fraction": 0.1259765625,
+      "actual_dead_fraction": 0.1220703125,
+      "neuron_fate_disagreement": 0.033203125
+    },
+    {
+      "case": "rare",
+      "width": 6,
+      "dynamically_predicted_family_extinctions": 10,
+      "initialization_family_misclassifications": 10,
+      "dynamic_family_misclassifications": 9,
+      "predicted_dead_fraction": 0.12565104166666666,
+      "actual_dead_fraction": 0.11979166666666667,
+      "neuron_fate_disagreement": 0.035807291666666664
+    },
+    {
+      "case": "rare",
+      "width": 8,
+      "dynamically_predicted_family_extinctions": 6,
+      "initialization_family_misclassifications": 3,
+      "dynamic_family_misclassifications": 5,
+      "predicted_dead_fraction": 0.13134765625,
+      "actual_dead_fraction": 0.12353515625,
+      "neuron_fate_disagreement": 0.033203125
+    },
+    {
+      "case": "rare",
+      "width": 12,
+      "dynamically_predicted_family_extinctions": 1,
+      "initialization_family_misclassifications": 0,
+      "dynamic_family_misclassifications": 1,
+      "predicted_dead_fraction": 0.13248697916666666,
+      "actual_dead_fraction": 0.1220703125,
+      "neuron_fate_disagreement": 0.030924479166666668
+    },
+    {
+      "case": "clusters",
+      "width": 4,
+      "dynamically_predicted_family_extinctions": 31,
+      "initialization_family_misclassifications": 217,
+      "dynamic_family_misclassifications": 207,
+      "predicted_dead_fraction": 0.12109375,
+      "actual_dead_fraction": 0.12109375,
+      "neuron_fate_disagreement": 0.00390625
+    },
+    {
+      "case": "clusters",
+      "width": 6,
+      "dynamically_predicted_family_extinctions": 10,
+      "initialization_family_misclassifications": 249,
+      "dynamic_family_misclassifications": 241,
+      "predicted_dead_fraction": 0.12109375,
+      "actual_dead_fraction": 0.12109375,
+      "neuron_fate_disagreement": 0.0013020833333333333
+    },
+    {
+      "case": "clusters",
+      "width": 8,
+      "dynamically_predicted_family_extinctions": 5,
+      "initialization_family_misclassifications": 255,
+      "dynamic_family_misclassifications": 250,
+      "predicted_dead_fraction": 0.126953125,
+      "actual_dead_fraction": 0.126953125,
+      "neuron_fate_disagreement": 0.00146484375
+    },
+    {
+      "case": "clusters",
+      "width": 12,
+      "dynamically_predicted_family_extinctions": 1,
+      "initialization_family_misclassifications": 256,
+      "dynamic_family_misclassifications": 255,
+      "predicted_dead_fraction": 0.12923177083333334,
+      "actual_dead_fraction": 0.12890625,
+      "neuron_fate_disagreement": 0.0006510416666666666
+    }
+  ],
+  "basin_audit": [
+    {
+      "case": "base",
+      "halved_step_disagreement": 0.00048828125,
+      "doubled_horizon_disagreement": 0.0,
+      "death_original": 0.13232421875,
+      "death_refined": 0.1328125
+    },
+    {
+      "case": "near",
+      "halved_step_disagreement": 0.0,
+      "doubled_horizon_disagreement": 0.0,
+      "death_original": 0.2041015625,
+      "death_refined": 0.2041015625
+    },
+    {
+      "case": "rare",
+      "halved_step_disagreement": 0.00146484375,
+      "doubled_horizon_disagreement": 0.0,
+      "death_original": 0.13037109375,
+      "death_refined": 0.1318359375
+    },
+    {
+      "case": "clusters",
+      "halved_step_disagreement": 0.0,
+      "doubled_horizon_disagreement": 0.0,
+      "death_original": 0.1279296875,
+      "death_refined": 0.1279296875
+    }
+  ],
+  "caveat": "Nonzero continuous-task loss includes within-cluster errors; binary loss classification there is not a pure extinction test."
+}

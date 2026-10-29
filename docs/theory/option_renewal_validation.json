@@ -1,0 +1,66 @@
+{
+  "checkpoint_time": 100,
+  "selected_seed_index": 5,
+  "draws": 128,
+  "seed": 241029,
+  "task_support": [
+    1,
+    3
+  ],
+  "input_correlation": -0.33333333333333337,
+  "damage": 0.08999999999999993,
+  "miss_probability": 0.19591327601530362,
+  "forecasts": [
+    {
+      "added": 1,
+      "predicted_loss": 0.017632194841377312,
+      "predicted_failure_probability": 0.19591327601530362,
+      "linear_repair_mean": 0.016874999999999987,
+      "linear_failures": 24
+    },
+    {
+      "added": 2,
+      "predicted_loss": 0.0034543810547143657,
+      "predicted_failure_probability": 0.03838201171904854,
+      "linear_repair_mean": 0.003515624999999997,
+      "linear_failures": 5
+    },
+    {
+      "added": 4,
+      "predicted_loss": 0.00013258609412410605,
+      "predicted_failure_probability": 0.0014731788236011793,
+      "linear_repair_mean": 0.0,
+      "linear_failures": 0
+    }
+  ],
+  "status": "Forecasts saved before unrestricted continuation of these expanded networks.",
+  "validation": [
+    {
+      "added": 1,
+      "actual_mean_loss": 0.016875,
+      "se": 0.0031171160391577986,
+      "linear_mean_loss": 0.016874999999999987,
+      "mae_from_linear": 1.5178830414901038e-17,
+      "predicted_fail_but_recovered": 0,
+      "predicted_repair_but_failed": 0
+    },
+    {
+      "added": 2,
+      "actual_mean_loss": 0.0035156250000000005,
+      "se": 0.001547277596141894,
+      "linear_mean_loss": 0.003515624999999997,
+      "mae_from_linear": 3.2526065175200597e-18,
+      "predicted_fail_but_recovered": 0,
+      "predicted_repair_but_failed": 0
+    },
+    {
+      "added": 4,
+      "actual_mean_loss": 3.474387249324296e-29,
+      "se": 6.272234326119441e-30,
+      "linear_mean_loss": 0.0,
+      "mae_from_linear": 3.474387249324296e-29,
+      "predicted_fail_but_recovered": 0,
+      "predicted_repair_but_failed": 0
+    }
+  ]
+}

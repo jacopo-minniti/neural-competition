@@ -1,0 +1,99 @@
+{
+  "count": 64,
+  "seed": 297101,
+  "dt": 0.025,
+  "end": 2000,
+  "factors": [
+    1,
+    2,
+    3
+  ],
+  "configs": [
+    {
+      "n": 1,
+      "family": "geometric",
+      "parameter": 1.0,
+      "overlap": 0.0,
+      "split": "same",
+      "case": "n1_geometric1_o0"
+    },
+    {
+      "n": 1,
+      "family": "geometric",
+      "parameter": 1.0,
+      "overlap": 1.0,
+      "split": "same",
+      "case": "n1_geometric1_o1"
+    },
+    {
+      "n": 2,
+      "family": "geometric",
+      "parameter": 0.25,
+      "overlap": 0.0,
+      "split": "same",
+      "case": "n2_geometric0.25_o0"
+    },
+    {
+      "n": 4,
+      "family": "geometric",
+      "parameter": 0.25,
+      "overlap": 0.0,
+      "split": "same",
+      "case": "n4_geometric0.25_o0"
+    },
+    {
+      "n": 4,
+      "family": "geometric",
+      "parameter": 0.1,
+      "overlap": 0.0,
+      "split": "same",
+      "case": "n4_geometric0.1_o0"
+    },
+    {
+      "n": 4,
+      "family": "geometric",
+      "parameter": 0.1,
+      "overlap": 1.0,
+      "split": "same",
+      "case": "n4_geometric0.1_o1"
+    },
+    {
+      "n": 3,
+      "family": "zipf",
+      "parameter": 1.0,
+      "overlap": 0.0,
+      "split": "transfer",
+      "case": "n3_zipf1_o0"
+    },
+    {
+      "n": 4,
+      "family": "zipf",
+      "parameter": 1.0,
+      "overlap": 0.0,
+      "split": "transfer",
+      "case": "n4_zipf1_o0"
+    },
+    {
+      "n": 4,
+      "family": "zipf",
+      "parameter": 2.0,
+      "overlap": 0.5,
+      "split": "transfer",
+      "case": "n4_zipf2_o0.5"
+    }
+  ],
+  "scale": 0.002,
+  "model_path": "docs/theory/probabilistic_options/locked/models.json",
+  "model_sha256": "2749dc7472ea394227ddb9a2022106b12659decbc70cd97444ac00925ede9547",
+  "design": "All initial closure forecasts precede training of their own run. All conditional opening forecasts are saved at t=20, before any run continues beyond t=20. No model refitting. New seeds, dt=.025; Zipf and N=3/intermediate alignment are declared transfer tests.",
+  "thresholds": {
+    "coverage": 0.95,
+    "mastery": 0.1
+  },
+  "sources": {
+    "run_probability_validation.py": "c0bd39cbc1fbd3a455a8bafff909ef771af6a330473557c26dba4a9c4a3bec69",
+    "probabilistic_options.py": "7a8458d239a52754c1149ba1c28aef24bb4ab106bea6379304f0f2f69364918e",
+    "implementation_moments.py": "d6762e6cc7776ffda30322d7dde82d12acc9969296c1f49da45186347bbbc281",
+    "toy_option_resources.py": "b0368544480a11ed884b7b59563fbb370d92543471e46a53effffda75099ce72"
+  }
+}

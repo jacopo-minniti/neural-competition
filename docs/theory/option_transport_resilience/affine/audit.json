@@ -1,0 +1,13 @@
+{
+  "uniform_function_error": 2.7755575615628914e-17,
+  "uniform_kernel_error": 1.3877787807814457e-17,
+  "uniform_transport_identity_error": 3.2526065174565133e-19,
+  "uniform_autodiff_kernel_error": 1.3877787807814457e-17,
+  "uniform_autodiff_velocity_error": 5.551115123125783e-17,
+  "reserve_function_error": 1.3877787807814457e-17,
+  "reserve_kernel_error": 1.3877787807814457e-17,
+  "reserve_transport_identity_error": 8.131516293641283e-20,
+  "reserve_autodiff_kernel_error": 1.3877787807814457e-17,
+  "reserve_autodiff_velocity_error": 5.551115123125783e-17,
+  "uniform_100_step_error": 5.551115123125783e-17
+}

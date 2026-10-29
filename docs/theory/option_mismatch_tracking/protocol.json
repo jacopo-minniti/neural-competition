@@ -1,0 +1,40 @@
+{
+  "seeds": [
+    281801,
+    281802,
+    281803,
+    281804,
+    281805,
+    281806,
+    281807,
+    281808
+  ],
+  "calibration_seeds": [
+    281801,
+    281802,
+    281803,
+    281804
+  ],
+  "test_seeds": [
+    281805,
+    281806,
+    281807,
+    281808
+  ],
+  "widths": [
+    32,
+    128
+  ],
+  "steps": 800,
+  "interval": 20,
+  "learning_rate": 0.05,
+  "batch_size": 128,
+  "training_examples": 8192,
+  "probe_examples": 64,
+  "validation_examples": 1024,
+  "audit_seed": 281800,
+  "paired_minibatches": true,
+  "primary_target": "next-20-step full-training loss improvement: width128 minus width32",
+  "evaluation": "seed-held-out fixed ridge baselines and uncalibrated dynamical predictions",
+  "note": "Recorded before these training outcomes. Probe is not a separate training objective."
+}

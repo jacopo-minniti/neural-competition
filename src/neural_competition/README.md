@@ -2,6 +2,8 @@
 
 | Module | Responsibility |
 | --- | --- |
+| `learning_ledger.py` | Exact finite-update cross-entropy accounting and finite-population response estimation |
+| `feature_profile.py` | Rank-aware least-squares readout and diagonal line-search control |
 | `residual_growth.py` | Gaussian ReLU kernel, conditional Gram matrix, residual potential |
 | `tasks.py` | Deterministic correlated-pair Gaussian teacher construction and normalization |
 | `training.py` | Shared batched scalar ReLU prediction, analytic gradient and joint-layer SGD/momentum/Adam loop |

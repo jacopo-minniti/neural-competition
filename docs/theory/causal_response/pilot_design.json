@@ -1,0 +1,8 @@
+{
+  "status": "exploratory",
+  "selection": "Three cases chosen from the previous peer-pressure outcomes: two known narrow weakening cases (283104/20/class4 and 283106/100/class6), plus a strengthening control (283101/100/class1). Both widths are included.",
+  "question": "Does response-matched reserve preserve the focal capability, and does any preservation improve common-output correction or native recovery?",
+  "anchor": "All states receive a fixed output offset to their common pre-pressure logits. Focal targets are unchanged hard labels; background targets are pre-pressure probabilities. This is a controlled correction probe, not ordinary MNIST training.",
+  "model": "Existing bilinear local model, with physical readout and a mask reset at the declared change of training pressure. No parameters fitted.",
+  "theory_direction": "Bound pressure-induced response drift at fixed initial capability; width helps only if that drift is harmful and the initial useful response is adequate. Beneficial drift remains a negative control."
+}

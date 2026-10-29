@@ -1,0 +1,4183 @@
+{
+  "method": "First descending loss crossing per seed/width; linear interpolation of metrics between adjacent 20-step checkpoints.",
+  "status": "Exploratory post-training analysis; no new runs and no revision of held-out forecast scores.",
+  "targets": [
+    0.8,
+    0.6,
+    0.4,
+    0.3,
+    0.25
+  ],
+  "primary_match": "full_loss",
+  "sensitivity_match": "panel_loss",
+  "summaries": [
+    {
+      "matching_loss": "full_loss",
+      "target": 0.8,
+      "pairs": 8,
+      "metrics": {
+        "strongest_half_residual": {
+          "narrow_mean": 0.229300803609701,
+          "wide_mean": 0.13463265204047564,
+          "paired_difference_mean": -0.09466815156922537,
+          "paired_difference_se": 0.01784761472919376,
+          "wide_greater_count": 0
+        },
+        "strongest_quarter_residual": {
+          "narrow_mean": 0.049474306336722076,
+          "wide_mean": 0.028778872368887102,
+          "paired_difference_mean": -0.020695433967834978,
+          "paired_difference_se": 0.0036913473302724116,
+          "wide_greater_count": 1
+        },
+        "alignment": {
+          "narrow_mean": 0.4262994594328736,
+          "wide_mean": 0.4243413746894279,
+          "paired_difference_mean": -0.0019580847434456997,
+          "paired_difference_se": 0.014287158024809099,
+          "wide_greater_count": 3
+        },
+        "residual_strength_percentile": {
+          "narrow_mean": 0.36165360676963143,
+          "wide_mean": 0.27564189723817134,
+          "paired_difference_mean": -0.08601170953146015,
+          "paired_difference_se": 0.011017440810761354,
+          "wide_greater_count": 0
+        },
+        "breadth": {
+          "narrow_mean": 163.21511693588866,
+          "wide_mean": 215.14260709580543,
+          "paired_difference_mean": 51.927490159916765,
+          "paired_difference_se": 5.5493495042547085,
+          "wide_greater_count": 8
+        },
+        "mass": {
+          "narrow_mean": 4215.938542132752,
+          "wide_mean": 4318.89708653641,
+          "paired_difference_mean": 102.95854440365747,
+          "paired_difference_se": 97.8614161809798,
+          "wide_greater_count": 6
+        },
+        "step": {
+          "narrow_mean": 30.107982717551295,
+          "wide_mean": 21.904128016217292,
+          "paired_difference_mean": -8.203854701334002,
+          "paired_difference_se": 1.7478769749454768,
+          "wide_greater_count": 0
+        }
+      }
+    },
+    {
+      "matching_loss": "full_loss",
+      "target": 0.6,
+      "pairs": 8,
+      "metrics": {
+        "strongest_half_residual": {
+          "narrow_mean": 0.17726929164521252,
+          "wide_mean": 0.1080609734238584,
+          "paired_difference_mean": -0.0692083182213541,
+          "paired_difference_se": 0.016665693687421036,
+          "wide_greater_count": 0
+        },
+        "strongest_quarter_residual": {
+          "narrow_mean": 0.037165957908841044,
+          "wide_mean": 0.019903547556188284,
+          "paired_difference_mean": -0.01726241035265276,
+          "paired_difference_se": 0.004657388214955498,
+          "wide_greater_count": 1
+        },
+        "alignment": {
+          "narrow_mean": 0.34650898483379683,
+          "wide_mean": 0.33773377227094226,
+          "paired_difference_mean": -0.008775212562854559,
+          "paired_difference_se": 0.013080658226017294,
+          "wide_greater_count": 2
+        },
+        "residual_strength_percentile": {
+          "narrow_mean": 0.32762624481923097,
+          "wide_mean": 0.23254037480824397,
+          "paired_difference_mean": -0.09508587001098699,
+          "paired_difference_se": 0.012954771978754616,
+          "wide_greater_count": 0
+        },
+        "breadth": {
+          "narrow_mean": 140.2101765764212,
+          "wide_mean": 177.35661921041634,
+          "paired_difference_mean": 37.14644263399514,
+          "paired_difference_se": 4.233006329870686,
+          "wide_greater_count": 8
+        },
+        "mass": {
+          "narrow_mean": 5101.78119423964,
+          "wide_mean": 5228.166451752263,
+          "paired_difference_mean": 126.3852575126225,
+          "paired_difference_se": 133.8540138915885,
+          "wide_greater_count": 6
+        },
+        "step": {
+          "narrow_mean": 48.86647642491877,
+          "wide_mean": 38.00526389280067,
+          "paired_difference_mean": -10.861212532118103,
+          "paired_difference_se": 2.983854175052625,
+          "wide_greater_count": 0
+        }
+      }
+    },
+    {
+      "matching_loss": "full_loss",
+      "target": 0.4,
+      "pairs": 8,
+      "metrics": {
+        "strongest_half_residual": {
+          "narrow_mean": 0.1491415321799131,
+          "wide_mean": 0.10273938206672444,
+          "paired_difference_mean": -0.04640215011318866,
+          "paired_difference_se": 0.022195770161427462,
+          "wide_greater_count": 3
+        },
+        "strongest_quarter_residual": {
+          "narrow_mean": 0.030687879194889307,
+          "wide_mean": 0.01785857083848545,
+          "paired_difference_mean": -0.012829308356403859,
+          "paired_difference_se": 0.007561911822475983,
+          "wide_greater_count": 3
+        },
+        "alignment": {
+          "narrow_mean": 0.27776562919564945,
+          "wide_mean": 0.2736894487484422,
+          "paired_difference_mean": -0.004076180447207277,
+          "paired_difference_se": 0.01787254465843606,
+          "wide_greater_count": 4
+        },
+        "residual_strength_percentile": {
+          "narrow_mean": 0.2926493537515797,
+          "wide_mean": 0.20288759849727134,
+          "paired_difference_mean": -0.08976175525430838,
+          "paired_difference_se": 0.015529061132822077,
+          "wide_greater_count": 0
+        },
+        "breadth": {
+          "narrow_mean": 117.65281105575804,
+          "wide_mean": 141.83512185460472,
+          "paired_difference_mean": 24.182310798846686,
+          "paired_difference_se": 3.0380532005270906,
+          "wide_greater_count": 8
+        },
+        "mass": {
+          "narrow_mean": 6534.217658803422,
+          "wide_mean": 6617.653256708214,
+          "paired_difference_mean": 83.43559790479185,
+          "paired_difference_se": 214.19936770539246,
+          "wide_greater_count": 5
+        },
+        "step": {
+          "narrow_mean": 122.57459169430085,
+          "wide_mean": 95.98261786052264,
+          "paired_difference_mean": -26.591973833778212,
+          "paired_difference_se": 6.494507005338963,
+          "wide_greater_count": 0
+        }
+      }
+    },
+    {
+      "matching_loss": "full_loss",
+      "target": 0.3,
+      "pairs": 8,
+      "metrics": {
+        "strongest_half_residual": {
+          "narrow_mean": 0.13958991928139242,
+          "wide_mean": 0.10685276656989338,
+          "paired_difference_mean": -0.032737152711499046,
+          "paired_difference_se": 0.025688796493147027,
+          "wide_greater_count": 3
+        },
+        "strongest_quarter_residual": {
+          "narrow_mean": 0.028140884382185965,
+          "wide_mean": 0.020832246820108515,
+          "paired_difference_mean": -0.007308637562077452,
+          "paired_difference_se": 0.008383906603062836,
+          "wide_greater_count": 4
+        },
+        "alignment": {
+          "narrow_mean": 0.25214830077149797,
+          "wide_mean": 0.26049031578660853,
+          "paired_difference_mean": 0.008342015015110556,
+          "paired_difference_se": 0.018804499828747857,
+          "wide_greater_count": 5
+        },
+        "residual_strength_percentile": {
+          "narrow_mean": 0.27867404504096505,
+          "wide_mean": 0.19747201105889256,
+          "paired_difference_mean": -0.08120203398207247,
+          "paired_difference_se": 0.015772292123094483,
+          "wide_greater_count": 0
+        },
+        "breadth": {
+          "narrow_mean": 106.70209443126942,
+          "wide_mean": 128.95619741725596,
+          "paired_difference_mean": 22.254102985986542,
+          "paired_difference_se": 2.7577913241799505,
+          "wide_greater_count": 8
+        },
+        "mass": {
+          "narrow_mean": 7389.564592766528,
+          "wide_mean": 7389.314573839967,
+          "paired_difference_mean": -0.2500189265613244,
+          "paired_difference_se": 277.5674834547305,
+          "wide_greater_count": 3
+        },
+        "step": {
+          "narrow_mean": 279.0287284357889,
+          "wide_mean": 213.9950942615265,
+          "paired_difference_mean": -65.03363417426236,
+          "paired_difference_se": 12.998044717934407,
+          "wide_greater_count": 0
+        }
+      }
+    },
+    {
+      "matching_loss": "full_loss",
+      "target": 0.25,
+      "pairs": 8,
+      "metrics": {
+        "strongest_half_residual": {
+          "narrow_mean": 0.11921901880404137,
+          "wide_mean": 0.09948546399948177,
+          "paired_difference_mean": -0.019733554804559596,
+          "paired_difference_se": 0.029453984442625345,
+          "wide_greater_count": 3
+        },
+        "strongest_quarter_residual": {
+          "narrow_mean": 0.0178914049696298,
+          "wide_mean": 0.016916187916416914,
+          "paired_difference_mean": -0.0009752170532128859,
+          "paired_difference_se": 0.0028472479107823153,
+          "wide_greater_count": 3
+        },
+        "alignment": {
+          "narrow_mean": 0.2235637484686071,
+          "wide_mean": 0.24554611370342222,
+          "paired_difference_mean": 0.02198236523481508,
+          "paired_difference_se": 0.016462231233191096,
+          "wide_greater_count": 5
+        },
+        "residual_strength_percentile": {
+          "narrow_mean": 0.26485123719404946,
+          "wide_mean": 0.19007839209318078,
+          "paired_difference_mean": -0.07477284510086865,
+          "paired_difference_se": 0.019642173282223493,
+          "wide_greater_count": 0
+        },
+        "breadth": {
+          "narrow_mean": 101.13409507012591,
+          "wide_mean": 123.4486125009574,
+          "paired_difference_mean": 22.314517430831483,
+          "paired_difference_se": 2.985342138548851,
+          "wide_greater_count": 8
+        },
+        "mass": {
+          "narrow_mean": 7910.535919982136,
+          "wide_mean": 7767.223565454898,
+          "paired_difference_mean": -143.312354527239,
+          "paired_difference_se": 275.58116297656596,
+          "wide_greater_count": 3
+        },
+        "step": {
+          "narrow_mean": 481.8070553362267,
+          "wide_mean": 355.1897409380846,
+          "paired_difference_mean": -126.61731439814218,
+          "paired_difference_se": 23.616827737964613,
+          "wide_greater_count": 0
+        }
+      }
+    },
+    {
+      "matching_loss": "panel_loss",
+      "target": 0.8,
+      "pairs": 8,
+      "metrics": {
+        "strongest_half_residual": {
+          "narrow_mean": 0.2597913607146301,
+          "wide_mean": 0.1630700538301637,
+          "paired_difference_mean": -0.09672130688446645,
+          "paired_difference_se": 0.017093411710281108,
+          "wide_greater_count": 0
+        },
+        "strongest_quarter_residual": {
+          "narrow_mean": 0.05653071877378508,
+          "wide_mean": 0.04909470535770852,
+          "paired_difference_mean": -0.007436013416076564,
+          "paired_difference_se": 0.006622761145646149,
+          "wide_greater_count": 4
+        },
+        "alignment": {
+          "narrow_mean": 0.46507588793465615,
+          "wide_mean": 0.4816942681590551,
+          "paired_difference_mean": 0.016618380224398974,
+          "paired_difference_se": 0.010084083567791998,
+          "wide_greater_count": 7
+        },
+        "residual_strength_percentile": {
+          "narrow_mean": 0.37646214492620583,
+          "wide_mean": 0.2978015023603693,
+          "paired_difference_mean": -0.07866064256583657,
+          "paired_difference_se": 0.00795493855704558,
+          "wide_greater_count": 0
+        },
+        "breadth": {
+          "narrow_mean": 172.9951169608568,
+          "wide_mean": 225.7413153712991,
+          "paired_difference_mean": 52.74619841044233,
+          "paired_difference_se": 5.292743788144485,
+          "wide_greater_count": 8
+        },
+        "mass": {
+          "narrow_mean": 3909.7417066407306,
+          "wide_mean": 4149.749883703188,
+          "paired_difference_mean": 240.0081770624579,
+          "paired_difference_se": 101.4914833634179,
+          "wide_greater_count": 7
+        },
+        "step": {
+          "narrow_mean": 24.52812429741205,
+          "wide_mean": 19.1387696034003,
+          "paired_difference_mean": -5.389354694011747,
+          "paired_difference_se": 1.4980998106205785,
+          "wide_greater_count": 0
+        }
+      }
+    },
+    {
+      "matching_loss": "panel_loss",
+      "target": 0.6,
+      "pairs": 8,
+      "metrics": {
+        "strongest_half_residual": {
+          "narrow_mean": 0.1952673310786021,
+          "wide_mean": 0.12124045354660831,
+          "paired_difference_mean": -0.0740268775319938,
+          "paired_difference_se": 0.014910546415955177,
+          "wide_greater_count": 0
+        },
+        "strongest_quarter_residual": {
+          "narrow_mean": 0.04169019230084529,
+          "wide_mean": 0.024378477562773365,
+          "paired_difference_mean": -0.017311714738071922,
+          "paired_difference_se": 0.0037249575076273226,
+          "wide_greater_count": 1
+        },
+        "alignment": {
+          "narrow_mean": 0.37620364540100854,
+          "wide_mean": 0.3814314650214517,
+          "paired_difference_mean": 0.005227819620443198,
+          "paired_difference_se": 0.009232831239514294,
+          "wide_greater_count": 4
+        },
+        "residual_strength_percentile": {
+          "narrow_mean": 0.3414876645136286,
+          "wide_mean": 0.25416000263460814,
+          "paired_difference_mean": -0.08732766187902041,
+          "paired_difference_se": 0.009795153806203293,
+          "wide_greater_count": 0
+        },
+        "breadth": {
+          "narrow_mean": 149.2120501043001,
+          "wide_mean": 197.152530415219,
+          "paired_difference_mean": 47.940480310918915,
+          "paired_difference_se": 5.942116147882349,
+          "wide_greater_count": 8
+        },
+        "mass": {
+          "narrow_mean": 4704.625365517176,
+          "wide_mean": 4762.38623266156,
+          "paired_difference_mean": 57.76086714438486,
+          "paired_difference_se": 122.64847181188738,
+          "wide_greater_count": 5
+        },
+        "step": {
+          "narrow_mean": 39.27853162404959,
+          "wide_mean": 29.77964732697673,
+          "paired_difference_mean": -9.498884297072863,
+          "paired_difference_se": 2.099254912424054,
+          "wide_greater_count": 0
+        }
+      }
+    },
+    {
+      "matching_loss": "panel_loss",
+      "target": 0.4,
+      "pairs": 8,
+      "metrics": {
+        "strongest_half_residual": {
+          "narrow_mean": 0.1500275661479893,
+          "wide_mean": 0.10249726415719806,
+          "paired_difference_mean": -0.04753030199079121,
+          "paired_difference_se": 0.01717555194476713,
+          "wide_greater_count": 1
+        },
+        "strongest_quarter_residual": {
+          "narrow_mean": 0.03090377158650647,
+          "wide_mean": 0.018239177684833296,
+          "paired_difference_mean": -0.012664593901673172,
+          "paired_difference_se": 0.006230165381135139,
+          "wide_greater_count": 2
+        },
+        "alignment": {
+          "narrow_mean": 0.2972769416925539,
+          "wide_mean": 0.3033541491402425,
+          "paired_difference_mean": 0.006077207447688637,
+          "paired_difference_se": 0.01318530368821037,
+          "wide_greater_count": 5
+        },
+        "residual_strength_percentile": {
+          "narrow_mean": 0.3036995265793412,
+          "wide_mean": 0.21598922408629617,
+          "paired_difference_mean": -0.08771030249304501,
+          "paired_difference_se": 0.013744592732444725,
+          "wide_greater_count": 0
+        },
+        "breadth": {
+          "narrow_mean": 124.8221192760665,
+          "wide_mean": 160.58343562194165,
+          "paired_difference_mean": 35.76131634587516,
+          "paired_difference_se": 4.608923797740404,
+          "wide_greater_count": 8
+        },
+        "mass": {
+          "narrow_mean": 5893.131091760163,
+          "wide_mean": 5817.194904771102,
+          "paired_difference_mean": -75.93618698906096,
+          "paired_difference_se": 185.4155882474442,
+          "wide_greater_count": 3
+        },
+        "step": {
+          "narrow_mean": 76.96623692295447,
+          "wide_mean": 56.10959127811742,
+          "paired_difference_mean": -20.856645644837045,
+          "paired_difference_se": 4.013807496855458,
+          "wide_greater_count": 0
+        }
+      }
+    },
+    {
+      "matching_loss": "panel_loss",
+      "target": 0.3,
+      "pairs": 8,
+      "metrics": {
+        "strongest_half_residual": {
+          "narrow_mean": 0.14691448867048468,
+          "wide_mean": 0.10519853122429756,
+          "paired_difference_mean": -0.04171595744618711,
+          "paired_difference_se": 0.020841429158708874,
+          "wide_greater_count": 4
+        },
+        "strongest_quarter_residual": {
+          "narrow_mean": 0.031127764366313357,
+          "wide_mean": 0.018432557085806385,
+          "paired_difference_mean": -0.012695207280506977,
+          "paired_difference_se": 0.0075773702756317,
+          "wide_greater_count": 4
+        },
+        "alignment": {
+          "narrow_mean": 0.27613276224528627,
+          "wide_mean": 0.2768318208547361,
+          "paired_difference_mean": 0.0006990586094498506,
+          "paired_difference_se": 0.016971466176423637,
+          "wide_greater_count": 4
+        },
+        "residual_strength_percentile": {
+          "narrow_mean": 0.2910609738416252,
+          "wide_mean": 0.20484534116144282,
+          "paired_difference_mean": -0.08621563268018234,
+          "paired_difference_se": 0.014243974262573372,
+          "wide_greater_count": 0
+        },
+        "breadth": {
+          "narrow_mean": 116.1797309950588,
+          "wide_mean": 142.91894597679175,
+          "paired_difference_mean": 26.73921498173295,
+          "paired_difference_se": 3.773561804526036,
+          "wide_greater_count": 8
+        },
+        "mass": {
+          "narrow_mean": 6621.597876377504,
+          "wide_mean": 6592.303289663072,
+          "paired_difference_mean": -29.294586714431375,
+          "paired_difference_se": 211.04019076047476,
+          "wide_greater_count": 4
+        },
+        "step": {
+          "narrow_mean": 132.57555025206636,
+          "wide_mean": 94.93012450306391,
+          "paired_difference_mean": -37.645425749002456,
+          "paired_difference_se": 7.204203116044418,
+          "wide_greater_count": 0
+        }
+      }
+    },
+    {
+      "matching_loss": "panel_loss",
+      "target": 0.25,
+      "pairs": 8,
+      "metrics": {
+        "strongest_half_residual": {
+          "narrow_mean": 0.14286712314378716,
+          "wide_mean": 0.1123354463446452,
+          "paired_difference_mean": -0.030531676799141972,
+          "paired_difference_se": 0.025093375821741114,
+          "wide_greater_count": 4
+        },
+        "strongest_quarter_residual": {
+          "narrow_mean": 0.030482480446001402,
+          "wide_mean": 0.02046930758649538,
+          "paired_difference_mean": -0.01001317285950602,
+          "paired_difference_se": 0.008779109468999475,
+          "wide_greater_count": 4
+        },
+        "alignment": {
+          "narrow_mean": 0.2611966701058713,
+          "wide_mean": 0.26944305289172066,
+          "paired_difference_mean": 0.008246382785849337,
+          "paired_difference_se": 0.019102929477508687,
+          "wide_greater_count": 5
+        },
+        "residual_strength_percentile": {
+          "narrow_mean": 0.2840876939189728,
+          "wide_mean": 0.2014712281605903,
+          "paired_difference_mean": -0.0826164657583825,
+          "paired_difference_se": 0.01605653240251005,
+          "wide_greater_count": 0
+        },
+        "breadth": {
+          "narrow_mean": 110.11263716828404,
+          "wide_mean": 135.24733602260238,
+          "paired_difference_mean": 25.134698854318373,
+          "paired_difference_se": 2.874055324409897,
+          "wide_greater_count": 8
+        },
+        "mass": {
+          "narrow_mean": 7046.011813531332,
+          "wide_mean": 7030.4016087580485,
+          "paired_difference_mean": -15.610204773284067,
+          "paired_difference_se": 258.1686249498226,
+          "wide_greater_count": 3
+        },
+        "step": {
+          "narrow_mean": 206.10871316683608,
+          "wide_mean": 141.48883733665363,
+          "paired_difference_mean": -64.61987583018244,
+          "paired_difference_se": 13.464048745285025,
+          "wide_greater_count": 0
+        }
+      }
+    }
+  ],
+  "pairs": [
+    {
+      "seed": 281801,
+      "matching_loss": "full_loss",
+      "target": 0.8,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.23572395127041856,
+          "strongest_quarter_residual": 0.059459695732461536,
+          "alignment": 0.43186856584069344,
+          "residual_strength_percentile": 0.36653374492761803,
+          "breadth": 166.099442083724,
+          "mass": 4114.750299447262,
+          "step": 35.908155365333485
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          1.0693842694163322,
+          0.7307098433375359
+        ],
+        "interpolation_fraction": 0.7954077682666744
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.15611027702085045,
+          "strongest_quarter_residual": 0.03167617652086185,
+          "alignment": 0.4455856017187733,
+          "residual_strength_percentile": 0.2974098164281621,
+          "breadth": 217.0909648317637,
+          "mass": 4193.608558070794,
+          "step": 24.042421600970222
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.8533450216054916,
+          0.5894189551472664
+        ],
+        "interpolation_fraction": 0.20212108004851106
+      }
+    },
+    {
+      "seed": 281802,
+      "matching_loss": "full_loss",
+      "target": 0.8,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.24051266756648743,
+          "strongest_quarter_residual": 0.053361876642479905,
+          "alignment": 0.4352193457041348,
+          "residual_strength_percentile": 0.3659262417792183,
+          "breadth": 161.9118663694253,
+          "mass": 3943.12714704466,
+          "step": 31.180092011514414
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.9811499565839767,
+          0.6570918783545494
+        ],
+        "interpolation_fraction": 0.5590046005757208
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.12024472140993704,
+          "strongest_quarter_residual": 0.03670273174057604,
+          "alignment": 0.41320269582195995,
+          "residual_strength_percentile": 0.25788993929265214,
+          "breadth": 230.3271973586351,
+          "mass": 4248.557600423034,
+          "step": 22.344284036632445
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.8275776132941246,
+          0.5923022553324699
+        ],
+        "interpolation_fraction": 0.11721420183162223
+      }
+    },
+    {
+      "seed": 281803,
+      "matching_loss": "full_loss",
+      "target": 0.8,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.134603910102769,
+          "strongest_quarter_residual": 0.024549816495293017,
+          "alignment": 0.3479520285382214,
+          "residual_strength_percentile": 0.3247801252964864,
+          "breadth": 143.03797015618278,
+          "mass": 4495.961140108395,
+          "step": 37.205073531672205
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          1.1289965063333511,
+          0.7465552389621735
+        ],
+        "interpolation_fraction": 0.8602536765836103
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.11794558734921683,
+          "strongest_quarter_residual": 0.025348752545106018,
+          "alignment": 0.4234085794939949,
+          "residual_strength_percentile": 0.2830856644263739,
+          "breadth": 214.59543868176246,
+          "mass": 4264.129305486209,
+          "step": 20.212473978952577
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.802523747086525,
+          0.5649655200541019
+        ],
+        "interpolation_fraction": 0.010623698947628813
+      }
+    },
+    {
+      "seed": 281804,
+      "matching_loss": "full_loss",
+      "target": 0.8,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.26127965659340113,
+          "strongest_quarter_residual": 0.052114922164725824,
+          "alignment": 0.4576989033445784,
+          "residual_strength_percentile": 0.377226578807464,
+          "breadth": 177.36758732915092,
+          "mass": 4186.408721193328,
+          "step": 23.57878196126841
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.8441541418433189,
+          0.59739900380373
+        ],
+        "interpolation_fraction": 0.17893909806342062
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.12966251413919572,
+          "strongest_quarter_residual": 0.030980406128334158,
+          "alignment": 0.4302021292779318,
+          "residual_strength_percentile": 0.26560084143230916,
+          "breadth": 224.86715692237138,
+          "mass": 4559.3649525033525,
+          "step": 20.752242892832165
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.8091522306203842,
+          0.565820436924696
+        ],
+        "interpolation_fraction": 0.037612144641608114
+      }
+    },
+    {
+      "seed": 281805,
+      "matching_loss": "full_loss",
+      "target": 0.8,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.20107225348293356,
+          "strongest_quarter_residual": 0.04271303679648784,
+          "alignment": 0.3919080462484476,
+          "residual_strength_percentile": 0.33363940124397473,
+          "breadth": 160.2351317871283,
+          "mass": 4242.5322947037,
+          "step": 31.05875083040549
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.966003842651844,
+          0.6657821536064148
+        ],
+        "interpolation_fraction": 0.5529375415202745
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.1470559487480652,
+          "strongest_quarter_residual": 0.020230730387350872,
+          "alignment": 0.4272976194468112,
+          "residual_strength_percentile": 0.28832674908146705,
+          "breadth": 196.53044550356526,
+          "mass": 4248.6458185207775,
+          "step": 23.372793599398022
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.8415310084819794,
+          0.5952603295445442
+        ],
+        "interpolation_fraction": 0.1686396799699011
+      }
+    },
+    {
+      "seed": 281806,
+      "matching_loss": "full_loss",
+      "target": 0.8,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.31880815311637756,
+          "strongest_quarter_residual": 0.05952253410255341,
+          "alignment": 0.43918149080293756,
+          "residual_strength_percentile": 0.3960517775556661,
+          "breadth": 142.8738863469569,
+          "mass": 3701.8822921437622,
+          "step": 33.08661845273246
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.9759546890854836,
+          0.7070468887686729
+        ],
+        "interpolation_fraction": 0.6543309226366232
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.13636225604657598,
+          "strongest_quarter_residual": 0.026307883218034463,
+          "alignment": 0.4230694753448166,
+          "residual_strength_percentile": 0.27211197911654406,
+          "breadth": 210.49086195833735,
+          "mass": 4151.008819606006,
+          "step": 22.739981055735953
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.8343282118439674,
+          0.5837555900216103
+        ],
+        "interpolation_fraction": 0.13699905278679764
+      }
+    },
+    {
+      "seed": 281807,
+      "matching_loss": "full_loss",
+      "target": 0.8,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.21542778932469422,
+          "strongest_quarter_residual": 0.0451430813246725,
+          "alignment": 0.44285000459972873,
+          "residual_strength_percentile": 0.3600232494261246,
+          "breadth": 185.87966914922902,
+          "mass": 4148.116032925043,
+          "step": 22.137792061595484
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.8276249542832375,
+          0.5691811628639698
+        ],
+        "interpolation_fraction": 0.10688960307977396
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.1268415396912124,
+          "strongest_quarter_residual": 0.028411265451276382,
+          "alignment": 0.4102457624945536,
+          "residual_strength_percentile": 0.25638983131862164,
+          "breadth": 228.79204222793294,
+          "mass": 4309.086373283643,
+          "step": 19.767835344063503
+        },
+        "bracket_steps": [
+          0,
+          20
+        ],
+        "bracket_losses": [
+          2.4504672288894653,
+          0.7806159779429436
+        ],
+        "interpolation_fraction": 0.9883917672031751
+      }
+    },
+    {
+      "seed": 281808,
+      "matching_loss": "full_loss",
+      "target": 0.8,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.22697804742052655,
+          "strongest_quarter_residual": 0.05892948743510261,
+          "alignment": 0.4637172903842471,
+          "residual_strength_percentile": 0.36904773512049927,
+          "breadth": 168.3153822653121,
+          "mass": 4894.730409495867,
+          "step": 26.708597525888383
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.911115825176239,
+          0.5798518769443035
+        ],
+        "interpolation_fraction": 0.33542987629441906
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.1428383719187515,
+          "strongest_quarter_residual": 0.030573032959557035,
+          "alignment": 0.42171913391658206,
+          "residual_strength_percentile": 0.2843203568092403,
+          "breadth": 198.44674928207527,
+          "mass": 4576.775264397461,
+          "step": 22.000991621153435
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.8261397704482079,
+          0.5648716054856777
+        ],
+        "interpolation_fraction": 0.10004958105767174
+      }
+    },
+    {
+      "seed": 281801,
+      "matching_loss": "full_loss",
+      "target": 0.6,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.22013618653615316,
+          "strongest_quarter_residual": 0.05960975513279672,
+          "alignment": 0.3900883842875674,
+          "residual_strength_percentile": 0.3483643681827094,
+          "breadth": 144.69982298822916,
+          "mass": 4914.311743926732,
+          "step": 57.733975929117186
+        },
+        "bracket_steps": [
+          40,
+          60
+        ],
+        "bracket_losses": [
+          0.7307098433375359,
+          0.5832980684936047
+        ],
+        "interpolation_fraction": 0.8866987964558591
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.11575833150592525,
+          "strongest_quarter_residual": 0.019528897479082572,
+          "alignment": 0.3436906125377542,
+          "residual_strength_percentile": 0.24141235363016,
+          "breadth": 177.98779105075198,
+          "mass": 5078.339476590598,
+          "step": 39.198181142565666
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.8533450216054916,
+          0.5894189551472664
+        ],
+        "interpolation_fraction": 0.9599090571282833
+      }
+    },
+    {
+      "seed": 281802,
+      "matching_loss": "full_loss",
+      "target": 0.6,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.16383890559760952,
+          "strongest_quarter_residual": 0.032219533717350486,
+          "alignment": 0.3414691373351365,
+          "residual_strength_percentile": 0.3296890131092515,
+          "breadth": 137.74645683044577,
+          "mass": 4779.216623685377,
+          "step": 49.24070454451927
+        },
+        "bracket_steps": [
+          40,
+          60
+        ],
+        "bracket_losses": [
+          0.6570918783545494,
+          0.5335258059203625
+        ],
+        "interpolation_fraction": 0.4620352272259635
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.10268147256797353,
+          "strongest_quarter_residual": 0.024506707352807893,
+          "alignment": 0.33048625454584535,
+          "residual_strength_percentile": 0.22196514130523706,
+          "breadth": 185.80650241684256,
+          "mass": 5121.772294864264,
+          "step": 39.34563953197473
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.8275776132941246,
+          0.5923022553324699
+        ],
+        "interpolation_fraction": 0.9672819765987366
+      }
+    },
+    {
+      "seed": 281803,
+      "matching_loss": "full_loss",
+      "target": 0.6,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.10797741035225476,
+          "strongest_quarter_residual": 0.017650830069240248,
+          "alignment": 0.2834172054910004,
+          "residual_strength_percentile": 0.2875176474878492,
+          "breadth": 121.24461734338952,
+          "mass": 5524.1816323978555,
+          "step": 60.04177546842427
+        },
+        "bracket_steps": [
+          60,
+          80
+        ],
+        "bracket_losses": [
+          0.6001977771520615,
+          0.5055119916796684
+        ],
+        "interpolation_fraction": 0.0020887734212137817
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.09735453450120791,
+          "strongest_quarter_residual": 0.019253702049207434,
+          "alignment": 0.3365407294561282,
+          "residual_strength_percentile": 0.24137595099100667,
+          "breadth": 171.9567565407148,
+          "mass": 5242.476256109784,
+          "step": 37.05045113498709
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.802523747086525,
+          0.5649655200541019
+        ],
+        "interpolation_fraction": 0.8525225567493548
+      }
+    },
+    {
+      "seed": 281804,
+      "matching_loss": "full_loss",
+      "target": 0.6,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.18653054878185465,
+          "strongest_quarter_residual": 0.04559850534016842,
+          "alignment": 0.3726261435478337,
+          "residual_strength_percentile": 0.346142592090785,
+          "breadth": 141.07687707683144,
+          "mass": 5134.565438102611,
+          "step": 39.78918402940386
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.8441541418433189,
+          0.59739900380373
+        ],
+        "interpolation_fraction": 0.9894592014701932
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.11499913237885973,
+          "strongest_quarter_residual": 0.0220905766023186,
+          "alignment": 0.3459808594041781,
+          "residual_strength_percentile": 0.22345153914096547,
+          "breadth": 190.21272317632275,
+          "mass": 5497.388510135205,
+          "step": 37.19070306792304
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.8091522306203842,
+          0.565820436924696
+        ],
+        "interpolation_fraction": 0.8595351533961522
+      }
+    },
+    {
+      "seed": 281805,
+      "matching_loss": "full_loss",
+      "target": 0.6,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.1412887885799453,
+          "strongest_quarter_residual": 0.02873963853979245,
+          "alignment": 0.3170466154257651,
+          "residual_strength_percentile": 0.29956629112579597,
+          "breadth": 143.67635632185713,
+          "mass": 5044.056482950791,
+          "step": 50.651420727792235
+        },
+        "bracket_steps": [
+          40,
+          60
+        ],
+        "bracket_losses": [
+          0.6657821536064148,
+          0.5422640703618526
+        ],
+        "interpolation_fraction": 0.5325710363896119
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.1360920745364707,
+          "strongest_quarter_residual": 0.022812778393068486,
+          "alignment": 0.36081397396413645,
+          "residual_strength_percentile": 0.25770902767329834,
+          "breadth": 164.9099112150486,
+          "mass": 5078.315027939925,
+          "step": 39.61508446917793
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.8415310084819794,
+          0.5952603295445442
+        ],
+        "interpolation_fraction": 0.9807542234588964
+      }
+    },
+    {
+      "seed": 281806,
+      "matching_loss": "full_loss",
+      "target": 0.6,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.26284002260872746,
+          "strongest_quarter_residual": 0.04283955327167176,
+          "alignment": 0.3679707989787372,
+          "residual_strength_percentile": 0.3679902234693985,
+          "breadth": 131.61479060008412,
+          "mass": 4360.287973568337,
+          "step": 57.07614465682707
+        },
+        "bracket_steps": [
+          40,
+          60
+        ],
+        "bracket_losses": [
+          0.7070468887686729,
+          0.5816709436476231
+        ],
+        "interpolation_fraction": 0.8538072328413533
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.11210215819284408,
+          "strongest_quarter_residual": 0.018803539396197378,
+          "alignment": 0.32946212306762274,
+          "residual_strength_percentile": 0.2197436615747513,
+          "breadth": 174.00005770924648,
+          "mass": 5117.096937387343,
+          "step": 38.703417008590336
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.8343282118439674,
+          0.5837555900216103
+        ],
+        "interpolation_fraction": 0.9351708504295168
+      }
+    },
+    {
+      "seed": 281807,
+      "matching_loss": "full_loss",
+      "target": 0.6,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.1559402751338556,
+          "strongest_quarter_residual": 0.03093952464989785,
+          "alignment": 0.34100828368201047,
+          "residual_strength_percentile": 0.3181152159479265,
+          "breadth": 154.7283012347289,
+          "mass": 5206.917560005455,
+          "step": 37.6150452702473
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.8276249542832375,
+          0.5691811628639698
+        ],
+        "interpolation_fraction": 0.8807522635123648
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.08197833985300461,
+          "strongest_quarter_residual": 0.01531914724940139,
+          "alignment": 0.31796295373855554,
+          "residual_strength_percentile": 0.212830207912973,
+          "breadth": 184.10007342888161,
+          "mass": 5282.259509586099,
+          "step": 35.62770289614354
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.7806159779429436,
+          0.5494675114750862
+        ],
+        "interpolation_fraction": 0.7813851448071769
+      }
+    },
+    {
+      "seed": 281808,
+      "matching_loss": "full_loss",
+      "target": 0.6,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.17960219557129964,
+          "strongest_quarter_residual": 0.03973032254981042,
+          "alignment": 0.35844530992232393,
+          "residual_strength_percentile": 0.32362460714013147,
+          "breadth": 146.89419021580352,
+          "mass": 5850.7120992799655,
+          "step": 38.783560773019005
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.911115825176239,
+          0.5798518769443035
+        ],
+        "interpolation_fraction": 0.9391780386509501
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.10352174385458143,
+          "strongest_quarter_residual": 0.016913031927422516,
+          "alignment": 0.33693267145331773,
+          "residual_strength_percentile": 0.24183511623755982,
+          "breadth": 169.8791381455219,
+          "mass": 5407.683601404886,
+          "step": 37.31093189104304
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.8261397704482079,
+          0.5648716054856777
+        ],
+        "interpolation_fraction": 0.8655465945521521
+      }
+    },
+    {
+      "seed": 281801,
+      "matching_loss": "full_loss",
+      "target": 0.4,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.17114358001577018,
+          "strongest_quarter_residual": 0.06334083745619426,
+          "alignment": 0.32075055541943015,
+          "residual_strength_percentile": 0.311633744396082,
+          "breadth": 116.68220859460138,
+          "mass": 6306.803913060887,
+          "step": 147.86603866299535
+        },
+        "bracket_steps": [
+          140,
+          160
+        ],
+        "bracket_losses": [
+          0.40912098065018654,
+          0.3859301954507828
+        ],
+        "interpolation_fraction": 0.3933019331497675
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.09081026696754162,
+          "strongest_quarter_residual": 0.013921050768968213,
+          "alignment": 0.268288704349322,
+          "residual_strength_percentile": 0.20984033116625395,
+          "breadth": 137.56672545424868,
+          "mass": 6396.2982319981975,
+          "step": 99.8061353925202
+        },
+        "bracket_steps": [
+          80,
+          100
+        ],
+        "bracket_losses": [
+          0.42479391396045685,
+          0.3997573144733906
+        ],
+        "interpolation_fraction": 0.9903067696260104
+      }
+    },
+    {
+      "seed": 281802,
+      "matching_loss": "full_loss",
+      "target": 0.4,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.11931586624069357,
+          "strongest_quarter_residual": 0.01820128074633255,
+          "alignment": 0.247807784629504,
+          "residual_strength_percentile": 0.2766683280960542,
+          "breadth": 115.03518147473899,
+          "mass": 6172.881847730368,
+          "step": 119.7409710431164
+        },
+        "bracket_steps": [
+          100,
+          120
+        ],
+        "bracket_losses": [
+          0.4267498068511486,
+          0.3996490053832531
+        ],
+        "interpolation_fraction": 0.98704855215582
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.12920359319243196,
+          "strongest_quarter_residual": 0.025756751788780244,
+          "alignment": 0.2922993019320535,
+          "residual_strength_percentile": 0.2095786412283107,
+          "breadth": 146.00944341707182,
+          "mass": 6546.316800567872,
+          "step": 103.92121092750408
+        },
+        "bracket_steps": [
+          100,
+          120
+        ],
+        "bracket_losses": [
+          0.40470946952700615,
+          0.38068898394703865
+        ],
+        "interpolation_fraction": 0.1960605463752036
+      }
+    },
+    {
+      "seed": 281803,
+      "matching_loss": "full_loss",
+      "target": 0.4,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.10029640795905866,
+          "strongest_quarter_residual": 0.017000872432458406,
+          "alignment": 0.2323278292412571,
+          "residual_strength_percentile": 0.26020427055392403,
+          "breadth": 111.68321628273918,
+          "mass": 7189.094436011301,
+          "step": 135.9492131215587
+        },
+        "bracket_steps": [
+          120,
+          140
+        ],
+        "bracket_losses": [
+          0.41796424612402916,
+          0.39543743431568146
+        ],
+        "interpolation_fraction": 0.7974606560779353
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.11604547805617058,
+          "strongest_quarter_residual": 0.020019716507557548,
+          "alignment": 0.2851501109713911,
+          "residual_strength_percentile": 0.2120838195863321,
+          "breadth": 141.26178563299084,
+          "mass": 6568.253031360549,
+          "step": 94.53588156119403
+        },
+        "bracket_steps": [
+          80,
+          100
+        ],
+        "bracket_losses": [
+          0.42639587819576263,
+          0.390077643096447
+        ],
+        "interpolation_fraction": 0.7267940780597018
+      }
+    },
+    {
+      "seed": 281804,
+      "matching_loss": "full_loss",
+      "target": 0.4,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.21181068382294904,
+          "strongest_quarter_residual": 0.05874407884789967,
+          "alignment": 0.3532987400914739,
+          "residual_strength_percentile": 0.3392143952869165,
+          "breadth": 114.18896260166918,
+          "mass": 6488.679026875399,
+          "step": 111.6800308422506
+        },
+        "bracket_steps": [
+          100,
+          120
+        ],
+        "bracket_losses": [
+          0.41813693568110466,
+          0.3870806209743023
+        ],
+        "interpolation_fraction": 0.5840015421125303
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.11365610768600104,
+          "strongest_quarter_residual": 0.01851776002868276,
+          "alignment": 0.2838508003430599,
+          "residual_strength_percentile": 0.19719047417515945,
+          "breadth": 151.54832832956362,
+          "mass": 6995.346014124723,
+          "step": 88.56303339529312
+        },
+        "bracket_steps": [
+          80,
+          100
+        ],
+        "bracket_losses": [
+          0.4145590029656887,
+          0.3805546909570694
+        ],
+        "interpolation_fraction": 0.4281516697646555
+      }
+    },
+    {
+      "seed": 281805,
+      "matching_loss": "full_loss",
+      "target": 0.4,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.10112428909960028,
+          "strongest_quarter_residual": 0.020112762514602357,
+          "alignment": 0.23812318201166158,
+          "residual_strength_percentile": 0.25611777972513383,
+          "breadth": 120.44978882120643,
+          "mass": 6476.364226384987,
+          "step": 123.13894875298536
+        },
+        "bracket_steps": [
+          120,
+          140
+        ],
+        "bracket_losses": [
+          0.4035702720284462,
+          0.3808220699429512
+        ],
+        "interpolation_fraction": 0.15694743764926805
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.1272656115269759,
+          "strongest_quarter_residual": 0.022298793936383884,
+          "alignment": 0.2846330684907907,
+          "residual_strength_percentile": 0.21869798110996114,
+          "breadth": 134.99029511423095,
+          "mass": 6466.2871277591685,
+          "step": 102.30754788775855
+        },
+        "bracket_steps": [
+          100,
+          120
+        ],
+        "bracket_losses": [
+          0.40344179421663284,
+          0.37361104413866997
+        ],
+        "interpolation_fraction": 0.11537739438792748
+      }
+    },
+    {
+      "seed": 281806,
+      "matching_loss": "full_loss",
+      "target": 0.4,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.21652965287157971,
+          "strongest_quarter_residual": 0.031533451871555936,
+          "alignment": 0.3061629499530839,
+          "residual_strength_percentile": 0.3437580365442225,
+          "breadth": 113.64623012113753,
+          "mass": 5403.284752373815,
+          "step": 148.36171779699202
+        },
+        "bracket_steps": [
+          140,
+          160
+        ],
+        "bracket_losses": [
+          0.4069853127002716,
+          0.3902774713933468
+        ],
+        "interpolation_fraction": 0.41808588984960104
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.08244155998092847,
+          "strongest_quarter_residual": 0.013264052698409813,
+          "alignment": 0.25227399555055785,
+          "residual_strength_percentile": 0.1837858465247504,
+          "breadth": 142.33997955154544,
+          "mass": 6486.28908427097,
+          "step": 96.46740861448481
+        },
+        "bracket_steps": [
+          80,
+          100
+        ],
+        "bracket_losses": [
+          0.4311518967151642,
+          0.3933172896504402
+        ],
+        "interpolation_fraction": 0.8233704307242404
+      }
+    },
+    {
+      "seed": 281807,
+      "matching_loss": "full_loss",
+      "target": 0.4,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.15804894729998448,
+          "strongest_quarter_residual": 0.01934747223654663,
+          "alignment": 0.2687318856728817,
+          "residual_strength_percentile": 0.2882701347420006,
+          "breadth": 123.15167241667768,
+          "mass": 6704.567756594162,
+          "step": 99.25911281664652
+        },
+        "bracket_steps": [
+          80,
+          100
+        ],
+        "bracket_losses": [
+          0.4342729225754738,
+          0.39868154004216194
+        ],
+        "interpolation_fraction": 0.9629556408323261
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.06028908820662811,
+          "strongest_quarter_residual": 0.012018981500069508,
+          "alignment": 0.25097134486733336,
+          "residual_strength_percentile": 0.19082104069259065,
+          "breadth": 139.28751223842596,
+          "mass": 6762.223956216798,
+          "step": 90.6894980483727
+        },
+        "bracket_steps": [
+          80,
+          100
+        ],
+        "bracket_losses": [
+          0.4188428111374378,
+          0.3835880011320114
+        ],
+        "interpolation_fraction": 0.534474902418635
+      }
+    },
+    {
+      "seed": 281808,
+      "matching_loss": "full_loss",
+      "target": 0.4,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.11486283012966886,
+          "strongest_quarter_residual": 0.017222277453524643,
+          "alignment": 0.25492210654590364,
+          "residual_strength_percentile": 0.2653281406683039,
+          "breadth": 126.38522813329388,
+          "mass": 7532.06531139646,
+          "step": 94.6007005178618
+        },
+        "bracket_steps": [
+          80,
+          100
+        ],
+        "bracket_losses": [
+          0.42466089129447937,
+          0.3908804692327976
+        ],
+        "interpolation_fraction": 0.7300350258930901
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.1022033509171178,
+          "strongest_quarter_residual": 0.01707145947903162,
+          "alignment": 0.2720482634830294,
+          "residual_strength_percentile": 0.20110265349481213,
+          "breadth": 141.67690509876041,
+          "mass": 6720.211807367435,
+          "step": 91.57022705705357
+        },
+        "bracket_steps": [
+          80,
+          100
+        ],
+        "bracket_losses": [
+          0.4186224155128002,
+          0.3864321820437908
+        ],
+        "interpolation_fraction": 0.5785113528526784
+      }
+    },
+    {
+      "seed": 281801,
+      "matching_loss": "full_loss",
+      "target": 0.3,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.17962608743459177,
+          "strongest_quarter_residual": 0.05641099363280018,
+          "alignment": 0.2992062431893285,
+          "residual_strength_percentile": 0.2963433378038384,
+          "breadth": 108.56588999978862,
+          "mass": 7091.913275483299,
+          "step": 329.3008484065569
+        },
+        "bracket_steps": [
+          320,
+          340
+        ],
+        "bracket_losses": [
+          0.30310593359172344,
+          0.2964271157979965
+        ],
+        "interpolation_fraction": 0.4650424203278462
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.06883651571403732,
+          "strongest_quarter_residual": 0.01280552877648105,
+          "alignment": 0.24468950385038385,
+          "residual_strength_percentile": 0.19326331981658357,
+          "breadth": 131.179161694237,
+          "mass": 7020.445992338474,
+          "step": 210.54209741304578
+        },
+        "bracket_steps": [
+          200,
+          220
+        ],
+        "bracket_losses": [
+          0.3074350506067276,
+          0.29332960210740566
+        ],
+        "interpolation_fraction": 0.5271048706522888
+      }
+    },
+    {
+      "seed": 281802,
+      "matching_loss": "full_loss",
+      "target": 0.3,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.07535900279190476,
+          "strongest_quarter_residual": 0.011327711916248002,
+          "alignment": 0.1987652064939123,
+          "residual_strength_percentile": 0.2354451204577112,
+          "breadth": 108.53373751297826,
+          "mass": 7027.414422236604,
+          "step": 285.2277138591253
+        },
+        "bracket_steps": [
+          280,
+          300
+        ],
+        "bracket_losses": [
+          0.3019513078033924,
+          0.29448606446385384
+        ],
+        "interpolation_fraction": 0.26138569295626357
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.09091036889964536,
+          "strongest_quarter_residual": 0.016660333766811558,
+          "alignment": 0.2454447519262593,
+          "residual_strength_percentile": 0.1830309198208372,
+          "breadth": 134.3339489487164,
+          "mass": 7178.6882594520885,
+          "step": 230.62863135973876
+        },
+        "bracket_steps": [
+          220,
+          240
+        ],
+        "bracket_losses": [
+          0.30314479023218155,
+          0.2972272075712681
+        ],
+        "interpolation_fraction": 0.5314315679869379
+      }
+    },
+    {
+      "seed": 281803,
+      "matching_loss": "full_loss",
+      "target": 0.3,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.1302221985695683,
+          "strongest_quarter_residual": 0.01939246677461392,
+          "alignment": 0.23208268784025846,
+          "residual_strength_percentile": 0.258110855606505,
+          "breadth": 101.32578978151201,
+          "mass": 8091.254622632976,
+          "step": 288.74714639448854
+        },
+        "bracket_steps": [
+          280,
+          300
+        ],
+        "bracket_losses": [
+          0.30342452228069305,
+          0.29559448920190334
+        ],
+        "interpolation_fraction": 0.43735731972442626
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.06356295024296996,
+          "strongest_quarter_residual": 0.01338453879080154,
+          "alignment": 0.2403936586762388,
+          "residual_strength_percentile": 0.18714831600894072,
+          "breadth": 127.98757700836327,
+          "mass": 7344.536865334734,
+          "step": 212.56124643694147
+        },
+        "bracket_steps": [
+          200,
+          220
+        ],
+        "bracket_losses": [
+          0.3048424497246742,
+          0.2971323076635599
+        ],
+        "interpolation_fraction": 0.6280623218470736
+      }
+    },
+    {
+      "seed": 281804,
+      "matching_loss": "full_loss",
+      "target": 0.3,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.2029163297202171,
+          "strongest_quarter_residual": 0.05634074543905712,
+          "alignment": 0.31121173114432343,
+          "residual_strength_percentile": 0.3216202193760682,
+          "breadth": 99.47731125188167,
+          "mass": 7162.228606484077,
+          "step": 260.83551574570595
+        },
+        "bracket_steps": [
+          260,
+          280
+        ],
+        "bracket_losses": [
+          0.3002596441656351,
+          0.29404446110129356
+        ],
+        "interpolation_fraction": 0.04177578728529817
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.0870579336391612,
+          "strongest_quarter_residual": 0.014849055601612957,
+          "alignment": 0.24045835688558617,
+          "residual_strength_percentile": 0.17176383698653094,
+          "breadth": 134.58510332751862,
+          "mass": 7921.733039194243,
+          "step": 200.20847369555312
+        },
+        "bracket_steps": [
+          200,
+          220
+        ],
+        "bracket_losses": [
+          0.30013585835695267,
+          0.28710223734378815
+        ],
+        "interpolation_fraction": 0.010423684777657378
+      }
+    },
+    {
+      "seed": 281805,
+      "matching_loss": "full_loss",
+      "target": 0.3,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.09593992350470693,
+          "strongest_quarter_residual": 0.020174914210111868,
+          "alignment": 0.22534461846514892,
+          "residual_strength_percentile": 0.25664130367292076,
+          "breadth": 108.21180545631402,
+          "mass": 7346.425430647081,
+          "step": 280.6734137756376
+        },
+        "bracket_steps": [
+          280,
+          300
+        ],
+        "bracket_losses": [
+          0.3002294395118952,
+          0.29341521859169006
+        ],
+        "interpolation_fraction": 0.0336706887818783
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.14844214591558025,
+          "strongest_quarter_residual": 0.024866620177205777,
+          "alignment": 0.2792386974794798,
+          "residual_strength_percentile": 0.22095582837693886,
+          "breadth": 120.90325620194295,
+          "mass": 7333.847832490726,
+          "step": 229.22003170431975
+        },
+        "bracket_steps": [
+          220,
+          240
+        ],
+        "bracket_losses": [
+          0.30359568260610104,
+          0.29579596407711506
+        ],
+        "interpolation_fraction": 0.4610015852159877
+      }
+    },
+    {
+      "seed": 281806,
+      "matching_loss": "full_loss",
+      "target": 0.3,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.15923870705949544,
+          "strongest_quarter_residual": 0.0175569878979577,
+          "alignment": 0.251144374373197,
+          "residual_strength_percentile": 0.3136755388651341,
+          "breadth": 102.5111203788357,
+          "mass": 6015.202244822525,
+          "step": 332.52562739332484
+        },
+        "bracket_steps": [
+          320,
+          340
+        ],
+        "bracket_losses": [
+          0.3049554768949747,
+          0.29704293608665466
+        ],
+        "interpolation_fraction": 0.626281369666243
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.1223785801184961,
+          "strongest_quarter_residual": 0.026215522858977085,
+          "alignment": 0.2593581132587076,
+          "residual_strength_percentile": 0.19033388333575668,
+          "breadth": 127.1259825893268,
+          "mass": 7289.850381557293,
+          "step": 220.46406892827662
+        },
+        "bracket_steps": [
+          220,
+          240
+        ],
+        "bracket_losses": [
+          0.3001707214862108,
+          0.29281312972307205
+        ],
+        "interpolation_fraction": 0.02320344641383091
+      }
+    },
+    {
+      "seed": 281807,
+      "matching_loss": "full_loss",
+      "target": 0.3,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.16611931568011412,
+          "strongest_quarter_residual": 0.023765674185552633,
+          "alignment": 0.2613850422057643,
+          "residual_strength_percentile": 0.2923906155355218,
+          "breadth": 107.17491391643381,
+          "mass": 7654.087483909892,
+          "step": 242.82450940089575
+        },
+        "bracket_steps": [
+          240,
+          260
+        ],
+        "bracket_losses": [
+          0.3010699078440666,
+          0.2934940233826637
+        ],
+        "interpolation_fraction": 0.14122547004478825
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.0919611868927608,
+          "strongest_quarter_residual": 0.015222774300648858,
+          "alignment": 0.2521751479073075,
+          "residual_strength_percentile": 0.19783912485202834,
+          "breadth": 126.57153263791308,
+          "mass": 7526.603887363683,
+          "step": 204.67915131666797
+        },
+        "bracket_steps": [
+          200,
+          220
+        ],
+        "bracket_losses": [
+          0.3015501890331507,
+          0.2949242480099201
+        ],
+        "interpolation_fraction": 0.23395756583339944
+      }
+    },
+    {
+      "seed": 281808,
+      "matching_loss": "full_loss",
+      "target": 0.3,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.107297789490541,
+          "strongest_quarter_residual": 0.020157581001146296,
+          "alignment": 0.23804650246005093,
+          "residual_strength_percentile": 0.2551653690100207,
+          "breadth": 117.81618715241123,
+          "mass": 8727.990655915768,
+          "step": 212.09505251057618
+        },
+        "bracket_steps": [
+          200,
+          220
+        ],
+        "bracket_losses": [
+          0.30667028948664665,
+          0.29564050771296024
+        ],
+        "interpolation_fraction": 0.6047526255288094
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.18167245113649605,
+          "strongest_quarter_residual": 0.042653600288329284,
+          "alignment": 0.3221642963089052,
+          "residual_strength_percentile": 0.23544085927352415,
+          "breadth": 128.96301693002957,
+          "mass": 7498.810332988491,
+          "step": 203.65705323766866
+        },
+        "bracket_steps": [
+          200,
+          220
+        ],
+        "bracket_losses": [
+          0.3015618547797203,
+          0.29302025213837624
+        ],
+        "interpolation_fraction": 0.18285266188343205
+      }
+    },
+    {
+      "seed": 281801,
+      "matching_loss": "full_loss",
+      "target": 0.25,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.11040781548152305,
+          "strongest_quarter_residual": 0.016660583565678667,
+          "alignment": 0.21046769739473004,
+          "residual_strength_percentile": 0.24642047785928264,
+          "breadth": 100.94406377542411,
+          "mass": 7856.143208960642,
+          "step": 579.479309332121
+        },
+        "bracket_steps": [
+          560,
+          580
+        ],
+        "bracket_losses": [
+          0.255139434710145,
+          0.24986262060701847
+        ],
+        "interpolation_fraction": 0.9739654666060471
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.05637098978378752,
+          "strongest_quarter_residual": 0.011437844148508755,
+          "alignment": 0.22853221171599236,
+          "residual_strength_percentile": 0.18018696894836866,
+          "breadth": 125.23018228757395,
+          "mass": 7389.291718344051,
+          "step": 342.02763239955505
+        },
+        "bracket_steps": [
+          340,
+          360
+        ],
+        "bracket_losses": [
+          0.2504699286073446,
+          0.2458346839994192
+        ],
+        "interpolation_fraction": 0.10138161997775391
+      }
+    },
+    {
+      "seed": 281802,
+      "matching_loss": "full_loss",
+      "target": 0.25,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.08309677492081596,
+          "strongest_quarter_residual": 0.01274178764661978,
+          "alignment": 0.19473088943221079,
+          "residual_strength_percentile": 0.237127675218583,
+          "breadth": 102.88823753531548,
+          "mass": 7499.874983788701,
+          "step": 526.9872289099239
+        },
+        "bracket_steps": [
+          520,
+          540
+        ],
+        "bracket_losses": [
+          0.25270508974790573,
+          0.24496213532984257
+        ],
+        "interpolation_fraction": 0.3493614454961995
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.08891112954360267,
+          "strongest_quarter_residual": 0.01580848792542732,
+          "alignment": 0.23518609476974484,
+          "residual_strength_percentile": 0.1753281024140895,
+          "breadth": 131.3144008196581,
+          "mass": 7595.009967368588,
+          "step": 387.2307936727883
+        },
+        "bracket_steps": [
+          380,
+          400
+        ],
+        "bracket_losses": [
+          0.25225500389933586,
+          0.24601778015494347
+        ],
+        "interpolation_fraction": 0.36153968363941297
+      }
+    },
+    {
+      "seed": 281803,
+      "matching_loss": "full_loss",
+      "target": 0.25,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.08184652963298288,
+          "strongest_quarter_residual": 0.013773899065580283,
+          "alignment": 0.1953698870288789,
+          "residual_strength_percentile": 0.23112354699506626,
+          "breadth": 100.40684472097206,
+          "mass": 8563.70208616947,
+          "step": 454.6858914723345
+        },
+        "bracket_steps": [
+          440,
+          460
+        ],
+        "bracket_losses": [
+          0.25317852571606636,
+          0.24884984642267227
+        ],
+        "interpolation_fraction": 0.7342945736167253
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.07195760482301282,
+          "strongest_quarter_residual": 0.012664255167564987,
+          "alignment": 0.24551467515843747,
+          "residual_strength_percentile": 0.19747648178161253,
+          "breadth": 123.06481662603468,
+          "mass": 7696.649450459332,
+          "step": 352.5661644335752
+        },
+        "bracket_steps": [
+          340,
+          360
+        ],
+        "bracket_losses": [
+          0.25346511974930763,
+          0.2479501198977232
+        ],
+        "interpolation_fraction": 0.6283082216787583
+      }
+    },
+    {
+      "seed": 281804,
+      "matching_loss": "full_loss",
+      "target": 0.25,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.19794963257217674,
+          "strongest_quarter_residual": 0.027130205525769387,
+          "alignment": 0.26894704340356285,
+          "residual_strength_percentile": 0.3183300164373075,
+          "breadth": 91.79720030279144,
+          "mass": 7594.1771995107465,
+          "step": 479.7570354300479
+        },
+        "bracket_steps": [
+          460,
+          480
+        ],
+        "bracket_losses": [
+          0.25181165896356106,
+          0.24997772090137005
+        ],
+        "interpolation_fraction": 0.9878517715023949
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.05199409028100982,
+          "strongest_quarter_residual": 0.011731180563082057,
+          "alignment": 0.2196373160658901,
+          "residual_strength_percentile": 0.1583441895367293,
+          "breadth": 127.67224723400892,
+          "mass": 8250.272441304214,
+          "step": 314.37246342829866
+        },
+        "bracket_steps": [
+          300,
+          320
+        ],
+        "bracket_losses": [
+          0.25461833365261555,
+          0.2481916919350624
+        ],
+        "interpolation_fraction": 0.7186231714149328
+      }
+    },
+    {
+      "seed": 281805,
+      "matching_loss": "full_loss",
+      "target": 0.25,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.09057039529111488,
+          "strongest_quarter_residual": 0.01922417435404301,
+          "alignment": 0.21569474808838884,
+          "residual_strength_percentile": 0.25036893523087056,
+          "breadth": 103.77989240132536,
+          "mass": 7726.0399801326785,
+          "step": 471.93348392367955
+        },
+        "bracket_steps": [
+          460,
+          480
+        ],
+        "bracket_losses": [
+          0.2518037296831608,
+          0.248780757188797
+        ],
+        "interpolation_fraction": 0.5966741961839765
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.1538496740219155,
+          "strongest_quarter_residual": 0.020603081672783193,
+          "alignment": 0.2742900308189351,
+          "residual_strength_percentile": 0.22050563849747337,
+          "breadth": 117.83702580357341,
+          "mass": 7636.531408632509,
+          "step": 377.5661092605993
+        },
+        "bracket_steps": [
+          360,
+          380
+        ],
+        "bracket_losses": [
+          0.25522924028337,
+          0.24927545711398125
+        ],
+        "interpolation_fraction": 0.8783054630299651
+      }
+    },
+    {
+      "seed": 281806,
+      "matching_loss": "full_loss",
+      "target": 0.25,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.13555012925809362,
+          "strongest_quarter_residual": 0.017313994128613702,
+          "alignment": 0.238380167747269,
+          "residual_strength_percentile": 0.3079087154274445,
+          "breadth": 94.66328556193423,
+          "mass": 6570.538496054728,
+          "step": 558.692498212592
+        },
+        "bracket_steps": [
+          540,
+          560
+        ],
+        "bracket_losses": [
+          0.25679828226566315,
+          0.24952447414398193
+        ],
+        "interpolation_fraction": 0.9346249106295978
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.08910544816937743,
+          "strongest_quarter_residual": 0.01647139797774066,
+          "alignment": 0.22192077055957488,
+          "residual_strength_percentile": 0.16881773388688676,
+          "breadth": 120.30903807478629,
+          "mass": 7710.286910556995,
+          "step": 382.89204732186573
+        },
+        "bracket_steps": [
+          380,
+          400
+        ],
+        "bracket_losses": [
+          0.25092362985014915,
+          0.2445362526923418
+        ],
+        "interpolation_fraction": 0.14460236609328656
+      }
+    },
+    {
+      "seed": 281807,
+      "matching_loss": "full_loss",
+      "target": 0.25,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.1819135690597083,
+          "strongest_quarter_residual": 0.02053162799537319,
+          "alignment": 0.26147900355129716,
+          "residual_strength_percentile": 0.30207802641845166,
+          "breadth": 101.38774813554994,
+          "mass": 8235.625991507739,
+          "step": 421.0448889948586
+        },
+        "bracket_steps": [
+          420,
+          440
+        ],
+        "bracket_losses": [
+          0.2502897772938013,
+          0.24474321119487286
+        ],
+        "interpolation_fraction": 0.05224444974293016
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.09473704634584365,
+          "strongest_quarter_residual": 0.017613618722558996,
+          "alignment": 0.24544874766124003,
+          "residual_strength_percentile": 0.19644676569853575,
+          "breadth": 120.12247534145779,
+          "mass": 7874.880043822937,
+          "step": 347.77280147707813
+        },
+        "bracket_steps": [
+          340,
+          360
+        ],
+        "bracket_losses": [
+          0.25130324251949787,
+          0.24794990196824074
+        ],
+        "interpolation_fraction": 0.38864007385390636
+      }
+    },
+    {
+      "seed": 281808,
+      "matching_loss": "full_loss",
+      "target": 0.25,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.07241730421591552,
+          "strongest_quarter_residual": 0.015754967475360378,
+          "alignment": 0.2034405511025194,
+          "residual_strength_percentile": 0.22545250396538938,
+          "breadth": 113.20548812769468,
+          "mass": 9238.185413732386,
+          "step": 361.87610641425636
+        },
+        "bracket_steps": [
+          360,
+          380
+        ],
+        "bracket_losses": [
+          0.25014084577560425,
+          0.24863937683403492
+        ],
+        "interpolation_fraction": 0.0938053207128192
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.18895772902730476,
+          "strongest_quarter_residual": 0.028999637153669336,
+          "alignment": 0.29383906287756284,
+          "residual_strength_percentile": 0.22352125598175043,
+          "breadth": 122.03871382056603,
+          "mass": 7984.866583150551,
+          "step": 337.08991551091594
+        },
+        "bracket_steps": [
+          320,
+          340
+        ],
+        "bracket_losses": [
+          0.25528279691934586,
+          0.24910044111311436
+        ],
+        "interpolation_fraction": 0.8544957755457986
+      }
+    },
+    {
+      "seed": 281801,
+      "matching_loss": "panel_loss",
+      "target": 0.8,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.27453349994630477,
+          "strongest_quarter_residual": 0.07136030182513856,
+          "alignment": 0.48734182225940287,
+          "residual_strength_percentile": 0.3850524953939022,
+          "breadth": 180.19910020068517,
+          "mass": 3810.2074312288946,
+          "step": 29.908452190402883
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.9672787859131073,
+          0.6296301144583871
+        ],
+        "interpolation_fraction": 0.49542260952014416
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.17180232581153515,
+          "strongest_quarter_residual": 0.039066529253527896,
+          "alignment": 0.4878180025896662,
+          "residual_strength_percentile": 0.31564445171604066,
+          "breadth": 228.30755487239017,
+          "mass": 3949.4667391286757,
+          "step": 19.836936847348305
+        },
+        "bracket_steps": [
+          0,
+          20
+        ],
+        "bracket_losses": [
+          3.0809912346460866,
+          0.7812498459437299
+        ],
+        "interpolation_fraction": 0.9918468423674152
+      }
+    },
+    {
+      "seed": 281802,
+      "matching_loss": "panel_loss",
+      "target": 0.8,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.28365588644399636,
+          "strongest_quarter_residual": 0.0655789261060644,
+          "alignment": 0.4882503143999848,
+          "residual_strength_percentile": 0.3857064993153336,
+          "breadth": 174.29459290072663,
+          "mass": 3569.311821958867,
+          "step": 24.457403433982158
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.8713496388345681,
+          0.551209719299281
+        ],
+        "interpolation_fraction": 0.2228701716991079
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.16283634620207732,
+          "strongest_quarter_residual": 0.06855680819831919,
+          "alignment": 0.4913335816136272,
+          "residual_strength_percentile": 0.2892563354156906,
+          "breadth": 243.9326021767733,
+          "mass": 4045.45236373158,
+          "step": 18.65483362392584
+        },
+        "bracket_steps": [
+          0,
+          20
+        ],
+        "bracket_losses": [
+          2.508244789093958,
+          0.6768215520589824
+        ],
+        "interpolation_fraction": 0.9327416811962919
+      }
+    },
+    {
+      "seed": 281803,
+      "matching_loss": "panel_loss",
+      "target": 0.8,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.1795933441064215,
+          "strongest_quarter_residual": 0.03537780568098016,
+          "alignment": 0.40774493827936703,
+          "residual_strength_percentile": 0.3528930729149956,
+          "breadth": 157.47590516999128,
+          "mass": 4016.5616604045244,
+          "step": 30.357342917842765
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.996256352842817,
+          0.6172858883142691
+        ],
+        "interpolation_fraction": 0.5178671458921383
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.15709304067575577,
+          "strongest_quarter_residual": 0.05569864454901112,
+          "alignment": 0.48537729982612976,
+          "residual_strength_percentile": 0.3081437101994777,
+          "breadth": 226.02151682844976,
+          "mass": 4154.577899614619,
+          "step": 18.739440970059313
+        },
+        "bracket_steps": [
+          0,
+          20
+        ],
+        "bracket_losses": [
+          2.400877954253767,
+          0.692312627452879
+        ],
+        "interpolation_fraction": 0.9369720485029657
+      }
+    },
+    {
+      "seed": 281804,
+      "matching_loss": "panel_loss",
+      "target": 0.8,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.2799983209632638,
+          "strongest_quarter_residual": 0.055631060016878744,
+          "alignment": 0.4820765496616248,
+          "residual_strength_percentile": 0.38541150554487097,
+          "breadth": 186.16401168050564,
+          "mass": 3967.0389982815545,
+          "step": 19.889953861341457
+        },
+        "bracket_steps": [
+          0,
+          20
+        ],
+        "bracket_losses": [
+          2.41097271589424,
+          0.7910868909951072
+        ],
+        "interpolation_fraction": 0.9944976930670729
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.1646986282546108,
+          "strongest_quarter_residual": 0.0577941442593002,
+          "alignment": 0.48302112903736466,
+          "residual_strength_percentile": 0.2901252542970821,
+          "breadth": 236.40872216003174,
+          "mass": 4417.718447195355,
+          "step": 18.860014918093533
+        },
+        "bracket_steps": [
+          0,
+          20
+        ],
+        "bracket_losses": [
+          2.400067500028062,
+          0.7032846427748345
+        ],
+        "interpolation_fraction": 0.9430007459046766
+      }
+    },
+    {
+      "seed": 281805,
+      "matching_loss": "panel_loss",
+      "target": 0.8,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.2567796547717918,
+          "strongest_quarter_residual": 0.05296710172195647,
+          "alignment": 0.4459151055134817,
+          "residual_strength_percentile": 0.35428230602768424,
+          "breadth": 173.01847029051714,
+          "mass": 3706.651446727678,
+          "step": 19.89458143832992
+        },
+        "bracket_steps": [
+          0,
+          20
+        ],
+        "bracket_losses": [
+          2.350039915348426,
+          0.7917865586208099
+        ],
+        "interpolation_fraction": 0.994729071916496
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.15732370807783616,
+          "strongest_quarter_residual": 0.026475130002636776,
+          "alignment": 0.45628176241683777,
+          "residual_strength_percentile": 0.30005962459922036,
+          "breadth": 205.501034142321,
+          "mass": 4057.5162234332875,
+          "step": 19.74058773166338
+        },
+        "bracket_steps": [
+          0,
+          20
+        ],
+        "bracket_losses": [
+          2.629150306059524,
+          0.7759630241777231
+        ],
+        "interpolation_fraction": 0.9870293865831689
+      }
+    },
+    {
+      "seed": 281806,
+      "matching_loss": "panel_loss",
+      "target": 0.8,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.346586056578191,
+          "strongest_quarter_residual": 0.06180636404259464,
+          "alignment": 0.47323012069249937,
+          "residual_strength_percentile": 0.4077071994991214,
+          "breadth": 151.70551656450965,
+          "mass": 3418.0057942080484,
+          "step": 26.352172277012833
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.8720413915129427,
+          0.6452169655645307
+        ],
+        "interpolation_fraction": 0.3176086138506416
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.1621243667538614,
+          "strongest_quarter_residual": 0.0441173822439101,
+          "alignment": 0.5117196426491769,
+          "residual_strength_percentile": 0.29605522808200796,
+          "breadth": 220.9207030361427,
+          "mass": 3939.8405122882086,
+          "step": 19.268365485279723
+        },
+        "bracket_steps": [
+          0,
+          20
+        ],
+        "bracket_losses": [
+          2.702160069828521,
+          0.7277735332209433
+        ],
+        "interpolation_fraction": 0.9634182742639862
+      }
+    },
+    {
+      "seed": 281807,
+      "matching_loss": "panel_loss",
+      "target": 0.8,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.22517719529009608,
+          "strongest_quarter_residual": 0.04855673894907749,
+          "alignment": 0.46115648927725356,
+          "residual_strength_percentile": 0.3667747442954263,
+          "breadth": 190.51412713656492,
+          "mass": 3996.902205766547,
+          "step": 19.938231139704907
+        },
+        "bracket_steps": [
+          0,
+          20
+        ],
+        "bracket_losses": [
+          2.820990561131333,
+          0.7937389489191135
+        ],
+        "interpolation_fraction": 0.9969115569852454
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.16713499438452864,
+          "strongest_quarter_residual": 0.058077023931193586,
+          "alignment": 0.4738747672196214,
+          "residual_strength_percentile": 0.28416839708789776,
+          "breadth": 238.9953245655066,
+          "mass": 4202.876559881602,
+          "step": 18.45699109732116
+        },
+        "bracket_steps": [
+          0,
+          20
+        ],
+        "bracket_losses": [
+          2.354446163275297,
+          0.6700479262290554
+        ],
+        "interpolation_fraction": 0.9228495548660581
+      }
+    },
+    {
+      "seed": 281808,
+      "matching_loss": "panel_loss",
+      "target": 0.8,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.23200692761697572,
+          "strongest_quarter_residual": 0.06096745184759018,
+          "alignment": 0.47489176339363504,
+          "residual_strength_percentile": 0.37386933641831266,
+          "breadth": 170.5892117433538,
+          "mass": 4793.254294549732,
+          "step": 25.426857120679443
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.9003293110624258,
+          0.5305782421422091
+        ],
+        "interpolation_fraction": 0.27134285603397224
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.16154702048110425,
+          "strongest_quarter_residual": 0.04297198042376926,
+          "alignment": 0.464127959920017,
+          "residual_strength_percentile": 0.29895901748553716,
+          "breadth": 205.8430651887776,
+          "mass": 4430.550324352181,
+          "step": 19.552986153511142
+        },
+        "bracket_steps": [
+          0,
+          20
+        ],
+        "bracket_losses": [
+          2.688510717880238,
+          0.7568254979823893
+        ],
+        "interpolation_fraction": 0.977649307675557
+      }
+    },
+    {
+      "seed": 281801,
+      "matching_loss": "panel_loss",
+      "target": 0.6,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.2135008661073561,
+          "strongest_quarter_residual": 0.05456869800567905,
+          "alignment": 0.39249536444772154,
+          "residual_strength_percentile": 0.3517424730778558,
+          "breadth": 151.8857503631614,
+          "mass": 4553.37875867904,
+          "step": 46.919310275429375
+        },
+        "bracket_steps": [
+          40,
+          60
+        ],
+        "bracket_losses": [
+          0.6296301144583871,
+          0.5439854091946144
+        ],
+        "interpolation_fraction": 0.3459655137714686
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.13444276307778907,
+          "strongest_quarter_residual": 0.025153533445061257,
+          "alignment": 0.3908717317768345,
+          "residual_strength_percentile": 0.26734123384884156,
+          "breadth": 196.09399548354133,
+          "mass": 4668.676594277247,
+          "step": 32.180508302731404
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.7812498459437299,
+          0.4836434711702145
+        ],
+        "interpolation_fraction": 0.6090254151365703
+      }
+    },
+    {
+      "seed": 281802,
+      "matching_loss": "panel_loss",
+      "target": 0.6,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.203471518398486,
+          "strongest_quarter_residual": 0.04287277630765542,
+          "alignment": 0.38968894549075106,
+          "residual_strength_percentile": 0.3489436547344976,
+          "breadth": 151.28052191979708,
+          "mass": 4264.070961114272,
+          "step": 36.95194021591917
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.8713496388345681,
+          0.551209719299281
+        ],
+        "interpolation_fraction": 0.8475970107959587
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.11587948484676917,
+          "strongest_quarter_residual": 0.03367148552515087,
+          "alignment": 0.3926440373936338,
+          "residual_strength_percentile": 0.24896105357736265,
+          "breadth": 219.26185477160675,
+          "mass": 4465.5896965898255,
+          "step": 26.56986549365552
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.6768215520589824,
+          0.442961202457705
+        ],
+        "interpolation_fraction": 0.32849327468277595
+      }
+    },
+    {
+      "seed": 281803,
+      "matching_loss": "panel_loss",
+      "target": 0.6,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.11506553034993455,
+          "strongest_quarter_residual": 0.019777505135209324,
+          "alignment": 0.31783173482142213,
+          "residual_strength_percentile": 0.309631723368927,
+          "breadth": 134.87872220246499,
+          "mass": 4810.171725130205,
+          "step": 42.85289792697891
+        },
+        "bracket_steps": [
+          40,
+          60
+        ],
+        "bracket_losses": [
+          0.6172858883142691,
+          0.49610462801888855
+        ],
+        "interpolation_fraction": 0.14264489634894542
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.10880129952914089,
+          "strongest_quarter_residual": 0.022641999450750155,
+          "alignment": 0.38483140576126573,
+          "residual_strength_percentile": 0.26456278328177196,
+          "breadth": 195.6600115015941,
+          "mass": 4698.603743021377,
+          "step": 27.690057109799227
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.692312627452879,
+          0.45222955359573525
+        ],
+        "interpolation_fraction": 0.38450285548996127
+      }
+    },
+    {
+      "seed": 281804,
+      "matching_loss": "panel_loss",
+      "target": 0.6,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.21053300054884072,
+          "strongest_quarter_residual": 0.04769097152611071,
+          "alignment": 0.3999435908524066,
+          "residual_strength_percentile": 0.356123873657031,
+          "breadth": 152.73007332122074,
+          "mass": 4830.1058059885345,
+          "step": 34.583912620080504
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.7910868909951072,
+          0.5290352784093313
+        ],
+        "interpolation_fraction": 0.7291956310040252
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.1220223166112234,
+          "strongest_quarter_residual": 0.026348455963026367,
+          "alignment": 0.38631954145411185,
+          "residual_strength_percentile": 0.2436394003107828,
+          "breadth": 206.81083653412182,
+          "mass": 5048.11204941004,
+          "step": 29.317325957990192
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.7032846427748345,
+          0.48158016824958416
+        ],
+        "interpolation_fraction": 0.4658662978995096
+      }
+    },
+    {
+      "seed": 281805,
+      "matching_loss": "panel_loss",
+      "target": 0.6,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.18042810594377967,
+          "strongest_quarter_residual": 0.03954190809757896,
+          "alignment": 0.3731438326095766,
+          "residual_strength_percentile": 0.32622163959366435,
+          "breadth": 155.58098339970138,
+          "mass": 4445.318970388225,
+          "step": 35.319271144108356
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.7917865586208099,
+          0.541400548977565
+        ],
+        "interpolation_fraction": 0.7659635572054178
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.13923371917304952,
+          "strongest_quarter_residual": 0.02207290514096812,
+          "alignment": 0.379864538045761,
+          "residual_strength_percentile": 0.26648238628630716,
+          "breadth": 173.97062096381788,
+          "mass": 4840.577365905296,
+          "step": 34.960935305113786
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.7759630241777231,
+          0.5407330461193629
+        ],
+        "interpolation_fraction": 0.7480467652556894
+      }
+    },
+    {
+      "seed": 281806,
+      "matching_loss": "panel_loss",
+      "target": 0.6,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.2775491133645132,
+          "strongest_quarter_residual": 0.050522220767980325,
+          "alignment": 0.38739779801658913,
+          "residual_strength_percentile": 0.3766148289477217,
+          "breadth": 132.7897146235688,
+          "mass": 4163.653624998886,
+          "step": 47.926608524273725
+        },
+        "bracket_steps": [
+          40,
+          60
+        ],
+        "bracket_losses": [
+          0.6452169655645307,
+          0.5311279060983987
+        ],
+        "interpolation_fraction": 0.39633042621368625
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.12430988903251003,
+          "strongest_quarter_residual": 0.022579740549945188,
+          "alignment": 0.3765655341133448,
+          "residual_strength_percentile": 0.24609550602858643,
+          "breadth": 192.36230501268486,
+          "mass": 4630.95942135668,
+          "step": 30.67058339993633
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.7277735332209433,
+          0.4882860967201317
+        ],
+        "interpolation_fraction": 0.5335291699968165
+      }
+    },
+    {
+      "seed": 281807,
+      "matching_loss": "panel_loss",
+      "target": 0.6,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.17202812007744586,
+          "strongest_quarter_residual": 0.03478074445105171,
+          "alignment": 0.36855042991552994,
+          "residual_strength_percentile": 0.3294488538324269,
+          "breadth": 163.1528989609252,
+          "mass": 4920.574534491547,
+          "step": 33.429366087642926
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.7937389489191135,
+          0.5052086524706713
+        ],
+        "interpolation_fraction": 0.6714683043821462
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.10687480283127598,
+          "strongest_quarter_residual": 0.02049155296926905,
+          "alignment": 0.37142489733272455,
+          "residual_strength_percentile": 0.23832913689778787,
+          "breadth": 212.40041760619175,
+          "mass": 4652.461924389758,
+          "step": 25.314753358642214
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.6700479262290554,
+          0.4064498944778664
+        ],
+        "interpolation_fraction": 0.2657376679321106
+      }
+    },
+    {
+      "seed": 281808,
+      "matching_loss": "panel_loss",
+      "target": 0.6,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.18956239383846077,
+          "strongest_quarter_residual": 0.04376671411549681,
+          "alignment": 0.38057746705407114,
+          "residual_strength_percentile": 0.33317426889690427,
+          "breadth": 151.39773604356094,
+          "mass": 5649.728543346697,
+          "step": 36.24494619796377
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.9003293110624258,
+          0.5305782421422091
+        ],
+        "interpolation_fraction": 0.8122473098981887
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.11835935327110847,
+          "strongest_quarter_residual": 0.022068147458015934,
+          "alignment": 0.36893003429393756,
+          "residual_strength_percentile": 0.2578685208454249,
+          "breadth": 180.6602014481934,
+          "mass": 5094.109066342263,
+          "step": 31.53314968794516
+        },
+        "bracket_steps": [
+          20,
+          40
+        ],
+        "bracket_losses": [
+          0.7568254979823893,
+          0.484869437017866
+        ],
+        "interpolation_fraction": 0.576657484397258
+      }
+    },
+    {
+      "seed": 281801,
+      "matching_loss": "panel_loss",
+      "target": 0.4,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.14440202841494224,
+          "strongest_quarter_residual": 0.051566338013457724,
+          "alignment": 0.3118159821219383,
+          "residual_strength_percentile": 0.3056726619019904,
+          "breadth": 125.49596716883804,
+          "mass": 5770.366676416524,
+          "step": 96.93844808518979
+        },
+        "bracket_steps": [
+          80,
+          100
+        ],
+        "bracket_losses": [
+          0.458694719500574,
+          0.389391180940989
+        ],
+        "interpolation_fraction": 0.8469224042594898
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.09508246021809608,
+          "strongest_quarter_residual": 0.015869833664294168,
+          "alignment": 0.2974642668284926,
+          "residual_strength_percentile": 0.218440448833656,
+          "breadth": 155.60214352263222,
+          "mass": 5746.110132211189,
+          "step": 62.24483410516818
+        },
+        "bracket_steps": [
+          60,
+          80
+        ],
+        "bracket_losses": [
+          0.40663890068851594,
+          0.34749064850158173
+        ],
+        "interpolation_fraction": 0.112241705258409
+      }
+    },
+    {
+      "seed": 281802,
+      "matching_loss": "panel_loss",
+      "target": 0.4,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.14765063259295838,
+          "strongest_quarter_residual": 0.02589722919051589,
+          "alignment": 0.30128677094471323,
+          "residual_strength_percentile": 0.3160122028780282,
+          "breadth": 122.16799957157713,
+          "mass": 5517.691955149796,
+          "step": 72.80530407735233
+        },
+        "bracket_steps": [
+          60,
+          80
+        ],
+        "bracket_losses": [
+          0.43652786130703847,
+          0.3794767189266834
+        ],
+        "interpolation_fraction": 0.6402652038676162
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.11188270377372879,
+          "strongest_quarter_residual": 0.02742889044720575,
+          "alignment": 0.3219435609779528,
+          "residual_strength_percentile": 0.2193914465720997,
+          "breadth": 175.1566915300823,
+          "mass": 5458.6031394896945,
+          "step": 49.65935997674878
+        },
+        "bracket_steps": [
+          40,
+          60
+        ],
+        "bracket_losses": [
+          0.442961202457705,
+          0.35400871997207933
+        ],
+        "interpolation_fraction": 0.482967998837439
+      }
+    },
+    {
+      "seed": 281803,
+      "matching_loss": "panel_loss",
+      "target": 0.4,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.09923193644926152,
+          "strongest_quarter_residual": 0.015163336482626206,
+          "alignment": 0.258099543343104,
+          "residual_strength_percentile": 0.27440150801175356,
+          "breadth": 116.13691122572396,
+          "mass": 6152.3211317948035,
+          "step": 77.26359533119435
+        },
+        "bracket_steps": [
+          60,
+          80
+        ],
+        "bracket_losses": [
+          0.49610462801888855,
+          0.3847667216614187
+        ],
+        "interpolation_fraction": 0.8631797665597174
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.11745625455650398,
+          "strongest_quarter_residual": 0.02168241723914567,
+          "alignment": 0.3182877895075768,
+          "residual_strength_percentile": 0.2331858292681606,
+          "breadth": 154.41106913405434,
+          "mass": 5869.1206261896905,
+          "step": 60.795538130428284
+        },
+        "bracket_steps": [
+          60,
+          80
+        ],
+        "bracket_losses": [
+          0.4037472897572312,
+          0.30953961789582607
+        ],
+        "interpolation_fraction": 0.03977690652141399
+      }
+    },
+    {
+      "seed": 281804,
+      "matching_loss": "panel_loss",
+      "target": 0.4,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.20820333917405182,
+          "strongest_quarter_residual": 0.059931622361260706,
+          "alignment": 0.3594795564635582,
+          "residual_strength_percentile": 0.34226661029859723,
+          "breadth": 116.0655434180517,
+          "mass": 6153.450643600513,
+          "step": 76.55157896633065
+        },
+        "bracket_steps": [
+          60,
+          80
+        ],
+        "bracket_losses": [
+          0.44114568912491686,
+          0.3914275453651998
+        ],
+        "interpolation_fraction": 0.827578948316533
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.1129201729275438,
+          "strongest_quarter_residual": 0.01836188641216255,
+          "alignment": 0.29950537694607676,
+          "residual_strength_percentile": 0.2006038893716966,
+          "breadth": 166.56409525626498,
+          "mass": 6313.923366986418,
+          "step": 58.598800918552044
+        },
+        "bracket_steps": [
+          40,
+          60
+        ],
+        "bracket_losses": [
+          0.48158016824958416,
+          0.3938539018017197
+        ],
+        "interpolation_fraction": 0.9299400459276022
+      }
+    },
+    {
+      "seed": 281805,
+      "matching_loss": "panel_loss",
+      "target": 0.4,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.12270469450432636,
+          "strongest_quarter_residual": 0.02222186738444029,
+          "alignment": 0.2812866982483063,
+          "residual_strength_percentile": 0.28058153995248947,
+          "breadth": 135.92235671423617,
+          "mass": 5459.746429169769,
+          "step": 63.1907086589193
+        },
+        "bracket_steps": [
+          60,
+          80
+        ],
+        "bracket_losses": [
+          0.4111115057961504,
+          0.34146236521987544
+        ],
+        "interpolation_fraction": 0.15953543294596476
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.11599939827323304,
+          "strongest_quarter_residual": 0.017987638364625094,
+          "alignment": 0.30684279604815967,
+          "residual_strength_percentile": 0.2320918013940167,
+          "breadth": 150.82787401698403,
+          "mass": 5686.059126080058,
+          "step": 59.257727976631315
+        },
+        "bracket_steps": [
+          40,
+          60
+        ],
+        "bracket_losses": [
+          0.5407330461193629,
+          0.3945755697128644
+        ],
+        "interpolation_fraction": 0.9628863988315657
+      }
+    },
+    {
+      "seed": 281806,
+      "matching_loss": "panel_loss",
+      "target": 0.4,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.22252975458068505,
+          "strongest_quarter_residual": 0.034671774932459626,
+          "alignment": 0.3145813011340989,
+          "residual_strength_percentile": 0.344198271537128,
+          "breadth": 117.61945140749441,
+          "mass": 4927.716155309124,
+          "step": 94.25642372986096
+        },
+        "bracket_steps": [
+          80,
+          100
+        ],
+        "bracket_losses": [
+          0.42536611705299693,
+          0.38978059078968025
+        ],
+        "interpolation_fraction": 0.7128211864930477
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.09268240411624959,
+          "strongest_quarter_residual": 0.016219836550177502,
+          "alignment": 0.28989904698248203,
+          "residual_strength_percentile": 0.20302971424482646,
+          "breadth": 156.46405334894425,
+          "mass": 5761.299427285045,
+          "step": 58.7187524766265
+        },
+        "bracket_steps": [
+          40,
+          60
+        ],
+        "bracket_losses": [
+          0.4882860967201317,
+          0.3939570576130954
+        ],
+        "interpolation_fraction": 0.935937623831325
+      }
+    },
+    {
+      "seed": 281807,
+      "matching_loss": "panel_loss",
+      "target": 0.4,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.13731268837730648,
+          "strongest_quarter_residual": 0.019536690122070502,
+          "alignment": 0.2782999206980665,
+          "residual_strength_percentile": 0.29135075448308934,
+          "breadth": 131.82523405164005,
+          "mass": 6189.174353809677,
+          "step": 68.36851169071201
+        },
+        "bracket_steps": [
+          60,
+          80
+        ],
+        "bracket_losses": [
+          0.4286115350710319,
+          0.3602325063297873
+        ],
+        "interpolation_fraction": 0.4184255845356002
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.07163835507222507,
+          "strongest_quarter_residual": 0.012968919618180877,
+          "alignment": 0.2931278790706709,
+          "residual_strength_percentile": 0.2017182814132059,
+          "breadth": 170.17886715770555,
+          "mass": 5612.66397839249,
+          "step": 42.02858563589747
+        },
+        "bracket_steps": [
+          40,
+          60
+        ],
+        "bracket_losses": [
+          0.4064498944778664,
+          0.3428598309012517
+        ],
+        "interpolation_fraction": 0.10142928179487347
+      }
+    },
+    {
+      "seed": 281808,
+      "matching_loss": "panel_loss",
+      "target": 0.4,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.11818545509038239,
+          "strongest_quarter_residual": 0.018241314205220804,
+          "alignment": 0.27336576058664575,
+          "residual_strength_percentile": 0.2751126635716534,
+          "breadth": 133.34349065097052,
+          "mass": 6974.5813888310995,
+          "step": 66.35532484407634
+        },
+        "bracket_steps": [
+          60,
+          80
+        ],
+        "bracket_losses": [
+          0.4174182747357234,
+          0.3626035322542006
+        ],
+        "interpolation_fraction": 0.31776624220381616
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.10231636432000421,
+          "strongest_quarter_residual": 0.015393999182874757,
+          "alignment": 0.29976247676052875,
+          "residual_strength_percentile": 0.2194523815927076,
+          "breadth": 155.46269100886562,
+          "mass": 6089.779441534232,
+          "step": 57.573131004886775
+        },
+        "bracket_steps": [
+          40,
+          60
+        ],
+        "bracket_losses": [
+          0.484869437017866,
+          0.3882794360735092
+        ],
+        "interpolation_fraction": 0.8786565502443386
+      }
+    },
+    {
+      "seed": 281801,
+      "matching_loss": "panel_loss",
+      "target": 0.3,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.17588174634991943,
+          "strongest_quarter_residual": 0.06561452590972731,
+          "alignment": 0.3321700207355016,
+          "residual_strength_percentile": 0.3123330090107375,
+          "breadth": 116.97373301637467,
+          "mass": 6332.259343154497,
+          "step": 162.25383216672319
+        },
+        "bracket_steps": [
+          160,
+          180
+        ],
+        "bracket_losses": [
+          0.3033419716789979,
+          0.2736860662540898
+        ],
+        "interpolation_fraction": 0.1126916083361589
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.09154197819373021,
+          "strongest_quarter_residual": 0.014017601259045734,
+          "alignment": 0.27002938988669345,
+          "residual_strength_percentile": 0.21028873910285245,
+          "breadth": 138.71126598343102,
+          "mass": 6358.881685607016,
+          "step": 97.58662900864836
+        },
+        "bracket_steps": [
+          80,
+          100
+        ],
+        "bracket_losses": [
+          0.34749064850158173,
+          0.2934829720125538
+        ],
+        "interpolation_fraction": 0.8793314504324182
+      }
+    },
+    {
+      "seed": 281802,
+      "matching_loss": "panel_loss",
+      "target": 0.3,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.1183183521865342,
+          "strongest_quarter_residual": 0.018168052539390495,
+          "alignment": 0.24917728490099572,
+          "residual_strength_percentile": 0.27803216326154445,
+          "breadth": 115.0582880437691,
+          "mass": 6148.315802976189,
+          "step": 117.16497201102555
+        },
+        "bracket_steps": [
+          100,
+          120
+        ],
+        "bracket_losses": [
+          0.32467385754966416,
+          0.29592477769819053
+        ],
+        "interpolation_fraction": 0.8582486005512776
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.13078110405493937,
+          "strongest_quarter_residual": 0.026506265694248327,
+          "alignment": 0.3045757074117444,
+          "residual_strength_percentile": 0.2150991376381349,
+          "breadth": 152.86505114649,
+          "mass": 6249.674603081904,
+          "step": 84.96795445644011
+        },
+        "bracket_steps": [
+          80,
+          100
+        ],
+        "bracket_losses": [
+          0.31055526194773825,
+          0.2680618693843054
+        ],
+        "interpolation_fraction": 0.24839772282200526
+      }
+    },
+    {
+      "seed": 281803,
+      "matching_loss": "panel_loss",
+      "target": 0.3,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.10082361800363931,
+          "strongest_quarter_residual": 0.0165692741836585,
+          "alignment": 0.23720094472533554,
+          "residual_strength_percentile": 0.2600155806290938,
+          "breadth": 113.02426200103397,
+          "mass": 6914.827503884612,
+          "step": 117.36200287042288
+        },
+        "bracket_steps": [
+          100,
+          120
+        ],
+        "bracket_losses": [
+          0.3320964393694913,
+          0.29512324035664084
+        ],
+        "interpolation_fraction": 0.8681001435211441
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.11222893444140297,
+          "strongest_quarter_residual": 0.0187018389613419,
+          "alignment": 0.28368681308889443,
+          "residual_strength_percentile": 0.21177745221049413,
+          "breadth": 142.60155811655488,
+          "mass": 6511.0225107289225,
+          "step": 90.42462867387195
+        },
+        "bracket_steps": [
+          80,
+          100
+        ],
+        "bracket_losses": [
+          0.30953961789582607,
+          0.29123754077774905
+        ],
+        "interpolation_fraction": 0.521231433693598
+      }
+    },
+    {
+      "seed": 281804,
+      "matching_loss": "panel_loss",
+      "target": 0.3,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.20770190970222258,
+          "strongest_quarter_residual": 0.05782774384063899,
+          "alignment": 0.3396542007543708,
+          "residual_strength_percentile": 0.3351511112119917,
+          "breadth": 106.88916030755674,
+          "mass": 6770.636454974343,
+          "step": 132.4572048186113
+        },
+        "bracket_steps": [
+          120,
+          140
+        ],
+        "bracket_losses": [
+          0.31242331378414084,
+          0.2924777257248032
+        ],
+        "interpolation_fraction": 0.622860240930565
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.11918937672701169,
+          "strongest_quarter_residual": 0.019986569820428342,
+          "alignment": 0.28733017455631665,
+          "residual_strength_percentile": 0.20005735027522875,
+          "breadth": 152.40621974791534,
+          "mass": 7129.885752501899,
+          "step": 98.92936816629995
+        },
+        "bracket_steps": [
+          80,
+          100
+        ],
+        "bracket_losses": [
+          0.3402255782620713,
+          0.2977248694072611
+        ],
+        "interpolation_fraction": 0.9464684083149975
+      }
+    },
+    {
+      "seed": 281805,
+      "matching_loss": "panel_loss",
+      "target": 0.3,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.10082767124610051,
+          "strongest_quarter_residual": 0.019804324842515687,
+          "alignment": 0.23778185095922902,
+          "residual_strength_percentile": 0.25538579622430463,
+          "breadth": 121.06681810436405,
+          "mass": 6436.836929153502,
+          "step": 118.05137837808867
+        },
+        "bracket_steps": [
+          100,
+          120
+        ],
+        "bracket_losses": [
+          0.3101860292022261,
+          0.29890043207066275
+        ],
+        "interpolation_fraction": 0.9025689189044335
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.12630688730767828,
+          "strongest_quarter_residual": 0.021243335644876824,
+          "alignment": 0.2858201503441865,
+          "residual_strength_percentile": 0.21958942288240035,
+          "breadth": 136.18559668917692,
+          "mass": 6392.276168048523,
+          "step": 97.02975041690031
+        },
+        "bracket_steps": [
+          80,
+          100
+        ],
+        "bracket_losses": [
+          0.3332444736557219,
+          0.2942016540701452
+        ],
+        "interpolation_fraction": 0.8514875208450153
+      }
+    },
+    {
+      "seed": 281806,
+      "matching_loss": "panel_loss",
+      "target": 0.3,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.2069065835280108,
+          "strongest_quarter_residual": 0.026376384056905032,
+          "alignment": 0.2865757131366379,
+          "residual_strength_percentile": 0.33247362441477313,
+          "breadth": 112.31759100249336,
+          "mass": 5561.051232603762,
+          "step": 174.03408710303992
+        },
+        "bracket_steps": [
+          160,
+          180
+        ],
+        "bracket_losses": [
+          0.31576548190342213,
+          0.2932980684013253
+        ],
+        "interpolation_fraction": 0.7017043551519968
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.09309740090637131,
+          "strongest_quarter_residual": 0.016141047757571258,
+          "alignment": 0.25483151880515076,
+          "residual_strength_percentile": 0.18740714217048976,
+          "breadth": 138.62110953827465,
+          "mass": 6628.530634914566,
+          "step": 109.82949372326527
+        },
+        "bracket_steps": [
+          100,
+          120
+        ],
+        "bracket_losses": [
+          0.3125084210329668,
+          0.2870576269531846
+        ],
+        "interpolation_fraction": 0.49147468616326334
+      }
+    },
+    {
+      "seed": 281807,
+      "matching_loss": "panel_loss",
+      "target": 0.3,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.15665505109195826,
+          "strongest_quarter_residual": 0.027059005354667133,
+          "alignment": 0.277125199691327,
+          "residual_strength_percentile": 0.2915256319408169,
+          "breadth": 119.86295950149523,
+          "mass": 6984.687932995223,
+          "step": 127.23358988017495
+        },
+        "bracket_steps": [
+          120,
+          140
+        ],
+        "bracket_losses": [
+          0.31008857319653077,
+          0.28219489007750165
+        ],
+        "interpolation_fraction": 0.361679494008747
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.059644357203944356,
+          "strongest_quarter_residual": 0.011963158041094398,
+          "alignment": 0.25584625164909963,
+          "residual_strength_percentile": 0.1930580988739817,
+          "breadth": 142.7863736126238,
+          "mass": 6595.098246433385,
+          "step": 76.78676009462333
+        },
+        "bracket_steps": [
+          60,
+          80
+        ],
+        "bracket_losses": [
+          0.3428598309012517,
+          0.2917959797951894
+        ],
+        "interpolation_fraction": 0.8393380047311667
+      }
+    },
+    {
+      "seed": 281808,
+      "matching_loss": "panel_loss",
+      "target": 0.3,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.1082009772554922,
+          "strongest_quarter_residual": 0.01760280420300373,
+          "alignment": 0.24937688305889244,
+          "residual_strength_percentile": 0.26357087403973933,
+          "breadth": 124.24503598338342,
+          "mass": 7824.167811277901,
+          "step": 112.0473347884445
+        },
+        "bracket_steps": [
+          100,
+          120
+        ],
+        "bracket_losses": [
+          0.3149576078298916,
+          0.29012621052492327
+        ],
+        "interpolation_fraction": 0.602366739422225
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.10879821095930226,
+          "strongest_quarter_residual": 0.018900639507844288,
+          "alignment": 0.272534561095803,
+          "residual_strength_percentile": 0.20148538613796063,
+          "breadth": 139.1743929798675,
+          "mass": 6873.056715988363,
+          "step": 103.88641148446204
+        },
+        "bracket_steps": [
+          100,
+          120
+        ],
+        "bracket_losses": [
+          0.3041010180119731,
+          0.28299662374816925
+        ],
+        "interpolation_fraction": 0.19432057422310195
+      }
+    },
+    {
+      "seed": 281801,
+      "matching_loss": "panel_loss",
+      "target": 0.25,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.17664969977223702,
+          "strongest_quarter_residual": 0.061333203091536295,
+          "alignment": 0.301642248101455,
+          "residual_strength_percentile": 0.29225032805693596,
+          "breadth": 111.85986727128105,
+          "mass": 6889.951030404391,
+          "step": 265.9000026637327
+        },
+        "bracket_steps": [
+          260,
+          280
+        ],
+        "bracket_losses": [
+          0.2576971482753429,
+          0.23160513200335964
+        ],
+        "interpolation_fraction": 0.29500013318663465
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.0759738506547204,
+          "strongest_quarter_residual": 0.012643974521479926,
+          "alignment": 0.25156510531717813,
+          "residual_strength_percentile": 0.19789153243525093,
+          "breadth": 135.6563341140176,
+          "mass": 6697.566441014282,
+          "step": 137.80311764570666
+        },
+        "bracket_steps": [
+          120,
+          140
+        ],
+        "bracket_losses": [
+          0.268275188723328,
+          0.247744864667715
+        ],
+        "interpolation_fraction": 0.8901558822853338
+      }
+    },
+    {
+      "seed": 281802,
+      "matching_loss": "panel_loss",
+      "target": 0.25,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.09535281074357409,
+          "strongest_quarter_residual": 0.014909596038117428,
+          "alignment": 0.22156714366531863,
+          "residual_strength_percentile": 0.25705346566099857,
+          "breadth": 112.41737977331604,
+          "mass": 6587.291899987449,
+          "step": 188.34947441458826
+        },
+        "bracket_steps": [
+          180,
+          200
+        ],
+        "bracket_losses": [
+          0.26001972225900777,
+          0.23601887678901934
+        ],
+        "interpolation_fraction": 0.4174737207294139
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.13743744822603562,
+          "strongest_quarter_residual": 0.03273134042028833,
+          "alignment": 0.2985155120072933,
+          "residual_strength_percentile": 0.20872739875756452,
+          "breadth": 145.5696908296344,
+          "mass": 6739.5999245026,
+          "step": 127.4272154194491
+        },
+        "bracket_steps": [
+          120,
+          140
+        ],
+        "bracket_losses": [
+          0.2560801934906528,
+          0.23970745311010305
+        ],
+        "interpolation_fraction": 0.3713607709724553
+      }
+    },
+    {
+      "seed": 281803,
+      "matching_loss": "panel_loss",
+      "target": 0.25,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.08662029024607915,
+          "strongest_quarter_residual": 0.014224144769856423,
+          "alignment": 0.22113706262750543,
+          "residual_strength_percentile": 0.24970122571863723,
+          "breadth": 110.47854169231378,
+          "mass": 7327.08818416131,
+          "step": 154.42505051327473
+        },
+        "bracket_steps": [
+          140,
+          160
+        ],
+        "bracket_losses": [
+          0.2774172556540765,
+          0.2394038627320266
+        ],
+        "interpolation_fraction": 0.7212525256637365
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.11246096406280456,
+          "strongest_quarter_residual": 0.019655638035292265,
+          "alignment": 0.26928850304229734,
+          "residual_strength_percentile": 0.2061486510517233,
+          "breadth": 136.93277585508505,
+          "mass": 6900.940786352315,
+          "step": 131.7423375337937
+        },
+        "bracket_steps": [
+          120,
+          140
+        ],
+        "bracket_losses": [
+          0.25624016296238483,
+          0.24561167788532748
+        ],
+        "interpolation_fraction": 0.5871168766896843
+      }
+    },
+    {
+      "seed": 281804,
+      "matching_loss": "panel_loss",
+      "target": 0.25,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.20347877571394066,
+          "strongest_quarter_residual": 0.0626152883187317,
+          "alignment": 0.3190418281735055,
+          "residual_strength_percentile": 0.32306076125648747,
+          "breadth": 98.41045007754789,
+          "mass": 7135.304102795359,
+          "step": 249.37534615545863
+        },
+        "bracket_steps": [
+          240,
+          260
+        ],
+        "bracket_losses": [
+          0.2579964312943579,
+          0.24093800771881424
+        ],
+        "interpolation_fraction": 0.4687673077729311
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.11647054818198538,
+          "strongest_quarter_residual": 0.01659349733338165,
+          "alignment": 0.26395815840196785,
+          "residual_strength_percentile": 0.185333670213807,
+          "breadth": 137.04894984798273,
+          "mass": 7697.5766572324965,
+          "step": 143.11703305937286
+        },
+        "bracket_steps": [
+          140,
+          160
+        ],
+        "bracket_losses": [
+          0.2545887379176467,
+          0.22514575267981968
+        ],
+        "interpolation_fraction": 0.15585165296864287
+      }
+    },
+    {
+      "seed": 281805,
+      "matching_loss": "panel_loss",
+      "target": 0.25,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.1183998791522522,
+          "strongest_quarter_residual": 0.02191418801325843,
+          "alignment": 0.2425019287869089,
+          "residual_strength_percentile": 0.2682560299517653,
+          "breadth": 110.842087118445,
+          "mass": 7046.488819233524,
+          "step": 201.30522735569124
+        },
+        "bracket_steps": [
+          200,
+          220
+        ],
+        "bracket_losses": [
+          0.2509943860064967,
+          0.23575740829283148
+        ],
+        "interpolation_fraction": 0.06526136778456365
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.14060220710039242,
+          "strongest_quarter_residual": 0.026535339810394826,
+          "alignment": 0.28758515448383415,
+          "residual_strength_percentile": 0.22095043270814724,
+          "breadth": 128.0169830968647,
+          "mass": 6878.170747870508,
+          "step": 149.3662199107543
+        },
+        "bracket_steps": [
+          140,
+          160
+        ],
+        "bracket_losses": [
+          0.26037315719435405,
+          0.2382230106182661
+        ],
+        "interpolation_fraction": 0.4683109955377146
+      }
+    },
+    {
+      "seed": 281806,
+      "matching_loss": "panel_loss",
+      "target": 0.25,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.2101797220735473,
+          "strongest_quarter_residual": 0.031215671135660483,
+          "alignment": 0.290316742566913,
+          "residual_strength_percentile": 0.33731898516551945,
+          "breadth": 106.38413496420722,
+          "mass": 5762.081739573854,
+          "step": 246.66284287777506
+        },
+        "bracket_steps": [
+          240,
+          260
+        ],
+        "bracket_losses": [
+          0.2528185550217522,
+          0.2443580372714269
+        ],
+        "interpolation_fraction": 0.3331421438887519
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.09077081880694393,
+          "strongest_quarter_residual": 0.01796812323217306,
+          "alignment": 0.23942205531121008,
+          "residual_strength_percentile": 0.1806880888156305,
+          "breadth": 128.6550604439598,
+          "mass": 7157.679178426335,
+          "step": 181.69596665703173
+        },
+        "bracket_steps": [
+          180,
+          200
+        ],
+        "bracket_losses": [
+          0.25078984217379596,
+          0.2414754824778531
+        ],
+        "interpolation_fraction": 0.08479833285158635
+      }
+    },
+    {
+      "seed": 281807,
+      "matching_loss": "panel_loss",
+      "target": 0.25,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.16129251176665357,
+          "strongest_quarter_residual": 0.021059748034561218,
+          "alignment": 0.26188377210577823,
+          "residual_strength_percentile": 0.2913690963373618,
+          "breadth": 110.75870928382764,
+          "mass": 7385.732174245309,
+          "step": 178.62046337797221
+        },
+        "bracket_steps": [
+          160,
+          180
+        ],
+        "bracket_losses": [
+          0.285101913876899,
+          0.24739940007326924
+        ],
+        "interpolation_fraction": 0.931023168898611
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.08661265569098332,
+          "strongest_quarter_residual": 0.01450815687147713,
+          "alignment": 0.2629915858957733,
+          "residual_strength_percentile": 0.1991913439615754,
+          "breadth": 137.0277242301006,
+          "mass": 6937.0972546453995,
+          "step": 111.6520774629512
+        },
+        "bracket_steps": [
+          100,
+          120
+        ],
+        "bracket_losses": [
+          0.2539175312755061,
+          0.2471933547705657
+        ],
+        "interpolation_fraction": 0.5826038731475593
+      }
+    },
+    {
+      "seed": 281808,
+      "matching_loss": "panel_loss",
+      "target": 0.25,
+      "narrow": {
+        "metrics": {
+          "strongest_half_residual": 0.09096329568201347,
+          "strongest_quarter_residual": 0.016588004166289222,
+          "alignment": 0.23148263481958553,
+          "residual_strength_percentile": 0.25369165920407666,
+          "breadth": 119.74992716533365,
+          "mass": 8234.156557849466,
+          "step": 164.2312979761957
+        },
+        "bracket_steps": [
+          160,
+          180
+        ],
+        "bracket_losses": [
+          0.251765694126345,
+          0.24341981947379931
+        ],
+        "interpolation_fraction": 0.2115648988097853
+      },
+      "wide": {
+        "metrics": {
+          "strongest_half_residual": 0.13835507803329603,
+          "strongest_quarter_residual": 0.023118390467475845,
+          "alignment": 0.28221834867421075,
+          "residual_strength_percentile": 0.2128387073410235,
+          "breadth": 133.0711697631744,
+          "mass": 7234.581880020453,
+          "step": 149.1067310041695
+        },
+        "bracket_steps": [
+          140,
+          160
+        ],
+        "bracket_losses": [
+          0.26130892270408346,
+          0.23647251829309185
+        ],
+        "interpolation_fraction": 0.45533655020847447
+      }
+    }
+  ],
+  "caveats": [
+    "Strength ranks are relative to each network spectrum, not a common absolute strength threshold.",
+    "Equal scalar loss does not equate residual patterns or training histories.",
+    "Interpolation approximates checkpoint statistics; it does not reconstruct an exact intermediate model.",
+    "Paired SE uses eight seeds; loss targets reuse the same seeds and are not independent experiments."
+  ]
+}
