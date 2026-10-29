@@ -13,8 +13,10 @@ The maintained model has two primary objects:
 
 Options are functional response modes, not neurons or teacher-assigned roles.
 Their dynamics are modeled with the existing feature–coefficient parameter
-evolution and physical ReLU gates. No latent resource state or fitted transition
-law is part of the maintained model.
+evolution and physical ReLU gates. A
+[probabilistic extension](docs/model/probabilistic_competition.md) derives closing,
+opening, and width laws from those dynamics under coherent common pressure.
+No latent resource state or fitted transition law is part of the maintained model.
 
 ## Reading order
 

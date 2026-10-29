@@ -1,0 +1,222 @@
+{
+  "status": "Mathematical and numerical consistency audit; not a fit or general validation.",
+  "seed": 20261029,
+  "gaussian_draws": 400000,
+  "probability_checks": [
+    {
+      "theta_over_pi": 0.08333333333333333,
+      "exposure": 0.5,
+      "predicted_block_blind": 0.3899160360253801,
+      "observed_block_blind": 0.3872625,
+      "binomial_se": 0.0007711704106026673,
+      "predicted_joint_blind": 0.35713126858661465,
+      "observed_joint_blind": 0.354415,
+      "widths": {
+        "4": {
+          "block_blind": 0.3899160360253801,
+          "block_blind_both": 0.35713126858661465,
+          "closed": 0.023114493796818198,
+          "newly_closed": 0.006847342504271357,
+          "closed_given_initially_open": 0.007060140926287646,
+          "reopened": 0.01387366660868775,
+          "open_given_initially_closed": 0.4602949612763983
+        },
+        "8": {
+          "block_blind": 0.3899160360253801,
+          "block_blind_both": 0.35713126858661465,
+          "closed": 0.000534279823483147,
+          "newly_closed": 0.0002696596123085387,
+          "closed_given_initially_open": 0.0002699048124376122,
+          "reopened": 0.0006438486925807752,
+          "open_given_initially_closed": 0.7087184711763557
+        }
+      }
+    },
+    {
+      "theta_over_pi": 0.08333333333333333,
+      "exposure": 1.0,
+      "predicted_block_blind": 0.37261090930171825,
+      "observed_block_blind": 0.3697975,
+      "binomial_se": 0.000764480247571945,
+      "predicted_joint_blind": 0.33317884955851584,
+      "observed_joint_blind": 0.33033,
+      "widths": {
+        "4": {
+          "block_blind": 0.37261090930171825,
+          "block_blind_both": 0.33317884955851584,
+          "closed": 0.01927623730164051,
+          "newly_closed": 0.006953428869210342,
+          "closed_given_initially_open": 0.007169524192329852,
+          "reopened": 0.01781800946880442,
+          "open_given_initially_closed": 0.5911587909522051
+        },
+        "8": {
+          "block_blind": 0.37261090930171825,
+          "block_blind_both": 0.33317884955851584,
+          "closed": 0.00037157332450915695,
+          "newly_closed": 0.0002197217168467849,
+          "closed_given_initially_open": 0.00021992150869870464,
+          "reopened": 0.0007566172960930114,
+          "open_given_initially_closed": 0.8328488657843373
+        }
+      }
+    },
+    {
+      "theta_over_pi": 0.08333333333333333,
+      "exposure": 2.0,
+      "predicted_block_blind": 0.3695447231970853,
+      "observed_block_blind": 0.3667025,
+      "binomial_se": 0.0007631864463456406,
+      "predicted_joint_blind": 0.3253239838747187,
+      "observed_joint_blind": 0.3225225,
+      "widths": {
+        "4": {
+          "block_blind": 0.3695447231970853,
+          "block_blind_both": 0.3253239838747187,
+          "closed": 0.018649535574086506,
+          "newly_closed": 0.007448341347150889,
+          "closed_given_initially_open": 0.007679817322585691,
+          "reopened": 0.018939623674298973,
+          "open_given_initially_closed": 0.6283712584164212
+        },
+        "8": {
+          "block_blind": 0.3695447231970853,
+          "block_blind_both": 0.3253239838747187,
+          "closed": 0.0003478051771291181,
+          "newly_closed": 0.00022233842501958228,
+          "closed_given_initially_open": 0.0002225405962310814,
+          "reopened": 0.0007830021516458477,
+          "open_given_initially_closed": 0.8618920784290055
+        }
+      }
+    },
+    {
+      "theta_over_pi": 0.3333333333333333,
+      "exposure": 0.5,
+      "predicted_block_blind": 0.1877455634666098,
+      "observed_block_blind": 0.186285,
+      "binomial_se": 0.000617448716221062,
+      "predicted_joint_blind": 0.1421528077392159,
+      "observed_joint_blind": 0.1411375,
+      "widths": {
+        "4": {
+          "block_blind": 0.1877455634666098,
+          "block_blind_both": 0.1421528077392159,
+          "closed": 0.0012424494629692214,
+          "newly_closed": 0.0008341096096767622,
+          "closed_given_initially_open": 0.0008347537097614546,
+          "reopened": 0.00036326508497914653,
+          "open_given_initially_closed": 0.4707915501329734
+        },
+        "8": {
+          "block_blind": 0.1877455634666098,
+          "block_blind_both": 0.1421528077392159,
+          "closed": 1.5436806680325065e-06,
+          "newly_closed": 1.3769392322455994e-06,
+          "closed_given_initially_open": 1.3769400520401548e-06,
+          "reopened": 4.286327449782214e-07,
+          "open_given_initially_closed": 0.7199384165893388
+        }
+      }
+    },
+    {
+      "theta_over_pi": 0.3333333333333333,
+      "exposure": 1.0,
+      "predicted_block_blind": 0.2350952384713056,
+      "observed_block_blind": 0.2334625,
+      "binomial_se": 0.0006704950919272742,
+      "predicted_joint_blind": 0.13640856509413424,
+      "observed_joint_blind": 0.1354775,
+      "widths": {
+        "4": {
+          "block_blind": 0.2350952384713056,
+          "block_blind_both": 0.13640856509413424,
+          "closed": 0.0030547476031811916,
+          "newly_closed": 0.002708516115265655,
+          "closed_given_initially_open": 0.002710607633501381,
+          "reopened": 0.0004253734503560688,
+          "open_given_initially_closed": 0.5512839916614646
+        },
+        "8": {
+          "block_blind": 0.2350952384713056,
+          "block_blind_both": 0.13640856509413424,
+          "closed": 9.331482919141234e-06,
+          "newly_closed": 9.211606675917028e-06,
+          "closed_given_initially_open": 9.211612160273072e-06,
+          "reopened": 4.754979375409219e-07,
+          "open_given_initially_closed": 0.7986539438607313
+        }
+      }
+    },
+    {
+      "theta_over_pi": 0.3333333333333333,
+      "exposure": 2.0,
+      "predicted_block_blind": 0.31880715762524947,
+      "observed_block_blind": 0.3164925,
+      "binomial_se": 0.0007368330100371434,
+      "predicted_joint_blind": 0.1376468799242555,
+      "observed_joint_blind": 0.1364825,
+      "widths": {
+        "4": {
+          "block_blind": 0.31880715762524947,
+          "block_blind_both": 0.1376468799242555,
+          "closed": 0.010330283806913271,
+          "newly_closed": 0.009971307747127149,
+          "closed_given_initially_open": 0.009979007598669331,
+          "reopened": 0.00041262887848548293,
+          "open_given_initially_closed": 0.5347670265171853
+        },
+        "8": {
+          "block_blind": 0.31880715762524947,
+          "block_blind_both": 0.1376468799242555,
+          "closed": 0.00010671476353137455,
+          "newly_closed": 0.00010658589971987499,
+          "closed_given_initially_open": 0.00010658596317840549,
+          "reopened": 4.665103692655585e-07,
+          "open_given_initially_closed": 0.7835582803843386
+        }
+      }
+    }
+  ],
+  "trap": {
+    "initial_jacobian_rank": 3,
+    "width": 4,
+    "common_exposure": 1.5,
+    "common_branch_elapsed": 0.6698941970109835,
+    "common_branch_residual": 0.6927995475967887,
+    "natural_full_task_q": 0.01,
+    "natural_full_task_checkpoints": [
+      {
+        "step": 0.00199968417018204,
+        "common_residual": 0.6941852910135751,
+        "intercept": 1.4977502117360353,
+        "minimum_readout": 1.3667634896935115,
+        "rare_inactive_margin": 0.3145323339676412
+      },
+      {
+        "step": 0.00099984208509102,
+        "common_residual": 0.6945679529096873,
+        "intercept": 1.4961073070986246,
+        "minimum_readout": 1.3673137209526216,
+        "rare_inactive_margin": 0.3147266714920366
+      }
+    ],
+    "release_q": 0.1,
+    "continuations": [
+      {
+        "step": 0.01,
+        "time": 50.0,
+        "loss": 0.05002095330103075,
+        "proven_floor": 0.05,
+        "maximum_rare_preactivation": -0.31468669102951285
+      },
+      {
+        "step": 0.005,
+        "time": 50.0,
+        "loss": 0.050020990815047184,
+        "proven_floor": 0.05,
+        "maximum_rare_preactivation": -0.31468669102951285
+      }
+    ]
+  }
+}

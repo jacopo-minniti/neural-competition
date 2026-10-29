@@ -9,6 +9,7 @@ The documentation is organized around the maintained options framework.
 - [Local feature–coefficient dynamics](model/local_dynamics.md)
 - [Finite-budget competition](model/finite_budget_competition.md)
 - [Shared implementations and heterogeneous demand](model/shared_implementation_competition.md)
+- [Dynamics-derived closing, opening, and width laws](model/probabilistic_competition.md)
 - [Delayed demand, recovery, and width](model/delayed_demand_and_width.md)
 - [Observed learning ledger](model/learning_ledger.md)
 

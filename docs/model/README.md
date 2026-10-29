@@ -50,6 +50,13 @@ initial coverage, preserve alternatives, or enable recruitment. Identical
 duplication does not reproduce this. Width protection is conditional on task
 structure, optimizer scaling, implementation overlap, and recovery time.
 
+The [probabilistic extension](probabilistic_competition.md) solves one coherent
+pressure regime explicitly. The probability of complete loss of a fixed
+refinement response is b(s)^m, with b(s) derived from Gaussian initialization
+and the feature flow. Joint laws separate initial absence, later closure, and
+reopening. These are exact at fixed accumulated pressure; natural training at a
+fixed time additionally requires control of the pressure clock and other forces.
+
 ## Technical chapters
 
 1. [Spectral derivation](spectral_options.md)
@@ -58,3 +65,4 @@ structure, optimizer scaling, implementation overlap, and recovery time.
 4. [Shared implementations](shared_implementation_competition.md)
 5. [Delayed demand and width](delayed_demand_and_width.md)
 6. [Observed learning ledger](learning_ledger.md)
+7. [Probabilistic competition and width](probabilistic_competition.md)

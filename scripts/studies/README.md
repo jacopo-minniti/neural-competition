@@ -9,5 +9,6 @@
 | Heterogeneous toys | `run_toy_resource_competition.py` | `analyze_toy_resource_competition.py` |
 | Refinement hierarchies | `run_refinement_hierarchy.py` | compact records under `docs/evidence/refinement_hierarchies/` |
 | Learning ledger | `trace_observed_learning.py` | `analyze_observed_learning.py` |
+| Analytic probability law | `probabilistic_option_transport.py` | `audit_probabilistic_option_transport.py` |
 
 Supporting audit and intervention scripts remain beside these entry points.

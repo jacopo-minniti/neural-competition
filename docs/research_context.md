@@ -69,8 +69,21 @@ Width can affect initial coverage, the number and diversity of implementation
 routes, survival under pressure, and timely recruitment. Under the toy's
 mean-field parameterization, individual feature velocities remain order one;
 there is no automatic feature freezing with width. Initial response reliability
-improves through averaging, while later protection requires assumptions about
-retained mean response and correlated feature evolution.
+improves through averaging. The new
+[probabilistic chapter](model/probabilistic_competition.md) derives later closing
+and opening probabilities in a coherent-pressure regime: a pressure clock makes
+transported implementations independent exactly at fixed exposure, and the
+feature flow determines their Gaussian gate-event probabilities. Complete loss
+of a specified refinement response has probability b(s)^m; two-time laws exclude
+initial absence and include reopening. Finite-strength reliability follows from
+the same transported block distribution.
+
+This is an exact restricted model, not a fixed-training-time law for arbitrary
+tasks. A separate full-objective invariant region proves that pressure-induced
+closure can enforce a nonzero loss floor above representational sufficiency.
+Quantifying entry probabilities under ordinary all-data training still requires
+clock and perturbation control. The small deterministic audit checks one natural
+training construction, not a population width curve.
 
 The strongest controlled evidence is dynamical: fresh discrete runs start with
 broad refinement support, but narrow paths close more often and recover less
@@ -97,6 +110,8 @@ yet identify a complete mediator of the natural width effect.
 Establish when task frequency, shared implementation, option transport, and
 finite recovery combine into a meaningful loss penalty, and determine how much
 of the natural width benefit passes through that chain. The maintained model
-does not include a separate implementation distribution or a fitted stochastic
-closure. Those later alternatives remain recoverable from commit `92b7904` but
-are outside the current theory.
+does not include a fitted stochastic closure. The new implementation distribution
+is only the initialization law pushed through the existing parameter dynamics;
+it is not an independent latent state. More general distributional approximations
+require finite-width error control, especially for rare failure events. Earlier
+alternatives remain recoverable from commit `92b7904`.

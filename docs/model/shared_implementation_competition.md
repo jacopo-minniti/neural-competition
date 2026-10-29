@@ -6,6 +6,12 @@
 MNIST is paused. [Executed evidence and reproduction](../evidence/toy_resource_competition/README.md)
 include the pilot, fresh confirmation, numerical checks, and negative results.
 
+The subsequent [probabilistic derivation](probabilistic_competition.md) makes the
+width argument explicit in a coherent-pressure regime. It derives a transported
+implementation law, closing/opening probabilities, and a full-objective loss
+trap; its fixed-pressure exactness does not replace the general correlation
+qualifications in section 4 below.
+
 ## 1. The minimal continuation
 
 Keep functional options as eigenspaces of the budget-matched response operator.

@@ -7,4 +7,5 @@ The maintained suite checks:
 - finite-budget causal interventions;
 - delayed-demand recovery and matched-response constructions;
 - heterogeneous toy response and recycling operations;
+- exact pressure transport, Gaussian closing/opening laws, and functional null events;
 - exact finite-update learning ledgers.
