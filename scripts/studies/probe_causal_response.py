@@ -175,7 +175,7 @@ def branches(
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", default="docs/theory/observed_learning/mnist_confirmation")
+    parser.add_argument("--input", default="docs/evidence/observed_learning/mnist_confirmation")
     parser.add_argument("--output", required=True)
     parser.add_argument("--cases", required=True, help="JSON list of seed, step, focal triples")
     parser.add_argument("--pressure", type=int, default=20)

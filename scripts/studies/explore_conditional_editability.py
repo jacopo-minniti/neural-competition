@@ -16,7 +16,7 @@ from torch import nn
 from torch.nn import functional as F
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / 'docs/theory/conditional_editability'
+OUT = ROOT / 'docs/evidence/conditional_editability'
 torch.set_num_threads(2)
 
 

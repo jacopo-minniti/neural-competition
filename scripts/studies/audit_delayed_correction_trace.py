@@ -11,7 +11,7 @@ import numpy as np
 from explore_stable_distinctions import task
 from explore_transported_gates import train
 
-ROOT = Path(__file__).resolve().parents[2] / "docs/theory/option_transport_resilience"
+ROOT = Path(__file__).resolve().parents[2] / "docs/evidence/option_transport_resilience"
 
 
 def predict(s, x):

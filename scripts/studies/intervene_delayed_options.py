@@ -13,7 +13,7 @@ from explore_stable_distinctions import task
 
 ROOT = (
     Path(__file__).resolve().parents[2]
-    / "docs/theory/option_transport_resilience/delayed_intervention"
+    / "docs/evidence/option_transport_resilience/delayed_intervention"
 )
 
 

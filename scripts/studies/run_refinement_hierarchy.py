@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 
 import numpy as np
-from implementation_moments import hierarchy, moments, observe
+from hierarchy_options import gate_summary, hierarchy, observe
 from toy_option_resources import advance, velocity
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -54,7 +54,7 @@ def main():
         analysis="Per-refinement structural coverage >= .95, residual gap <= .1 of target gap; report continuous values and sensitivities. Checkpoint transitions are sampled, not exact event times.",
         sources={},
     )
-    for name in [Path(__file__).name, "implementation_moments.py", "toy_option_resources.py"]:
+    for name in [Path(__file__).name, "hierarchy_options.py", "toy_option_resources.py"]:
         path = Path(__file__).with_name(name)
         protocol["sources"][name] = hashlib.sha256(path.read_bytes()).hexdigest()
         (out / name).write_bytes(path.read_bytes())
@@ -103,7 +103,9 @@ def main():
                     obs = observe(state, data)
                     with (out / "trajectory.jsonl").open("a") as f:
                         for seed in range(args.count):
-                            resource = moments(tuple(v[seed : seed + 1] for v in state), data)
+                            groups, largest_group = gate_summary(
+                                tuple(v[seed : seed + 1] for v in state), data
+                            )
                             row = dict(
                                 case=name,
                                 **config,
@@ -111,8 +113,8 @@ def main():
                                 factor=factor,
                                 seed=seed,
                                 time=t,
-                                gate_groups=len(resource["groups"]),
-                                largest_group=max(g["count"] for g in resource["groups"]),
+                                gate_groups=groups,
+                                largest_group=largest_group,
                                 **{k: np.asarray(v[seed]).tolist() for k, v in obs.items()},
                             )
                             f.write(json.dumps(row, allow_nan=False) + "\n")

@@ -6,7 +6,7 @@ from pathlib import Path
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "docs/theory/option_transport_resilience"
+OUT = ROOT / "docs/evidence/option_transport_resilience"
 
 
 def read(path):

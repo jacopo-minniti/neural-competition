@@ -200,7 +200,7 @@ def forecast(s, x, y, rate, k, horizons):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", default="docs/theory/observed_learning/mnist")
+    parser.add_argument("--input", default="docs/evidence/observed_learning/mnist")
     parser.add_argument("--output", required=True)
     parser.add_argument("--rate", type=float, default=0.01)
     parser.add_argument("--steps", type=int, nargs="+", default=[0, 20, 100, 400, 800])

@@ -9,7 +9,7 @@ from explore_conditional_editability import OUT as SOURCE
 from explore_conditional_editability import ROOT, Net, contrasts, kernel
 from torch.nn import functional as F
 
-OUT = ROOT/'docs/theory/gd_options'
+OUT = ROOT/'docs/evidence/gd_options'
 torch.set_num_threads(2)
 
 

@@ -45,7 +45,7 @@ def main():
     out = ROOT / args.output
     out.mkdir(parents=True, exist_ok=True)
     assert not (out / "protocol.json").exists()
-    cases = json.loads((ROOT / "docs/theory/causal_response/pilot_cases.json").read_text())
+    cases = json.loads((ROOT / "docs/evidence/causal_response/pilot_cases.json").read_text())
     protocol = dict(
         cases=cases,
         kind="Retrospective diagnostic on selected development cases; actual post-pressure parameters supplied",
@@ -65,7 +65,7 @@ def main():
             for width in [32, 128]:
                 base = from_checkpoint(
                     ROOT
-                    / f"docs/theory/observed_learning/mnist_confirmation/model_{case['seed']}_{width}_{case['step']}.pt"
+                    / f"docs/evidence/observed_learning/mnist_confirmation/model_{case['seed']}_{width}_{case['step']}.pt"
                 )
                 f0 = cache(base, x)[0]
                 p0 = f0.softmax(-1)

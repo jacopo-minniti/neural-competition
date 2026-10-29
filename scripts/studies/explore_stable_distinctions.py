@@ -55,7 +55,7 @@ def linear_span(w, x, mass, y, evaluation=None):
 
 CASES = [('discrete', 1, 0., .1), ('clusters', 3, .15, .1),
          ('rare_clusters', 3, .15, .02)]
-ROOT = Path(__file__).resolve().parents[2]/'docs/theory'
+ROOT = Path(__file__).resolve().parents[2]/'docs/evidence/option_transport_resilience'
 
 
 def forecast():

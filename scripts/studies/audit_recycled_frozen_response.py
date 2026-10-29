@@ -12,7 +12,7 @@ from recycle_toy_resources import recycle
 from toy_option_resources import forward, kernel, task
 
 ROOT = Path(__file__).resolve().parents[2]
-BASE = ROOT / "docs/theory/toy_resource_competition"
+BASE = ROOT / "docs/evidence/toy_resource_competition"
 
 
 def frozen(state, data, horizon, dt):

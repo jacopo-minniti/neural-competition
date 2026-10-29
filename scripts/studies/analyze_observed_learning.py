@@ -11,12 +11,11 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
-import torch
 from explore_stable_distinctions import task
 from trace_observed_learning import toy_forward, toy_tangent, toy_velocity
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "docs/theory/observed_learning"
+OUT = ROOT / "docs/evidence/observed_learning"
 
 
 def read(path):
@@ -245,33 +244,6 @@ def probe(folder):
     return result
 
 
-def history():
-    root = ROOT / "docs/theory"
-    rows = read(root / "option_mismatch_tracking/forecasts.jsonl")
-    end = [r for r in rows if r["step"] == 800]
-    result = dict(
-        mnist_prior_endpoint={
-            side: float(np.mean([r[side]["full_loss"] for r in end])) for side in ["narrow", "wide"]
-        }
-    )
-    confirmation = read(root / "option_transport_resilience/delayed_confirmation/outcomes.jsonl")
-    result["prior_discrete_failures"] = {
-        str(w): sum(
-            r["loss"] > 1e-7 for r in confirmation if r["case"] == "delayed" and r["width"] == w
-        )
-        for w in [4, 8]
-    }
-    assert result["prior_discrete_failures"] == {"4": 11, "8": 0}
-    result["prior_cohort_hashes"] = {
-        str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
-        for path in [
-            root / "option_mismatch_tracking/forecasts.jsonl",
-            root / "option_transport_resilience/delayed_confirmation/outcomes.jsonl",
-        ]
-    }
-    return result
-
-
 def figures(result, data):
     plt.rcParams.update({"font.size": 10, "axes.spines.top": False, "axes.spines.right": False})
     fig, axes = plt.subplots(2, 2, figsize=(11, 7), constrained_layout=True)
@@ -384,25 +356,9 @@ def figures(result, data):
 
 
 def main():
-    result = {"history": history()}
+    result = {}
     for name in ["mnist", "mnist_confirmation"]:
         result[name], data = mnist(OUT / name)
-    result["mnist_original_replay"], _ = mnist(OUT / "mnist_original_replay")
-    replay_error = 0.0
-    for seed in range(281801, 281809):
-        for width in [32, 128]:
-            current = torch.load(
-                OUT / "mnist_original_replay" / f"model_{seed}_{width}_800.pt", weights_only=True
-            )
-            prior = torch.load(
-                ROOT / "docs/theory/option_mismatch_tracking" / f"final_{seed}_{width}.pt",
-                weights_only=True,
-            )
-            replay_error = max(
-                replay_error, max(float((current[k] - prior[k]).abs().max()) for k in current)
-            )
-    assert replay_error == 0
-    result["mnist_original_replay"]["historical_max_parameter_difference"] = replay_error
     for name in ["toy", "toy_half_step"]:
         result[name] = toy(OUT / name)
     result["batch_probe"] = probe(OUT / "batch_probe")

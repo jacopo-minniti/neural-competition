@@ -14,7 +14,7 @@ import numpy as np
 from matplotlib.ticker import MaxNLocator
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "docs/theory/response_feedback"
+OUT = ROOT / "docs/evidence/response_feedback"
 
 
 def read(path):

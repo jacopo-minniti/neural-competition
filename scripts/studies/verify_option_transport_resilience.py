@@ -9,7 +9,7 @@ import numpy as np
 from analyze_option_transport_resilience import read
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "docs/theory/option_transport_resilience"
+OUT = ROOT / "docs/evidence/option_transport_resilience"
 
 
 def main():
@@ -56,7 +56,7 @@ def main():
     results["intervention_matching"] = intervention["matching"]
     results["clone_max_loss_difference"] = intervention["clone_max_loss_difference"]
     results["numerical_bound_violations"] = 0
-    note = ROOT / "docs/theory/delayed_demand_option_recovery.md"
+    note = ROOT / "docs/model/delayed_demand_and_width.md"
     for target in re.findall(r"\]\(([^)]+)\)", note.read_text()):
         if not target.startswith("https://"):
             assert (note.parent / target).exists(), target

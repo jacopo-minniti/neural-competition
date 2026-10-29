@@ -6,7 +6,7 @@ from pathlib import Path
 import numpy as np
 from analyze_option_transport_resilience import read, summary
 
-ROOT = Path(__file__).resolve().parents[2] / "docs/theory/option_transport_resilience"
+ROOT = Path(__file__).resolve().parents[2] / "docs/evidence/option_transport_resilience"
 
 
 def analyze(folder):

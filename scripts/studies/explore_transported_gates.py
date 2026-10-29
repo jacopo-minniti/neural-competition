@@ -141,7 +141,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('phase', choices=['forecast', 'validate'])
     args = parser.parse_args()
-    output = Path(__file__).resolve().parents[2]/'docs/theory/transported_gates_forecasts.json'
+    output = Path(__file__).resolve().parents[2]/'docs/evidence/option_transport_resilience/transported_gates_forecasts.json'
     if args.phase == 'forecast':
         forecasts(output)
     else:

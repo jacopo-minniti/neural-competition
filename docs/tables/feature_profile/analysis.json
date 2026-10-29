@@ -1,6 +1,0 @@
-{
-  "sha256": "2a20265f3bbf9d6394cf47fb257dccdc30281193e98903fe66246f5fd3601c88",
-  "bootstrap_seed": 845,
-  "bootstrap_draws": 5000,
-  "scope": "Exploratory paired seed intervals, no multiplicity correction"
-}

@@ -14,9 +14,40 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
-from explore_recruitable_workspace import initial, regions, task
 
 ROOT = Path(__file__).resolve().parents[2]
+
+
+def task(seed, n, validation=False, affine=False):
+    """Sample the one-dimensional local-refinement task used by this assay."""
+    rng = np.random.default_rng(seed + (100000 if validation else 0))
+    x = rng.uniform(-1, 1, n)
+    x = np.column_stack([x, np.ones(n)])
+    shape_rng = np.random.default_rng(seed + 70000)
+    centers = np.array([-0.60, 0.0, 0.57]) + shape_rng.uniform(-0.035, 0.035, 3)
+    widths = np.array([0.25, 0.28, 0.23])
+    heights = np.array([1.0, -0.8, 0.7]) * shape_rng.uniform(0.9, 1.1, 3)
+    y = 0.2 * x[:, 0]
+    if not affine:
+        for center, width, height in zip(centers, widths, heights):
+            y += height * np.maximum(1 - np.abs((x[:, 0] - center) / width), 0)
+    return x, y
+
+
+def initial(seed, width, active=False):
+    """Draw the nested initializer used in the width comparison."""
+    rng = np.random.default_rng(seed + 50000)
+    bank = rng.normal(size=(36, 3))
+    if active:
+        for index in range(36):
+            while abs(bank[index, 1]) >= abs(bank[index, 0]):
+                bank[index] = rng.normal(size=3)
+    return bank[:width, :2].copy(), 0.3 * bank[:width, 2].copy(), np.zeros(2)
+
+
+def regions(x):
+    """Return the three equal input regions used for local pressure."""
+    return [x[:, 0] < -1 / 3, np.abs(x[:, 0]) <= 1 / 3, x[:, 0] > 1 / 3]
 
 
 def append(path, row):
@@ -191,9 +222,6 @@ def main():
         ],
         inference="No endpoint-fitted coefficients. Seed/task pair is the sampling unit; all horizons correlated.",
         source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
-        dependency_sha256=hashlib.sha256(
-            Path(__file__).with_name("explore_recruitable_workspace.py").read_bytes()
-        ).hexdigest(),
     )
     (out / "protocol.json").write_text(json.dumps(protocol, indent=2) + "\n")
     (out / "source.py").write_bytes(Path(__file__).read_bytes())

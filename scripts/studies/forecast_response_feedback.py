@@ -52,7 +52,7 @@ def run(states, x, y, vx, vy, horizons, rate, batches, decode=False):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", default="docs/theory/observed_learning/mnist")
+    parser.add_argument("--input", default="docs/evidence/observed_learning/mnist")
     parser.add_argument("--output", required=True)
     parser.add_argument("--rate", type=float, default=0.05)
     parser.add_argument("--steps", type=int, nargs="+", default=[0, 20, 100, 800])
