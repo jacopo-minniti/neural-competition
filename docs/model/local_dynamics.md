@@ -16,7 +16,11 @@ pressure reduces a useful response relative to a declared counterfactual, and th
 reduction impairs subsequent correction. Useful feature creation is the positive
 case. Neither a loss increase nor a width advantage establishes the negative case.
 
-Keep the existing spectral operator B_tau, its strengths, and its residual loading.
+Keep the existing spectral operator C_tau, its strengths, and its residual loading.
+Eigenspaces describe capability modes; options are their nonzero declared-residual
+components together with available responses and residual-weighted values.
+Fixed-demand audits isolate capability change; zero response means option closure
+only while the corresponding demand remains.
 Add a local model of how its implementation changes. Do not add separate state
 variables for saturation, extinction, noise, gate counts and recruitment. They
 may matter in particular regimes; the model below tests what can be omitted over
@@ -48,7 +52,7 @@ of residual relaxation and fails in the retained pilot.
 For physical predictions, **evaluate the original ReLU network and Jacobian at
 the forecast parameters** theta_hat. This updates the observed activation masks
 without feeding their evolution back into the approximate dynamics. Use
-f(theta_hat), J(theta_hat), and the original B_tau definition. We also retain
+f(theta_hat), J(theta_hat), and the original C_tau definition. We also retain
 internal fixed-mask predictions as an ablation. This distinction matters:
 internal loss differences can be accurate through cancellation even when its
 option-strength forecasts are poor.
@@ -75,7 +79,7 @@ output coefficient in the first copy and zero in the others. Keep the original
 normalization; set each output-weight learning metric to 1/k and each incoming
 metric to 1. The initial function and **entire optimizer response kernel** match:
 the output derivatives contribute k/k copies and incoming derivatives contribute
-only the active coefficient. Consequently B_tau matches for every demand and
+only the active coefficient. Consequently C_tau matches for every demand and
 curvature at the initial function. Uniform coefficients a/k with incoming metric
 k instead give synchronized copies that reproduce the original trajectory;
 this is the implementation control. This is an artificial optimizer-aware
@@ -168,8 +172,9 @@ instantaneous response kappa_2=a²+w_2² has derivative -4. This illustrates the
 sign mechanism; it establishes neither a lasting trap nor a width law.
 
 Conversely, disjoint implementations produce no cross-pressure change, and a
-truly linear model with fixed metric and reference curvature cannot change its
-options. Shared implementations alone are insufficient: their signed interaction
+model affine in its trainable parameters, with fixed metric and reference
+curvature, cannot change its capability operator. Its option values can still
+change as residual demand is fitted. Shared implementations alone are insufficient: their signed interaction
 must be harmful, its response loss must be loaded by useful demand, and recovery
 must be too slow for the available budget. These are the conditions to test,
 rather than assuming resource use always destroys alternatives.
@@ -242,7 +247,8 @@ To measure capability rather than residual inflation, fix the initial focal
 residual d=1{y=focal}(onehot-p_0) and **initial full-task curvature** H_0. Compute
 V_tau(d;J_t,H_0), tau=1, with a matrix-free solve on all training images.
 This reference-curvature value isolates implementation change; it is not the
-current model's own-residual value and does not enumerate every spectral option.
+current model's own-residual value and does not separately enumerate the
+spectral corrections required by that reference residual.
 Solver relative residuals are below 1e-8 and an independent dense test checks
 normalization and the optimizer metric.
 
@@ -301,4 +307,4 @@ next missing causal link is whether selectively preventing a **predicted harmful
 response change improves later correction at matched initial response, including
 recovery and width. Generic preservation was already harmful in the ordinary
 MNIST branches here. That narrower test is more informative than adding another
-unconditional option summary.
+demand-independent capability summary.

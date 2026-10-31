@@ -1,0 +1,199 @@
+{
+  "status": "Exploratory pilot; no fitted forecast parameters; paired seed bank across settings.",
+  "count": 2048,
+  "control_count": 256,
+  "seed": 301031,
+  "step": 0.01,
+  "clock_step": 0.01,
+  "times": [
+    0,
+    0.25,
+    0.5,
+    1,
+    2,
+    5,
+    20
+  ],
+  "tau": 20,
+  "target": [
+    4,
+    1,
+    -1
+  ],
+  "settings": [
+    {
+      "key": "a0_s0.02_q0.001_m4",
+      "angle_over_pi": 0.08333333333333333,
+      "scale": 0.02,
+      "q": 0.001,
+      "width": 4
+    },
+    {
+      "key": "a1_s0.02_q0.001_m4",
+      "angle_over_pi": 0.3333333333333333,
+      "scale": 0.02,
+      "q": 0.001,
+      "width": 4
+    },
+    {
+      "key": "a0_s0.02_q0.01_m4",
+      "angle_over_pi": 0.08333333333333333,
+      "scale": 0.02,
+      "q": 0.01,
+      "width": 4
+    },
+    {
+      "key": "a1_s0.02_q0.01_m4",
+      "angle_over_pi": 0.3333333333333333,
+      "scale": 0.02,
+      "q": 0.01,
+      "width": 4
+    },
+    {
+      "key": "a0_s0.02_q0.1_m4",
+      "angle_over_pi": 0.08333333333333333,
+      "scale": 0.02,
+      "q": 0.1,
+      "width": 4
+    },
+    {
+      "key": "a1_s0.02_q0.1_m4",
+      "angle_over_pi": 0.3333333333333333,
+      "scale": 0.02,
+      "q": 0.1,
+      "width": 4
+    },
+    {
+      "key": "a0_s0.2_q0.001_m4",
+      "angle_over_pi": 0.08333333333333333,
+      "scale": 0.2,
+      "q": 0.001,
+      "width": 4
+    },
+    {
+      "key": "a1_s0.2_q0.001_m4",
+      "angle_over_pi": 0.3333333333333333,
+      "scale": 0.2,
+      "q": 0.001,
+      "width": 4
+    },
+    {
+      "key": "a0_s0.2_q0.01_m4",
+      "angle_over_pi": 0.08333333333333333,
+      "scale": 0.2,
+      "q": 0.01,
+      "width": 4
+    },
+    {
+      "key": "a1_s0.2_q0.01_m4",
+      "angle_over_pi": 0.3333333333333333,
+      "scale": 0.2,
+      "q": 0.01,
+      "width": 4
+    },
+    {
+      "key": "a0_s0.2_q0.1_m4",
+      "angle_over_pi": 0.08333333333333333,
+      "scale": 0.2,
+      "q": 0.1,
+      "width": 4
+    },
+    {
+      "key": "a1_s0.2_q0.1_m4",
+      "angle_over_pi": 0.3333333333333333,
+      "scale": 0.2,
+      "q": 0.1,
+      "width": 4
+    },
+    {
+      "key": "a0_s0.02_q0.001_m8",
+      "angle_over_pi": 0.08333333333333333,
+      "scale": 0.02,
+      "q": 0.001,
+      "width": 8
+    },
+    {
+      "key": "a1_s0.02_q0.001_m8",
+      "angle_over_pi": 0.3333333333333333,
+      "scale": 0.02,
+      "q": 0.001,
+      "width": 8
+    },
+    {
+      "key": "a0_s0.02_q0.01_m8",
+      "angle_over_pi": 0.08333333333333333,
+      "scale": 0.02,
+      "q": 0.01,
+      "width": 8
+    },
+    {
+      "key": "a1_s0.02_q0.01_m8",
+      "angle_over_pi": 0.3333333333333333,
+      "scale": 0.02,
+      "q": 0.01,
+      "width": 8
+    },
+    {
+      "key": "a0_s0.02_q0.1_m8",
+      "angle_over_pi": 0.08333333333333333,
+      "scale": 0.02,
+      "q": 0.1,
+      "width": 8
+    },
+    {
+      "key": "a1_s0.02_q0.1_m8",
+      "angle_over_pi": 0.3333333333333333,
+      "scale": 0.02,
+      "q": 0.1,
+      "width": 8
+    },
+    {
+      "key": "a0_s0.2_q0.001_m8",
+      "angle_over_pi": 0.08333333333333333,
+      "scale": 0.2,
+      "q": 0.001,
+      "width": 8
+    },
+    {
+      "key": "a1_s0.2_q0.001_m8",
+      "angle_over_pi": 0.3333333333333333,
+      "scale": 0.2,
+      "q": 0.001,
+      "width": 8
+    },
+    {
+      "key": "a0_s0.2_q0.01_m8",
+      "angle_over_pi": 0.08333333333333333,
+      "scale": 0.2,
+      "q": 0.01,
+      "width": 8
+    },
+    {
+      "key": "a1_s0.2_q0.01_m8",
+      "angle_over_pi": 0.3333333333333333,
+      "scale": 0.2,
+      "q": 0.01,
+      "width": 8
+    },
+    {
+      "key": "a0_s0.2_q0.1_m8",
+      "angle_over_pi": 0.08333333333333333,
+      "scale": 0.2,
+      "q": 0.1,
+      "width": 8
+    },
+    {
+      "key": "a1_s0.2_q0.1_m8",
+      "angle_over_pi": 0.3333333333333333,
+      "scale": 0.2,
+      "q": 0.1,
+      "width": 8
+    }
+  ],
+  "optimizer": "Full-batch Euler GD, M_w=M_a=m and M_c=1; physical ReLU gates.",
+  "forecast": "Initial-state common-only scalar RK4 clock and exact transported features.",
+  "diagnostic": "Observed-clock response is retrospective, not a forecast.",
+  "event": "All units inactive on both rare inputs. New closure excludes initial absence.",
+  "dependence": "Settings and widths share initial seed banks; seeds are independent.",
+  "source_sha256": "a9534232f48810c3b4ad88b3b0c9f2a1b9e3c0f9ebcfe2391973cca57f4f0f3e"
+}

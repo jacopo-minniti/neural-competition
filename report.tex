@@ -1,0 +1,218 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=23mm]{geometry}
+\usepackage{amsmath,amssymb,microtype}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 1pt}
+\setlength{\abovedisplayskip}{7pt plus 1pt}
+\setlength{\belowdisplayskip}{7pt plus 1pt}
+\setlength{\abovedisplayshortskip}{4pt}
+\setlength{\belowdisplayshortskip}{5pt}
+\newcommand{\tr}{\operatorname{tr}}
+\begin{document}
+\begin{center}
+  {\Large\bfseries Learning Options in Neural Networks:\\
+  Feature Competition and the Role of Width}
+\end{center}
+\begin{flushright}
+  \small\itshape In neural networks, as in life, it is a matter of keeping your options open.
+\end{flushright}
+
+\section{Working hypothesis}
+
+Let \(f_\theta(x)=c+m^{-1}\sum_{j=1}^m a_j[w_j^Tx+b_j]_+\) be a shallow ReLU network, where \([z]_+=\max(z,0)\), trained by (stochastic) gradient descent to approximate a target function \(\widetilde f\). Suppose its width \(m\) already suffices to approximate the target to the desired accuracy. Why might a wider, overparameterized network find an adequate solution more reliably or sooner? Alongside explanations ranging from Lottery Tickets to escape directions, we investigate how training changes the corrections available to the network. The central idea is that an update can improve the current fit while making a different correction harder to learn later, so the outcome depends on which possibilities remain available as the residual changes.
+
+We consider tasks with several underlying factors whose contributions to training are unequal. We use \emph{feature} to refer to a factor or dependency in the data generating process. Some features occur frequently and explain much of the initial error; others describe rarer distinctions. For example, a shared rule may predict an attribute's effect in most contexts, while a rare context requires a different response to that attribute. Early training can make substantial progress by fitting the shared rule. Once that part is largely solved, the contextual correction accounts for more of the remaining error and becomes more important to further progress.
+
+Our hypothesis is that this ordering matters because different features share parameter implementations. A hidden unit can contribute to several features, and several units can support the same correction, with their updates coupled through their combined prediction error. Parameters that could support a contextual correction may therefore move while the model fits the shared rule, leaving them less able to distinguish the relevant contexts when that distinction becomes the main source of error. We call this adverse interaction \emph{competition}: learning one part of the task weakens the ability to learn another. We ask whether the task distribution and current network state can predict when this happens, which corrections it affects, and how much it matters for subsequent learning.
+
+We describe these possibilities through \emph{options}. Informally, an option is a correction required by the residual, considered together with the network's ability to make it. Its strength describes how effectively local training can reduce error with that pattern; its value also accounts for how much correction is needed. For example, the model may still need to separate two contexts although its parameters respond almost identically to both: demand for the distinction remains, but the option is weak or closed. An option closes when its response disappears while the correction is still needed; satisfying demand is different from closure. Later updates can change the implementation again, so the account must include strengthening and reopening as well as weakening and closure.
+
+Width provides alternative implementations of a needed correction. If one becomes unresponsive, another may continue to support it; additional units may also help recover the response before training ends. We ask whether greater width reduces the probability that all useful alternatives are lost together, and how this changes the loss the model can ultimately remove.
+
+Below, we formalize these quantities, particularly options, starting from gradient dynamics. Specialized models add assumptions and controlled task settings to obtain quantitative predictions. The aim is an account that is theoretically tractable and empirically useful beyond these settings, where its assumptions may hold only approximately.
+
+\clearpage
+\section{From prediction error to options and competition}
+
+We develop the core argument for squared loss. We first derive the instantaneous prediction dynamics of the nonlinear network. We then freeze its derivatives at a checkpoint to measure which corrections it could make over a stated horizon if that local representation stayed fixed. Combining this capability with the current residual gives our definition of options. The final subsection returns to nonlinear training and asks how learning one part of the task changes the options needed for another.
+
+\subsection{How residuals drive predictions}
+
+Let $\mathcal D=\{(x_i,y_i)\}_{i=1}^n$ be the training dataset and $\theta\in\mathbb R^P$ the parameters. Write $F(\theta)=(f_\theta(x_i))_{i=1}^n$ for the prediction vector and $e(\theta)=y-F(\theta)$ for the residual, so that $L(\theta)=\|e(\theta)\|^2/(2n)$. The prediction Jacobian and loss gradient are
+\begin{equation}
+ J_\theta=
+ \begin{bmatrix}
+   \nabla_\theta f_\theta(x_1)^T\\
+   \vdots\\
+   \nabla_\theta f_\theta(x_n)^T
+ \end{bmatrix}\in\mathbb R^{n\times P},
+ \qquad
+ \nabla_\theta L(\theta)=-\frac1nJ_\theta^Te(\theta).
+ \label{eq:jacobian}
+\end{equation}
+Row $i$ describes how the prediction on example $i$ responds to each parameter; column $\alpha$ describes the pattern of prediction changes produced by moving parameter $\alpha$. In particular, $F(\theta+\delta\theta)-F(\theta)\simeq J_\theta\delta\theta$, so the column space of $J_\theta$ contains the corrections accessible to first order at the current state.
+
+To express the induced prediction dynamics, take the gradient descent update $\theta_{k+1}=\theta_k-\eta\nabla L(\theta_k)$ and let $\eta\to0$ with training time $s=k\eta$. The limiting gradient flow satisfies $\dot\theta=J_\theta^Te/n$. Since the labels are constant, the chain rule gives $\dot e=-J_\theta\dot\theta$. The Jacobian therefore enters twice: $J_\theta^T$ combines the residual's requests into a parameter velocity, and $J_\theta$ converts that velocity into changes across all predictions. Defining $K_\theta$ collects this relationship into
+\begin{equation}
+ \dot\theta=\frac1nJ_\theta^Te,\qquad
+ \dot e=-K_\theta e,\qquad
+ K_\theta=\frac1nJ_\theta J_\theta^T.
+ \label{eq:residual-flow}
+\end{equation}
+These are instantaneous identities for the nonlinear network under full-batch squared-loss gradient flow, wherever differentiable. No frozen representation has yet been assumed: $J_\theta$ and $K_\theta$ change along the trajectory. ReLU boundaries require piecewise treatment, and a finite GD step generally has additional prediction-change terms.
+
+Why is $K_\theta$ a kernel matrix? The parameter sensitivities define a feature representation $\phi_\theta(x)=\nabla_\theta f_\theta(x)/\sqrt n$, and $k_\theta(x,x')=\phi_\theta(x)^T\phi_\theta(x')$ is its inner-product kernel. Evaluating it on the dataset gives the normalized neural tangent kernel matrix $K_\theta$. Thus two inputs are similar under this kernel when their predictions respond to similar parameter changes. Its entry $K_{\theta,ij}$ describes how residual at $x_j$ contributes to prediction velocity at $x_i$, since $\dot F_i=\sum_jK_{\theta,ij}e_j$. The entries can have either sign, but the matrix is positive semidefinite:
+\begin{equation}
+ d^TK_\theta d=\frac1n\|J_\theta^Td\|^2\ge0,
+ \qquad
+ -\dot L=\frac1n e^TK_\theta e\ge0.
+ \label{eq:kernel-psd}
+\end{equation}
+The kernel therefore lets us study correction patterns in prediction space without assigning them to individual parameters. It determines the current residual velocity and loss-decrease rate; it does not, by itself, determine its own future evolution.
+
+This section uses uniform data weights and ordinary Euclidean gradient descent. The weighted toy experiments absorb data weights and their specified parameter learning metric into the corresponding Jacobian Gram matrix; the cross-entropy experiments also use local loss curvature. These generalizations preserve the capability--demand distinction, but the simple squared-loss formulas below are not literal formulas for every experimental loss and optimizer.
+
+\subsection{Correction rates at a checkpoint}
+
+At an actual training checkpoint $s$, let $\theta_s=\theta(s)$, $e_s=e(\theta_s)$, and $J_s=J_{\theta_s}$. We want to characterize the correction capability present at this state before asking how further learning changes it. We therefore introduce the first-order approximation in the parameters,
+\begin{equation}
+ \widehat f_s(\delta\theta,x)
+ :=f_{\theta_s}(x)+\nabla_\theta f_{\theta_s}(x)^T\delta\theta
+ \simeq f_{\theta_s+\delta\theta}(x).
+ \label{eq:linearization}
+\end{equation}
+This model is affine in $\delta\theta$ and can still be nonlinear in the input $x$; it is not a deep linear network. Its derivatives are held fixed at $J_s$. We ask a hypothetical question: if this derivative representation stayed fixed, how much error could training remove over a look-ahead interval of length $t$? Here $s$ locates the actual checkpoint, while $t$ measures time within the frozen model. This question underlies the next two subsections as well. It defines a capability diagnostic at the checkpoint, rather than assuming that the nonlinear network will preserve its derivatives over the whole interval.
+
+Let $\widehat e_s(t)$ be the residual obtained by gradient flow on this auxiliary model, starting at $\delta\theta=0$. Its residual equation has a constant coefficient matrix $K_s=J_sJ_s^T/n$, and hence
+\begin{equation}
+ \frac{d\widehat e_s}{dt}=-K_s\widehat e_s,
+ \qquad \widehat e_s(0)=e_s,
+ \qquad \widehat e_s(t)=e^{-tK_s}e_s.
+ \label{eq:frozen-flow}
+\end{equation}
+These statements are exact for the linearized model. Their accuracy as forecasts of nonlinear training depends on how much the derivatives change as the parameters move.
+
+To understand the matrix exponential, use the spectral theorem: because $K_s$ is symmetric and positive semidefinite, it has an orthonormal eigenbasis $v_{s,i}$ with eigenvalues $\kappa_{s,i}\ge0$. Expand $\widehat e_s(t)=\sum_i\gamma_{s,i}(t)v_{s,i}$. Multiplication by $K_s$ scales each eigenvector without mixing it with the others. Projecting the residual equation onto $v_{s,i}$ therefore gives
+\begin{equation}
+ \frac{d\gamma_{s,i}}{dt}
+ =-v_{s,i}^TK_s\widehat e_s
+ =-\kappa_{s,i}\gamma_{s,i},
+ \qquad
+ \gamma_{s,i}(t)=e^{-t\kappa_{s,i}}v_{s,i}^Te_s.
+ \label{eq:mode-decay}
+\end{equation}
+Each eigenvector describes a pattern of prediction error, and its eigenvalue is that pattern's correction rate under the frozen dynamics. We call these \emph{capability modes}. A zero-rate mode cannot be corrected by the linearized model. For example, if two observations have identical prediction gradients, moving the parameters changes their predictions equally to first order, so their difference is a null mode. The nonlinear network may later acquire a response to that distinction by changing its derivatives.
+
+A rate alone does not say how much correction is possible within a given budget. Write $\widehat L_s(t)=\|\widehat e_s(t)\|^2/(2n)$. Substitution of \eqref{eq:frozen-flow} into this loss gives
+\begin{equation}
+ \widehat L_s(0)-\widehat L_s(t)
+ =\frac1{2n}e_s^TB_{s,t}e_s,
+ \qquad B_{s,t}:=I-e^{-2tK_s}.
+ \label{eq:benefit}
+\end{equation}
+The eigenvalues $\beta_{s,i}(t)=1-e^{-2t\kappa_{s,i}}$ of $B_{s,t}$ are the \emph{response strengths at horizon $t$}. For residual entirely in mode $i$, this is exactly the fraction of its initial loss removed within that interval. A small positive rate may provide little correction within the budget, while a strength near one means that most of the loss in that mode can be removed. Structural unavailability, where the response is zero, is therefore different from a response that is merely too slow.
+
+The factor $2t$ appears because loss is quadratic in the residual. Prediction change is instead $(I-e^{-tK_s})e_s=B_{s,t/2}e_s$. For $h$ discrete GD steps of size $\eta$, the analogous loss-benefit strength is $1-(1-\eta\kappa_{s,i})^{2h}$ when $0\le\eta\kappa_{s,i}\le2$. Both calculations concern the frozen model; neither is an unconditional finite-time prediction for nonlinear training.
+
+\subsection{Options as demanded corrections}
+
+Capability alone does not specify a useful option: the residual must require the corresponding correction. At checkpoint $s$, let $E$ be an eigenspace of $K_s$ and $\Pi_E$ its orthogonal projector. We define an \emph{option} as a nonzero demanded correction $q_E=\Pi_E e_s$, considered together with the response available to correct it. Its response strength is $\beta_{s,E}(t)$, and its value is
+\begin{equation}
+ v_{s,t}(E):=\frac1{2n}\beta_{s,E}(t)\|q_E\|^2.
+ \label{eq:option-value}
+\end{equation}
+Using eigenspaces makes the definition independent of the choice of eigenbasis within a repeated eigenvalue. An option is \emph{open} when $q_E\ne0$ and its correction rate is positive. It is \emph{closed} when $q_E\ne0$ but its rate is zero: a correction is still needed, and the current linearized model has no response to it. If $q_E=0$, there is no current demand in that eigenspace; satisfying or removing demand is not closure. A weak open option can also have little value within the available time.
+
+Summing over the demanded corrections recovers the same local loss-benefit formula. For a general reference residual $e$ at checkpoint $s$, define
+\begin{equation}
+ V_{s,t}(e):=\frac1{2n}e^TB_{s,t}e
+ =\frac1{2n}\sum_i\beta_{s,i}(t)|v_{s,i}^Te|^2.
+ \label{eq:value}
+\end{equation}
+For $e=e_s$, this is the total value of the current options and equals the frozen model's predicted loss reduction. The response strength describes capability; the squared residual projection describes demand. Strong capability in a direction with no residual is not a current option, while substantial demand in weak or null modes gives a \emph{capability--demand mismatch}. For example, at $t=1$, rates $10$ and $0.01$ remove approximately $100\%$ and $2\%$ of their respective modal losses. Equal-norm residuals aligned with these two modes have equal initial loss but very different option values.
+
+For $e\ne0$, the normalized value $e^TB_{s,t}e/\|e\|^2$ is the fraction of that reference loss removable by the local model. We can also probe capability independently of current demand with a fixed unit correction vector $d$, measuring $\beta_{s,t}(d):=d^TB_{s,t}d$. Such a probe need not be an eigenvector or a current option: it may describe a contextual distinction that will matter later. Positive strength means some response along $d$, not necessarily that all of $d$ is correctable. Across actual checkpoints, holding $d$ or a reference residual fixed isolates capability changes. Recomputing demand as well answers a different question, and matching modes by sorted eigenvector index does not reliably track the same correction.
+
+\subsection{Averaging over correction horizons}
+
+For many measurements, we summarize a range of look-ahead times by averaging $B_{s,t}$ with the exponential density $\tau^{-1}e^{-t/\tau}$. The mean horizon is $\tau$, with greater weight on earlier correction. In each eigenspace the average strength is
+\begin{equation}
+ \int_0^\infty\frac{e^{-t/\tau}}{\tau}
+       (1-e^{-2t\kappa_{s,i}})\,dt
+ =\frac{\kappa_{s,i}}{\kappa_{s,i}+(2\tau)^{-1}}.
+ \label{eq:discount-scalar}
+\end{equation}
+Collecting these modes gives the \emph{discounted response operator}, denoted by $C_{s,\tau}$ to distinguish it from the fixed-horizon operator $B_{s,t}$:
+\begin{equation}
+ C_{s,\tau}:=\int_0^\infty\frac{e^{-t/\tau}}{\tau}B_{s,t}\,dt
+ =K_s(K_s+\lambda I)^{-1},
+ \qquad \lambda=(2\tau)^{-1}.
+ \label{eq:discount}
+\end{equation}
+This is the response operator used in most of the reported squared-loss measurements, with the corresponding curvature-aware version used for cross-entropy. Its strengths $\overline\beta_{s,i}(\tau)=\kappa_{s,i}/(\kappa_{s,i}+\lambda)$ give discounted option values by weighting the same residual projections as in \eqref{eq:value}. The total discounted value is $V^{\mathrm{disc}}_{s,\tau}(e)=e^TC_{s,\tau}e/(2n)$. The scale $\tau$ specifies how we measure the frozen response; it neither modifies the training objective nor assumes that actual training stops at a random time.
+
+We use total response strength $\mathcal M_{s,\tau}=\tr C_{s,\tau}$ and effective breadth $D_{\mathrm{eff}}=(\tr C_{s,\tau})^2/\tr(C_{s,\tau}^2)$ to summarize capability, setting both to zero for the zero operator. Breadth equals $k$ for $k$ equally strong modes and approaches one as a single mode dominates. These quantities measure the amount and distribution of response, independently of demand; they are not counts or values of current options. Demand enters through the residual-weighted quadratic form.
+
+\subsection{How training changes options}
+
+Up to this point, the finite-time calculations have held $J_s$, and hence $K_s$, fixed while looking ahead from a checkpoint. Our question about competition concerns what happens when actual nonlinear training changes these derivatives. In the shallow ReLU network, writing $z_j(x)=w_j^Tx+b_j$, a unit's prediction derivatives are
+\begin{equation}
+ \frac{\partial f_\theta(x)}{\partial a_j}=\frac1m[z_j(x)]_+,
+ \qquad
+ \nabla_{w_j}f_\theta(x)=\frac1m a_j\mathbf1_{z_j(x)>0}x,
+ \qquad
+ \frac{\partial f_\theta(x)}{\partial b_j}
+ =\frac1m a_j\mathbf1_{z_j(x)>0}.
+ \label{eq:unit-derivatives}
+\end{equation}
+Changing a readout coefficient changes the response available through its incoming parameters; changing the incoming parameters changes the activation available through the readout. Even with fixed gates, the two trainable factors are coupled, so the network is not its first-order approximation. Gate crossings additionally change which observations respond to a unit. Both mechanisms change $J_\theta$, $K_\theta$, and the capability supporting demanded corrections.
+
+Deriving useful predictions from these coupled dynamics is nontrivial. To expose a tractable mechanism, we focus on an idealized task structure: latent factors generate observations with highly unequal frequencies, and a frequent shared rule is supplemented by less frequent contextual refinements. We expect variants of this structure to approximate some real data distributions. Word frequencies in text provide a familiar example of strong imbalance, often summarized approximately by Zipf's law.\footnote{For a large-corpus analysis and the limits of a precise power-law description, see Moreno-S\'anchez, Font-Clos, and Corral (2016), \href{https://doi.org/10.1371/journal.pone.0147073}{\emph{Large-Scale Analysis of Zipf's Law in English Texts}}.} Token occurrence is not identical to the frequency of a learned dependency, but it motivates studying unequal exposure. In an image dataset, a possible analogue would be a shared eye pattern across many cat images versus a distinction specific to a rare pose or lighting condition; this is an illustrative task structure, not an empirical frequency claim about images.
+
+When error amplitudes and derivatives are comparable, frequent contexts can supply a larger early training pressure. Fitting their shared rule then leaves contextual refinements as a larger fraction of the remaining demand, even though all examples have been present throughout training. This gives competition a concrete setting: parameters useful for a rare distinction can be moved while fitting the common rule. Frequency imbalance alone does not guarantee this ordering or an adverse interaction; residual magnitudes, signed gradient alignment, and available implementations also matter.
+
+At a current checkpoint, decompose the actual residual as $e=p+r$. For example, $p$ contains the residuals on common-context examples and is zero elsewhere, while $r$ contains the residuals on the remaining examples. The parameter velocities add exactly:
+\begin{equation}
+ \dot\theta=\frac1nJ_\theta^Tp+\frac1nJ_\theta^Tr.
+ \label{eq:pressure}
+\end{equation}
+We call $p$ and $r$ \emph{training pressures}: each specifies signed errors that drive an update through the same Jacobian. The factor $1/n$ retains the original dataset weighting, so a less frequent subset contributes fewer terms rather than being independently renormalized. This decomposition lets us isolate what pressure $p$ does to the capability needed for $r$.
+
+Fix the observation scale $\tau$ and write $K=K_\theta$ and $C_\tau(\theta)=K(K+\lambda I)^{-1}$, suppressing the checkpoint subscript. Let $\dot K[p]$ be the directional derivative along the parameter velocity $J_\theta^Tp/n$. To derive the corresponding change in response, write $C_\tau=I-\lambda R$ with $R=(K+\lambda I)^{-1}$. Differentiating $(K+\lambda I)R=I$ gives $\dot R=-R\dot K R$, and hence
+\begin{equation}
+ \dot C_\tau[p]
+ =\lambda(K+\lambda I)^{-1}\dot K[p](K+\lambda I)^{-1}.
+ \label{eq:transport}
+\end{equation}
+This is a derivative of the checkpoint diagnostic along nonlinear parameter motion. It does not assume that the actual kernel stays frozen between checkpoints.
+
+We define \emph{local competition from $p$ against $r$} as a reduction in the discounted capability for the nonzero reference demand $r$ caused by the $p$ update. Equivalently, the competition score is positive:
+\begin{equation}
+ \mathfrak C_\tau(p\!\to\!r)
+ :=-\frac1{2n}r^T\dot C_\tau[p]r>0.
+ \label{eq:competition}
+\end{equation}
+Here $r$ is held fixed while differentiating: otherwise a change in demand could be mistaken for a change in capability. For a particular required direction $d$, the analogous condition is $d^T\dot C_\tau[p]d<0$. The opposite sign describes strengthening. For the disjoint-subset example, the $p$-only gradient flow decreases its own component loss, yet can have either effect on the capability needed by $r$.
+
+At a ReLU gate crossing the smooth derivative need not exist. For a finite pressure step we instead compare the same reference demand before and after updating the actual network:
+\begin{equation}
+ \Delta V_\tau(p\!\to\!r)
+ :=\frac1{2n}r^T\left[
+ C_\tau\!\left(\theta+\frac\eta nJ_\theta^Tp\right)
+ -C_\tau(\theta)\right]r.
+ \label{eq:finite-competition}
+\end{equation}
+A negative value is a finite-step capability loss due to $p$, relative to making no update from the same state. Complete closure for a still-required correction $q$ means $q\ne0$ and $q^TC_\tau(\theta)q=0$, equivalently $J_\theta^Tq=0$. A reduction short of zero is weakening. These comparisons use fixed corrections because the spectral eigenspaces themselves can rotate during training.
+
+Local competition is a mechanism, not yet proof of a lasting learning penalty. To establish harmful competition over a budget, the weakened response must overlap the residual that actually remains or arises later, and alternatives or recovery must fail to compensate soon enough to impair correction relative to a declared continuation. Tracking capability and demand separately distinguishes closure from successful fitting and allows strengthening or reopening to be measured on the same terms.
+
+Width supplies possible alternative implementations of a needed correction. At any state,
+\begin{equation}
+ d^TK_\theta d=\frac1n\sum_\alpha(J_\theta^Td)_\alpha^2.
+ \label{eq:implementations}
+\end{equation}
+Every term is nonnegative, so complete unavailability requires all parameter derivatives to have zero component along $d$. Losing one unit's contribution need not eliminate the response if others still support it. Additional width supplies more possible routes, but does not by itself guarantee stronger response or protection: initialization, width-dependent normalization, shared motion, and recovery all matter. The models built on this core study when pressure removes all useful alternatives together and whether width preserves or restores the corrections that residual demand requires.
+\end{document}

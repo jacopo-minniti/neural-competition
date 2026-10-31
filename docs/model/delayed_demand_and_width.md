@@ -14,7 +14,10 @@ Learning a frequent shared rule changes which residual directions remain
 important. A capability that contributes little to early progress can become
 essential to subsequent correction.
 
-Keep the existing response operator as the definition of available options.
+Keep the existing response operator as the measure of available capability.
+Options are its nonzero spectral residual components together with their
+responses and residual-weighted values, as defined in the
+[spectral foundation](spectral_options.md#3-capability-modes-and-demanded-options).
 Add a law, or a measured intervention, for its evolution under ordinary training.
 Do not equate a broad spectrum, a large parameter nullspace, low gate turnover,
 or many duplicate units with usable slack. The missing bridge is selective
@@ -138,19 +141,23 @@ Keep fixed output coordinates, data weights, and optimizer metric M. With
 D=JM^(1/2), A=D^T H D/n, and a declared horizon tau, retain
 
 \[
- B_\tau=\frac1nD(A+(2\tau)^{-1}I)^{-1}D^T.
+ C_\tau=\frac1nD(A+(2\tau)^{-1}I)^{-1}D^T.
 \]
 
-An option is a positive-eigenvalue eigenspace of this operator. Its strength is
-the corresponding eigenvalue, with discounted local quadratic gain
-d^T B_tau d/(2n). Degenerate modes are subspaces, and null or weak modes are not
-automatically permanent. Demand is a separate vector or covariance in these
-coordinates. No semantic or neuron roles enter this definition.
+The operator's eigenspaces are capability modes. For a declared residual d,
+an option is a nonzero projected correction q_E=Pi_E d, considered together
+with its response beta_E. Its value is beta_E ||q_E||²/(2n); summing gives
+d^T C_tau d/(2n). A demanded zero-response correction is a closed option;
+zero demand is not closure. Degenerate modes are subspaces, and null or weak
+responses are not automatically permanent. Demand and capability remain
+separately measurable, but the option definition includes both. A fixed
+arbitrary direction with no declared demand remains a capability probe.
+No semantic or neuron roles enter this definition.
 
 The extra object is the **response transition induced by actual training**:
 
 \[
- \mathcal T_{\theta,h}^{A}=B_\tau(\theta-hM\nabla L_A)-B_\tau(\theta).
+ \mathcal T_{\theta,h}^{A}=C_\tau(\theta-hM\nabla L_A)-C_\tau(\theta).
 \]
 
 L_A is the original loss on an observed exposure, with its sampling weights.
@@ -158,13 +165,13 @@ The expression is an audit of an ordinary update, not a new loss optimized by
 the model. On a fixed demand d, d^T T d distinguishes weakening from creation.
 Changing the residual while taking this difference would conflate demand removal
 with loss of capability. For smooth networks and constant M, the infinitesimal
-version is DB[-M grad L_A]; ReLU experiments must also include gate transitions.
+version is DC[-M grad L_A]; ReLU experiments must also include gate transitions.
 
-For squared loss, K=DD^T/n and B=K(K+lambda I)^(-1), lambda=(2 tau)^(-1).
+For squared loss, K=DD^T/n and C=K(K+lambda I)^(-1), lambda=(2 tau)^(-1).
 The exact derivative is particularly simple:
 
 \[
- \dot B=\lambda(K+\lambda I)^{-1}\dot K(K+\lambda I)^{-1}.
+ \dot C=\lambda(K+\lambda I)^{-1}\dot K(K+\lambda I)^{-1}.
 \]
 
 Thus the relevant sign is the signed transport on filtered task demands, not
@@ -176,11 +183,11 @@ curvature must be recorded or controlled separately.
 **Slack and width.** The resource is alternative implementations whose useful
 responses do not all weaken under the same training pressure. Width can help
 by changing the distribution of these responses and their co-evolution. A
-checkpoint B does not encode that distribution. Initializing independently
+checkpoint C does not encode that distribution. Initializing independently
 does not establish independent survival after joint training.
 
 **Operational estimate.** JVP/VJP products, short paired continuations, and the
-existing matrix-free B products suffice for selected demands and random probes.
+existing matrix-free C products suffice for selected demands and random probes.
 The full transport tensor is unnecessary. This is feasible as a checkpoint
 audit; it is not yet a cheap validated monitor for a large network.
 
@@ -220,7 +227,7 @@ Keep denominator m, and use the fixed metrics
 
 The function is unchanged. Readout-kernel contributions sum to their old value,
 as do incoming contributions because sum c_r^2/S=1. Consequently the complete
-initial kernel, all B_tau operators at matched curvature, and the initial loss
+initial kernel, all C_tau operators at matched curvature, and the initial loss
 derivative are unchanged on **every input**, not only on one measured residual.
 
 Within the initial gate cell, direct differentiation gives
@@ -248,12 +255,12 @@ when damping useful feature creation is more costly than preservation.
 
 **Estimation.** Function/kernel matching, common-demand transport, and original
 loss continuations directly test the operational definition. A later outcome
-difference with exactly matched B proves that B alone is not a closed state;
+difference with exactly matched C proves that C alone is not a closed state;
 it does not prove that the particular extra implementation was beneficial.
 
 ### C. Finite-budget accessibility and recovery
 
-Response options remain the same. The extension is a time-indexed claim about
+The definition of demanded options remains the same. The extension is a time-indexed claim about
 when a weakened direction can become useful again. For squared loss in fixed
 weighted coordinates, actual gradient flow obeys
 
@@ -265,8 +272,8 @@ weighted coordinates, actual gradient flow obeys
 The trajectory-conditioned benefit operator is
 
 \[
- \mathcal B_{t,T}^{\rm path}=I-U(T,t)^TU(T,t),\qquad
- L_t-L_T=\tfrac12 e_t^T\mathcal B_{t,T}^{\rm path}e_t.
+ B_{t,T}^{\rm path}=I-U(T,t)^TU(T,t),\qquad
+ L_t-L_T=\tfrac12 e_t^TB_{t,T}^{\rm path}e_t.
 \]
 
 It is PSD because K_s is PSD and the residual flow is contractive. Its modes
@@ -314,7 +321,7 @@ If attaining loss below F requires leaving Omega, this also lower-bounds that
 correction's recovery time. When the surplus is zero and r>0, the flow cannot
 exit. If r=0 or the floor is uninformative, the result supplies no obstruction.
 The proof uses an upper bound on available dissipation before exit, not a
-claim that total option strength must fall.
+claim that total response strength must fall.
 
 ### Two teacher-free instances
 
@@ -595,7 +602,7 @@ distinguishes three outcomes that should not be collapsed into a count:
 * **Recruitment:** a capability is created or recovered after the dominant phase.
   Response histories and recovery bounds distinguish delay from permanent loss.
 
-Within a fixed width pair, compare both B operators against the same present
+Within a fixed width pair, compare both C operators against the same present
 residual pattern, or a covariance constructed only from already observed
 residuals under a declared policy. Average-width residuals are a symmetric
 comparison, not a unique ground truth. Report original own-residual losses too.

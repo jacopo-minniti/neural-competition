@@ -1,0 +1,43 @@
+{
+  "output": "docs/evidence/competition_reserve/step_sensitivity",
+  "seeds": 4,
+  "seed_bank": 210731,
+  "factors": 24,
+  "rate": 0.0025,
+  "widths": [
+    4,
+    8,
+    16
+  ],
+  "scale": 0.2,
+  "initializations": [
+    "gaussian",
+    "uniform"
+  ],
+  "rare_masses": [
+    0.04,
+    0.15
+  ],
+  "spreads": [
+    0.0,
+    0.15
+  ],
+  "stages": 2,
+  "remaining_head_residual_fraction": 0.5,
+  "tau": 20,
+  "material_loss_fraction": 0.5,
+  "state_quantities": [
+    "capability",
+    "protected_reserve",
+    "completion_reserve",
+    "implementation_participation",
+    "instantaneous_slope"
+  ],
+  "target": "Capability and vulnerable task mass after specified common prediction gain",
+  "fitted_parameters": 0,
+  "sources": {
+    "run_competition_reserve.py": "340efc680e4f553212c7cc87ce1dab49e004650f2808f97ee038e791cd17913b",
+    "competition_reserve.py": "687c72c690a2487c8499fe3e8d73bed4ccb159050df26101f86a2ea49b614668",
+    "probabilistic_option_transport.py": "2052a5ebdccce5a02a74de4a6a504cd0d908a5521ca5bdf941a521f78c188853"
+  }
+}

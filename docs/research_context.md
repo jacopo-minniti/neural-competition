@@ -1,6 +1,6 @@
 # Current research context
 
-Last curated: 29 October 2026.
+Last curated: 30 October 2026.
 
 ## Current model
 
@@ -14,18 +14,23 @@ D=JM^{1/2},\qquad A=D^THD/n.
 The discounted finite-response operator is
 
 \[
-B_\tau=\frac1nD\left(A+\frac1{2\tau}I\right)^{-1}D^T.
+C_\tau=\frac1nD\left(A+\frac1{2\tau}I\right)^{-1}D^T.
 \]
 
-Its positive eigenspaces are **options** and their eigenvalues are response
-strengths. For residual demand (e),
+Its eigenspaces are **capability modes**, with eigenvalues giving response
+strengths. For a declared residual demand \(e\), an **option** is a nonzero
+correction \(q_E=\Pi_Ee\) in an eigenspace, together with its available
+response. Its value is \(\beta_E\|q_E\|^2/(2n)\). The total value,
 
 \[
-V_\tau(e)=\frac1{2n}e^TB_\tau e
+V_\tau(e)=\frac1{2n}e^TC_\tau e
 \]
 
-is the frozen local quadratic loss benefit. For (h) actual gradient steps,
-use the deterministic-budget filter
+is the frozen local quadratic loss benefit. An option is closed when its demand
+remains but the response is zero; an unneeded mode is not a current option.
+Fixed directions remain useful as demand-independent capability probes. For
+\(h\) steps of gradient descent on the frozen local quadratic, use the
+deterministic-budget filter
 
 \[
 B_{h,\eta}=D\phi_{h,\eta}(A)D^T/n,
@@ -65,6 +70,34 @@ reduce finite-budget correction.
 
 ## Width
 
+The current priority is [protected reserve and tolerable common
+learning](model/competition_reserve.md), rather than detailed future-step
+forecasting. Units inactive on the entire common support supply an exact
+operator lower bound under common-only gradient training, from arbitrary states.
+Under a stronger coherent-pressure approximation, a scalar inversion maps
+common prediction gain to transported capability. A monotone structural special
+case makes critical progress the last surviving route's closing exposure mapped
+into common gain; a distribution over common demand gives joint loss laws
+without independent-refinement assumptions. Full rare-task updates can invalidate
+the initial floor. Natural widening changes both alternative routes and their
+normalization, so monotonicity is conditional, not universal.
+
+The earlier [conditional forecasting tool](model/power_law_competition.md)
+has no Gaussian or small-initialization premise. A multinomial exposure law
+supplies joint pressure uncertainty;
+the retained coupled local dynamics propagate residuals and both layers. Exact
+one-step laws, an analytic shared-count binomial special case, and approximate
+multi-step physical response forecasts are distinguished. The older Gaussian
+coherent-pressure law below is a restricted analytic case, not the general premise.
+
+Fresh tests use 24 power-law refinements, then transfer to 32 with a steeper
+frequency law and different association strength. The richer synthetic tasks
+contain co-occurring correlated factors, continuous attributes, context jitter,
+nuisance inputs, and mixed observation coordinates. Narrow widths have exact
+capacity witnesses. The same predictor improves expected-response forecasts
+across three initialization families; this is conditional robustness rather than
+proof that initialization stops affecting training.
+
 Width can affect initial coverage, the number and diversity of implementation
 routes, survival under pressure, and timely recruitment. Under the toy's
 mean-field parameterization, individual feature velocities remain order one;
@@ -93,6 +126,28 @@ yet identify a complete mediator of the natural width effect.
 
 ## Current empirical position
 
+- **Current reserve:** 24-factor power-law tasks with correlated geometry,
+  continuous variants, and an exact three-unit capacity witness distinguish
+  present capability from protection against common learning. Protected and
+  completion reserve rank later half-response losses with AUC .907/.964, versus
+  .689 for current strength; 32-factor transfer gives .841/.902 versus .704.
+  These pooled scores are descriptive, not calibrated probabilities, and are
+  not uniformly best in every stratum. Width-4 versus width-16 mean loss-event
+  fractions are 6.09% versus .049% (transfer 6.62% versus 1.29%). Some full-training
+  responses violate the common-only floor. These tasks impose a stronger shared
+  refinement structure than the earlier co-occurring family. See the
+  [reserve evidence](evidence/competition_reserve/README.md).
+
+- **Many power-law refinements:** coupled 16-step expected-response prediction
+  has error ratios .485/.205 versus persistence on prototype/associated tasks,
+  and .244/.105 after 32-factor transfer. Rare prototype availability losses are
+  underestimated. Most short-window resolution closures recover by step 16,
+  ruling out an absorbing model in these regimes. Natural-width effects on
+  final loss remain modest and mixed. Common pressure weakens prototype response
+  slightly but creates response in the associated task; neither sign alone
+  establishes harmful learning. The uncentered-input and frozen-pressure
+  failures are retained in the [evidence record](evidence/power_law_competition/README.md).
+
 - **Discrete contextual tasks:** replicated width-dependent persistent failures
   above known representational sufficiency; later-needed responses can be lost
   during early learning.
@@ -110,8 +165,9 @@ yet identify a complete mediator of the natural width effect.
 Establish when task frequency, shared implementation, option transport, and
 finite recovery combine into a meaningful loss penalty, and determine how much
 of the natural width benefit passes through that chain. The maintained model
-does not include a fitted stochastic closure. The new implementation distribution
-is only the initialization law pushed through the existing parameter dynamics;
-it is not an independent latent state. More general distributional approximations
+does not include a fitted stochastic closure. Current protected reserve is a
+decomposition of the existing kernel, not a latent resource. The Gaussian
+implementation distribution in the older special case is only its initialization
+law pushed through parameter dynamics. More general distributional approximations
 require finite-width error control, especially for rare failure events. Earlier
 alternatives remain recoverable from commit `92b7904`.

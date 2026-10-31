@@ -1,0 +1,19 @@
+{
+  "seed": 305731,
+  "bank_size": 4096,
+  "q": 0.01,
+  "angle_over_pi": 0.3333333333333333,
+  "scale": 0.2,
+  "widths": [
+    4,
+    8
+  ],
+  "step": 0.01,
+  "end": 1000.0,
+  "tau": 20,
+  "status": "Single illustrative pair; initially selected, not a prevalence estimate.",
+  "selection_rule": "First bank entry: positive narrow readouts/common gates, initially open, closure before 80% common correction, wide protected response > .001.",
+  "loss_curve": "Measured full-task GD; reserve predicts response, not entire loss curve.",
+  "floor": "Conditional invariant-trap theorem q/2, additional to protected reserve.",
+  "source_sha256": "cc4154b2ad49f48d476bdcaee53af79f3cc9a89cfe709de6c009e79455d39510"
+}

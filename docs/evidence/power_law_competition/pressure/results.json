@@ -1,0 +1,858 @@
+{
+  "protocol": {
+    "seed_bank": 106100,
+    "seeds": 6,
+    "initializations": [
+      "fanin_gaussian",
+      "fanin_uniform"
+    ],
+    "cases": [
+      "prototype",
+      "associated"
+    ],
+    "checkpoint": 200,
+    "widths": [
+      50,
+      100
+    ],
+    "pressure_steps": 16,
+    "continuation_steps": 100,
+    "rate": 0.025,
+    "batch": 32,
+    "comparison": "Same-state common-only, refinement-only, full, and no-pressure",
+    "model": "Bilinear local dynamics with one midpoint gate refresh",
+    "caution": "Changes function and speed; not pure option mediation or natural-width mediation"
+  },
+  "records": [
+    {
+      "key": "prototype_fanin_gaussian_0_50",
+      "case": "prototype",
+      "initialization": "fanin_gaussian",
+      "seed": 0,
+      "width": 50,
+      "after_loss": {
+        "none": 0.06556711977934089,
+        "common": 0.06554111379043831,
+        "refinement": 0.06230621268802302,
+        "full": 0.06225594629547825
+      },
+      "initial_mean_strength": 0.7726400883753027,
+      "common_mean_change": -0.0008672992512461323,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "prototype_fanin_gaussian_0_100",
+      "case": "prototype",
+      "initialization": "fanin_gaussian",
+      "seed": 0,
+      "width": 100,
+      "after_loss": {
+        "none": 0.059143271810087064,
+        "common": 0.05912145873525656,
+        "refinement": 0.0557267463123967,
+        "full": 0.05567212486426487
+      },
+      "initial_mean_strength": 0.7656965528669732,
+      "common_mean_change": 0.0011817013660944814,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "prototype_fanin_uniform_0_50",
+      "case": "prototype",
+      "initialization": "fanin_uniform",
+      "seed": 0,
+      "width": 50,
+      "after_loss": {
+        "none": 0.06910605191460065,
+        "common": 0.06897302311590367,
+        "refinement": 0.06563319282832587,
+        "full": 0.06547353177978957
+      },
+      "initial_mean_strength": 0.7856679533467618,
+      "common_mean_change": 0.0005538554833005027,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "prototype_fanin_uniform_0_100",
+      "case": "prototype",
+      "initialization": "fanin_uniform",
+      "seed": 0,
+      "width": 100,
+      "after_loss": {
+        "none": 0.06018831862883974,
+        "common": 0.060161539243496195,
+        "refinement": 0.05718856234218608,
+        "full": 0.05714017486964497
+      },
+      "initial_mean_strength": 0.7709036818432278,
+      "common_mean_change": 0.0007016458911496271,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "prototype_fanin_gaussian_1_50",
+      "case": "prototype",
+      "initialization": "fanin_gaussian",
+      "seed": 1,
+      "width": 50,
+      "after_loss": {
+        "none": 0.049428024173425684,
+        "common": 0.049432663311873425,
+        "refinement": 0.046405914557782216,
+        "full": 0.04640953380978444
+      },
+      "initial_mean_strength": 0.714303770757985,
+      "common_mean_change": -9.139964760137657e-05,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "prototype_fanin_gaussian_1_100",
+      "case": "prototype",
+      "initialization": "fanin_gaussian",
+      "seed": 1,
+      "width": 100,
+      "after_loss": {
+        "none": 0.056658443867771406,
+        "common": 0.056668181712372256,
+        "refinement": 0.05332663163487535,
+        "full": 0.053277446714533355
+      },
+      "initial_mean_strength": 0.711807683568074,
+      "common_mean_change": -0.0009418560160483804,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "prototype_fanin_uniform_1_50",
+      "case": "prototype",
+      "initialization": "fanin_uniform",
+      "seed": 1,
+      "width": 50,
+      "after_loss": {
+        "none": 0.0524636372476946,
+        "common": 0.052468415520448744,
+        "refinement": 0.04891059963509105,
+        "full": 0.048876183355525606
+      },
+      "initial_mean_strength": 0.7167791812466451,
+      "common_mean_change": 0.00013380347123085243,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "prototype_fanin_uniform_1_100",
+      "case": "prototype",
+      "initialization": "fanin_uniform",
+      "seed": 1,
+      "width": 100,
+      "after_loss": {
+        "none": 0.047623165203579856,
+        "common": 0.04762576932305448,
+        "refinement": 0.044355858019854776,
+        "full": 0.044334231024329325
+      },
+      "initial_mean_strength": 0.7344452251799215,
+      "common_mean_change": 7.746675434067152e-05,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "prototype_fanin_gaussian_2_50",
+      "case": "prototype",
+      "initialization": "fanin_gaussian",
+      "seed": 2,
+      "width": 50,
+      "after_loss": {
+        "none": 0.051363113237125196,
+        "common": 0.05131808595936548,
+        "refinement": 0.048513756468853766,
+        "full": 0.048470249064772715
+      },
+      "initial_mean_strength": 0.749862051377909,
+      "common_mean_change": -0.00010858756824619342,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "prototype_fanin_gaussian_2_100",
+      "case": "prototype",
+      "initialization": "fanin_gaussian",
+      "seed": 2,
+      "width": 100,
+      "after_loss": {
+        "none": 0.050808703273822184,
+        "common": 0.05076636503392726,
+        "refinement": 0.04783351614287904,
+        "full": 0.04781566689856057
+      },
+      "initial_mean_strength": 0.7423127980910831,
+      "common_mean_change": -0.0010299260570663243,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "prototype_fanin_uniform_2_50",
+      "case": "prototype",
+      "initialization": "fanin_uniform",
+      "seed": 2,
+      "width": 50,
+      "after_loss": {
+        "none": 0.056359976543753736,
+        "common": 0.05632922778830602,
+        "refinement": 0.053130064380934275,
+        "full": 0.05309752554996179
+      },
+      "initial_mean_strength": 0.7639442638712195,
+      "common_mean_change": -0.00392066540865683,
+      "common_weakened_fraction": 0.041666666666666664
+    },
+    {
+      "key": "prototype_fanin_uniform_2_100",
+      "case": "prototype",
+      "initialization": "fanin_uniform",
+      "seed": 2,
+      "width": 100,
+      "after_loss": {
+        "none": 0.05000146452008508,
+        "common": 0.04999200028035568,
+        "refinement": 0.046868879826784685,
+        "full": 0.04684720962097539
+      },
+      "initial_mean_strength": 0.7721578699872635,
+      "common_mean_change": -0.0007238558395363989,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "prototype_fanin_gaussian_3_50",
+      "case": "prototype",
+      "initialization": "fanin_gaussian",
+      "seed": 3,
+      "width": 50,
+      "after_loss": {
+        "none": 0.05614890673964521,
+        "common": 0.05602503630710075,
+        "refinement": 0.05260524641395684,
+        "full": 0.05253589424595582
+      },
+      "initial_mean_strength": 0.7594193733529634,
+      "common_mean_change": -0.0006978720539780511,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "prototype_fanin_gaussian_3_100",
+      "case": "prototype",
+      "initialization": "fanin_gaussian",
+      "seed": 3,
+      "width": 100,
+      "after_loss": {
+        "none": 0.053900570585751505,
+        "common": 0.053989474188520646,
+        "refinement": 0.05037684356352441,
+        "full": 0.050328844197051886
+      },
+      "initial_mean_strength": 0.7509461010705327,
+      "common_mean_change": -0.00012044621346068059,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "prototype_fanin_uniform_3_50",
+      "case": "prototype",
+      "initialization": "fanin_uniform",
+      "seed": 3,
+      "width": 50,
+      "after_loss": {
+        "none": 0.05821192727860649,
+        "common": 0.0582447448903369,
+        "refinement": 0.05483530087867263,
+        "full": 0.05465563476286917
+      },
+      "initial_mean_strength": 0.7520795806706083,
+      "common_mean_change": -0.0006607949331544719,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "prototype_fanin_uniform_3_100",
+      "case": "prototype",
+      "initialization": "fanin_uniform",
+      "seed": 3,
+      "width": 100,
+      "after_loss": {
+        "none": 0.05747742524490909,
+        "common": 0.057409500614416006,
+        "refinement": 0.05407149264560806,
+        "full": 0.05402336089812692
+      },
+      "initial_mean_strength": 0.7501429928341038,
+      "common_mean_change": -0.001927534285268831,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "prototype_fanin_gaussian_4_50",
+      "case": "prototype",
+      "initialization": "fanin_gaussian",
+      "seed": 4,
+      "width": 50,
+      "after_loss": {
+        "none": 0.06405704227908458,
+        "common": 0.06396310302804922,
+        "refinement": 0.06110300234054911,
+        "full": 0.06099220202907253
+      },
+      "initial_mean_strength": 0.7608830347846233,
+      "common_mean_change": -0.0005343646328018296,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "prototype_fanin_gaussian_4_100",
+      "case": "prototype",
+      "initialization": "fanin_gaussian",
+      "seed": 4,
+      "width": 100,
+      "after_loss": {
+        "none": 0.06051996223521714,
+        "common": 0.060423109145899885,
+        "refinement": 0.057369785600820414,
+        "full": 0.05727566829960659
+      },
+      "initial_mean_strength": 0.7717457255164186,
+      "common_mean_change": 0.001216470130186396,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "prototype_fanin_uniform_4_50",
+      "case": "prototype",
+      "initialization": "fanin_uniform",
+      "seed": 4,
+      "width": 50,
+      "after_loss": {
+        "none": 0.05387988674990553,
+        "common": 0.0537513978579167,
+        "refinement": 0.05031810654545338,
+        "full": 0.050264770379123365
+      },
+      "initial_mean_strength": 0.7838216879466265,
+      "common_mean_change": -0.000450292010293174,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "prototype_fanin_uniform_4_100",
+      "case": "prototype",
+      "initialization": "fanin_uniform",
+      "seed": 4,
+      "width": 100,
+      "after_loss": {
+        "none": 0.05065039496682164,
+        "common": 0.0505833779715115,
+        "refinement": 0.047237279614782496,
+        "full": 0.04717967809622428
+      },
+      "initial_mean_strength": 0.7708486231115278,
+      "common_mean_change": 0.0006075195797368288,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "prototype_fanin_gaussian_5_50",
+      "case": "prototype",
+      "initialization": "fanin_gaussian",
+      "seed": 5,
+      "width": 50,
+      "after_loss": {
+        "none": 0.05695093072331777,
+        "common": 0.05699290306260366,
+        "refinement": 0.0535480829249765,
+        "full": 0.053492345898577646
+      },
+      "initial_mean_strength": 0.7376541462620861,
+      "common_mean_change": -0.0022270145596539844,
+      "common_weakened_fraction": 0.041666666666666664
+    },
+    {
+      "key": "prototype_fanin_gaussian_5_100",
+      "case": "prototype",
+      "initialization": "fanin_gaussian",
+      "seed": 5,
+      "width": 100,
+      "after_loss": {
+        "none": 0.05799691642319224,
+        "common": 0.05799961420889023,
+        "refinement": 0.054635192156179825,
+        "full": 0.05458671401291672
+      },
+      "initial_mean_strength": 0.7303372653614545,
+      "common_mean_change": 0.0008753160369417192,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "prototype_fanin_uniform_5_50",
+      "case": "prototype",
+      "initialization": "fanin_uniform",
+      "seed": 5,
+      "width": 50,
+      "after_loss": {
+        "none": 0.055671228854150226,
+        "common": 0.05568432565933827,
+        "refinement": 0.05330405625844022,
+        "full": 0.053296175981771235
+      },
+      "initial_mean_strength": 0.7135274895855268,
+      "common_mean_change": 0.00038719622204809917,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "prototype_fanin_uniform_5_100",
+      "case": "prototype",
+      "initialization": "fanin_uniform",
+      "seed": 5,
+      "width": 100,
+      "after_loss": {
+        "none": 0.05393158219601585,
+        "common": 0.05394825324346024,
+        "refinement": 0.05071661328513503,
+        "full": 0.05069353532789267
+      },
+      "initial_mean_strength": 0.720223482769251,
+      "common_mean_change": -0.002042009248097207,
+      "common_weakened_fraction": 0.041666666666666664
+    },
+    {
+      "key": "associated_fanin_gaussian_0_50",
+      "case": "associated",
+      "initialization": "fanin_gaussian",
+      "seed": 0,
+      "width": 50,
+      "after_loss": {
+        "none": 0.26950524013986665,
+        "common": 0.26351408561278733,
+        "refinement": 0.26603044538053594,
+        "full": 0.2601088393826064
+      },
+      "initial_mean_strength": 0.6646361019323556,
+      "common_mean_change": 0.03583452172991908,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_gaussian_0_100",
+      "case": "associated",
+      "initialization": "fanin_gaussian",
+      "seed": 0,
+      "width": 100,
+      "after_loss": {
+        "none": 0.24926777137377337,
+        "common": 0.24482994288123466,
+        "refinement": 0.2462094198677242,
+        "full": 0.24184660172768246
+      },
+      "initial_mean_strength": 0.713959252009877,
+      "common_mean_change": 0.02455467188890938,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_uniform_0_50",
+      "case": "associated",
+      "initialization": "fanin_uniform",
+      "seed": 0,
+      "width": 50,
+      "after_loss": {
+        "none": 0.25805205649905055,
+        "common": 0.2533981093128068,
+        "refinement": 0.25230395006796724,
+        "full": 0.2503307503844395
+      },
+      "initial_mean_strength": 0.7403768827830891,
+      "common_mean_change": 0.021388788455355055,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_uniform_0_100",
+      "case": "associated",
+      "initialization": "fanin_uniform",
+      "seed": 0,
+      "width": 100,
+      "after_loss": {
+        "none": 0.24033289176876,
+        "common": 0.23711258578750263,
+        "refinement": 0.2361439383935408,
+        "full": 0.2346420282932463
+      },
+      "initial_mean_strength": 0.7675671407869064,
+      "common_mean_change": 0.017927338270179314,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_gaussian_1_50",
+      "case": "associated",
+      "initialization": "fanin_gaussian",
+      "seed": 1,
+      "width": 50,
+      "after_loss": {
+        "none": 0.23791927691599302,
+        "common": 0.23592676687926725,
+        "refinement": 0.23502409767003202,
+        "full": 0.23297620114230203
+      },
+      "initial_mean_strength": 0.7939579313853663,
+      "common_mean_change": 0.010579357281207314,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_gaussian_1_100",
+      "case": "associated",
+      "initialization": "fanin_gaussian",
+      "seed": 1,
+      "width": 100,
+      "after_loss": {
+        "none": 0.2283674280941242,
+        "common": 0.22557549414295455,
+        "refinement": 0.2254240710945568,
+        "full": 0.22305728637630093
+      },
+      "initial_mean_strength": 0.7973345308467472,
+      "common_mean_change": 0.013458785668445078,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_uniform_1_50",
+      "case": "associated",
+      "initialization": "fanin_uniform",
+      "seed": 1,
+      "width": 50,
+      "after_loss": {
+        "none": 0.2299053549325299,
+        "common": 0.22551569416619927,
+        "refinement": 0.22344360619833475,
+        "full": 0.2186190261822456
+      },
+      "initial_mean_strength": 0.7676568269256662,
+      "common_mean_change": 0.019640305603811612,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_uniform_1_100",
+      "case": "associated",
+      "initialization": "fanin_uniform",
+      "seed": 1,
+      "width": 100,
+      "after_loss": {
+        "none": 0.23364825952252005,
+        "common": 0.22710768359973615,
+        "refinement": 0.22605396364638292,
+        "full": 0.21910118447420462
+      },
+      "initial_mean_strength": 0.7791921073599556,
+      "common_mean_change": 0.017461457024425493,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_gaussian_2_50",
+      "case": "associated",
+      "initialization": "fanin_gaussian",
+      "seed": 2,
+      "width": 50,
+      "after_loss": {
+        "none": 0.2625951740590318,
+        "common": 0.258811696572956,
+        "refinement": 0.25992112887198615,
+        "full": 0.2555483009304023
+      },
+      "initial_mean_strength": 0.7054406147506566,
+      "common_mean_change": 0.033816097613417154,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_gaussian_2_100",
+      "case": "associated",
+      "initialization": "fanin_gaussian",
+      "seed": 2,
+      "width": 100,
+      "after_loss": {
+        "none": 0.2638859873081103,
+        "common": 0.2593825968726278,
+        "refinement": 0.26154498143338156,
+        "full": 0.2561674562893324
+      },
+      "initial_mean_strength": 0.7181768183595097,
+      "common_mean_change": 0.03410659193051035,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_uniform_2_50",
+      "case": "associated",
+      "initialization": "fanin_uniform",
+      "seed": 2,
+      "width": 50,
+      "after_loss": {
+        "none": 0.25380706580757423,
+        "common": 0.2519166511330067,
+        "refinement": 0.2500938913843241,
+        "full": 0.24845786646211737
+      },
+      "initial_mean_strength": 0.7520454629549053,
+      "common_mean_change": 0.01755914821683882,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_uniform_2_100",
+      "case": "associated",
+      "initialization": "fanin_uniform",
+      "seed": 2,
+      "width": 100,
+      "after_loss": {
+        "none": 0.2563310064593473,
+        "common": 0.25391319774767185,
+        "refinement": 0.2530375219606873,
+        "full": 0.25093119238376715
+      },
+      "initial_mean_strength": 0.7441848995098658,
+      "common_mean_change": 0.021283295470583666,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_gaussian_3_50",
+      "case": "associated",
+      "initialization": "fanin_gaussian",
+      "seed": 3,
+      "width": 50,
+      "after_loss": {
+        "none": 0.22084593908756334,
+        "common": 0.21803777987657283,
+        "refinement": 0.217967246671252,
+        "full": 0.21350019223391128
+      },
+      "initial_mean_strength": 0.688019008047999,
+      "common_mean_change": 0.04807850531600455,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_gaussian_3_100",
+      "case": "associated",
+      "initialization": "fanin_gaussian",
+      "seed": 3,
+      "width": 100,
+      "after_loss": {
+        "none": 0.2213753567654363,
+        "common": 0.21948392190695587,
+        "refinement": 0.21664728340424216,
+        "full": 0.2145777186377028
+      },
+      "initial_mean_strength": 0.7030223776752633,
+      "common_mean_change": 0.03301680384208775,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_uniform_3_50",
+      "case": "associated",
+      "initialization": "fanin_uniform",
+      "seed": 3,
+      "width": 50,
+      "after_loss": {
+        "none": 0.22748244201418477,
+        "common": 0.22418718383782582,
+        "refinement": 0.2197186421153769,
+        "full": 0.21587992512898008
+      },
+      "initial_mean_strength": 0.7099135725760685,
+      "common_mean_change": 0.03010565200763755,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_uniform_3_100",
+      "case": "associated",
+      "initialization": "fanin_uniform",
+      "seed": 3,
+      "width": 100,
+      "after_loss": {
+        "none": 0.2186929653903366,
+        "common": 0.2162762625496073,
+        "refinement": 0.21348022636780234,
+        "full": 0.21143159909509285
+      },
+      "initial_mean_strength": 0.7352017542059565,
+      "common_mean_change": 0.024067058312703504,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_gaussian_4_50",
+      "case": "associated",
+      "initialization": "fanin_gaussian",
+      "seed": 4,
+      "width": 50,
+      "after_loss": {
+        "none": 0.2593954846959991,
+        "common": 0.25754558132879235,
+        "refinement": 0.25605465226078383,
+        "full": 0.252653121916235
+      },
+      "initial_mean_strength": 0.755713783925286,
+      "common_mean_change": 0.01878357047752319,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_gaussian_4_100",
+      "case": "associated",
+      "initialization": "fanin_gaussian",
+      "seed": 4,
+      "width": 100,
+      "after_loss": {
+        "none": 0.24820104829407946,
+        "common": 0.2459965762565835,
+        "refinement": 0.2451996105281862,
+        "full": 0.24256800453667846
+      },
+      "initial_mean_strength": 0.7667776010099181,
+      "common_mean_change": 0.020432031985744933,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_uniform_4_50",
+      "case": "associated",
+      "initialization": "fanin_uniform",
+      "seed": 4,
+      "width": 50,
+      "after_loss": {
+        "none": 0.24967824204340094,
+        "common": 0.2461372926029728,
+        "refinement": 0.24621188669394126,
+        "full": 0.2429823758524936
+      },
+      "initial_mean_strength": 0.7293447588939314,
+      "common_mean_change": 0.027655202619492808,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_uniform_4_100",
+      "case": "associated",
+      "initialization": "fanin_uniform",
+      "seed": 4,
+      "width": 100,
+      "after_loss": {
+        "none": 0.2501167053917702,
+        "common": 0.24498163934513584,
+        "refinement": 0.24559468966172898,
+        "full": 0.24093709037359995
+      },
+      "initial_mean_strength": 0.7227144906689805,
+      "common_mean_change": 0.028540264222639503,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_gaussian_5_50",
+      "case": "associated",
+      "initialization": "fanin_gaussian",
+      "seed": 5,
+      "width": 50,
+      "after_loss": {
+        "none": 0.2083534061009575,
+        "common": 0.20431139157339445,
+        "refinement": 0.20047189496334664,
+        "full": 0.20002741018723405
+      },
+      "initial_mean_strength": 0.7346576839875599,
+      "common_mean_change": 0.019160577798676692,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_gaussian_5_100",
+      "case": "associated",
+      "initialization": "fanin_gaussian",
+      "seed": 5,
+      "width": 100,
+      "after_loss": {
+        "none": 0.20706959713667172,
+        "common": 0.20453825216992078,
+        "refinement": 0.20257999676736105,
+        "full": 0.20187047505828423
+      },
+      "initial_mean_strength": 0.7239077951222642,
+      "common_mean_change": 0.0223499964130305,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_uniform_5_50",
+      "case": "associated",
+      "initialization": "fanin_uniform",
+      "seed": 5,
+      "width": 50,
+      "after_loss": {
+        "none": 0.21513892048516456,
+        "common": 0.21232748615841218,
+        "refinement": 0.21208774711098682,
+        "full": 0.20888296449524
+      },
+      "initial_mean_strength": 0.7149600770154986,
+      "common_mean_change": 0.0332789712247881,
+      "common_weakened_fraction": 0.0
+    },
+    {
+      "key": "associated_fanin_uniform_5_100",
+      "case": "associated",
+      "initialization": "fanin_uniform",
+      "seed": 5,
+      "width": 100,
+      "after_loss": {
+        "none": 0.20779623764925287,
+        "common": 0.2052308839647418,
+        "refinement": 0.2037738503760092,
+        "full": 0.20155152056305947
+      },
+      "initial_mean_strength": 0.7183254209542472,
+      "common_mean_change": 0.030450662298683834,
+      "common_weakened_fraction": 0.0
+    }
+  ],
+  "summaries": [
+    {
+      "case": "prototype",
+      "arm": "common",
+      "states": 24,
+      "mean_effect": -0.00044203928292002863,
+      "error_ratio": 0.48964337450546164,
+      "sign_accuracy": 0.9982300884955753,
+      "nontrivial_effects": 565,
+      "after_loss_difference": -2.897418682921953e-05
+    },
+    {
+      "case": "prototype",
+      "arm": "refinement",
+      "states": 24,
+      "mean_effect": 0.0020112537923726403,
+      "error_ratio": 0.2138887724071919,
+      "sign_accuracy": 0.96,
+      "nontrivial_effects": 575,
+      "after_loss_difference": -0.0032411303087774
+    },
+    {
+      "case": "prototype",
+      "arm": "full",
+      "states": 24,
+      "mean_effect": 0.001511126114134516,
+      "error_ratio": 0.24337427114764235,
+      "sign_accuracy": 0.9773519163763066,
+      "nontrivial_effects": 574,
+      "after_loss_difference": -0.003296392354163903
+    },
+    {
+      "case": "associated",
+      "arm": "common",
+      "states": 24,
+      "mean_effect": 0.025147068986358972,
+      "error_ratio": 0.07748104250446713,
+      "sign_accuracy": 0.9930555555555556,
+      "nontrivial_effects": 576,
+      "after_loss_difference": -0.003404379235659677
+    },
+    {
+      "case": "associated",
+      "arm": "refinement",
+      "states": 24,
+      "mean_effect": -0.001608041700609614,
+      "error_ratio": 0.16077687636348761,
+      "sign_accuracy": 0.9547826086956521,
+      "nontrivial_effects": 575,
+      "after_loss_difference": -0.004281046460209484
+    },
+    {
+      "case": "associated",
+      "arm": "full",
+      "states": 24,
+      "mean_effect": 0.025381164995307154,
+      "error_ratio": 0.13804669483309673,
+      "sign_accuracy": 0.9791666666666666,
+      "nontrivial_effects": 576,
+      "after_loss_difference": -0.007463113576180828
+    }
+  ]
+}

@@ -6,14 +6,20 @@ functional viewpoint, many simultaneous options, turnover, and held-out checks.
 ## Main revision
 
 Do not define options by inventing an editing objective. Start with the actual
-training loss and optimizer. An option is a **residual-response mode of their
-local dynamics**: a direction of prediction error to which the current network
-can respond, with a quantitatively defined strength at a stated time scale.
+training loss and optimizer. A **capability mode** is a spectral direction of
+the local response. An **option** is a correction required by a declared
+residual in such an eigenspace, considered together with the available response.
+Its value includes both demand and capability. A demanded correction can have
+zero response, in which case the option is closed.
 
 The preferred object is a positive semidefinite response/benefit operator in
 fixed output-residual coordinates. Its eigenvectors are discovered from model
 derivatives. No teacher, semantic role, focal subset, or protected direction is
-provided. The actual residual determines which available modes matter now.
+provided. The actual residual supplies the demanded corrections. A fixed
+reference residual can instead be declared for comparisons across checkpoints.
+We write \(B_t\) for fixed-horizon benefit and \(C_\tau\) for discounted
+response. This terminology and notation leave all operators and derivations
+unchanged.
 
 Two changes were necessary during this iteration:
 
@@ -54,7 +60,8 @@ contexts: it uses all residuals and derivatives, with their actual data weights.
 
 The framework does not promise to preserve arbitrary future tasks. Nonlocal
 revisions, new input support, and new semantics can require new representations.
-An option here is local responsiveness on the measured distribution.
+An option here concerns a demanded correction on the measured distribution and
+the local response available to make it.
 
 ### Coherence is already in an ordinary augmented loss
 
@@ -145,12 +152,12 @@ training need not stop randomly. Since
 \(\mathbb E\phi_{2T}(A)=(A+(2\tau)^{-1}I)^{-1}\),
 
 \[
- \boxed{\mathcal B_\tau=
+ \boxed{C_\tau=
  \frac1nD\left(A+\frac1{2\tau}I\right)^{-1}D^T.} \tag{7}
 \]
 
 The discounted loss benefit is exactly
-\(e^T\mathcal B_\tau e/(2n)\) for the local model. The inverse now represents
+\(e^TC_\tau e/(2n)\) for the local model. The inverse now represents
 GD's finite response time and the original loss's restoring forces. It is not
 justified by saying the network solves an unrelated ridge editing objective.
 At a deterministic horizon, (5) or (6), rather than (7), is the exact filter.
@@ -161,26 +168,41 @@ For an explanatory focal/background split, (7)'s focal block has the form
 the Q/P tradeoff. They are not free protection coefficients. This is the
 precise sense in which the earlier useful formula survives.
 
-## 3. A formal definition of options
+## 3. Capability modes and demanded options
 
 Fix the data distribution or audit panel, optimizer geometry, output-residual
-coordinates, and horizon. An **option mode** is an eigenspace of
-\(\mathcal B_\tau\) with positive eigenvalue \(\beta\). It is a residual
-direction to which local GD can respond, with strength \(\beta\). Degenerate
-eigenvalues define a subspace rather than distinguished individual vectors.
+coordinates, and horizon. The eigenspaces \(E\) of \(C_\tau\), or of the
+chosen fixed-horizon benefit operator, are **capability modes**; their
+eigenvalues \(\beta_E\) are response strengths. A repeated eigenvalue defines
+one subspace, rather than distinguished individual vectors.
+
+Also declare a residual demand \(e\). An **option** is a nonzero demanded
+correction \(q_E=\Pi_Ee\), considered together with its response in
+eigenspace \(E\). Its value is \(\beta_E\|q_E\|^2/(2n)\). It is open
+when \(q_E\ne0\) and \(\beta_E>0\), and closed when \(q_E\ne0\) but
+\(\beta_E=0\). If \(q_E=0\), there is no current demand in that eigenspace;
+satisfying demand is not closure. Summing these values gives exactly (9), so
+the definition changes no measurement or derivation.
+
+Demand usually means the current model's residual. A fixed reference residual,
+or a specified residual component, may instead be declared to isolate changes
+in capability. A unit vector \(d\) with no declared demand is a capability
+probe, not by itself a current option. Across checkpoints, hold the reference
+correction fixed rather than identifying options by sorted eigenvector index.
 
 The primary object is the spectrum, not its integer rank. For ordinary networks
 rank can remain full while weak responses deteriorate substantially. Two useful
 collective summaries are
 
 \[
- \mathcal M=\operatorname{tr}\mathcal B_\tau,\qquad
- \mathcal D=\frac{(\operatorname{tr}\mathcal B_\tau)^2}
-                  {\operatorname{tr}(\mathcal B_\tau^2)}. \tag{8}
+ \mathcal M=\operatorname{tr}C_\tau,\qquad
+ \mathcal D=\frac{(\operatorname{tr}C_\tau)^2}
+                  {\operatorname{tr}(C_\tau^2)}. \tag{8}
 \]
 
-\(\mathcal M\) is **option mass**, in fixed residual-response units. It is not
-a literal count. \(\mathcal D\) is **effective breadth**, the participation
+\(\mathcal M\) is **response mass**, in fixed residual-response units. It is
+independent of demand and is not a count or total value of current options.
+\(\mathcal D\) is **effective breadth**, the participation
 ratio of the response strengths. It is one for a single mode, and \(d\) for
 \(d\) equal modes. Multiplying every strength by a constant changes mass but
 not breadth. Breadth alone would give too much credit to uniformly tiny modes,
@@ -197,9 +219,12 @@ Most importantly, usefulness now follows from the actual residual:
  V_\tau(e)=\frac1{2n}\sum_j\beta_j|\langle v_j,e\rangle|^2. \tag{9}
 \]
 
-An available option can be unused. A falling residual can reduce current value
-while option mass grows. Many options need not help if the residual occupies
-their weakest directions. There is no claim that trace alone predicts loss.
+An available capability mode need not carry demand. A falling residual can
+reduce current option value while response mass grows. Strong capability in
+many modes need not help if the residual occupies weak or null modes. There is
+no claim that trace alone predicts loss. Historical code and result records
+retain names such as `option_mass`; these denote response mass under the
+current terminology, without changing the recorded numbers.
 
 ### An instantaneous connection requiring no frozen-curvature forecast
 
@@ -213,7 +238,7 @@ At every actual gradient-flow checkpoint,
 This identity is exact for the current network and full-batch risk. Recomputing
 the residual and response geometry permits a trajectory-level loss ledger even
 when a frozen finite-time forecast fails. It does not prove that declining
-option mass caused a particular future error.
+response mass caused a particular future error.
 
 ## 4. Why the first candidate was misleading
 
@@ -236,11 +261,12 @@ changes in the Jacobian. Neither diagnostic is metric-free.
 
 ## 5. What width and turnover mean here
 
-Compare operators on the same data/output coordinates and horizon. Define
+Compare operators on the same data/output coordinates and fixed horizon tau.
+Write C_s=C_tau(theta_s) and C_t=C_tau(theta_t) for two actual checkpoints. Define
 
 \[
- \mathcal L_{s,t}=\operatorname{tr}(\mathcal B_s-\mathcal B_t)_+,\qquad
- \mathcal G_{s,t}=\operatorname{tr}(\mathcal B_t-\mathcal B_s)_+. \tag{11}
+ \mathcal L_{s,t}=\operatorname{tr}(C_s-C_t)_+,\qquad
+ \mathcal G_{s,t}=\operatorname{tr}(C_t-C_s)_+. \tag{11}
 \]
 
 They measure net weakening and strengthening over an interval, including
@@ -253,11 +279,11 @@ Jacobian directions enlarge \(G=DD^T/n\) in PSD order. The discounted operator
 is monotone under this enlargement. For invertible \(G\),
 
 \[
- \mathcal B_\tau=(H+(2\tau)^{-1}G^{-1})^{-1}; \tag{12}
+ C_\tau=(H+(2\tau)^{-1}G^{-1})^{-1}; \tag{12}
 \]
 
 inverse ordering proves the claim, and a regularization limit handles singular
-\(G\). Thus extra directions cannot decrease discounted option mass or the
+\(G\). Thus extra directions cannot decrease discounted response mass or the
 benefit for any fixed residual in this controlled comparison. Matched-cost
 copies \([D/\sqrt2,D/\sqrt2]\) leave it unchanged. Breadth is not monotone:
 strengthening one mode much more than others can reduce participation ratio.
@@ -306,7 +332,7 @@ The following averages use discounted horizon \(\tau=1\) as a standardized
 checkpoint response diagnostic, not a claim that the quadratic remains valid
 for a full unit of subsequent training time:
 
-| Width | Checkpoint | Option mass | Effective breadth |
+| Width | Checkpoint | Response mass | Effective breadth |
 |---|---:|---:|---:|
 | 32 | 0 | 1,948 | 329.2 |
 | 32 | 100 | 4,912 | 159.6 |
@@ -337,7 +363,7 @@ slightly (242.2→240.6 and 230.7→229.7), but increases estimated breadth
 yet statistically stable. A population number should not be inferred from this
 single small panel. These follow-ups use one seed and are exploratory.
 
-At the same horizon \(\tau=1\), option mass lost between initialization and checkpoint 600
+At the same horizon \(\tau=1\), response mass lost between initialization and checkpoint 600
 is 175.6/153.9 for the two width-32 seeds and 140.4/94.4 for width 128. Gains
 are much larger than losses. A fixed-output-curvature control also has less
 weakening at width 128, about 19.9/17.9 versus 26.9/25.4. These small, correlated
@@ -405,10 +431,10 @@ at larger steps. Raw means, uncertainty and noise terms are retained.
 ### Scalable estimation
 
 For a random residual probe \(z\), let \(v=D^Tz/\sqrt n\). Then
-\(z^T\mathcal B_\tau z=v^T(A+(2\tau)^{-1}I)^{-1}v\). GGN matrix-vector
+\(z^TC_\tau z=v^T(A+(2\tau)^{-1}I)^{-1}v\). GGN matrix-vector
 products require a JVP, the actual output-loss Hessian product, and a VJP.
 No full Jacobian, kernel or parameter Hessian is required. The second spectral
-moment can likewise be estimated from \(\|\mathcal B_\tau z\|^2\).
+moment can likewise be estimated from \(\|C_\tau z\|^2\).
 
 A separate implementation on the final width-32 network uses 16 random probes
 and at most 24 CG iterations per solve. It estimates mass 7,173 (estimated
@@ -421,7 +447,7 @@ and nonlinear error remain separate from solver/probe error.
 ## 8. What is retained, rejected, and next
 
 Retain: functional rather than neuronal options; all residual directions;
-the distinction between option supply and residual demand; spectral turnover;
+the distinction between capability and residual demand, jointly defining options; spectral turnover;
 matched-cost redundancy controls; and held-out loss checks.
 
 Reject: a manually weighted editing objective as the starting definition;

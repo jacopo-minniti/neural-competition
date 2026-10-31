@@ -3,18 +3,40 @@
 The model has one functional capability object, one demand object, and an
 explicit local dynamics.
 
+The current [reserve model](competition_reserve.md) asks which responses are
+protected from dominant learning, and how much common learning exposed responses
+can tolerate. Its state certificate needs no initialization distribution or
+coherent-pressure assumption. A stronger coherent-pressure model derives
+completion reserves and joint structural loss laws indexed by functional
+progress. Tests cover 24–32 power-law refinements and bounded continuous context
+variation. The earlier [conditional forecasting model](power_law_competition.md)
+remains a numerical tool on a broader co-occurring-factor family; its forecast
+accuracy alone does not establish an explanatory state theory.
+
 ## 1. Capability
 
-At a network state, (B_\tau) or (B_{h,\eta}) measures which output-space
-corrections gradient descent can make over a declared horizon. Options are its
-positive eigenspaces. Rank, effective breadth, and mass are summaries; they are
-not literal neuron counts.
+At a network state, \(C_\tau\) measures exponentially averaged local response,
+while \(B_t\) or \(B_{h,\eta}\) uses a fixed continuous or discrete horizon.
+Their eigenspaces describe capability modes. Rank, effective breadth, and
+response mass summarize capability independently of current demand.
 
 ## 2. Demand
 
-Residual demand (e) determines which available directions currently matter.
-Raw value (e^TBe), normalized directional strength, residual magnitude, and
-actual loss must be reported separately.
+For a declared residual \(e\), an **option** is a nonzero spectral correction
+\(q_E=\Pi_Ee\), together with the response available in eigenspace \(E\).
+Its value is \(\beta_E\|q_E\|^2/(2n)\), and summing gives the unchanged
+local benefit \(V(e)=e^TBe/(2n)\), with \(B\) the chosen benefit operator.
+Demand remaining with zero response means a closed option; zero demand means
+there is no current option in that eigenspace. Use eigenspaces to avoid choosing
+an arbitrary basis within a repeated eigenvalue. See the
+[precise definition](spectral_options.md#3-capability-modes-and-demanded-options).
+
+Raw value, normalized directional strength, residual magnitude, and actual loss
+must be reported separately. A fixed arbitrary direction is a capability probe;
+it represents an option only when loaded by declared demand. Reference residuals
+may be held fixed to compare capability across checkpoints. Historical filenames,
+result keys such as `option_mass`, and evidence snapshots retain their original
+names; `option_mass` measures response mass, not a residual-dependent option count.
 
 ## 3. Dynamics
 
@@ -66,3 +88,5 @@ fixed time additionally requires control of the pressure clock and other forces.
 5. [Delayed demand and width](delayed_demand_and_width.md)
 6. [Observed learning ledger](learning_ledger.md)
 7. [Probabilistic competition and width](probabilistic_competition.md)
+8. [Conditional probabilities on power-law refinement tasks](power_law_competition.md)
+9. [Protected reserve and tolerable common learning](competition_reserve.md)

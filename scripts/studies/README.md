@@ -10,5 +10,10 @@
 | Refinement hierarchies | `run_refinement_hierarchy.py` | compact records under `docs/evidence/refinement_hierarchies/` |
 | Learning ledger | `trace_observed_learning.py` | `analyze_observed_learning.py` |
 | Analytic probability law | `probabilistic_option_transport.py` | `audit_probabilistic_option_transport.py` |
+| Probability model under full-task training | `probe_probabilistic_natural_training.py` | `analyze_probabilistic_natural_training.py` |
+| Many power-law refinements | `run_power_law_competition.py` | `analyze_power_law_competition.py` |
+| Power-law causal pressure | `probe_power_law_pressure.py` | `audit_power_law_pressure_steps.py` |
+| Current reserve and common-learning tolerance | `run_competition_reserve.py` | `analyze_competition_reserve.py` |
+| Reserve closure and illustrative loss curves | `probe_reserve_learning_curves.py` | same script; retained forecast and outcome records |
 
 Supporting audit and intervention scripts remain beside these entry points.

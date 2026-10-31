@@ -1,0 +1,24 @@
+{
+  "seed_bank": 106100,
+  "seeds": 6,
+  "initializations": [
+    "fanin_gaussian",
+    "fanin_uniform"
+  ],
+  "cases": [
+    "prototype",
+    "associated"
+  ],
+  "checkpoint": 200,
+  "widths": [
+    50,
+    100
+  ],
+  "pressure_steps": 16,
+  "continuation_steps": 100,
+  "rate": 0.025,
+  "batch": 32,
+  "comparison": "Same-state common-only, refinement-only, full, and no-pressure",
+  "model": "Bilinear local dynamics with one midpoint gate refresh",
+  "caution": "Changes function and speed; not pure option mediation or natural-width mediation"
+}

@@ -11,11 +11,22 @@ The maintained model has two primary objects:
 - **residual demand**, which determines which available corrections currently
   matter.
 
-Options are functional response modes, not neurons or teacher-assigned roles.
+An option is a correction required by a declared residual, considered together
+with the network's response to it. Spectral directions describe capability modes;
+their residual loading specifies the options. An option is closed when demand remains but its local
+response is zero; satisfying demand is not closure. The precise spectral
+definition and unchanged value formulas are in the
+[spectral derivation](docs/model/spectral_options.md#3-capability-modes-and-demanded-options).
 Their dynamics are modeled with the existing feature–coefficient parameter
-evolution and physical ReLU gates. A
-[probabilistic extension](docs/model/probabilistic_competition.md) derives closing,
-opening, and width laws from those dynamics under coherent common pressure.
+evolution and physical ReLU gates. The current
+[reserve model](docs/model/competition_reserve.md) distinguishes present
+capability from response protected against common-task learning. It derives an
+exact state certificate, a completion curve indexed by common learning rather
+than elapsed steps, and a restricted last-alternative loss law. Tests use 24–32
+power-law refinements, with continuous context variation and sufficient narrow
+capacity. The earlier [conditional forecasting model](docs/model/power_law_competition.md)
+remains a numerical tool; the [Gaussian pressure law](docs/model/probabilistic_competition.md)
+is a more restricted analytic special case.
 No latent resource state or fitted transition law is part of the maintained model.
 
 ## Reading order

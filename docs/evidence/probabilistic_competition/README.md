@@ -1,5 +1,9 @@
 # Analytic probability-law audit
 
+The subsequent [30 October full-task pilot](natural_training_pilot_20261030/README.md)
+tests random networks under ordinary training. The original audit described
+below remains a separate mathematical and constructed-example check.
+
 This is a consistency check for the
 [probabilistic competition derivation](../../model/probabilistic_competition.md),
 not a fitted model or a validation of natural-width failure probabilities.

@@ -155,7 +155,7 @@ not a cheaper replacement for computing that gradient.
 For any fixed PSD parameter response \(Q\), the same argument gives bias
 \((1/b-1/N)\operatorname{tr}(Q\Sigma)\) in \(\bar u_P^TQ\bar u_P\).
 This extends to a resolvent constructed on an independently fixed reference
-measure. **It does not give an unbiased correction for the old \(B_\tau\)
+measure. **It does not give an unbiased correction for the old \(C_\tau\)
 when its curvature and residual are both constructed from the same panel.**
 We have not reclassified the old discounted spectra or repaired their forecasts.
 

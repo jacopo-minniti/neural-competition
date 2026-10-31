@@ -8,7 +8,7 @@ locked fresh predictions, negative outcomes, and timing controls.
 
 ## The minimal change
 
-Keep the existing option operator and the local coefficient–feature model.
+Keep the existing response operator and the local coefficient–feature model.
 Two corrections are justified:
 
 1. **A correction budget must be explicit.** Reduced instantaneous response or
@@ -33,7 +33,13 @@ the correction over the relevant budget.** Initial damage may disappear, and a
 response that initially helps may become harmful later. This qualification is
 necessary even on unmodified MNIST inputs.
 
-## Budget-matched options, within the same formalization
+## Budget-matched response and option values
+
+Capability modes are spectral eigenspaces; options are nonzero projections of
+a declared residual into those eigenspaces, together with their responses.
+Changing the observation budget changes their response strengths and values,
+without changing the derivation below. A fixed arbitrary direction remains a
+capability probe when no residual demand is specified.
 
 Use D=JM^(1/2), A=D^T H D/n and g=D^T d/n at a declared reference state.
 For the frozen local quadratic model, h steps of gradient descent at rate eta
@@ -49,7 +55,7 @@ Thus B_(h,eta)=D phi_(h,eta)(A) D^T/n is another member of the same spectral
 response family. Under the usual stability condition eta lambda_max(A) <= 2,
 it is positive semidefinite. The continuous-time filter is
 (1-exp(-2ta))/a; averaging its gain over an exponential horizon of mean tau
-recovers the established resolvent B_tau. No new editing objective is introduced
+recovers the established resolvent C_tau. No new editing objective is introduced
 by choosing a deterministic rather than discounted observation budget.
 
 The gain identity follows by solving u_(k+1)=(I-eta A)u_k+eta g, u_0=0, in each

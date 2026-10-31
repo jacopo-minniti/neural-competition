@@ -1,0 +1,157 @@
+{
+  "width_contrasts": [
+    {
+      "case": "prototype",
+      "step": 0,
+      "widths": {
+        "50": {
+          "observed": 0.056025752314814804,
+          "predicted": 0.05978732638888889,
+          "validation_loss": 2.080472198249195,
+          "mean_diversity": 7.572942766306642
+        },
+        "100": {
+          "observed": 0.020941840277777776,
+          "predicted": 0.020182291666666668,
+          "validation_loss": 2.081286947050818,
+          "mean_diversity": 11.39965751952826
+        }
+      },
+      "wide_minus_narrow": -0.035083912037037035,
+      "seed_bootstrap95": [
+        -0.06401909722222222,
+        -0.009114583333333334
+      ]
+    },
+    {
+      "case": "prototype",
+      "step": 200,
+      "widths": {
+        "50": {
+          "observed": 0.05208333333333333,
+          "predicted": 0.03537326388888889,
+          "validation_loss": 0.48171795542213114,
+          "mean_diversity": 8.894601450847372
+        },
+        "100": {
+          "observed": 0.04188368055555555,
+          "predicted": 0.02698206018518519,
+          "validation_loss": 0.4826698303903274,
+          "mean_diversity": 16.29985402057165
+        }
+      },
+      "wide_minus_narrow": -0.01019965277777778,
+      "seed_bootstrap95": [
+        -0.023184317129629633,
+        0.00245949074074074
+      ]
+    },
+    {
+      "case": "prototype",
+      "step": 2000,
+      "widths": {
+        "50": {
+          "observed": 0.006872106481481481,
+          "predicted": 0.006908275462962962,
+          "validation_loss": 0.0029372685495314085,
+          "mean_diversity": 8.93402021468399
+        },
+        "100": {
+          "observed": 0.007957175925925927,
+          "predicted": 0.008355034722222222,
+          "validation_loss": 0.0037119044781360913,
+          "mean_diversity": 15.964969431539041
+        }
+      },
+      "wide_minus_narrow": 0.0010850694444444445,
+      "seed_bootstrap95": [
+        -0.0036168981481481486,
+        0.007993344907407407
+      ]
+    },
+    {
+      "case": "associated",
+      "step": 0,
+      "widths": {
+        "50": {
+          "observed": 0.20088252314814814,
+          "predicted": 0.20424623842592593,
+          "validation_loss": 0.870931791913527,
+          "mean_diversity": 10.696231048076882
+        },
+        "100": {
+          "observed": 0.1605541087962963,
+          "predicted": 0.1578414351851852,
+          "validation_loss": 0.8691326990273492,
+          "mean_diversity": 17.118792310882917
+        }
+      },
+      "wide_minus_narrow": -0.04032841435185185,
+      "seed_bootstrap95": [
+        -0.0630787037037037,
+        -0.016963252314814825
+      ]
+    },
+    {
+      "case": "associated",
+      "step": 200,
+      "widths": {
+        "50": {
+          "observed": 0.015878182870370367,
+          "predicted": 0.0205078125,
+          "validation_loss": 0.5635618224713228,
+          "mean_diversity": 10.182775252829227
+        },
+        "100": {
+          "observed": 0.007848668981481483,
+          "predicted": 0.011610243055555554,
+          "validation_loss": 0.5387631942007709,
+          "mean_diversity": 16.379816743448707
+        }
+      },
+      "wide_minus_narrow": -0.008029513888888888,
+      "seed_bootstrap95": [
+        -0.02510127314814815,
+        0.0034035011574073564
+      ]
+    },
+    {
+      "case": "associated",
+      "step": 2000,
+      "widths": {
+        "50": {
+          "observed": 0.005063657407407407,
+          "predicted": 0.005823206018518518,
+          "validation_loss": 0.1069383353442348,
+          "mean_diversity": 11.73566258073963
+        },
+        "100": {
+          "observed": 0.0018084490740740743,
+          "predicted": 0.00390625,
+          "validation_loss": 0.1033588085976655,
+          "mean_diversity": 18.213724762623105
+        }
+      },
+      "wide_minus_narrow": -0.0032552083333333335,
+      "seed_bootstrap95": [
+        -0.008499710648148147,
+        -0.00039785879629629633
+      ]
+    }
+  ],
+  "reversibility": [
+    {
+      "case": "prototype",
+      "closed_by_step4": 2078,
+      "reopened_by_step16": 1580,
+      "conditional_reopening": 0.7603464870067372
+    },
+    {
+      "case": "associated",
+      "closed_by_step4": 2208,
+      "reopened_by_step16": 1233,
+      "conditional_reopening": 0.5584239130434783
+    }
+  ],
+  "caution": "Six seed clusters, not independent factors or fork outcomes; checkpoint comparisons are not causal mediation."
+}

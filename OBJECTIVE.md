@@ -3,6 +3,11 @@
 Develop a simple theory connecting functional correction options, competition
 through shared trainable implementations, and the learning benefit of width.
 
+An option is a demanded correction together with the response available to make
+it. Capability modes alone do not specify options: their residual loading
+determines the demanded corrections and their values. Closure means that response
+vanishes while demand remains, rather than that the correction has been fitted.
+
 ## Maintained hypothesis
 
 Tasks can contain common structures and less frequent refinements whose relative
@@ -26,10 +31,16 @@ Neither an option decrease nor a width gap alone establishes this chain.
 
 - Primary setting: shallow ReLU networks on controlled heterogeneous-frequency
   tasks with sufficient narrow representational capacity.
+- General task family: 24–32 power-law refinements, shared attributes, and
+  associated continuous contexts; predict conditional on arbitrary current
+  states rather than assuming a particular initialization law.
 - Transfer setting: local controlled probes on MNIST; new MNIST research is
   paused.
-- Prediction target: short-horizon response and intervention effects from known
-  states. Whole-run success prediction remains later work.
+- Primary target: describe current capability, pressure-relative protected
+  reserve, and the amount of dominant learning that useful responses tolerate.
+  Derive conditional loss probabilities and cumulative behavior from structural
+  assumptions before attempting detailed trajectories. Short-horizon forecasts
+  remain a numerical tool; whole-run success prediction remains later work.
 
 ## Evidence standards
 

@@ -5,6 +5,11 @@
 functional response operator and coefficient–feature dynamics. No failure rate,
 transition rate, or width exponent is fitted to training outcomes.
 
+The subsequent [general conditional model](power_law_competition.md) removes
+the initialization-distribution assumption from its forecast, using future
+exposure randomness at an arbitrary current state. It tests 24–32 associated
+power-law refinements. This chapter remains the restricted analytic case.
+
 The main result is an explicit law for a restricted but interpretable competition
 mechanism. Common learning moves randomly initialized features; geometry decides
 which stop responding to a refinement; width decides how often **all** such
@@ -25,12 +30,16 @@ On a fixed weighted panel, write
 
 \[
 K_m=bb^T+\frac1m\sum_j Z_j,\qquad
-B_{\tau,m}=K_m(K_m+\lambda I)^{-1},\quad \lambda=(2\tau)^{-1}.
+C_{\tau,m}=K_m(K_m+\lambda I)^{-1},\quad \lambda=(2\tau)^{-1}.
 \]
 
-Here b=P^(1/2)1 and Z_j is the existing PSD derivative block. Options remain
-eigenspaces of B. A fixed unit functional contrast d is **completely unavailable**
-when d^T B d=0, equivalently Kd=0. A positive value means some response, not that
+Here b=P^(1/2)1 and Z_j is the existing PSD derivative block. Eigenspaces of
+the response operator are capability modes. Options are nonzero spectral
+components of a declared residual, together with their available responses;
+their values include the residual loading. A fixed unit functional contrast d
+is a capability probe and is **completely unavailable**
+when d^T C d=0, equivalently Kd=0. This means option closure when that correction
+is still demanded; no demand means no current option. A positive value means some response, not that
 d lies entirely in range(K), and not that correction is fast enough. We derive
 this exact null event first, then a separate finite-strength bound.
 
@@ -170,7 +179,7 @@ exact-boundary exceptions have zero initialization probability at a fixed finite
 exposure. PSD additivity then gives
 
 \[
-d^TB_{\tau,m}d=0
+d^TC_{\tau,m}d=0
 \quad\Longleftrightarrow\quad
 \text{every block is inactive on both rare inputs}. \tag{5}
 \]
@@ -332,14 +341,14 @@ finite block variance v_s=E||Z(s)-EZ(s)||_F^2. Independence proves
 E||K_m-bar K||_F^2=v_s/m. The resolvent identity proves
 
 \[
-\|B(K_m)-B(\bar K_s)\|\le\frac{\|K_m-\bar K_s\|}{\lambda}.
+\|C(K_m)-C(\bar K_s)\|\le\frac{\|K_m-\bar K_s\|}{\lambda}.
 \]
 
-For a fixed unit d, let bar beta_s=d^T B(bar K_s)d. For any chosen
+For a fixed unit d, let bar beta_s=d^T C(bar K_s)d. For any chosen
 finite-response resolution 0<=beta_*<bar beta_s,
 
 \[
-\boxed{P\{d^TB_{\tau,m}d<\beta_*\}
+\boxed{P\{d^TC_{\tau,m}d<\beta_*\}
  \le \min\left(1,\frac{v_s}
  {m\lambda^2(\bar\beta_s-\beta_*)^2}\right).} \tag{16}
 \]
@@ -347,17 +356,17 @@ finite-response resolution 0<=beta_*<bar beta_s,
 This can be conservative at small widths. Its extra content relative to the old
 initialization bound is that both the mean and the variance are now determined
 **after competition**, without an assumed bound on learned pair correlations.
-It applies to any d, including coupled directions; replacing d^T B d by the
+It applies to any d, including coupled directions; replacing d^T C d by the
 scalar filter of d^T K d would generally be invalid. A response resolution is a
 declared diagnostic, not a new definition of an option or a loss guarantee.
 
 There is also an exact mean-response statement:
 
 \[
-\mathbb E B_{\tau,m+1}(s)\succeq\mathbb E B_{\tau,m}(s). \tag{17}
+\mathbb E C_{\tau,m+1}(s)\succeq\mathbb E C_{\tau,m}(s). \tag{17}
 \]
 
-Proof: B(K)=I-lambda(K+lambda I)^(-1) is operator concave. A sample mean of
+Proof: C(K)=I-lambda(K+lambda I)^(-1) is operator concave. A sample mean of
 m+1 blocks is the average of its m+1 leave-one-out means of size m. Apply operator
 Jensen and average over iid blocks. This does not imply monotonicity of every
 tail probability, and does not order independently trained networks at equal
@@ -553,6 +562,27 @@ trap mechanism. Remaining work is quantitative control of the exposure clock and
 rare-pressure perturbation in the maintained tasks, then prediction of recovered
 response strength over a correction budget. A fitted closure curve would not
 resolve those gaps.
+
+### 30 October: exploratory full-task validation
+
+The [new randomized pilot](../evidence/probabilistic_competition/natural_training_pilot_20261030/README.md)
+uses 2,048 paired Gaussian seed banks across 24 settings, with actual full-task
+gradient training from initialization. Initial-state forecasts integrate the
+common-only scalar clock before transporting features; no observed future clock
+or fitted closure coefficient enters the forecast. At scale .2, theta=pi/3,
+and q=.001, predicted/observed closed counts at time 20 are 20/20 at width 4
+and 0/0 at width 8; the finer step gives 21 narrow closures. Geometry-dependent
+net reopening is also recovered. These are finite-cohort tests of the
+clock-bridged approximation, not a new exact b(t)^m law.
+
+The approximation materially underestimates later closures when rare pressure
+is stronger. At q=.1 in the same geometry, the forecast is 20 closures versus
+42 observed at time 20 and 75 by time 200. All 42 states certified in the
+invariant trap at time 20 remain closed through time 200, with loss at least
+.05. The longer follow-up was selected after the initial pilot and is not
+independent confirmation. These results supply random-initialization natural
+training evidence for the mechanism and a useful weak-rare-pressure regime,
+while preserving the clock, perturbation, rare-tail, and broader-data gaps above.
 
 ## 9. Verification and relation to existing theory
 

@@ -1,0 +1,54 @@
+{
+  "output": "docs/evidence/power_law_competition/centered_confirmation",
+  "seeds": 6,
+  "seed_bank": 95100,
+  "samples": 64,
+  "checkpoints": [
+    0,
+    200,
+    2000
+  ],
+  "horizons": [
+    1,
+    4,
+    16
+  ],
+  "widths": [
+    50,
+    100
+  ],
+  "initializations": [
+    "small_gaussian",
+    "fanin_gaussian",
+    "fanin_uniform"
+  ],
+  "cases": [
+    "prototype",
+    "associated"
+  ],
+  "rate": 0.025,
+  "batch": 32,
+  "uncentered": false,
+  "factors": 24,
+  "alpha": 1.15,
+  "tau": 5,
+  "changes": [
+    0.05,
+    0.1,
+    0.25
+  ],
+  "availability_resolutions": [
+    0.05,
+    0.1,
+    0.25
+  ],
+  "block_size": 4,
+  "prediction": "Frozen-checkpoint force, exact multinomial aggregate exposure",
+  "uncertainty": "Independent forecast and validation batch streams; no fitted parameters",
+  "audit_measure": "Fixed balanced factor-intervention panel, not population risk",
+  "capacity": "Exact width 50 witness for both entire bounded task supports",
+  "sources": {
+    "run_power_law_competition.py": "01b9e86087c0a241454e34a4e78f466ccad5523ca5784187adaf05ccd0b43594",
+    "power_law_tasks.py": "f825e8633e917564f3b36ed72d404afebc9ca8e373548229dffca757549b1cde"
+  }
+}

@@ -14,9 +14,11 @@ qualifications in section 4 below.
 
 ## 1. The minimal continuation
 
-Keep functional options as eigenspaces of the budget-matched response operator.
-Add an explicit relationship between options through their **shared derivative
-implementations**, and evolve those implementations with the existing coupled
+Keep capability modes as eigenspaces of the budget-matched response operator.
+An option is the nonzero projection of a declared residual into one of these
+eigenspaces, considered together with its response; its value includes both
+strength and demand. Add an explicit relationship between corrections through
+their **shared derivative implementations**, and evolve those implementations with the existing coupled
 feature–coefficient dynamics. Do not introduce a conserved option count or an
 independent scalar law for each option.
 
@@ -83,7 +85,7 @@ Use weighted output coordinates F=P^(1/2)f and whitened parameters
 β=M^(−1/2)θ for constant M. Let D=∂F/∂β, K=DDᵀ, λ=1/(2τ), and
 
 \[
- B_\tau=K(K+\lambda I)^{-1},\qquad r(u)=D^Tu.
+ C_\tau=K(K+\lambda I)^{-1},\qquad r(u)=D^Tu.
 \]
 
 The implementation r(u) of a functional direction u is a vector in the same
@@ -100,7 +102,7 @@ It follows by differentiating DDᵀ, not by postulating competition coefficients
 The response transport is
 
 \[
- \boxed{\dot B_\tau[p]=\lambda(K+\lambda I)^{-1}\dot K[p]\,(K+\lambda I)^{-1}.}
+ \boxed{\dot C_\tau[p]=\lambda(K+\lambda I)^{-1}\dot K[p]\,(K+\lambda I)^{-1}.}
 \]
 
 Diagonal transport changes strength; off-diagonal transport changes orientation
@@ -110,16 +112,16 @@ mechanism is absent even when gradient overlap remains nonzero. For changing
 optimizer metrics or loss curvature, their already-established transport terms
 must also be retained; this study isolates constant metric and squared loss.
 
-ReLU gate changes require finite updates. From the same state, evaluate B₀,
-B_C, B_R, B_full after no update, common-only, refinement-only, and the summed
+ReLU gate changes require finite updates. From the same state, evaluate C₀,
+C_C, C_R, C_full after no update, common-only, refinement-only, and the summed
 update. The symmetric allocation
 
 \[
- \Delta_C=\tfrac12(B_C-B_0+B_{\rm full}-B_R),\quad
- \Delta_R=\tfrac12(B_R-B_0+B_{\rm full}-B_C)
+ \Delta_C=\tfrac12(C_C-C_0+C_{\rm full}-C_R),\quad
+ \Delta_R=\tfrac12(C_R-C_0+C_{\rm full}-C_C)
 \]
 
-sums exactly to B_full−B₀. It is a specified allocation of nonlinear interaction,
+sums exactly to C_full−C₀. It is a specified allocation of nonlinear interaction,
 not a unique attribution law. Our event audit additionally reports the direct
 common-only and refinement-only counterfactuals, so interpretation does not
 rely on this allocation convention.
@@ -168,7 +170,7 @@ On a short interval with approximately fixed residual and gates, put
 Thus a weak newly available route can amplify. A zero readout coefficient need
 not mean permanent absence: ȧ_j=〈e,h_j〉_P can recruit it. Conversely, if every
 available derivative is orthogonal to the residual, deterministic training has
-no first-order recruitment signal. Neither a frozen B nor its first derivative
+no first-order recruitment signal. Neither a frozen C nor its first derivative
 alone describes all delayed amplification. Fixed residual and gate assumptions
 must be checked before using this exponential as a quantitative forecast.
 
@@ -190,7 +192,7 @@ Therefore, for 0<δ<μ, Markov's inequality and the operator/Frobenius norm boun
 imply, with probability at least 1−σ²/(mδ²),
 
 \[
- B_{\tau,m}|_S\succeq
+ C_{\tau,m}|_S\succeq
  \frac{\mu-\delta}{\mu-\delta+\lambda}I_S.
 \]
 
@@ -236,12 +238,12 @@ recovery after closure are distinct joint probabilities. For example,
 P(A_T|A₀) splits into paths that never close and paths that close and recover.
 There is no assumed memoryless transition law. Our structural coverage audit
 uses Q_t=||Proj_range(D_t) d||² for a normalized task-refinement contrast d;
-finite availability uses dᵀB_τd. Q_t and dᵀB_τd must not be interchanged.
+finite availability uses dᵀC_τd. Q_t and dᵀC_τd must not be interchanged.
 
 ## 5. From response paths to finite-budget harm
 
 For weighted squared loss L=||e||²/2, gradient flow gives
-−L̇=eᵀKe. Define b_τ=eᵀB_τe/||e||²=V_τ/L. A useful scalar relation follows
+−L̇=eᵀKe. Define b_τ=eᵀC_τe/||e||²=V_τ/L. A useful scalar relation follows
 without following individual eigenvectors:
 
 \[
@@ -255,7 +257,7 @@ Proof: Cauchy–Schwarz gives
 1−b_τ=λeᵀ(K+λI)^(−1)e/||e||² and integrate the loss-rate identity.
 This relates residual-loaded finite response to accumulated progress while
 allowing rotations. It is an observed-path bound, not a forecast using the
-initial B. Euler GD requires the existing finite-update ledger remainder.
+initial C. Euler GD requires the existing finite-update ledger remainder.
 
 For descriptive plots we also report U_τ=L−V_τ, the demand not covered by the
 local discounted response, and its time average over [20,2000]. The sparse-grid
