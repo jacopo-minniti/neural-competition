@@ -5,8 +5,8 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 .ipynb_checkpoints/
-runs/
-data/
+/runs/
+/data/
 /output/
 /tmp/
 /neural_competition.pdf

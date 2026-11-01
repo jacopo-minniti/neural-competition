@@ -154,5 +154,5 @@ The plotter reads the maintained evidence directory. Theory tests check the
 protected-block invariant, the response lower bound, inversion of common
 functional progress, analytic gate-crossing exposures, the joint last-alternative
 law against actual spectral null events, and the exact capacity
-witness. The earlier [broader-task evidence](../power_law_competition/README.md),
+witness. The earlier [broader-task evidence](../../../archive/docs/evidence/power_law_competition/README.md),
 including response creation and frequent reopening, is retained unchanged.

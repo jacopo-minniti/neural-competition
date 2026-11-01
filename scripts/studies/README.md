@@ -1,19 +1,18 @@
-# Maintained study pipelines
+# Protection-model studies
 
-| Family | Principal producer | Analyzer |
-|---|---|---|
-| Spectral foundation | `explore_gd_option_dynamics.py` | `plot_gd_option_dynamics.py` |
-| Local response | `forecast_response_feedback.py` | `analyze_response_feedback.py` |
-| Finite-budget causality | `probe_causal_response.py` | `analyze_causal_response.py` |
-| Delayed demand | `probe_delayed_option_recovery.py` | `analyze_delayed_option_recovery.py` |
-| Heterogeneous toys | `run_toy_resource_competition.py` | `analyze_toy_resource_competition.py` |
-| Refinement hierarchies | `run_refinement_hierarchy.py` | compact records under `docs/evidence/refinement_hierarchies/` |
-| Learning ledger | `trace_observed_learning.py` | `analyze_observed_learning.py` |
-| Analytic probability law | `probabilistic_option_transport.py` | `audit_probabilistic_option_transport.py` |
-| Probability model under full-task training | `probe_probabilistic_natural_training.py` | `analyze_probabilistic_natural_training.py` |
-| Many power-law refinements | `run_power_law_competition.py` | `analyze_power_law_competition.py` |
-| Power-law causal pressure | `probe_power_law_pressure.py` | `audit_power_law_pressure_steps.py` |
-| Current reserve and common-learning tolerance | `run_competition_reserve.py` | `analyze_competition_reserve.py` |
-| Reserve closure and illustrative loss curves | `probe_reserve_learning_curves.py` | same script; retained forecast and outcome records |
+Run scripts from the repository root; producers that save protocols require a
+new output directory. Use `--help` for the exact options.
 
-Supporting audit and intervention scripts remain beside these entry points.
+- `competition_reserve.py`: protected response, dominant-flow transport,
+  completion curves, and gradient-direction diagnostics.
+- `run_competition_reserve.py`, `analyze_competition_reserve.py`, and
+  `plot_competition_reserve.py`: reserve confirmation and summary.
+- `probe_reserve_learning_curves.py`: the selected three-pattern example in
+  the report. Its measured loss curves are not full loss predictions.
+- `reserve_bridge.py`, `run_reserve_bridge.py`, and `analyze_reserve_bridge.py`:
+  the co-occurring-factor study and analysis.
+- `run_natural_parity.py` and `analyze_natural_parity.py`: the parity study.
+
+See [reproduction](../../docs/reproduction.md) for the validation commands and
+[evidence](../../docs/README.md) for retained protocols, forecasts and results.
+The [archive](../../archive/README.md) contains earlier alternative pipelines.

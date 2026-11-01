@@ -41,7 +41,7 @@ def main():
                     target="Capability and vulnerable task mass after specified common prediction gain",
                     fitted_parameters=0, sources={})
     (out / "sources").mkdir(exist_ok=True)
-    for name in [Path(__file__).name, "competition_reserve.py", "probabilistic_option_transport.py"]:
+    for name in [Path(__file__).name, "competition_reserve.py"]:
         source = Path(__file__).with_name(name).read_bytes()
         protocol["sources"][name] = hashlib.sha256(source).hexdigest()
         (out / "sources" / name).write_bytes(source)

@@ -1,8 +1,6 @@
 # Reproduction
 
-Run from the repository root.
-
-## Validate the maintained repository
+Run from the repository root:
 
 ```sh
 .venv/bin/python scripts/check_repository.py
@@ -10,30 +8,22 @@ Run from the repository root.
 .venv/bin/ruff check src scripts tests
 ```
 
-## Regenerate compact analyses
+The active producers and analyzers are listed in
+[study scripts](../scripts/studies/README.md). The retained
+[reserve](evidence/competition_reserve/README.md),
+[bridge](evidence/reserve_bridge/README.md), and
+[parity](evidence/natural_parity/README.md) evidence describe their protocols
+and commands. Use fresh output directories: several producers deliberately
+refuse to overwrite an existing protocol.
 
-The retained evidence directories contain aggregate records but not all raw
-inputs. Full regeneration therefore starts with a fresh output directory using
-the corresponding producer, followed by its analyzer. Producers refuse to
-overwrite existing protocols.
+The main studies retain their compact analyses and, for reserve and the bridge,
+their recorded forecasts, outcomes and historical source snapshots. The
+parity analysis and local raw outcomes are retained; the producer can regenerate
+its results. The selected learning-curve record retains the initial state,
+forecast, and measured outcomes. Historical sources document what was executed;
+the active source is maintained separately.
 
-Principal entry points:
-
-```sh
-# Heterogeneous toy tasks and causal resource probes
-.venv/bin/python scripts/studies/run_toy_resource_competition.py --help
-
-# N-refinement frequency hierarchies
-.venv/bin/python scripts/studies/run_refinement_hierarchy.py --help
-
-# Delayed-demand recovery study
-.venv/bin/python scripts/studies/probe_delayed_option_recovery.py --help
-
-# MNIST local response and finite-budget causal probes
-.venv/bin/python scripts/studies/train_response_checkpoints.py --help
-.venv/bin/python scripts/studies/probe_causal_response.py --help
-```
-
-Exact historical commands and source snapshots are recorded in the evidence
-READMEs and protocols. To inspect the complete pre-curation workspace, use a
-separate checkout of commit `92b7904`.
+Large raw simulation arrays and ignored run directories from secondary studies
+were removed during cleanup. Their summaries, protocols, and earlier code are
+in [the archive](../archive/README.md). Tracked historical arrays remain in Git
+history; ignored local runs can be regenerated but were not Git-tracked.

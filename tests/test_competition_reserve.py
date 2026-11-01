@@ -9,12 +9,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts/studies"))
 from competition_reserve import (  # noqa: E402
     capability,
     common_flow,
+    detect_dominant_episode,
     directional_lifetimes,
     exposure_for_gain,
     forward,
     head_prediction,
+    online_reserve,
     protected_reserve,
     task,
+    vector_flow,
     velocity,
 )
 
@@ -99,3 +102,50 @@ def test_last_alternative_law_matches_joint_functional_null_events():
     assert np.all(np.isinf(directional_lifetimes(
         protected_state, meta["directions"], meta["theta"]).max(axis=0)))
     assert np.all(capability(common_flow(protected_state, 3.), audit) > 1e-8)
+
+
+def test_vector_transport_and_flow_generalizes_common_flow():
+    rng = np.random.default_rng(601)
+    d = 8
+    w = 0.2 * rng.normal(size=(4, d))
+    a = 0.2 * rng.normal(size=4)
+    state = (w, a, 0.5)
+    u_canonical = np.zeros(d)
+    u_canonical[0] = 1.0
+
+    for exposure in [0.0, 0.2, 1.0, 2.5]:
+        st_common = common_flow(state, exposure)
+        st_vector = vector_flow(state, u_canonical, exposure, norm_x=1.0)
+        np.testing.assert_allclose(st_vector[0], st_common[0], atol=1e-12)
+        np.testing.assert_allclose(st_vector[1], st_common[1], atol=1e-12)
+        np.testing.assert_allclose(st_vector[2], st_common[2], atol=1e-12)
+
+
+def test_detect_dominant_episode_recovers_known_head():
+    train, _, _, _ = task(701, spread=0.0)
+    rng = np.random.default_rng(702)
+    state = (0.2 * rng.normal(size=(8, train["x"].shape[1])),
+             0.2 * rng.normal(size=8), 0.0)
+    u_det, coherence, strength, scale = detect_dominant_episode(state, train["x"], train["y"], train["p"])
+    assert coherence > 0.8
+    assert strength > 0.0
+    assert scale > 0.5
+    # The true head direction in task() is e_0
+    assert abs(u_det[0]) > 0.95
+
+
+def test_online_reserve_matches_reserve_under_canonical_direction():
+    train, _, audit, _ = task(801)
+    rng = np.random.default_rng(802)
+    state = (0.2 * rng.normal(size=(4, train["x"].shape[1])),
+             0.2 * rng.normal(size=4), 0.0)
+    u_canonical = np.zeros(train["x"].shape[1])
+    u_canonical[0] = 1.0
+
+    for gain in [0.2, 1.0]:
+        beta_old, exp_old = online_reserve(state, audit, u_canonical, gain, norm_x=1.0)
+        # Verify exposure and capability match reserve()
+        beta_ref = exposure_for_gain(state, gain)
+        st_flow = common_flow(state, beta_ref)
+        np.testing.assert_allclose(exp_old, beta_ref, atol=1e-10)
+        np.testing.assert_allclose(beta_old, capability(st_flow, audit), atol=1e-10)

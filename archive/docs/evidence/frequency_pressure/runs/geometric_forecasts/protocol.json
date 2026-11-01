@@ -1,0 +1,88 @@
+{
+  "run": "runs/parity_pressure/geometric",
+  "output": "runs/parity_pressure/geometric_forecasts",
+  "seeds": 4,
+  "widths": [
+    8,
+    32
+  ],
+  "steps": [
+    10000
+  ],
+  "horizons": [
+    1,
+    10,
+    100,
+    1000
+  ],
+  "particles": 64,
+  "seed_bank": 1357100,
+  "training": {
+    "output": "runs/parity_pressure/geometric",
+    "seeds": 32,
+    "seed_bank": 731100,
+    "steps": 20000,
+    "widths": [
+      8,
+      16,
+      32
+    ],
+    "features": 8,
+    "alpha": 1.0,
+    "maximum": 0.4,
+    "profile": "geometric",
+    "encoding": "raw",
+    "initialization": "gaussian",
+    "scale": 0.3,
+    "rate": 0.05,
+    "batch": 128,
+    "stride": 100,
+    "diagnostic_seeds": 0,
+    "diagnostic_steps": [
+      0,
+      10000,
+      20000
+    ],
+    "forecast_steps": [
+      999999
+    ],
+    "horizons": [
+      1,
+      10,
+      100,
+      1000
+    ],
+    "response_steps": 1000,
+    "q": [
+      0.4,
+      0.29719885782738964,
+      0.22081790273476248,
+      0.16406707120152758,
+      0.12190136542044754,
+      0.09057236642639063,
+      0.06729500963161782,
+      0.05
+    ],
+    "expected_activity": 1.4118525732421356,
+    "positive_label_probability": 0.4926615019031413,
+    "architecture": "c + mean_j a_j ReLU(w_j @ [x,1])",
+    "optimizer": "ordinary minibatch gradient descent; M_w=M_a=m, M_c=1",
+    "updates": "all parameters, all steps, fixed product distribution, no interventions",
+    "response_tau": 50.0,
+    "pressure_allocation": "mean plus equal shares of ANOVA interactions to participants",
+    "exploratory": true,
+    "sources": {
+      "run_frequency_pressure.py": "427ddca5bc0999d4b0037d89cfbe3910e22c3f10e7ed7ef7bf93c60f524b046b",
+      "frequency_pressure.py": "bb814c56d7924803162a09eb7b12798cbfc5b7c359f951dfd552e852fffd2f64",
+      "parity.py": "30a2542975b9632cf55c41e32aec8ff993862a49958abf82c8cab749cda937c1"
+    }
+  },
+  "forecast": "state-dependent moment-matched Gaussian gradient noise; all gates refreshed",
+  "validation": "independent ordinary SGD minibatches, all parameters updated",
+  "weakening": "fixed initial residual kernel response falls by at least 10%",
+  "independence": "future prediction/validation RNGs independent; states clustered by seed",
+  "sources": {
+    "probe_frequency_pressure.py": "50fdfbb80d07989cbfcb92b921139654b89e6914835af3ddbbf4ec448b47a2fe",
+    "frequency_pressure.py": "4f22da39461d49ec44c65eeae9031932b6d4e304fc39a5a8b4a9301a72ecfa5d"
+  }
+}

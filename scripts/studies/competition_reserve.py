@@ -7,7 +7,28 @@ Single-prototype common transport is exact, including common-gate absorption.
 from __future__ import annotations
 
 import numpy as np
-from probabilistic_option_transport import transport
+
+
+def transport(w, a, exposure):
+    """Flow under one unit-norm common input (the first coordinate).
+
+    Use the absorbing zero-subgradient solution at a common-gate hit.
+    Other coordinates stay fixed. Arrays can have any leading batch shape.
+    """
+    if exposure < 0:
+        raise ValueError("Exposure must be nonnegative.")
+    w, a = np.asarray(w, dtype=float), np.asarray(a, dtype=float)
+    out_w, out_a = w.copy(), a.copy()
+    active = w[..., 0] > 0
+    along = w[..., 0] * np.cosh(exposure) + a * np.sinh(exposure)
+    readout = a * np.cosh(exposure) + w[..., 0] * np.sinh(exposure)
+    hit = active & (along <= 0)
+    out_w[..., 0] = np.where(active, np.maximum(along, 0), w[..., 0])
+    out_a[...] = np.where(active, readout, a)
+    out_a[...] = np.where(hit, -np.sqrt(np.maximum(a * a - w[..., 0] ** 2, 0)), out_a)
+    return out_w, out_a
+
+
 
 
 def forward(state, x):
@@ -207,3 +228,124 @@ def learn_to_gain(state, train, gain, rate=.01, max_steps=10000, common_only=Fal
                                 integrated_other_to_common=length_rest / max(length_common, 1e-30))
     return result, dict(completed=False, steps=max_steps, elapsed=elapsed,
                         integrated_other_to_common=length_rest / max(length_common, 1e-30))
+
+
+def vector_transport(w, a, u, exposure):
+    """Exact hyperbolic transport along an arbitrary unit vector u in input space.
+
+    Decomposes incoming weights into parallel and orthogonal components relative to u.
+    Parallel components and readouts follow the exact 2D hyperbolic flow with
+    ReLU gate absorption when along <= 0.
+    Orthogonal components remain strictly invariant.
+    """
+    if exposure < 0:
+        raise ValueError("Exposure must be nonnegative.")
+    u = np.asarray(u, dtype=float)
+    norm = np.linalg.norm(u)
+    if norm < 1e-12:
+        raise ValueError("Direction u must have positive norm.")
+    u = u / norm
+    w, a = np.asarray(w, dtype=float), np.asarray(a, dtype=float)
+    w_along = w @ u
+    w_perp = w - w_along[..., None] * u
+    active = w_along > 0
+    along = w_along * np.cosh(exposure) + a * np.sinh(exposure)
+    readout = a * np.cosh(exposure) + w_along * np.sinh(exposure)
+    hit = active & (along <= 0)
+    new_along = np.where(active, np.maximum(along, 0), w_along)
+    new_a = np.where(active, readout, a)
+    new_a = np.where(hit, -np.sqrt(np.maximum(a**2 - w_along**2, 0)), new_a)
+    new_w = w_perp + new_along[..., None] * u
+    return new_w, new_a
+
+
+def vector_flow(state, u, exposure, norm_x=1.0):
+    """Full network state flow under dominant pressure along unit vector u."""
+    w, a = vector_transport(state[0], state[1], u, exposure)
+    return w, a, state[2] + exposure / norm_x
+
+
+def directional_prediction(state, u, norm_x=1.0):
+    """Network output along direction norm_x * u."""
+    w, a, c = state
+    u = np.asarray(u, dtype=float)
+    u = u / np.linalg.norm(u)
+    return float(c + norm_x * np.mean(a * np.maximum(w @ u, 0)))
+
+
+def vector_exposure_for_gain(state, u, gain, norm_x=1.0):
+    """Invert the monotone response along direction u for a given gain."""
+    if gain < 0:
+        raise ValueError("gain must be nonnegative.")
+    if gain == 0:
+        return 0.0
+    u = np.asarray(u, dtype=float)
+    u = u / np.linalg.norm(u)
+    target = directional_prediction(state, u, norm_x) + gain
+    low, high = 0.0, max(gain * norm_x, 1.0)
+    while directional_prediction(vector_flow(state, u, high, norm_x), u, norm_x) < target:
+        high *= 2.0
+    for _ in range(60):
+        mid = (low + high) / 2
+        if directional_prediction(vector_flow(state, u, mid, norm_x), u, norm_x) < target:
+            low = mid
+        else:
+            high = mid
+    return (low + high) / 2
+
+
+def detect_dominant_episode(state, x, y, p=None):
+    """Detect dominant pressure direction, coherence, and scale from gradient covariance/SVD.
+
+    Uses the singular value decomposition of the incoming layer gradient matrix G_W
+    (the uncentered parameter gradient covariance across neurons).
+
+    Returns:
+        direction (np.ndarray): Unit vector u in input space along the dominant gradient axis.
+        coherence (float): Ratio of dominant eigenvalue energy sigma_1^2 / sum(sigma_i^2) in [0, 1].
+        strength (float): Dominant singular value sigma_1.
+        scale (float): Characteristic input projection scale ell along u.
+    """
+    w, a, c = state
+    x = np.asarray(x, dtype=float)
+    y = np.asarray(y, dtype=float)
+    if p is None:
+        p = np.full(len(x), 1.0 / len(x))
+    else:
+        p = np.asarray(p, dtype=float)
+
+    pre = w @ x.T
+    f = c + np.mean(a[:, None] * np.maximum(pre, 0), axis=0)
+    e = y - f
+    pe = p * e
+
+    # Incoming weight gradient matrix G_W of shape (width, input_dim)
+    # G_W[j] = a[j] * sum_k p_k * e_k * 1{w_j^T x_k > 0} * x_k
+    gw = a[:, None] * (((pre > 0) * pe) @ x)
+
+    # SVD of G_W: dominant right singular vector is the input-space direction
+    # that maximizes total squared update across neurons in the layer
+    _, s, vt = np.linalg.svd(gw, full_matrices=False)
+    u = vt[0]
+
+    # Coherence ratio: fraction of gradient variance along the dominant axis
+    total_energy = np.sum(s**2)
+    coherence = float(s[0]**2 / max(total_energy, 1e-30))
+
+    # Orient u so that positive residual pressure corresponds to u^T x > 0
+    # i.e., sum_k p_k * e_k * (x_k^T u) > 0
+    pressure_projection = float(np.sum(pe * (x @ u)))
+    if pressure_projection < 0:
+        u = -u
+
+    # Characteristic scale ell: root-mean-square projection of inputs weighted by squared residual
+    scale = float(np.sqrt(np.sum(pe**2 * ((x @ u)**2)) / max(np.sum(pe**2), 1e-30)))
+
+    return u, coherence, float(s[0]), max(scale, 1e-12)
+
+
+def online_reserve(state, audit, u, gain, norm_x=1.0, tau=20.):
+    """Predict capability reserve along detected direction u for a given gain."""
+    exposure = vector_exposure_for_gain(state, u, gain, norm_x)
+    flow_state = vector_flow(state, u, exposure, norm_x)
+    return capability(flow_state, audit, tau), exposure

@@ -1,0 +1,48 @@
+{
+  "output": "runs/reserve_bridge/association_transfer",
+  "seeds": 128,
+  "seed_bank": 190731,
+  "rate": 0.01,
+  "followup_steps": 0,
+  "settings": [
+    "associated_factors",
+    "associated_more_pressure"
+  ],
+  "settings_spec": [
+    {
+      "name": "associated_factors",
+      "mass": 0.04,
+      "cooccurrence": 1.0,
+      "spread": 0.0,
+      "gamma": 1.5,
+      "association": 1.0
+    },
+    {
+      "name": "associated_more_pressure",
+      "mass": 0.15,
+      "cooccurrence": 1.0,
+      "spread": 0.0,
+      "gamma": 1.5,
+      "association": 1.0
+    }
+  ],
+  "widths": [
+    4,
+    8,
+    16
+  ],
+  "factors": 4,
+  "target": "unchanged global 4 ReLU(x0) + linear attribute",
+  "primary": "half-response loss over two successive half-completion phases",
+  "primary_audit": "unchanged uniform single-factor prototype panel",
+  "secondary": "population factor corrections and exact missing-factor loss floor",
+  "optimizer": "full objective GD, M_w=M_a=m; no frozen parameters or gates",
+  "prediction": "unchanged analytic common-completion reserve; no fitted parameters",
+  "phase_endpoint": "first ordinary step crossing half remaining head correction",
+  "sources": {
+    "run_reserve_bridge.py": "494132da3d01ac4c334d42af84105938c8238848ba593ba51035e1200dff3636",
+    "reserve_bridge.py": "01a87536a6ccd6fce66736b37a2a8350ba60c4406830b983891d05c86ced98ad",
+    "competition_reserve.py": "a3a02cb9d7df0a3da42f2da54ed2146832deb00e0ac57f4fa63f1a1ce6b7fc6f",
+    "probabilistic_option_transport.py": "2052a5ebdccce5a02a74de4a6a504cd0d908a5521ca5bdf941a521f78c188853"
+  }
+}

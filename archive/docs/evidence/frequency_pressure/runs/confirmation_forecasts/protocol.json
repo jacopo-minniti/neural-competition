@@ -1,0 +1,104 @@
+{
+  "run": "runs/parity_pressure/confirmation",
+  "output": "runs/parity_pressure/confirmation_forecasts",
+  "seeds": 8,
+  "widths": [
+    8,
+    32
+  ],
+  "steps": [
+    2000,
+    6000,
+    10000
+  ],
+  "horizons": [
+    1,
+    10,
+    100,
+    1000
+  ],
+  "particles": 128,
+  "seed_bank": 1057100,
+  "training": {
+    "output": "runs/parity_pressure/confirmation",
+    "seeds": 32,
+    "seed_bank": 841100,
+    "steps": 20000,
+    "widths": [
+      8,
+      16,
+      32
+    ],
+    "features": 8,
+    "alpha": 1.0,
+    "maximum": 0.4,
+    "profile": "power",
+    "encoding": "raw",
+    "initialization": "gaussian",
+    "scale": 0.3,
+    "rate": 0.05,
+    "batch": 128,
+    "stride": 100,
+    "diagnostic_seeds": 16,
+    "diagnostic_steps": [
+      0,
+      100,
+      500,
+      1000,
+      2000,
+      4000,
+      6000,
+      10000,
+      20000
+    ],
+    "forecast_steps": [
+      500,
+      2000,
+      6000,
+      10000
+    ],
+    "horizons": [
+      1,
+      10,
+      100,
+      1000
+    ],
+    "response_steps": 1000,
+    "cohort": "confirmation",
+    "q": [
+      0.4,
+      0.2,
+      0.13333333333333333,
+      0.1,
+      0.08000000000000002,
+      0.06666666666666667,
+      0.05714285714285714,
+      0.05
+    ],
+    "expected_activity": 1.0871428571428572,
+    "positive_label_probability": 0.47957273599999994,
+    "architecture": "c + mean_j a_j ReLU(w_j @ [x,1])",
+    "optimizer": "ordinary minibatch gradient descent; M_w=M_a=m, M_c=1",
+    "updates": "all parameters, all steps, fixed product distribution, no interventions",
+    "response_tau": 50.0,
+    "pressure_allocation": "mean plus equal shares of ANOVA interactions to participants",
+    "exploratory": false,
+    "primary_comparison": "paired width 8 minus width 32 population loss at step 20000",
+    "primary_transport": "negative off-diagonal factor-to-singleton response share at step 10000",
+    "weakening_relative_threshold": 0.1,
+    "demand_energy_fraction": 0.001,
+    "sources": {
+      "run_frequency_pressure.py": "172c48e1cbbf5b2e82b256fcabb3476bce105fb1d7e30d54db6aa30bb69c2d34",
+      "frequency_pressure.py": "b13c92466a68fd205e7a6965c2edc7ad9229a2f8a21a49c1010970f54024d484",
+      "parity.py": "30a2542975b9632cf55c41e32aec8ff993862a49958abf82c8cab749cda937c1"
+    }
+  },
+  "forecast": "state-dependent moment-matched Gaussian gradient noise; all gates refreshed",
+  "validation": "independent ordinary SGD minibatches, all parameters updated",
+  "weakening": "fixed initial residual kernel response falls by at least 10%",
+  "independence": "future prediction/validation RNGs independent; states clustered by seed",
+  "sources": {
+    "probe_frequency_pressure.py": "50fdfbb80d07989cbfcb92b921139654b89e6914835af3ddbbf4ec448b47a2fe",
+    "frequency_pressure.py": "b13c92466a68fd205e7a6965c2edc7ad9229a2f8a21a49c1010970f54024d484"
+  }
+}

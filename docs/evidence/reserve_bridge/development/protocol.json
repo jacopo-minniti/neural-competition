@@ -1,0 +1,86 @@
+{
+  "output": "runs/reserve_bridge/development",
+  "seeds": 64,
+  "seed_bank": 170731,
+  "rate": 0.01,
+  "followup_steps": 2000,
+  "settings": [
+    "anchor",
+    "cooccurrence",
+    "more_other_pressure",
+    "boundary_30",
+    "boundary_60",
+    "bounded_observations",
+    "remove_opposition"
+  ],
+  "settings_spec": [
+    {
+      "name": "anchor",
+      "mass": 0.04,
+      "cooccurrence": 0.0,
+      "spread": 0.0,
+      "gamma": 1.5
+    },
+    {
+      "name": "cooccurrence",
+      "mass": 0.04,
+      "cooccurrence": 1.0,
+      "spread": 0.0,
+      "gamma": 1.5
+    },
+    {
+      "name": "more_other_pressure",
+      "mass": 0.15,
+      "cooccurrence": 1.0,
+      "spread": 0.0,
+      "gamma": 1.5
+    },
+    {
+      "name": "boundary_30",
+      "mass": 0.3,
+      "cooccurrence": 1.0,
+      "spread": 0.0,
+      "gamma": 1.5
+    },
+    {
+      "name": "boundary_60",
+      "mass": 0.6,
+      "cooccurrence": 1.0,
+      "spread": 0.0,
+      "gamma": 1.5
+    },
+    {
+      "name": "bounded_observations",
+      "mass": 0.04,
+      "cooccurrence": 1.0,
+      "spread": 0.1,
+      "gamma": 1.5
+    },
+    {
+      "name": "remove_opposition",
+      "mass": 0.04,
+      "cooccurrence": 1.0,
+      "spread": 0.0,
+      "gamma": 1.0
+    }
+  ],
+  "widths": [
+    4,
+    8,
+    16
+  ],
+  "factors": 4,
+  "target": "unchanged global 4 ReLU(x0) + linear attribute",
+  "primary": "half-response loss over two successive half-completion phases",
+  "primary_audit": "unchanged uniform single-factor prototype panel",
+  "secondary": "population factor corrections and exact missing-factor loss floor",
+  "optimizer": "full objective GD, M_w=M_a=m; no frozen parameters or gates",
+  "prediction": "unchanged analytic common-completion reserve; no fitted parameters",
+  "phase_endpoint": "first ordinary step crossing half remaining head correction",
+  "sources": {
+    "run_reserve_bridge.py": "9a8eb9b66579086b696477fb0599893ad7502b41dbda8e6843fa447082f4595d",
+    "reserve_bridge.py": "6c9e74b4655af16ecfd37e3017ad88b748a4a6e25c7529de7a4983bd65258d0a",
+    "competition_reserve.py": "a3a02cb9d7df0a3da42f2da54ed2146832deb00e0ac57f4fa63f1a1ce6b7fc6f",
+    "probabilistic_option_transport.py": "2052a5ebdccce5a02a74de4a6a504cd0d908a5521ca5bdf941a521f78c188853"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "output": "runs/parity_pressure/uniform_init",
+  "seeds": 32,
+  "seed_bank": 731100,
+  "steps": 20000,
+  "widths": [
+    8,
+    16,
+    32
+  ],
+  "features": 8,
+  "alpha": 1.0,
+  "maximum": 0.4,
+  "profile": "power",
+  "encoding": "raw",
+  "initialization": "uniform",
+  "scale": 0.3,
+  "rate": 0.05,
+  "batch": 128,
+  "stride": 100,
+  "diagnostic_seeds": 0,
+  "diagnostic_steps": [
+    0,
+    10000,
+    20000
+  ],
+  "forecast_steps": [
+    999999
+  ],
+  "horizons": [
+    1,
+    10,
+    100,
+    1000
+  ],
+  "response_steps": 1000,
+  "q": [
+    0.4,
+    0.2,
+    0.13333333333333333,
+    0.1,
+    0.08000000000000002,
+    0.06666666666666667,
+    0.05714285714285714,
+    0.05
+  ],
+  "expected_activity": 1.0871428571428572,
+  "positive_label_probability": 0.47957273599999994,
+  "architecture": "c + mean_j a_j ReLU(w_j @ [x,1])",
+  "optimizer": "ordinary minibatch gradient descent; M_w=M_a=m, M_c=1",
+  "updates": "all parameters, all steps, fixed product distribution, no interventions",
+  "response_tau": 50.0,
+  "pressure_allocation": "mean plus equal shares of ANOVA interactions to participants",
+  "exploratory": true,
+  "sources": {
+    "run_frequency_pressure.py": "427ddca5bc0999d4b0037d89cfbe3910e22c3f10e7ed7ef7bf93c60f524b046b",
+    "frequency_pressure.py": "bb814c56d7924803162a09eb7b12798cbfc5b7c359f951dfd552e852fffd2f64",
+    "parity.py": "30a2542975b9632cf55c41e32aec8ff993862a49958abf82c8cab749cda937c1"
+  }
+}

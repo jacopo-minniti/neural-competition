@@ -346,7 +346,7 @@ counts of semantic concepts. The wider model has greater breadth initially and
 later. Total strength is nearly equal at the final checkpoint, so a mass-only
 interpretation would miss the width difference.
 
-![GD-derived response spectra and local loss checks](../evidence/gd_options/summary.png)
+![GD-derived response spectra and local loss checks](../../archive/docs/evidence/gd_options/summary.png)
 
 A shorter-horizon follow-up checks that this contrast is not peculiar to
 \(\tau=1\). For the first seed at \(\tau=.025\), width-32 breadth changes

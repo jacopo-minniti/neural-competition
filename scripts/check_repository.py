@@ -11,10 +11,12 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
-    documents = [ROOT / "README.md", ROOT / "OBJECTIVE.md"]
+    documents = [ROOT / "README.md", ROOT / "OBJECTIVES.md"]
     documents.extend((ROOT / "docs").rglob("*.md"))
     documents.extend((ROOT / "scripts").rglob("*.md"))
     documents.extend((ROOT / "tests").rglob("*.md"))
+    documents.extend((ROOT / "archive").rglob("*.md"))
+    documents.extend((ROOT / "figures").rglob("*.md"))
 
     errors = []
     links = 0
@@ -31,12 +33,12 @@ def main():
                 errors.append(f"{document.relative_to(ROOT)}: missing link {target}")
 
     required = [
-        "docs/evidence/gd_options/results.json",
-        "docs/evidence/response_feedback/analysis.json",
-        "docs/evidence/causal_response/analysis.json",
-        "docs/evidence/option_transport_resilience/analysis.json",
-        "docs/evidence/toy_resource_competition/summary.json",
-        "docs/evidence/refinement_hierarchies/summary.json",
+        "report.tex",
+        "figures/learning_and_reserve.png",
+        "docs/evidence/competition_reserve/summary.json",
+        "docs/evidence/competition_reserve/learning_curve_example_20261030/forecast.json",
+        "docs/evidence/reserve_bridge/analysis.json",
+        "docs/evidence/natural_parity/analysis.json",
     ]
     for relative in required:
         if not (ROOT / relative).is_file():

@@ -21,10 +21,61 @@ from competition_reserve import (
     head_prediction,
     protected_reserve,
 )
-from probe_probabilistic_natural_training import fields, measure
 
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt  # noqa: E402
+
+
+def fields(w, a, c, angle, q, common_only=False):
+    cosine, sine = np.cos(angle), np.sin(angle)
+    pre = np.stack(
+        [w[..., 0], -cosine * w[..., 0] + sine * w[..., 1],
+         -cosine * w[..., 0] - sine * w[..., 1]], axis=-1
+    )
+    activation = np.maximum(pre, 0)
+    residual = np.array([4.0, 1.0, -1.0]) - c[..., None] - np.mean(
+        a[..., None] * activation, axis=-2
+    )
+    pressure = residual * np.array([1 - q, q / 2, q / 2])
+    if common_only:
+        pressure[..., 1:] = 0
+    gated = (pre > 0) * pressure[..., None, :]
+    dw = np.stack(
+        [a * (gated[..., 0] - cosine * (gated[..., 1] + gated[..., 2])),
+         a * sine * (gated[..., 1] - gated[..., 2])], axis=-1
+    )
+    da = np.sum(activation * pressure[..., None, :], axis=-1)
+    return dw, da, pressure.sum(-1), residual, pre
+
+
+def measure(w, a, c, angle, q, tau=20.0):
+    _, _, _, residual, pre = fields(w, a, c, angle, q)
+    x = np.array([[1.0, 0.0], [-np.cos(angle), np.sin(angle)],
+                  [-np.cos(angle), -np.sin(angle)]])
+    root = np.sqrt([1 - q, q / 2, q / 2])
+    h, ga = np.maximum(pre, 0), (pre > 0) * a[..., None]
+    kernel = (
+        np.swapaxes(h, -1, -2) @ h
+        + (np.swapaxes(ga, -1, -2) @ ga) * (x @ x.T)
+    ) / a.shape[-1] + 1
+    kernel *= root[:, None] * root[None, :]
+    eigenvalue, eigenvector = np.linalg.eigh(kernel)
+    direction = np.array([0.0, 1.0, -1.0]) / np.sqrt(2)
+    loading = (np.swapaxes(eigenvector, -1, -2) @ direction) ** 2
+    eigenvalue = np.maximum(eigenvalue, 0)
+    strength = np.sum(loading * eigenvalue / (eigenvalue + .5 / tau), axis=-1)
+    blind = np.all(pre[..., 1:] <= 0, axis=(-2, -1))
+    margin = -np.max(pre[..., 1:], axis=(-2, -1))
+    trap = (blind & np.all(w[..., 0] > 0, axis=-1)
+            & np.all(a >= 0, axis=-1) & (c >= 0) & (residual[..., 0] >= 0))
+    return dict(
+        response=strength, blind=blind, trap=trap, rare_inactive_margin=margin,
+        loss=.5 * np.sum(residual ** 2 * root ** 2, axis=-1),
+        rare_loss=.25 * np.sum(residual[..., 1:] ** 2, axis=-1),
+        contrast_gap=np.abs((residual[..., 1] - residual[..., 2]) / 2),
+        common_residual=residual[..., 0],
+    )
+
 
 
 def setup(angle, q):

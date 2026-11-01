@@ -1,0 +1,933 @@
+{
+  "protocol": {
+    "output": "runs/natural_parity",
+    "seed_bank": 50731,
+    "rate": 0.01,
+    "followup_steps": 2500,
+    "widths": [
+      4,
+      8,
+      16,
+      32
+    ],
+    "settings": [
+      {
+        "name": "primary_d4",
+        "factors": 4,
+        "alpha": 1.15,
+        "q0": 0.35,
+        "standardized": true,
+        "bipolar": true,
+        "seeds": 128
+      },
+      {
+        "name": "dimension_d6",
+        "factors": 6,
+        "alpha": 1.15,
+        "q0": 0.35,
+        "standardized": true,
+        "bipolar": true,
+        "seeds": 64
+      },
+      {
+        "name": "flatter_alpha05",
+        "factors": 4,
+        "alpha": 0.5,
+        "q0": 0.35,
+        "standardized": true,
+        "bipolar": true,
+        "seeds": 64
+      },
+      {
+        "name": "uncentered_control",
+        "factors": 4,
+        "alpha": 1.15,
+        "q0": 0.35,
+        "standardized": false,
+        "bipolar": true,
+        "seeds": 64
+      },
+      {
+        "name": "zero_label_control",
+        "factors": 4,
+        "alpha": 1.15,
+        "q0": 0.35,
+        "standardized": true,
+        "bipolar": false,
+        "seeds": 64
+      }
+    ]
+  },
+  "summaries": {
+    "dimension_d6": {
+      "4": {
+        "seeds": 64,
+        "factors": 6,
+        "coherence": {
+          "mean": 0.841020853471973,
+          "low": 0.8102749105645002,
+          "high": 0.8695457547215318
+        },
+        "cosine_to_oracle": {
+          "mean": 0.7508059826598886,
+          "low": 0.6777587713227998,
+          "high": 0.819775975472961
+        },
+        "loss_end": {
+          "mean": 0.14169043440433746,
+          "low": 0.13251400926813514,
+          "high": 0.1514283757803918
+        },
+        "acc_end": {
+          "mean": 0.553955078125,
+          "low": 0.540771484375,
+          "high": 0.567138671875
+        },
+        "events_observed": 9,
+        "events_pred_det": 0,
+        "events_pred_ora": 2,
+        "total_probes": 384,
+        "observed_rate": {
+          "mean": 0.0234375,
+          "low": 0.0,
+          "high": 0.05729166666666667
+        },
+        "predicted_rate_det": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "auc_detected": 0.32622222222222225,
+        "auc_oracle": 0.41125925925925927,
+        "auc_baseline": 0.4177777777777778,
+        "weakened_70_observed": 24,
+        "weakened_70_pred": 2
+      },
+      "8": {
+        "seeds": 64,
+        "factors": 6,
+        "coherence": {
+          "mean": 0.7608071843464927,
+          "low": 0.7359274561542655,
+          "high": 0.7846700392759388
+        },
+        "cosine_to_oracle": {
+          "mean": 0.8737750913606271,
+          "low": 0.8340273343590271,
+          "high": 0.9057802816056666
+        },
+        "loss_end": {
+          "mean": 0.10418061548861232,
+          "low": 0.10022161750900654,
+          "high": 0.10822001315351854
+        },
+        "acc_end": {
+          "mean": 0.5537109375,
+          "low": 0.543212890625,
+          "high": 0.565185546875
+        },
+        "events_observed": 0,
+        "events_pred_det": 0,
+        "events_pred_ora": 0,
+        "total_probes": 384,
+        "observed_rate": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "predicted_rate_det": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "auc_detected": null,
+        "auc_oracle": null,
+        "auc_baseline": null,
+        "weakened_70_observed": 0,
+        "weakened_70_pred": 0
+      },
+      "16": {
+        "seeds": 64,
+        "factors": 6,
+        "coherence": {
+          "mean": 0.7311154314668133,
+          "low": 0.7084283669507633,
+          "high": 0.753478055780378
+        },
+        "cosine_to_oracle": {
+          "mean": 0.9267560514500821,
+          "low": 0.8925374513055706,
+          "high": 0.9518612982675859
+        },
+        "loss_end": {
+          "mean": 0.09341053520726494,
+          "low": 0.08967499396397911,
+          "high": 0.09739156535620029
+        },
+        "acc_end": {
+          "mean": 0.549072265625,
+          "low": 0.54150390625,
+          "high": 0.55712890625
+        },
+        "events_observed": 0,
+        "events_pred_det": 0,
+        "events_pred_ora": 0,
+        "total_probes": 384,
+        "observed_rate": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "predicted_rate_det": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "auc_detected": null,
+        "auc_oracle": null,
+        "auc_baseline": null,
+        "weakened_70_observed": 0,
+        "weakened_70_pred": 0
+      },
+      "32": {
+        "seeds": 64,
+        "factors": 6,
+        "coherence": {
+          "mean": 0.7097114232730344,
+          "low": 0.6928169777026147,
+          "high": 0.7266927917330556
+        },
+        "cosine_to_oracle": {
+          "mean": 0.9531671821234007,
+          "low": 0.9417567523465845,
+          "high": 0.963812921491853
+        },
+        "loss_end": {
+          "mean": 0.08054839361533607,
+          "low": 0.07885937946635356,
+          "high": 0.0823389292328775
+        },
+        "acc_end": {
+          "mean": 0.536865234375,
+          "low": 0.53076171875,
+          "high": 0.543212890625
+        },
+        "events_observed": 0,
+        "events_pred_det": 0,
+        "events_pred_ora": 0,
+        "total_probes": 384,
+        "observed_rate": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "predicted_rate_det": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "auc_detected": null,
+        "auc_oracle": null,
+        "auc_baseline": null,
+        "weakened_70_observed": 0,
+        "weakened_70_pred": 0
+      }
+    },
+    "flatter_alpha05": {
+      "4": {
+        "seeds": 64,
+        "factors": 4,
+        "coherence": {
+          "mean": 0.8152531550741797,
+          "low": 0.7897734871023491,
+          "high": 0.8397042883217343
+        },
+        "cosine_to_oracle": {
+          "mean": 0.7128072140962245,
+          "low": 0.6536827362441664,
+          "high": 0.7707808072607054
+        },
+        "loss_end": {
+          "mean": 0.18627570319928136,
+          "low": 0.1746034499261847,
+          "high": 0.1993824850401231
+        },
+        "acc_end": {
+          "mean": 0.6826171875,
+          "low": 0.6630859375,
+          "high": 0.7021484375
+        },
+        "events_observed": 0,
+        "events_pred_det": 0,
+        "events_pred_ora": 1,
+        "total_probes": 256,
+        "observed_rate": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "predicted_rate_det": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "auc_detected": null,
+        "auc_oracle": null,
+        "auc_baseline": null,
+        "weakened_70_observed": 3,
+        "weakened_70_pred": 1
+      },
+      "8": {
+        "seeds": 64,
+        "factors": 4,
+        "coherence": {
+          "mean": 0.7368542622112726,
+          "low": 0.7069520496221124,
+          "high": 0.7668039645676531
+        },
+        "cosine_to_oracle": {
+          "mean": 0.79076557230061,
+          "low": 0.7318803560969283,
+          "high": 0.8426596299757066
+        },
+        "loss_end": {
+          "mean": 0.16349793226511478,
+          "low": 0.15853429908936006,
+          "high": 0.16864371611285392
+        },
+        "acc_end": {
+          "mean": 0.6708984375,
+          "low": 0.6552734375,
+          "high": 0.685546875
+        },
+        "events_observed": 0,
+        "events_pred_det": 0,
+        "events_pred_ora": 0,
+        "total_probes": 256,
+        "observed_rate": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "predicted_rate_det": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "auc_detected": null,
+        "auc_oracle": null,
+        "auc_baseline": null,
+        "weakened_70_observed": 0,
+        "weakened_70_pred": 0
+      },
+      "16": {
+        "seeds": 64,
+        "factors": 4,
+        "coherence": {
+          "mean": 0.6824675613101141,
+          "low": 0.6570280235878412,
+          "high": 0.7058651389313239
+        },
+        "cosine_to_oracle": {
+          "mean": 0.8586437791328301,
+          "low": 0.8199189277828702,
+          "high": 0.8914534433981943
+        },
+        "loss_end": {
+          "mean": 0.14789903329780413,
+          "low": 0.14464063715277872,
+          "high": 0.15130373346212994
+        },
+        "acc_end": {
+          "mean": 0.6533203125,
+          "low": 0.640625,
+          "high": 0.6669921875
+        },
+        "events_observed": 0,
+        "events_pred_det": 0,
+        "events_pred_ora": 0,
+        "total_probes": 256,
+        "observed_rate": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "predicted_rate_det": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "auc_detected": null,
+        "auc_oracle": null,
+        "auc_baseline": null,
+        "weakened_70_observed": 0,
+        "weakened_70_pred": 0
+      },
+      "32": {
+        "seeds": 64,
+        "factors": 4,
+        "coherence": {
+          "mean": 0.6416485814107508,
+          "low": 0.623174545090214,
+          "high": 0.6592410235282723
+        },
+        "cosine_to_oracle": {
+          "mean": 0.9349331379104815,
+          "low": 0.9215553556507188,
+          "high": 0.9471439389225523
+        },
+        "loss_end": {
+          "mean": 0.13784465446399247,
+          "low": 0.13529231889618462,
+          "high": 0.1403158843950753
+        },
+        "acc_end": {
+          "mean": 0.68359375,
+          "low": 0.671875,
+          "high": 0.6953125
+        },
+        "events_observed": 0,
+        "events_pred_det": 0,
+        "events_pred_ora": 0,
+        "total_probes": 256,
+        "observed_rate": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "predicted_rate_det": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "auc_detected": null,
+        "auc_oracle": null,
+        "auc_baseline": null,
+        "weakened_70_observed": 0,
+        "weakened_70_pred": 0
+      }
+    },
+    "primary_d4": {
+      "4": {
+        "seeds": 128,
+        "factors": 4,
+        "coherence": {
+          "mean": 0.8301811585539991,
+          "low": 0.8090133610909166,
+          "high": 0.8503694614839157
+        },
+        "cosine_to_oracle": {
+          "mean": 0.7378423061899595,
+          "low": 0.6885351561584135,
+          "high": 0.7856375425714085
+        },
+        "loss_end": {
+          "mean": 0.08258499060003081,
+          "low": 0.07554789311485245,
+          "high": 0.09013111156967725
+        },
+        "acc_end": {
+          "mean": 0.65625,
+          "low": 0.64306640625,
+          "high": 0.66993408203125
+        },
+        "events_observed": 8,
+        "events_pred_det": 1,
+        "events_pred_ora": 1,
+        "total_probes": 512,
+        "observed_rate": {
+          "mean": 0.015625,
+          "low": 0.001953125,
+          "high": 0.033203125
+        },
+        "predicted_rate_det": {
+          "mean": 0.001953125,
+          "low": 0.0,
+          "high": 0.005859375
+        },
+        "auc_detected": 0.5920138888888888,
+        "auc_oracle": 0.6021825396825397,
+        "auc_baseline": 0.48040674603174605,
+        "weakened_70_observed": 23,
+        "weakened_70_pred": 2
+      },
+      "8": {
+        "seeds": 128,
+        "factors": 4,
+        "coherence": {
+          "mean": 0.759422142367514,
+          "low": 0.7386484721764099,
+          "high": 0.7801510582510798
+        },
+        "cosine_to_oracle": {
+          "mean": 0.818183291587288,
+          "low": 0.7751022993700286,
+          "high": 0.8561993024321766
+        },
+        "loss_end": {
+          "mean": 0.07120853297230309,
+          "low": 0.06749983980650483,
+          "high": 0.07504738858283004
+        },
+        "acc_end": {
+          "mean": 0.662109375,
+          "low": 0.65087890625,
+          "high": 0.673828125
+        },
+        "events_observed": 0,
+        "events_pred_det": 0,
+        "events_pred_ora": 0,
+        "total_probes": 512,
+        "observed_rate": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "predicted_rate_det": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "auc_detected": null,
+        "auc_oracle": null,
+        "auc_baseline": null,
+        "weakened_70_observed": 4,
+        "weakened_70_pred": 0
+      },
+      "16": {
+        "seeds": 128,
+        "factors": 4,
+        "coherence": {
+          "mean": 0.7278374965049754,
+          "low": 0.7101558352944941,
+          "high": 0.7459840172506136
+        },
+        "cosine_to_oracle": {
+          "mean": 0.8902931324960374,
+          "low": 0.8631369618588511,
+          "high": 0.913458567459457
+        },
+        "loss_end": {
+          "mean": 0.06065590847578112,
+          "low": 0.05816971334108631,
+          "high": 0.06325055048635153
+        },
+        "acc_end": {
+          "mean": 0.6572265625,
+          "low": 0.64794921875,
+          "high": 0.6669921875
+        },
+        "events_observed": 0,
+        "events_pred_det": 0,
+        "events_pred_ora": 0,
+        "total_probes": 512,
+        "observed_rate": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "predicted_rate_det": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "auc_detected": null,
+        "auc_oracle": null,
+        "auc_baseline": null,
+        "weakened_70_observed": 0,
+        "weakened_70_pred": 0
+      },
+      "32": {
+        "seeds": 128,
+        "factors": 4,
+        "coherence": {
+          "mean": 0.7163309954958725,
+          "low": 0.7013294005627158,
+          "high": 0.7315887147669179
+        },
+        "cosine_to_oracle": {
+          "mean": 0.9349102564331486,
+          "low": 0.9198999914448065,
+          "high": 0.9480409544327585
+        },
+        "loss_end": {
+          "mean": 0.05195729939662515,
+          "low": 0.05088210642808308,
+          "high": 0.053190171523634075
+        },
+        "acc_end": {
+          "mean": 0.64404296875,
+          "low": 0.6376953125,
+          "high": 0.650390625
+        },
+        "events_observed": 0,
+        "events_pred_det": 0,
+        "events_pred_ora": 0,
+        "total_probes": 512,
+        "observed_rate": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "predicted_rate_det": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "auc_detected": null,
+        "auc_oracle": null,
+        "auc_baseline": null,
+        "weakened_70_observed": 0,
+        "weakened_70_pred": 0
+      }
+    },
+    "uncentered_control": {
+      "4": {
+        "seeds": 64,
+        "factors": 4,
+        "coherence": {
+          "mean": 0.8622601344618426,
+          "low": 0.8315808451716366,
+          "high": 0.8921966493139987
+        },
+        "cosine_to_oracle": {
+          "mean": 0.8266601552234001,
+          "low": 0.785179919545388,
+          "high": 0.8658461383450304
+        },
+        "loss_end": {
+          "mean": 0.19100543739449632,
+          "low": 0.1737871144585015,
+          "high": 0.21046076871435873
+        },
+        "acc_end": {
+          "mean": 0.57421875,
+          "low": 0.5537109375,
+          "high": 0.595703125
+        },
+        "events_observed": 0,
+        "events_pred_det": 7,
+        "events_pred_ora": 9,
+        "total_probes": 256,
+        "observed_rate": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "predicted_rate_det": {
+          "mean": 0.02734375,
+          "low": 0.0,
+          "high": 0.06640625
+        },
+        "auc_detected": null,
+        "auc_oracle": null,
+        "auc_baseline": null,
+        "weakened_70_observed": 0,
+        "weakened_70_pred": 11
+      },
+      "8": {
+        "seeds": 64,
+        "factors": 4,
+        "coherence": {
+          "mean": 0.8105806649468774,
+          "low": 0.7780079501140457,
+          "high": 0.8408102541350694
+        },
+        "cosine_to_oracle": {
+          "mean": 0.8324077684909431,
+          "low": 0.7905182432175287,
+          "high": 0.8721495420843428
+        },
+        "loss_end": {
+          "mean": 0.18349289807371855,
+          "low": 0.1750565540176788,
+          "high": 0.19309260423941693
+        },
+        "acc_end": {
+          "mean": 0.5703125,
+          "low": 0.55859375,
+          "high": 0.5830078125
+        },
+        "events_observed": 0,
+        "events_pred_det": 2,
+        "events_pred_ora": 0,
+        "total_probes": 256,
+        "observed_rate": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "predicted_rate_det": {
+          "mean": 0.0078125,
+          "low": 0.0,
+          "high": 0.01953125
+        },
+        "auc_detected": null,
+        "auc_oracle": null,
+        "auc_baseline": null,
+        "weakened_70_observed": 0,
+        "weakened_70_pred": 6
+      },
+      "16": {
+        "seeds": 64,
+        "factors": 4,
+        "coherence": {
+          "mean": 0.7562653328926826,
+          "low": 0.7317650958264192,
+          "high": 0.7817850686774236
+        },
+        "cosine_to_oracle": {
+          "mean": 0.8760913716213783,
+          "low": 0.8443068830067237,
+          "high": 0.9058185214984881
+        },
+        "loss_end": {
+          "mean": 0.1980379490251718,
+          "low": 0.191589493579766,
+          "high": 0.20493372563200954
+        },
+        "acc_end": {
+          "mean": 0.5595703125,
+          "low": 0.5478515625,
+          "high": 0.5712890625
+        },
+        "events_observed": 0,
+        "events_pred_det": 0,
+        "events_pred_ora": 0,
+        "total_probes": 256,
+        "observed_rate": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "predicted_rate_det": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "auc_detected": null,
+        "auc_oracle": null,
+        "auc_baseline": null,
+        "weakened_70_observed": 0,
+        "weakened_70_pred": 0
+      },
+      "32": {
+        "seeds": 64,
+        "factors": 4,
+        "coherence": {
+          "mean": 0.733364592546984,
+          "low": 0.7154292327033869,
+          "high": 0.7507616458304552
+        },
+        "cosine_to_oracle": {
+          "mean": 0.8862410331553983,
+          "low": 0.8572324460362524,
+          "high": 0.9136504681910897
+        },
+        "loss_end": {
+          "mean": 0.1988492903317392,
+          "low": 0.19448950073152646,
+          "high": 0.20339551694196786
+        },
+        "acc_end": {
+          "mean": 0.552734375,
+          "low": 0.5458984375,
+          "high": 0.55859375
+        },
+        "events_observed": 0,
+        "events_pred_det": 0,
+        "events_pred_ora": 0,
+        "total_probes": 256,
+        "observed_rate": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "predicted_rate_det": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "auc_detected": null,
+        "auc_oracle": null,
+        "auc_baseline": null,
+        "weakened_70_observed": 0,
+        "weakened_70_pred": 0
+      }
+    },
+    "zero_label_control": {
+      "4": {
+        "seeds": 64,
+        "factors": 4,
+        "coherence": {
+          "mean": 0.8071231347487868,
+          "low": 0.7811431927039961,
+          "high": 0.8334887398249639
+        },
+        "cosine_to_oracle": {
+          "mean": 0.43072468270147984,
+          "low": 0.37688745633106596,
+          "high": 0.4849843454580615
+        },
+        "loss_end": {
+          "mean": 0.02786071965043825,
+          "low": 0.024934219970372557,
+          "high": 0.03121837565788091
+        },
+        "acc_end": {
+          "mean": 0.6455078125,
+          "low": 0.6240234375,
+          "high": 0.6669921875
+        },
+        "events_observed": 2,
+        "events_pred_det": 1,
+        "events_pred_ora": 0,
+        "total_probes": 256,
+        "observed_rate": {
+          "mean": 0.0078125,
+          "low": 0.0,
+          "high": 0.0234375
+        },
+        "predicted_rate_det": {
+          "mean": 0.00390625,
+          "low": 0.0,
+          "high": 0.01171875
+        },
+        "auc_detected": 0.017716535433070866,
+        "auc_oracle": 0.007874015748031496,
+        "auc_baseline": 0.7066929133858267,
+        "weakened_70_observed": 2,
+        "weakened_70_pred": 2
+      },
+      "8": {
+        "seeds": 64,
+        "factors": 4,
+        "coherence": {
+          "mean": 0.7287323160809338,
+          "low": 0.7033976752622286,
+          "high": 0.7537101200104445
+        },
+        "cosine_to_oracle": {
+          "mean": 0.4132553780657007,
+          "low": 0.36105057891256576,
+          "high": 0.4647966220369112
+        },
+        "loss_end": {
+          "mean": 0.03291634758905733,
+          "low": 0.031175927939549933,
+          "high": 0.03474946351019801
+        },
+        "acc_end": {
+          "mean": 0.64453125,
+          "low": 0.625,
+          "high": 0.6640625
+        },
+        "events_observed": 0,
+        "events_pred_det": 0,
+        "events_pred_ora": 0,
+        "total_probes": 256,
+        "observed_rate": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "predicted_rate_det": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "auc_detected": null,
+        "auc_oracle": null,
+        "auc_baseline": null,
+        "weakened_70_observed": 0,
+        "weakened_70_pred": 0
+      },
+      "16": {
+        "seeds": 64,
+        "factors": 4,
+        "coherence": {
+          "mean": 0.69272234835551,
+          "low": 0.6721027904331202,
+          "high": 0.7130812546382143
+        },
+        "cosine_to_oracle": {
+          "mean": 0.3977774237225339,
+          "low": 0.345365068903744,
+          "high": 0.4492283435874406
+        },
+        "loss_end": {
+          "mean": 0.012563383400910868,
+          "low": 0.011916590802762935,
+          "high": 0.013245132637581937
+        },
+        "acc_end": {
+          "mean": 0.646484375,
+          "low": 0.63671875,
+          "high": 0.6572265625
+        },
+        "events_observed": 0,
+        "events_pred_det": 0,
+        "events_pred_ora": 0,
+        "total_probes": 256,
+        "observed_rate": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "predicted_rate_det": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "auc_detected": null,
+        "auc_oracle": null,
+        "auc_baseline": null,
+        "weakened_70_observed": 0,
+        "weakened_70_pred": 0
+      },
+      "32": {
+        "seeds": 64,
+        "factors": 4,
+        "coherence": {
+          "mean": 0.6655885780188482,
+          "low": 0.6495054888108607,
+          "high": 0.6813148057048101
+        },
+        "cosine_to_oracle": {
+          "mean": 0.41663682139158237,
+          "low": 0.38183511215807553,
+          "high": 0.45196633142799075
+        },
+        "loss_end": {
+          "mean": 0.010899631296158892,
+          "low": 0.01061323793416127,
+          "high": 0.011193410138972452
+        },
+        "acc_end": {
+          "mean": 0.6533203125,
+          "low": 0.64453125,
+          "high": 0.662109375
+        },
+        "events_observed": 0,
+        "events_pred_det": 0,
+        "events_pred_ora": 0,
+        "total_probes": 256,
+        "observed_rate": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "predicted_rate_det": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "auc_detected": null,
+        "auc_oracle": null,
+        "auc_baseline": null,
+        "weakened_70_observed": 0,
+        "weakened_70_pred": 0
+      }
+    }
+  }
+}

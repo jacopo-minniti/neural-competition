@@ -1,46 +1,28 @@
-# Neural competition through functional options
+# Neural competition: protected reserve
 
-This repository studies one mechanism: training pressure changes the functional
-corrections a network can make through shared trainable features, and width can
-change whether useful corrections survive or recover within a finite budget.
+This project studies how learning one part of a task changes the corrections a
+network can make later, and whether greater width preserves those corrections.
+The current model separates residual demand from response capability, identifies
+response protected from a specified dominant pressure, and predicts response
+after a declared amount of dominant learning.
 
-The maintained model has two primary objects:
+[The report](report.tex) is the main entry point. It develops the theory and
+presents the selected learning-curve example, the co-occurrence study and the
+parity test. The main evidence is conditional: the selected loss example is not
+a prevalence estimate; the completion forecast is approximate under full
+training; and parity exposes a prediction failure. A causal account of a
+width-dependent loss advantage remains an open goal.
 
-- **spectral capability**, derived from the prediction Jacobian, loss curvature,
-  optimizer geometry, and an explicit observation budget;
-- **residual demand**, which determines which available corrections currently
-  matter.
+## Explore the project
 
-An option is a correction required by a declared residual, considered together
-with the network's response to it. Spectral directions describe capability modes;
-their residual loading specifies the options. An option is closed when demand remains but its local
-response is zero; satisfying demand is not closure. The precise spectral
-definition and unchanged value formulas are in the
-[spectral derivation](docs/model/spectral_options.md#3-capability-modes-and-demanded-options).
-Their dynamics are modeled with the existing feature–coefficient parameter
-evolution and physical ReLU gates. The current
-[reserve model](docs/model/competition_reserve.md) distinguishes present
-capability from response protected against common-task learning. It derives an
-exact state certificate, a completion curve indexed by common learning rather
-than elapsed steps, and a restricted last-alternative loss law. Tests use 24–32
-power-law refinements, with continuous context variation and sufficient narrow
-capacity. The earlier [conditional forecasting model](docs/model/power_law_competition.md)
-remains a numerical tool; the [Gaussian pressure law](docs/model/probabilistic_competition.md)
-is a more restricted analytic special case.
-No latent resource state or fitted transition law is part of the maintained model.
+- [Research objectives and evidence standards](OBJECTIVES.md)
+- [Protected-reserve model and its assumptions](docs/model/competition_reserve.md)
+- [Co-occurrence, parity and the next tests](docs/model/reserve_relaxation.md)
+- [Evidence and reproduction](docs/README.md)
+- [Active study scripts](scripts/studies/README.md)
+- [Earlier models and supporting evidence](archive/README.md)
 
-## Reading order
-
-1. [Research objective](OBJECTIVE.md)
-2. [Current research context](docs/research_context.md)
-3. [Model overview](docs/model/README.md)
-4. [Experiment overview](docs/experiments/README.md)
-5. [Reproduction](docs/reproduction.md) and [data retention](docs/data.md)
-
-The complete repository state before this curation is preserved in Git commit
-`92b7904` (`Snapshot complete options research before simplification`).
-
-## Quick validation
+## Validate
 
 ```sh
 .venv/bin/python scripts/check_repository.py

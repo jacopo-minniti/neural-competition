@@ -1,7 +1,7 @@
 # Current capability, protected reserve, and tolerable common learning
 
 29 October 2026. This revises the priority of the
-[short-horizon probabilistic model](power_law_competition.md). The immediate
+[short-horizon probabilistic model](../../archive/docs/model/power_law_competition.md). The immediate
 problem is to describe **what currently supports a correction, how much of it
 is exposed to dominant learning, and what common learning it can survive**.
 Predicting a parameter trajectory at a prescribed future step is secondary.
@@ -278,7 +278,7 @@ Natural widening also changes the \(1/m\) normalization, functional strength,
 and the common progress map \(F\). It need not monotonically improve every
 finite-strength reserve. Equation (12) is therefore not a universal monotonicity
 theorem at matched training time or gain. The earlier
-[independent Gaussian construction](probabilistic_competition.md) gives the
+[independent Gaussian construction](../../archive/docs/model/probabilistic_competition.md) gives the
 additional restricted law \(\Pr(\text{complete closure at }s)=b(s)^m\), with
 \(b\) derived from the same dynamics. We do not assume independence of trained
 features to import that law into arbitrary states.

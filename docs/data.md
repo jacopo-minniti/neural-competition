@@ -1,15 +1,14 @@
 # Data retention
 
-The maintained repository stores compact analysis records, figures, protocols,
-and source snapshots under `docs/evidence/`. Large model checkpoints and raw
-trajectories are not required for ordinary inspection or tests.
+The current evidence directories retain analyses, protocols and, where needed,
+forecasts, results and historical source snapshots. The selected learning-curve
+example includes its initial state and observed outcomes. The ignored
+`runs/natural_parity/` directory contains the local parity run used for its
+analysis; it is regenerable and is not part of Git.
 
-Official compressed MNIST archives remain under `data/mnist/raw/`. The prepared
-tensor cache is regenerable and intentionally absent. Ignored legacy `runs/`,
-scratch output, and temporary build directories were permanently removed during
-the 29 October curation.
-
-All tracked pre-curation files—including later implementation-distribution and
-probabilistic-transition work—are recoverable from commit `92b7904`. Large
-ignored runs were never part of Git and must be regenerated from their archived
-protocols if needed.
+During the protection-model cleanup, redundant local bridge and older parity
+runs were removed. Older power-law and probabilistic study arrays were removed
+from the working tree, while their compact records were moved to the
+[archive](../archive/README.md). Previously tracked arrays remain in Git history;
+ignored local runs were never tracked. The local MNIST download cache under
+`data/` is unrelated to the active protection studies and remains ignored.
